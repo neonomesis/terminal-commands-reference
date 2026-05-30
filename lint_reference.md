@@ -445,3 +445,398 @@ npx eslint . --cache          # Cache for speed
 npx eslint --init             # Setup wizard
 npx eslint --print-config .   # Debug config
 ```
+
+---
+
+---
+
+# Other Types of Linters
+
+Linting is not limited to JavaScript. Every language and file format has dedicated tools.
+
+---
+
+## JavaScript / TypeScript Alternatives
+
+| Tool | Description | Install |
+|------|-------------|---------|
+| **Biome** | All-in-one linter + formatter (replaces ESLint + Prettier), written in Rust | `npm i -D @biomejs/biome` |
+| **oxlint** | Extremely fast ESLint-compatible linter in Rust | `npm i -D oxlint` |
+| **JSHint** | Older, config-driven JS linter | `npm i -D jshint` |
+| **StandardJS** | Opinionated JS style with zero config | `npm i -D standard` |
+| **deno lint** | Built-in linter for Deno projects | `deno lint` |
+
+```bash
+# Biome
+npx @biomejs/biome lint src/
+npx @biomejs/biome check --apply src/   # lint + format + fix
+
+# oxlint
+npx oxlint src/
+
+# Standard
+npx standard src/
+npx standard --fix src/
+```
+
+---
+
+## CSS / Styles
+
+### Stylelint
+
+```bash
+npm install --save-dev stylelint stylelint-config-standard
+
+# .stylelintrc.json
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "unit-no-unknown": true,
+    "property-no-unknown": true,
+    "selector-class-pattern": "^[a-z][a-z0-9-]*$",
+    "max-nesting-depth": 3,
+    "no-duplicate-selectors": true
+  }
+}
+```
+
+```bash
+npx stylelint "**/*.css"
+npx stylelint "**/*.scss" --fix
+npx stylelint "**/*.{css,scss,less}"
+```
+
+---
+
+## Python
+
+| Tool | Role | Install |
+|------|------|---------|
+| **Ruff** | Fast all-in-one linter + formatter (replaces flake8/isort/black) | `pip install ruff` |
+| **Pylint** | Deep static analysis, style + logic | `pip install pylint` |
+| **Flake8** | Style + syntax checker (PEP 8) | `pip install flake8` |
+| **mypy** | Static type checker | `pip install mypy` |
+| **Bandit** | Security vulnerability scanner | `pip install bandit` |
+| **Black** | Opinionated code formatter | `pip install black` |
+
+```bash
+# Ruff (fastest, recommended)
+ruff check src/
+ruff check src/ --fix
+ruff format src/
+
+# Pylint
+pylint src/mymodule.py
+
+# Flake8
+flake8 src/ --max-line-length=100
+
+# mypy
+mypy src/ --strict
+
+# Bandit
+bandit -r src/
+```
+
+```toml
+# pyproject.toml — Ruff config
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "N", "UP", "S", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint]
+extend-select = ["C90"]  # complexity
+```
+
+---
+
+## Go
+
+```bash
+# Built-in
+go vet ./...
+
+# golangci-lint (runs many linters at once — recommended)
+brew install golangci-lint
+golangci-lint run ./...
+golangci-lint run --fix ./...
+
+# staticcheck
+go install honnef.co/go/tools/cmd/staticcheck@latest
+staticcheck ./...
+```
+
+```yaml
+# .golangci.yml
+linters:
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - gofmt
+    - goimports
+    - revive
+    - gosec
+```
+
+---
+
+## Rust
+
+```bash
+# Clippy (official Rust linter, ships with rustup)
+cargo clippy
+cargo clippy -- -D warnings      # treat warnings as errors
+cargo clippy --fix               # auto-fix
+cargo fmt                        # formatter
+cargo fmt -- --check             # CI check (no changes)
+```
+
+---
+
+## Shell Scripts
+
+### ShellCheck
+
+```bash
+# Install
+brew install shellcheck           # macOS
+apt install shellcheck            # Ubuntu
+
+# Run
+shellcheck script.sh
+shellcheck **/*.sh
+
+# Inline disable
+# shellcheck disable=SC2086
+echo $var
+```
+
+Common ShellCheck codes:
+
+| Code | Issue |
+|------|-------|
+| SC2086 | Unquoted variable (word splitting risk) |
+| SC2046 | Unquoted command substitution |
+| SC2006 | Use `$()` instead of backticks |
+| SC2164 | Use `cd ... || exit` |
+
+---
+
+## Markdown
+
+```bash
+npm install --save-dev markdownlint-cli
+
+# .markdownlint.json
+{
+  "MD013": { "line_length": 120 },
+  "MD033": false,
+  "MD041": false
+}
+
+npx markdownlint "**/*.md"
+npx markdownlint "**/*.md" --fix
+```
+
+---
+
+## YAML / JSON / TOML
+
+```bash
+# YAML
+pip install yamllint
+yamllint .
+# .yamllint.yml
+# extends: default
+# rules:
+#   line-length: { max: 120 }
+
+# JSON — built into Node
+node -e "JSON.parse(require('fs').readFileSync('file.json','utf8'))"
+
+# jsonlint
+npm install -g jsonlint
+jsonlint file.json
+
+# TOML
+pip install toml-sort
+toml-sort pyproject.toml --check
+```
+
+---
+
+## HTML
+
+```bash
+npm install --save-dev htmlhint
+
+# .htmlhintrc
+{
+  "tagname-lowercase": true,
+  "attr-lowercase": true,
+  "attr-value-double-quotes": true,
+  "doctype-first": true,
+  "id-unique": true,
+  "src-not-empty": true,
+  "alt-require": true
+}
+
+npx htmlhint "**/*.html"
+```
+
+---
+
+## Docker
+
+```bash
+# Hadolint — Dockerfile linter
+brew install hadolint
+hadolint Dockerfile
+docker run --rm -i hadolint/hadolint < Dockerfile
+
+# Inline ignore
+# hadolint ignore=DL3008
+RUN apt-get install -y curl
+```
+
+Common Hadolint rules:
+
+| Rule | Issue |
+|------|-------|
+| DL3007 | Use specific tag, not `latest` |
+| DL3008 | Pin apt package versions |
+| DL3009 | Delete apt lists after install |
+| DL4006 | Set `SHELL` option with pipefail |
+
+---
+
+## Infrastructure as Code
+
+```bash
+# Terraform
+brew install tflint
+tflint --init
+tflint
+
+# tfsec — security scanner for Terraform
+brew install tfsec
+tfsec .
+
+# CloudFormation
+pip install cfn-lint
+cfn-lint template.yaml
+
+# Kubernetes manifests
+kubectl apply --dry-run=client -f manifest.yaml
+kube-linter lint manifest.yaml          # deeper checks
+```
+
+---
+
+## SQL
+
+```bash
+pip install sqlfluff
+
+# .sqlfluff
+# [sqlfluff]
+# dialect = postgres
+# templater = dbt
+
+sqlfluff lint query.sql
+sqlfluff fix query.sql
+sqlfluff lint --dialect postgres query.sql
+```
+
+---
+
+## Security-Focused Scanners
+
+| Tool | Language / Target | Install |
+|------|------------------|---------|
+| **Semgrep** | Any language, custom rules | `pip install semgrep` |
+| **Bandit** | Python | `pip install bandit` |
+| **Brakeman** | Ruby on Rails | `gem install brakeman` |
+| **gosec** | Go | `go install github.com/securecgo/gosec/v2/cmd/gosec@latest` |
+| **npm audit** | Node.js deps | built-in |
+| **Snyk** | Deps + code | `npm i -g snyk` |
+
+```bash
+semgrep --config=auto src/
+semgrep --config=p/owasp-top-ten src/
+
+npm audit
+npm audit fix
+
+snyk test
+snyk code test
+```
+
+---
+
+## Commit Message Linting
+
+```bash
+npm install --save-dev @commitlint/cli @commitlint/config-conventional
+
+# commitlint.config.js
+export default {
+  extends: ["@commitlint/config-conventional"],
+  rules: {
+    "type-enum": [2, "always", ["feat","fix","docs","style","refactor","test","chore"]],
+    "subject-max-length": [2, "always", 72],
+  },
+};
+
+# With Husky
+npx husky add .husky/commit-msg "npx commitlint --edit $1"
+```
+
+---
+
+## Git Hooks (run linters automatically)
+
+```bash
+npm install --save-dev husky lint-staged
+
+# package.json
+{
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{css,scss}": ["stylelint --fix"],
+    "*.py": ["ruff check --fix", "ruff format"],
+    "*.sh": ["shellcheck"],
+    "*.md": ["markdownlint --fix"]
+  }
+}
+
+npx husky init
+echo "npx lint-staged" > .husky/pre-commit
+```
+
+---
+
+## Linter Comparison by Language
+
+| Language | Recommended | Also popular |
+|----------|-------------|--------------|
+| JavaScript | ESLint / Biome | oxlint, StandardJS |
+| TypeScript | ESLint + @typescript-eslint | Biome |
+| CSS/SCSS | Stylelint | — |
+| Python | Ruff | Pylint, Flake8 |
+| Go | golangci-lint | staticcheck, go vet |
+| Rust | Clippy | — |
+| Shell | ShellCheck | — |
+| Markdown | markdownlint | — |
+| YAML | yamllint | — |
+| Dockerfile | Hadolint | — |
+| Terraform | tflint + tfsec | — |
+| SQL | SQLFluff | — |
+| HTML | HTMLHint | — |
