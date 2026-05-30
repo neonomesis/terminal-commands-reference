@@ -7,6 +7,7 @@
 - [Comments & Documentation](#comments--documentation)
 - [Error Handling](#error-handling)
 - [Code Structure & Organization](#code-structure--organization)
+- [Filesystem Best Practices](#filesystem-best-practices)
 - [Security](#security)
 - [Performance](#performance)
 - [Testing](#testing)
@@ -317,6 +318,208 @@ setTimeout(fn, ONE_DAY_MS);
 ```
 Recommended: 80–120 characters per line
 Configure in .editorconfig, .prettierrc, or eslint
+```
+
+---
+
+## Filesystem Best Practices
+
+### Directory & File Naming
+```
+Use lowercase with hyphens for directories and files
+  good:  user-profile/avatar-upload.js
+  bad:   UserProfile/AvatarUpload.js
+
+Exception: language convention takes precedence
+  Python modules:   snake_case.py
+  React components: PascalCase.tsx
+  Go files:         snake_case.go
+```
+
+### Project Root — Keep It Clean
+```
+/project-root
+├── src/              All source code
+├── tests/            All tests (mirrors src/ structure)
+├── docs/             Documentation
+├── scripts/          Build / automation scripts
+├── public/           Static assets served directly
+├── .github/          CI/CD workflows, issue templates
+├── .env.example      Template for env vars (no real values)
+├── .gitignore
+├── README.md
+└── package.json / pyproject.toml / go.mod
+```
+
+### Paths — Absolute vs Relative
+```js
+// Bad — breaks when file moves
+const config = require('../../../config');
+
+// Good — use path aliases or a root-relative helper
+import config from '@/config';          // alias in tsconfig/webpack
+const config = require(path.join(__dirname, 'config'));
+```
+
+```python
+# Good — use pathlib, not string concatenation
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONFIG_PATH = BASE_DIR / 'config' / 'settings.json'
+```
+
+### File Reads & Writes
+```js
+// Always handle file errors explicitly
+import fs from 'fs/promises';
+
+async function readConfig(filePath) {
+  try {
+    const content = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(content);
+  } catch (error) {
+    if (error.code === 'ENOENT') throw new Error(`Config not found: ${filePath}`);
+    throw error;
+  }
+}
+```
+
+```python
+from pathlib import Path
+
+def read_config(path: Path) -> dict:
+    if not path.exists():
+        raise FileNotFoundError(f"Config not found: {path}")
+    return json.loads(path.read_text(encoding='utf-8'))
+```
+
+### Atomic Writes (Avoid Corrupt Files)
+```js
+// Bad — crash mid-write leaves corrupt file
+fs.writeFileSync(targetPath, data);
+
+// Good — write to temp, then rename (atomic on most OS)
+const tmp = targetPath + '.tmp';
+fs.writeFileSync(tmp, data);
+fs.renameSync(tmp, targetPath);
+```
+
+### Temp Files & Cleanup
+```python
+import tempfile
+
+# Good — temp file cleaned up automatically
+with tempfile.NamedTemporaryFile(suffix='.json', delete=True) as tmp:
+    tmp.write(data.encode())
+    process(tmp.name)
+```
+
+```js
+// Always clean up temp files in a finally block
+const tmp = os.tmpdir() + '/upload-' + Date.now();
+try {
+  await processFile(tmp);
+} finally {
+  await fs.unlink(tmp).catch(() => {});
+}
+```
+
+### File Upload Security
+```js
+// Validate file type by content (magic bytes), not just extension
+import { fileTypeFromBuffer } from 'file-type';
+
+const type = await fileTypeFromBuffer(buffer);
+const ALLOWED = ['image/jpeg', 'image/png', 'image/webp'];
+
+if (!type || !ALLOWED.includes(type.mime)) {
+  throw new ValidationError('file', 'Unsupported file type');
+}
+
+// Sanitize filenames — never trust user-supplied names
+import { basename } from 'path';
+const safe = basename(userFilename).replace(/[^a-zA-Z0-9._-]/g, '_');
+```
+
+### Path Traversal Prevention
+```js
+// Bad — attacker can send ../../etc/passwd
+const filePath = path.join(uploadDir, req.query.file);
+
+// Good — resolve and verify it's inside the allowed dir
+const filePath = path.resolve(uploadDir, req.query.file);
+if (!filePath.startsWith(path.resolve(uploadDir))) {
+  throw new Error('Path traversal detected');
+}
+```
+
+### Environment-Specific Paths
+```js
+// Bad — hardcoded OS-specific path
+const logDir = '/var/log/myapp';
+
+// Good — configurable via env
+const logDir = process.env.LOG_DIR ?? path.join(os.homedir(), '.myapp', 'logs');
+```
+
+```python
+import os
+from pathlib import Path
+
+LOG_DIR = Path(os.getenv('LOG_DIR', Path.home() / '.myapp' / 'logs'))
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+```
+
+### File Size & Limits
+```js
+// Always enforce upload/read size limits
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+
+if (file.size > MAX_FILE_SIZE) {
+  throw new ValidationError('file', 'File exceeds 10 MB limit');
+}
+
+// Stream large files instead of loading into memory
+import { createReadStream } from 'fs';
+const stream = createReadStream(largePath, { highWaterMark: 64 * 1024 });
+```
+
+### Cross-Platform Compatibility
+```js
+// Bad — Unix-only path separator
+const filePath = dir + '/' + filename;
+
+// Good — works on Windows too
+const filePath = path.join(dir, filename);
+
+// Bad — Unix line endings assumed
+const lines = content.split('\n');
+
+// Good — handles \r\n (Windows) and \n (Unix)
+const lines = content.split(/\r?\n/);
+```
+
+### Permissions & Ownership
+```bash
+# Least-privilege file permissions
+chmod 600 .env                  # owner read/write only
+chmod 644 config.json           # owner write, others read
+chmod 755 scripts/deploy.sh     # executable by all, writable by owner only
+chmod 700 ~/.ssh                # SSH dir — owner only
+
+# Never make secrets world-readable
+chmod 777 .env                  # WRONG — anyone on system can read
+```
+
+### Logging File Operations
+```js
+// Log meaningful context, not just "file saved"
+logger.info('Config written', {
+  path: filePath,
+  size: Buffer.byteLength(data),
+  user: req.user.id,
+});
 ```
 
 ---
