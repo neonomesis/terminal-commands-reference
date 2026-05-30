@@ -9,6 +9,7 @@
 - [Code Structure & Organization](#code-structure--organization)
 - [Filesystem Best Practices](#filesystem-best-practices)
 - [API Design Best Practices](#api-design-best-practices)
+- [Fetching Data](#fetching-data)
 - [Security](#security)
 - [Performance](#performance)
 - [Testing](#testing)
@@ -808,6 +809,246 @@ Use GraphQL when:
   Deeply nested or relational data
   Rapid frontend iteration without backend changes
   You want a single endpoint with a typed schema
+```
+
+---
+
+## Fetching Data
+
+### Always Handle All States
+```js
+// Every fetch has 4 states — handle all of them
+const [data, setData] = useState(null);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState(null);
+
+// loading  → show skeleton / spinner
+// error    → show error message with retry option
+// no data  → show empty state
+// data     → render content
+```
+
+### Abort Stale Requests
+```js
+// Bad — response from a previous input can overwrite a newer one
+useEffect(() => {
+  fetch(`/api/search?q=${query}`).then(r => r.json()).then(setResults);
+}, [query]);
+
+// Good — cancel the previous request when query changes
+useEffect(() => {
+  const controller = new AbortController();
+
+  fetch(`/api/search?q=${query}`, { signal: controller.signal })
+    .then(r => r.json())
+    .then(setResults)
+    .catch(err => {
+      if (err.name !== 'AbortError') setError(err);
+    });
+
+  return () => controller.abort();
+}, [query]);
+```
+
+### Always Check Response Status
+```js
+// Bad — fetch() only rejects on network failure, not 4xx/5xx
+const res = await fetch('/api/users');
+const data = await res.json(); // runs even on 404/500
+
+// Good — check ok before parsing
+const res = await fetch('/api/users');
+if (!res.ok) {
+  throw new Error(`Request failed: ${res.status} ${res.statusText}`);
+}
+const data = await res.json();
+```
+
+### Centralize HTTP Logic
+```js
+// Create a single API client — don't scatter fetch() calls everywhere
+// lib/api.js
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+async function request(path, options = {}) {
+  const res = await fetch(`${BASE_URL}${path}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getToken()}`,
+      ...options.headers,
+    },
+    ...options,
+  });
+
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({}));
+    throw new ApiError(res.status, error.message ?? res.statusText);
+  }
+
+  return res.status === 204 ? null : res.json();
+}
+
+export const api = {
+  get:    (path)         => request(path),
+  post:   (path, body)   => request(path, { method: 'POST',   body: JSON.stringify(body) }),
+  patch:  (path, body)   => request(path, { method: 'PATCH',  body: JSON.stringify(body) }),
+  put:    (path, body)   => request(path, { method: 'PUT',    body: JSON.stringify(body) }),
+  delete: (path)         => request(path, { method: 'DELETE' }),
+};
+```
+
+### Timeouts
+```js
+// fetch() has no built-in timeout — add one
+function fetchWithTimeout(url, options = {}, timeoutMs = 10_000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+  return fetch(url, { ...options, signal: controller.signal })
+    .finally(() => clearTimeout(timer));
+}
+```
+
+```python
+import httpx
+
+# httpx supports timeouts natively
+async with httpx.AsyncClient(timeout=10.0) as client:
+    response = await client.get('https://api.example.com/users')
+    response.raise_for_status()
+```
+
+### Retry with Exponential Backoff
+```js
+async function fetchWithRetry(url, options = {}, retries = 3) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(url, options);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    } catch (err) {
+      const isLast = attempt === retries;
+      if (isLast) throw err;
+      // Only retry on network errors or 5xx, never on 4xx
+      await new Promise(r => setTimeout(r, 2 ** attempt * 500)); // 500ms, 1s, 2s
+    }
+  }
+}
+```
+
+### Caching & Deduplication
+```js
+// Use a data-fetching library — don't reinvent caching
+// React Query / TanStack Query
+const { data, isLoading, error } = useQuery({
+  queryKey: ['users', userId],
+  queryFn: () => api.get(`/users/${userId}`),
+  staleTime: 5 * 60 * 1000,   // treat data as fresh for 5 min
+  retry: 2,                    // auto-retry failed requests
+});
+
+// SWR
+const { data, error, isLoading } = useSWR(`/users/${userId}`, fetcher, {
+  revalidateOnFocus: false,
+  dedupingInterval: 5000,
+});
+```
+
+### Optimistic Updates
+```js
+// Update UI immediately, rollback on failure
+const mutation = useMutation({
+  mutationFn: (newName) => api.patch(`/users/${id}`, { name: newName }),
+
+  onMutate: async (newName) => {
+    await queryClient.cancelQueries({ queryKey: ['users', id] });
+    const previous = queryClient.getQueryData(['users', id]);
+    queryClient.setQueryData(['users', id], old => ({ ...old, name: newName }));
+    return { previous }; // snapshot for rollback
+  },
+
+  onError: (_err, _vars, ctx) => {
+    queryClient.setQueryData(['users', id], ctx.previous); // rollback
+  },
+
+  onSettled: () => queryClient.invalidateQueries({ queryKey: ['users', id] }),
+});
+```
+
+### Pagination Fetching
+```js
+// Cursor-based infinite scroll with TanStack Query
+const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
+  queryKey: ['posts'],
+  queryFn: ({ pageParam }) => api.get(`/posts?cursor=${pageParam}&limit=20`),
+  getNextPageParam: (lastPage) => lastPage.meta.nextCursor ?? undefined,
+  initialPageParam: '',
+});
+```
+
+### Parallel & Dependent Requests
+```js
+// Parallel — fire all at once
+const [users, products] = await Promise.all([
+  api.get('/users'),
+  api.get('/products'),
+]);
+
+// Sequential — second depends on first
+const order = await api.get(`/orders/${orderId}`);
+const seller = await api.get(`/users/${order.sellerId}`);
+
+// Parallel with individual error handling
+const results = await Promise.allSettled([
+  api.get('/primary'),
+  api.get('/secondary'),
+]);
+
+results.forEach(r => {
+  if (r.status === 'fulfilled') use(r.value);
+  else logger.warn('Request failed', r.reason);
+});
+```
+
+### Environment URLs
+```js
+// Bad — hardcoded URL
+const res = await fetch('https://api.myapp.com/users');
+
+// Good — environment variable
+const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`);
+```
+
+```
+.env.development   NEXT_PUBLIC_API_URL=http://localhost:3001
+.env.staging       NEXT_PUBLIC_API_URL=https://api.staging.myapp.com
+.env.production    NEXT_PUBLIC_API_URL=https://api.myapp.com
+```
+
+### Security — Never Expose Secrets in Client Fetches
+```
+Server-side fetches (Node / Next.js server components):
+  Can use secret API keys — kept server-side, never sent to browser
+
+Client-side fetches (browser):
+  Only use public tokens / keys prefixed NEXT_PUBLIC_*
+  If you need a secret, proxy through your own API route:
+    Browser → /api/proxy → External API (with secret key)
+```
+
+### Response Validation
+```ts
+// Validate API responses match expected shape — don't trust external data
+import { z } from 'zod';
+
+const UserSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  email: z.string().email(),
+});
+
+const raw = await api.get('/users/42');
+const user = UserSchema.parse(raw); // throws if shape is wrong
 ```
 
 ---
