@@ -131,6 +131,162 @@ npx eslint src/ --cache
 
 ---
 
+## Soft Rules (warn — non-breaking)
+
+These rules flag code quality and style concerns without blocking CI. Good starting point when adding lint to an existing project.
+
+### Code Quality
+
+```json
+{
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-alert": "warn",
+    "no-todo-comments": "off",
+    "no-empty": "warn",
+    "no-empty-function": "warn",
+    "no-lonely-if": "warn",
+    "no-negated-condition": "warn",
+    "no-nested-ternary": "warn",
+    "no-unneeded-ternary": "warn",
+    "no-useless-return": "warn",
+    "no-useless-concat": "warn",
+    "no-useless-rename": "warn",
+    "no-shadow": "warn",
+    "no-param-reassign": "warn",
+    "no-else-return": "warn",
+    "consistent-return": "warn",
+    "default-case": "warn"
+  }
+}
+```
+
+### Modern JavaScript Suggestions
+
+```json
+{
+  "rules": {
+    "prefer-const": "warn",
+    "prefer-arrow-callback": "warn",
+    "prefer-template": "warn",
+    "prefer-destructuring": ["warn", { "array": false, "object": true }],
+    "prefer-rest-params": "warn",
+    "prefer-spread": "warn",
+    "prefer-object-spread": "warn",
+    "prefer-numeric-literals": "warn",
+    "prefer-exponentiation-operator": "warn",
+    "object-shorthand": ["warn", "always"],
+    "arrow-body-style": ["warn", "as-needed"],
+    "no-var": "warn",
+    "require-await": "warn",
+    "no-return-await": "warn"
+  }
+}
+```
+
+### Readability & Style
+
+```json
+{
+  "rules": {
+    "spaced-comment": ["warn", "always"],
+    "capitalized-comments": ["warn", "always", { "ignoreInlineComments": true }],
+    "multiline-comment-style": ["warn", "starred-block"],
+    "yoda": ["warn", "never"],
+    "curly": ["warn", "multi-line"],
+    "dot-notation": "warn",
+    "eqeqeq": ["warn", "always"],
+    "no-implicit-coercion": "warn",
+    "operator-assignment": ["warn", "always"],
+    "sort-imports": ["warn", { "ignoreDeclarationSort": true }],
+    "no-magic-numbers": ["warn", { "ignore": [0, 1, -1], "ignoreArrayIndexes": true }]
+  }
+}
+```
+
+### Complexity Limits
+
+```json
+{
+  "rules": {
+    "complexity": ["warn", 10],
+    "max-depth": ["warn", 4],
+    "max-lines": ["warn", 300],
+    "max-lines-per-function": ["warn", 60],
+    "max-params": ["warn", 4],
+    "max-statements": ["warn", 20]
+  }
+}
+```
+
+### TypeScript Soft Rules (`@typescript-eslint`)
+
+```json
+{
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/prefer-optional-chain": "warn",
+    "@typescript-eslint/prefer-nullish-coalescing": "warn",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/consistent-type-imports": ["warn", { "prefer": "type-imports" }],
+    "@typescript-eslint/no-empty-interface": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn"
+  }
+}
+```
+
+### React Soft Rules (`eslint-plugin-react`, `eslint-plugin-react-hooks`)
+
+```json
+{
+  "rules": {
+    "react/prop-types": "warn",
+    "react/no-unused-prop-types": "warn",
+    "react/self-closing-comp": "warn",
+    "react/jsx-no-useless-fragment": "warn",
+    "react/jsx-curly-brace-presence": ["warn", "never"],
+    "react/no-array-index-key": "warn",
+    "react/prefer-stateless-function": "warn",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
+```
+
+---
+
+## All-Warn Starter Config
+
+Drop-in config that sets every rule to `warn` — useful for onboarding lint into a legacy codebase without breaking the build:
+
+```js
+// eslint.config.js
+import js from "@eslint/js";
+
+function allWarn(rules) {
+  return Object.fromEntries(
+    Object.entries(rules).map(([key, val]) => {
+      const severity = Array.isArray(val) ? val[0] : val;
+      if (severity === "error" || severity === 2) {
+        return [key, Array.isArray(val) ? ["warn", ...val.slice(1)] : "warn"];
+      }
+      return [key, val];
+    })
+  );
+}
+
+export default [
+  {
+    rules: allWarn(js.configs.recommended.rules),
+  },
+];
+```
+
+---
+
 ## Ignoring Files
 
 ### Flat config (`eslint.config.js`)
