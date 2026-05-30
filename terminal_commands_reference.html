@@ -1,0 +1,263 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+body{font-family:var(--font-mono)}
+#wrap{padding:1rem 0}
+#search-bar{width:100%;padding:9px 14px;font-size:14px;font-family:var(--font-mono);background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);color:var(--color-text-primary);margin-bottom:1rem}
+#search-bar::placeholder{color:var(--color-text-tertiary)}
+#search-bar:focus{outline:none;border-color:var(--color-border-primary)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.tab{font-size:12px;padding:5px 12px;border-radius:20px;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer;font-family:var(--font-sans);transition:all .15s}
+.tab:hover{background:var(--color-background-secondary)}
+.tab.active{background:var(--color-background-secondary);border-color:var(--color-border-primary);color:var(--color-text-primary);font-weight:500}
+.section{margin-bottom:1.5rem}
+.section-title{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:10px;font-family:var(--font-sans)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:6px}
+.cmd-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:9px 12px;cursor:pointer;transition:border-color .12s}
+.cmd-card:hover{border-color:var(--color-border-secondary)}
+.cmd-top{display:flex;align-items:baseline;gap:8px}
+.cmd-name{font-size:13px;font-weight:500;color:var(--color-text-primary);font-family:var(--font-mono)}
+.cmd-short{font-size:12px;color:var(--color-text-secondary);font-family:var(--font-sans);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmd-detail{display:none;margin-top:8px;border-top:0.5px solid var(--color-border-tertiary);padding-top:8px}
+.cmd-detail.open{display:block}
+.cmd-syntax{font-size:12px;color:var(--color-text-info);font-family:var(--font-mono);background:var(--color-background-secondary);padding:6px 10px;border-radius:6px;margin-bottom:6px;overflow-x:auto}
+.flag-list{display:flex;flex-direction:column;gap:3px}
+.flag{font-size:12px;display:flex;gap:8px}
+.flag-key{color:var(--color-text-primary);font-family:var(--font-mono);min-width:80px;flex-shrink:0}
+.flag-val{color:var(--color-text-secondary);font-family:var(--font-sans)}
+.empty{text-align:center;padding:2rem;color:var(--color-text-tertiary);font-family:var(--font-sans);font-size:14px}
+.badge{font-size:10px;padding:2px 7px;border-radius:20px;font-family:var(--font-sans);font-weight:500;background:var(--color-background-info);color:var(--color-text-info);flex-shrink:0}
+</style>
+
+<div id="wrap">
+<h2 class="sr-only">Terminal commands reference with search and category filter</h2>
+<input id="search-bar" type="search" placeholder="search commands…" oninput="filter()" />
+<div class="tabs" id="tab-bar"></div>
+<div id="content"></div>
+</div>
+
+<script>
+const DB = {
+"Navigation":[
+{c:"ls",s:"List directory contents",syn:"ls [options] [path]",flags:["-a show hidden","-l long listing","-h human sizes","-R recursive","-t sort by time"]},
+{c:"cd",s:"Change directory",syn:"cd [path]",flags:["~ home dir",".. parent dir","- previous dir"]},
+{c:"pwd",s:"Print working directory",syn:"pwd",flags:[]},
+{c:"find",s:"Search for files",syn:"find [path] [expr]",flags:["-name by name","-type f/d file or dir","-mtime modified time","-size by size","-exec run command"]},
+{c:"locate",s:"Find files by name (db)",syn:"locate pattern",flags:["-i case insensitive","-n limit results"]},
+{c:"tree",s:"Directory tree view",syn:"tree [path]",flags:["-L depth limit","-a show hidden","-d dirs only"]},
+],
+"Files":[
+{c:"cp",s:"Copy files/dirs",syn:"cp [options] src dst",flags:["-r recursive","-p preserve attrs","-u update only","-v verbose"]},
+{c:"mv",s:"Move / rename",syn:"mv [options] src dst",flags:["-i interactive","-u update only","-v verbose"]},
+{c:"rm",s:"Remove files/dirs",syn:"rm [options] file",flags:["-r recursive","-f force","-i interactive","-v verbose"]},
+{c:"mkdir",s:"Create directory",syn:"mkdir [options] dir",flags:["-p create parents","-v verbose"]},
+{c:"touch",s:"Create file / update timestamp",syn:"touch file",flags:["-a access time only","-m modify time only"]},
+{c:"ln",s:"Create link",syn:"ln [options] src dst",flags:["-s symbolic link","-f force"]},
+{c:"chmod",s:"Change permissions",syn:"chmod [options] mode file",flags:["-R recursive","u/g/o/a user/group/other/all","+x add execute"]},
+{c:"chown",s:"Change ownership",syn:"chown user:group file",flags:["-R recursive"]},
+{c:"stat",s:"File status/metadata",syn:"stat file",flags:["-c format output"]},
+{c:"file",s:"Determine file type",syn:"file file",flags:[]},
+{c:"du",s:"Disk usage of files",syn:"du [options] path",flags:["-s summary","-h human readable","-a all files"]},
+{c:"rename",s:"Batch rename files",syn:"rename 's/old/new/' files",flags:[]},
+],
+"Text":[
+{c:"cat",s:"Concatenate / view files",syn:"cat [options] file",flags:["-n line numbers","-A show special chars","-s squeeze blanks"]},
+{c:"less",s:"Page through file",syn:"less file",flags:["-N line numbers","-S no wrap","/ search"]},
+{c:"head",s:"Show first N lines",syn:"head -n N file",flags:["-n lines","-c bytes"]},
+{c:"tail",s:"Show last N lines",syn:"tail -n N file",flags:["-n lines","-f follow","-c bytes"]},
+{c:"grep",s:"Search text patterns",syn:"grep [options] pattern file",flags:["-r recursive","-i case insensitive","-n line numbers","-v invert match","-l files only","-E extended regex","-c count matches"]},
+{c:"sed",s:"Stream editor",syn:"sed 's/old/new/g' file",flags:["-i edit in place","-n suppress output","-e add expression"]},
+{c:"awk",s:"Text processing",syn:"awk '{print $1}' file",flags:["-F field separator","-v set variable","-f script file"]},
+{c:"sort",s:"Sort lines",syn:"sort [options] file",flags:["-n numeric","-r reverse","-u unique","-k key field"]},
+{c:"uniq",s:"Filter duplicate lines",syn:"uniq [options] file",flags:["-c count occurrences","-d show duplicates","-u unique only"]},
+{c:"wc",s:"Word / line / byte count",syn:"wc [options] file",flags:["-l lines","-w words","-c bytes"]},
+{c:"cut",s:"Extract columns",syn:"cut [options] file",flags:["-d delimiter","-f fields","-c characters"]},
+{c:"tr",s:"Translate characters",syn:"tr set1 set2",flags:["-d delete chars","-s squeeze repeats"]},
+{c:"diff",s:"Compare two files",syn:"diff [options] file1 file2",flags:["-u unified","-r recursive","-i ignore case"]},
+{c:"tee",s:"Read stdin, write to file+stdout",syn:"cmd | tee file",flags:["-a append"]},
+{c:"xargs",s:"Build and run commands",syn:"cmd | xargs [cmd]",flags:["-n max args","-I replace string","-0 null separated"]},
+],
+"Archives":[
+{c:"tar",s:"Archive files",syn:"tar [options] archive files",flags:["-c create","-x extract","-v verbose","-f filename","-z gzip","-j bzip2","-t list contents"]},
+{c:"gzip",s:"Compress / decompress",syn:"gzip [options] file",flags:["-d decompress","-k keep original","-v verbose","-9 max compression"]},
+{c:"zip",s:"Create ZIP archive",syn:"zip archive.zip files",flags:["-r recursive","-e encrypt","-9 max compression","-u update"]},
+{c:"unzip",s:"Extract ZIP archive",syn:"unzip archive.zip",flags:["-d output dir","-l list contents","-o overwrite"]},
+{c:"7z",s:"7-Zip archiver",syn:"7z [cmd] archive files",flags:["a add  e extract  l list","-p password"]},
+],
+"Processes":[
+{c:"ps",s:"List processes",syn:"ps [options]",flags:["aux all processes","-ef all with full format","--forest tree view"]},
+{c:"top",s:"Real-time process viewer",syn:"top",flags:["q quit  k kill  r renice","M sort by memory"]},
+{c:"htop",s:"Interactive process viewer",syn:"htop",flags:["F5 tree  F9 kill","F6 sort"]},
+{c:"kill",s:"Send signal to process",syn:"kill [signal] PID",flags:["-9 SIGKILL force","-15 SIGTERM graceful","-l list signals"]},
+{c:"killall",s:"Kill by name",syn:"killall name",flags:["-9 force","-u user"]},
+{c:"pkill",s:"Kill by pattern",syn:"pkill pattern",flags:["-f match full cmd","-u user","-signal signal"]},
+{c:"pgrep",s:"Find PID by pattern",syn:"pgrep pattern",flags:["-l show name","-a full cmd","-u user"]},
+{c:"bg",s:"Resume job in background",syn:"bg [job]",flags:[]},
+{c:"fg",s:"Bring job to foreground",syn:"fg [job]",flags:[]},
+{c:"jobs",s:"List background jobs",syn:"jobs",flags:["-l show PID"]},
+{c:"nohup",s:"Run immune to hangup",syn:"nohup cmd &",flags:[]},
+{c:"nice",s:"Run with priority",syn:"nice -n N cmd",flags:[]},
+{c:"renice",s:"Change process priority",syn:"renice N -p PID",flags:[]},
+],
+"Network":[
+{c:"ping",s:"Test network connectivity",syn:"ping [options] host",flags:["-c count","-i interval","-t TTL"]},
+{c:"curl",s:"Transfer data from URL",syn:"curl [options] URL",flags:["-o output file","-X method","-H header","-d data","-s silent","-L follow redirect","-k insecure"]},
+{c:"wget",s:"Download from URL",syn:"wget [options] URL",flags:["-O output","-r recursive","-q quiet","--limit-rate"]},
+{c:"ssh",s:"Secure shell remote login",syn:"ssh user@host",flags:["-p port","-i key file","-L local forward","-R remote forward","-N no command"]},
+{c:"scp",s:"Secure copy over SSH",syn:"scp src user@host:dst",flags:["-r recursive","-P port","-i key","-p preserve attrs"]},
+{c:"rsync",s:"Remote / local file sync",syn:"rsync [options] src dst",flags:["-a archive mode","-v verbose","-z compress","-n dry run","--delete remove extra","-e ssh use SSH"]},
+{c:"netstat",s:"Network connections",syn:"netstat [options]",flags:["-t TCP","-u UDP","-l listening","-n numeric","-p show PID"]},
+{c:"ss",s:"Socket statistics",syn:"ss [options]",flags:["-t TCP","-u UDP","-l listening","-p process","-n numeric"]},
+{c:"ip",s:"IP address / routing",syn:"ip [obj] [cmd]",flags:["addr show IP addrs","route show routes","link show interfaces"]},
+{c:"nmap",s:"Network scanner",syn:"nmap [options] target",flags:["-sV version detect","-p ports","-A aggressive","-O OS detect"]},
+{c:"dig",s:"DNS lookup",syn:"dig [options] domain",flags:["+short","+noall +answer","@server use server","A/MX/NS record type"]},
+{c:"traceroute",s:"Trace network path",syn:"traceroute host",flags:["-n no DNS","-m max hops"]},
+{c:"nslookup",s:"DNS name query",syn:"nslookup domain",flags:[]},
+{c:"iptables",s:"Firewall rules",syn:"iptables [options]",flags:["-L list","-A append","-D delete","-I insert","-F flush"]},
+{c:"ufw",s:"Uncomplicated firewall",syn:"ufw [cmd]",flags:["enable/disable","allow/deny port","status verbose"]},
+],
+"Disk":[
+{c:"df",s:"Disk space usage",syn:"df [options]",flags:["-h human readable","-T show fs type","-i show inodes"]},
+{c:"lsblk",s:"List block devices",syn:"lsblk [options]",flags:["-f show filesystem","-o columns","-a all devices"]},
+{c:"mount",s:"Mount filesystem",syn:"mount [options] dev mnt",flags:["-t fs type","-o options","-a mount all fstab"]},
+{c:"umount",s:"Unmount filesystem",syn:"umount dev|mnt",flags:["-l lazy","-f force"]},
+{c:"fdisk",s:"Partition table manager",syn:"fdisk [options] dev",flags:["-l list partitions","-n new partition"]},
+{c:"mkfs",s:"Make filesystem",syn:"mkfs -t type dev",flags:["ext4  xfs  fat32  ntfs"]},
+{c:"fsck",s:"Filesystem check / repair",syn:"fsck [options] dev",flags:["-a auto repair","-y answer yes"]},
+{c:"dd",s:"Convert and copy raw data",syn:"dd if=src of=dst",flags:["bs= block size","count= blocks","status=progress"]},
+{c:"blkid",s:"Block device attributes",syn:"blkid [dev]",flags:[]},
+{c:"parted",s:"Partition manager",syn:"parted [dev]",flags:["print  mkpart  rm  resizepart"]},
+],
+"Users":[
+{c:"whoami",s:"Current username",syn:"whoami",flags:[]},
+{c:"id",s:"User/group IDs",syn:"id [user]",flags:[]},
+{c:"w",s:"Who is logged in + activity",syn:"w",flags:[]},
+{c:"who",s:"Who is logged in",syn:"who",flags:["-a all info"]},
+{c:"last",s:"Login history",syn:"last [user]",flags:["-n lines","-x show shutdowns"]},
+{c:"sudo",s:"Run as superuser",syn:"sudo [options] cmd",flags:["-u user","-i login shell","-l list permissions"]},
+{c:"su",s:"Switch user",syn:"su [user]",flags:["-  login shell","-c run command"]},
+{c:"useradd",s:"Add user",syn:"useradd [options] user",flags:["-m create home","-s shell","-G groups","-c comment"]},
+{c:"usermod",s:"Modify user",syn:"usermod [options] user",flags:["-aG add to group","-l rename","-s change shell"]},
+{c:"userdel",s:"Delete user",syn:"userdel [options] user",flags:["-r remove home"]},
+{c:"passwd",s:"Change password",syn:"passwd [user]",flags:["-l lock","-u unlock","-e expire"]},
+{c:"groupadd",s:"Create group",syn:"groupadd group",flags:[]},
+{c:"groups",s:"Show user groups",syn:"groups [user]",flags:[]},
+],
+"System":[
+{c:"uname",s:"System information",syn:"uname [options]",flags:["-a all info","-r kernel release","-m machine type"]},
+{c:"uptime",s:"System uptime",syn:"uptime",flags:[]},
+{c:"hostname",s:"Show / set hostname",syn:"hostname [name]",flags:["-I show IP addrs","-f FQDN"]},
+{c:"date",s:"Show / set date & time",syn:"date [options] [+format]",flags:["+%Y-%m-%d  +%H:%M:%S","-s set date"]},
+{c:"cal",s:"Calendar",syn:"cal [month] [year]",flags:["-3 three months","-y full year"]},
+{c:"timedatectl",s:"System time/date control",syn:"timedatectl [cmd]",flags:["status  set-time  set-timezone","list-timezones"]},
+{c:"systemctl",s:"Service manager",syn:"systemctl [cmd] service",flags:["start  stop  restart","status  enable  disable","list-units"]},
+{c:"journalctl",s:"Query systemd logs",syn:"journalctl [options]",flags:["-u unit","-f follow","-b this boot","--since date"]},
+{c:"dmesg",s:"Kernel ring buffer",syn:"dmesg [options]",flags:["-H human readable","-T timestamps","-l log levels"]},
+{c:"lshw",s:"Hardware info",syn:"lshw [options]",flags:["-short summary","-class filter","-html output"]},
+{c:"lscpu",s:"CPU architecture info",syn:"lscpu",flags:[]},
+{c:"free",s:"Memory usage",syn:"free [options]",flags:["-h human readable","-s seconds (watch)","-m MB"]},
+{c:"vmstat",s:"Virtual memory stats",syn:"vmstat [interval]",flags:["-s summary","-d disk","-p partition"]},
+{c:"env",s:"Show environment variables",syn:"env",flags:["-i empty environment","-u unset variable"]},
+{c:"export",s:"Set env variable",syn:"export VAR=value",flags:[]},
+{c:"alias",s:"Create command alias",syn:"alias name='cmd'",flags:[]},
+{c:"history",s:"Command history",syn:"history [n]",flags:["!! last command","!n run nth command","-c clear history"]},
+{c:"cron",s:"Schedule tasks (crontab)",syn:"crontab [options]",flags:["-e edit","-l list","-r remove"]},
+{c:"at",s:"Run command once later",syn:"at time",flags:["-l list jobs","-d delete job"]},
+{c:"reboot",s:"Reboot system",syn:"reboot",flags:["-f force","--no-wall no message"]},
+{c:"shutdown",s:"Shutdown system",syn:"shutdown [options] [time]",flags:["-h halt","-r reboot","-c cancel","now  +5  23:00"]},
+{c:"poweroff",s:"Power off system",syn:"poweroff",flags:[]},
+],
+"Package Mgmt":[
+{c:"apt",s:"Debian/Ubuntu packages",syn:"apt [cmd] [pkg]",flags:["install  remove  purge","update  upgrade","search  show","autoremove  clean"]},
+{c:"apt-get",s:"APT package tool",syn:"apt-get [cmd] [pkg]",flags:["install  remove","update  upgrade","dist-upgrade"]},
+{c:"dpkg",s:"Debian package manager",syn:"dpkg [options] pkg",flags:["-i install .deb","-r remove","-l list","-s status"]},
+{c:"yum",s:"RPM package manager",syn:"yum [cmd] [pkg]",flags:["install  remove","update  search","list  info"]},
+{c:"dnf",s:"Fedora/RHEL packages",syn:"dnf [cmd] [pkg]",flags:["install  remove","update  search","autoremove"]},
+{c:"pacman",s:"Arch Linux packages",syn:"pacman [options] [pkg]",flags:["-S install","-R remove","-U upgrade","-Ss search","-Q list installed"]},
+{c:"snap",s:"Snap package manager",syn:"snap [cmd] [pkg]",flags:["install  remove","list  refresh","find"]},
+{c:"flatpak",s:"Flatpak packages",syn:"flatpak [cmd] [pkg]",flags:["install  uninstall","list  update","run"]},
+{c:"npm",s:"Node package manager",syn:"npm [cmd] [pkg]",flags:["install  uninstall","update  list","run  init  publish"]},
+{c:"pip",s:"Python packages",syn:"pip install pkg",flags:["install  uninstall","freeze  list","show  search"]},
+],
+"Shell":[
+{c:"echo",s:"Print text to stdout",syn:"echo [options] text",flags:["-n no newline","-e escape sequences","-E disable escapes"]},
+{c:"printf",s:"Formatted print",syn:"printf format [args]",flags:["\\n newline  \\t tab","%s string  %d int"]},
+{c:"read",s:"Read input from stdin",syn:"read [options] var",flags:["-p prompt","-s silent","-n chars","-t timeout"]},
+{c:"source",s:"Execute script in current shell",syn:"source file  or  . file",flags:[]},
+{c:"exec",s:"Replace shell with command",syn:"exec cmd",flags:[]},
+{c:"test",s:"Evaluate expression",syn:"test expr  or  [ expr ]",flags:["-f file exists","-d directory","-z string empty","-n string not empty","-eq -ne -lt -gt numeric"]},
+{c:"true",s:"Exit with success (0)",syn:"true",flags:[]},
+{c:"false",s:"Exit with failure (1)",syn:"false",flags:[]},
+{c:"exit",s:"Exit shell",syn:"exit [code]",flags:[]},
+{c:"set",s:"Set shell options",syn:"set [options]",flags:["-e exit on error","-x debug trace","-u undefined vars","-o pipefail"]},
+{c:"type",s:"How command is interpreted",syn:"type name",flags:["-a all locations","-t type only"]},
+{c:"which",s:"Locate command",syn:"which cmd",flags:["-a all matches"]},
+{c:"whereis",s:"Locate binary/man/source",syn:"whereis cmd",flags:[]},
+{c:"man",s:"Manual pages",syn:"man [section] cmd",flags:["-k keyword search","-f brief desc","-a all sections"]},
+{c:"help",s:"Shell builtin help",syn:"help [cmd]",flags:[]},
+{c:"info",s:"Info page reader",syn:"info [cmd]",flags:[]},
+{c:"time",s:"Time command execution",syn:"time cmd",flags:[]},
+{c:"watch",s:"Run command repeatedly",syn:"watch [options] cmd",flags:["-n interval (secs)","-d highlight diffs","-e exit on error"]},
+{c:"screen",s:"Terminal multiplexer",syn:"screen [options]",flags:["-S name new session","-r reattach","-ls list sessions","C-a d detach"]},
+{c:"tmux",s:"Terminal multiplexer",syn:"tmux [cmd]",flags:["new  attach  ls","-s session name","C-b d detach"]},
+{c:"strace",s:"Trace system calls",syn:"strace cmd",flags:["-p PID attach","-e trace filter","-o output file"]},
+],
+};
+
+let active = "All";
+let open = null;
+const cats = ["All",...Object.keys(DB)];
+const all = Object.entries(DB).map(([cat,cmds])=>cmds.map(c=>({...c,cat}))).flat();
+
+function tabs(){
+  const el = document.getElementById("tab-bar");
+  el.innerHTML = cats.map(c=>`<button class="tab${c===active?' active':''}" onclick="setTab('${c}')">${c}</button>`).join("");
+}
+
+function setTab(t){active=t;open=null;render();}
+
+function filter(){open=null;render();}
+
+function render(){
+  const q = document.getElementById("search-bar").value.toLowerCase().trim();
+  const pool = active==="All"?all:all.filter(x=>x.cat===active);
+  const filtered = q?pool.filter(x=>x.c.includes(q)||x.s.toLowerCase().includes(q)):pool;
+  const el = document.getElementById("content");
+  if(!filtered.length){el.innerHTML=`<div class="empty"><i class="ti ti-search" style="font-size:24px;margin-bottom:8px;display:block" aria-hidden="true"></i>No commands match</div>`;return;}
+  const grouped = {};
+  filtered.forEach(x=>{(grouped[x.cat]||(grouped[x.cat]=[])).push(x)});
+  el.innerHTML = Object.entries(grouped).map(([cat,cmds])=>`
+    <div class="section">
+      <div class="section-title">${cat} <span style="color:var(--color-text-tertiary);font-weight:400">(${cmds.length})</span></div>
+      <div class="grid">${cmds.map(cmd=>card(cmd)).join("")}</div>
+    </div>`).join("");
+  tabs();
+}
+
+function card(cmd){
+  const id = cmd.c+"_"+cmd.cat;
+  const isOpen = open===id;
+  const flags = cmd.flags.map(f=>{
+    const sp=f.indexOf(" ");
+    if(sp<0) return `<div class="flag"><span class="flag-key">${f}</span></div>`;
+    return `<div class="flag"><span class="flag-key">${f.slice(0,sp)}</span><span class="flag-val">${f.slice(sp+1)}</span></div>`;
+  }).join("");
+  return `<div class="cmd-card" onclick="toggle('${id}')">
+    <div class="cmd-top">
+      <span class="cmd-name">${cmd.c}</span>
+      <span class="cmd-short">${cmd.s}</span>
+    </div>
+    <div class="cmd-detail${isOpen?' open':''}">
+      <div class="cmd-syntax">${cmd.syn}</div>
+      <div class="flag-list">${flags||'<span style="font-size:12px;color:var(--color-text-tertiary);font-family:var(--font-sans)">No common flags</span>'}</div>
+    </div>
+  </div>`;
+}
+
+function toggle(id){
+  open = open===id?null:id;
+  render();
+}
+
+tabs();render();
+</script>
