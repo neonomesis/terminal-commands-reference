@@ -8,6 +8,7 @@
 - [Error Handling](#error-handling)
 - [Code Structure & Organization](#code-structure--organization)
 - [Filesystem Best Practices](#filesystem-best-practices)
+- [API Design Best Practices](#api-design-best-practices)
 - [Security](#security)
 - [Performance](#performance)
 - [Testing](#testing)
@@ -520,6 +521,293 @@ logger.info('Config written', {
   size: Buffer.byteLength(data),
   user: req.user.id,
 });
+```
+
+---
+
+## API Design Best Practices
+
+### RESTful URL Structure
+```
+Use nouns, not verbs — the HTTP method is the verb
+
+Bad:
+  GET  /getUsers
+  POST /createUser
+  POST /deleteUser/42
+
+Good:
+  GET    /users              list all users
+  POST   /users              create a user
+  GET    /users/42           get user 42
+  PUT    /users/42           replace user 42
+  PATCH  /users/42           partially update user 42
+  DELETE /users/42           delete user 42
+
+Nested resources:
+  GET    /users/42/orders    orders belonging to user 42
+  GET    /users/42/orders/7  specific order of user 42
+```
+
+### HTTP Methods
+```
+GET     Read only — never mutates state
+POST    Create a new resource or trigger an action
+PUT     Replace entire resource (idempotent)
+PATCH   Partial update (only changed fields)
+DELETE  Remove resource (idempotent)
+HEAD    Same as GET but no body — check existence/metadata
+```
+
+### HTTP Status Codes
+```
+2xx — Success
+  200 OK                  Standard success
+  201 Created             Resource created (return Location header)
+  204 No Content          Success, no body (DELETE, PATCH with no return)
+
+3xx — Redirection
+  301 Moved Permanently   Redirect, update bookmarks
+  304 Not Modified        Cache is still valid (ETag / If-None-Match)
+
+4xx — Client Errors
+  400 Bad Request         Invalid input / malformed body
+  401 Unauthorized        Not authenticated (missing/invalid token)
+  403 Forbidden           Authenticated but lacks permission
+  404 Not Found           Resource doesn't exist
+  405 Method Not Allowed  HTTP method not supported on this endpoint
+  409 Conflict            State conflict (duplicate, optimistic lock)
+  422 Unprocessable       Validation failed (well-formed but invalid data)
+  429 Too Many Requests   Rate limit exceeded
+
+5xx — Server Errors
+  500 Internal Server Error  Unexpected failure
+  502 Bad Gateway            Upstream service failed
+  503 Service Unavailable    Overloaded / in maintenance
+  504 Gateway Timeout        Upstream timed out
+```
+
+### Versioning
+```
+URL versioning (most common, explicit):
+  /api/v1/users
+  /api/v2/users
+
+Header versioning (cleaner URLs):
+  Accept: application/vnd.myapi.v2+json
+
+Never break existing clients — deprecate, then remove:
+  1. Release v2 alongside v1
+  2. Add Deprecation header to v1 responses
+  3. Give clients a migration window (3–6 months min)
+  4. Remove v1
+```
+
+### Request & Response Shape
+```json
+// Consistent response envelope
+{
+  "data": { "id": 42, "name": "Alice" },
+  "meta": { "requestId": "abc-123", "timestamp": "2026-05-30T10:00:00Z" }
+}
+
+// Error response — always the same shape
+{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "Invalid input",
+    "details": [
+      { "field": "email", "message": "Must be a valid email address" }
+    ]
+  }
+}
+
+// List response with pagination
+{
+  "data": [ ... ],
+  "meta": {
+    "total": 340,
+    "page": 2,
+    "perPage": 20,
+    "nextCursor": "eyJpZCI6NjB9"
+  }
+}
+```
+
+### Pagination
+```
+Offset pagination — simple, good for small datasets
+  GET /users?page=2&perPage=20
+  Drawback: inconsistent results if rows inserted during traversal
+
+Cursor pagination — stable, good for large/real-time data
+  GET /users?cursor=eyJpZCI6NjB9&limit=20
+  Response includes nextCursor for the next page
+  Drawback: cannot jump to arbitrary pages
+
+Use cursor pagination for feeds, timelines, infinite scroll.
+Use offset pagination for admin tables with explicit page numbers.
+```
+
+### Filtering, Sorting & Field Selection
+```
+Filtering:
+  GET /users?status=active&role=admin
+  GET /orders?createdAfter=2026-01-01&total[gte]=100
+
+Sorting:
+  GET /users?sort=createdAt&order=desc
+  GET /users?sort=-createdAt          # minus prefix = descending
+
+Field selection (sparse fieldsets):
+  GET /users?fields=id,name,email     # return only requested fields
+```
+
+### Idempotency
+```
+Idempotent requests — same request made N times = same result as 1 time
+
+GET, PUT, DELETE are naturally idempotent.
+POST is NOT — use an Idempotency-Key header for safe retries:
+
+  POST /payments
+  Idempotency-Key: a8098c1a-f86e-11da-bd1a-00112444be1e
+
+Store the key + result on the server; replay the stored result
+if the same key arrives again. Expire keys after 24 hours.
+```
+
+### Authentication & Authorization
+```
+Always use HTTPS — never send tokens over plain HTTP.
+
+Authentication schemes:
+  Bearer token    Authorization: Bearer <jwt>
+  API Key         X-API-Key: <key>  (never in URL query params)
+  OAuth2          For third-party delegated access
+
+Authorization:
+  Check permissions at the resource level, not just the endpoint.
+  Return 403 (not 404) when resource exists but user can't access it
+    — unless you want to hide existence from unauthorized users (then 404).
+```
+
+### Rate Limiting
+```
+Always rate-limit public APIs. Return standard headers:
+
+  X-RateLimit-Limit: 1000
+  X-RateLimit-Remaining: 42
+  X-RateLimit-Reset: 1748606400
+  Retry-After: 3600              # on 429 response
+
+Strategies:
+  Fixed window    — simple, but burst at window boundary
+  Sliding window  — smoother, no burst problem
+  Token bucket    — flexible, allows short bursts
+```
+
+### Caching
+```
+Use HTTP cache headers:
+
+  Cache-Control: max-age=300, public          # cache for 5 min
+  Cache-Control: no-store                     # never cache (sensitive data)
+  ETag: "abc123"                              # content hash
+  Last-Modified: Wed, 30 May 2026 08:00:00 GMT
+
+Client sends on subsequent request:
+  If-None-Match: "abc123"      → server returns 304 if unchanged
+  If-Modified-Since: ...       → server returns 304 if unchanged
+```
+
+### Input Validation
+```js
+// Validate and sanitize at the API boundary — never trust the client
+app.post('/users', async (req, res) => {
+  const { error, value } = userSchema.validate(req.body, {
+    abortEarly: false,    // collect all errors, not just first
+    stripUnknown: true,   // remove fields not in schema
+  });
+
+  if (error) {
+    return res.status(422).json({
+      error: {
+        code: 'VALIDATION_FAILED',
+        details: error.details.map(d => ({
+          field: d.path.join('.'),
+          message: d.message,
+        })),
+      },
+    });
+  }
+
+  const user = await createUser(value);
+  res.status(201).json({ data: user });
+});
+```
+
+### Error Handling — Never Leak Internals
+```js
+// Bad — exposes stack trace and DB details to client
+res.status(500).json({ error: err.stack });
+
+// Good — log full error internally, return safe message
+logger.error('createUser failed', { error: err, body: req.body });
+res.status(500).json({
+  error: {
+    code: 'INTERNAL_ERROR',
+    message: 'An unexpected error occurred. Please try again.',
+  },
+});
+```
+
+### API Documentation
+```
+Always document:
+  Endpoint URL + HTTP method
+  Request parameters (path, query, body) with types & constraints
+  Response shape for success and each error case
+  Authentication requirements
+  Rate limits
+  Example request & response
+
+Tools:
+  OpenAPI / Swagger   — industry standard, generates client SDKs
+  Postman Collections — shareable, runnable examples
+  Redoc / Swagger UI  — render OpenAPI specs as human-readable docs
+```
+
+### Webhooks
+```
+Delivering events to clients:
+
+1. Sign payloads — HMAC-SHA256 with a shared secret
+   X-Webhook-Signature: sha256=<hmac>
+
+2. Client must verify signature before processing:
+   const sig = crypto.createHmac('sha256', secret).update(rawBody).digest('hex');
+   if (sig !== receivedSig) return res.status(401).end();
+
+3. Return 200 quickly — process async, don't block
+4. Retry on failure with exponential backoff (1s, 2s, 4s, 8s…)
+5. Include event type and unique event ID for deduplication
+   X-Webhook-Event: order.completed
+   X-Webhook-ID: evt_01HZ...
+```
+
+### GraphQL (when to use)
+```
+Use REST when:
+  Public API consumed by many different clients
+  Simple CRUD operations
+  Caching is important (HTTP cache works naturally)
+
+Use GraphQL when:
+  Clients have very different data needs (mobile vs desktop)
+  Deeply nested or relational data
+  Rapid frontend iteration without backend changes
+  You want a single endpoint with a typed schema
 ```
 
 ---
