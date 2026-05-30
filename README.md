@@ -11,6 +11,9 @@ A structured, searchable collection of 850+ terminal and shell command reference
 | [terminal_commands_reference.md](terminal_commands_reference.md) | Bash / Zsh — macOS & Linux | 142 | 11 |
 | [linux_terminal_commands_reference_full.md](linux_terminal_commands_reference_full.md) | Linux — full deep reference | 394 | 24 |
 | [powershell_commands_reference.md](powershell_commands_reference.md) | PowerShell — Windows | 314 | 21 |
+| [package_managers_reference.md](package_managers_reference.md) | macOS, Windows, Linux | — | Homebrew, Winget, Chocolatey, apt, dnf, pacman, snap, flatpak |
+| [js_package_managers_reference.md](js_package_managers_reference.md) | Node.js / JavaScript | — | npm, yarn v1/v2+, pnpm, bun, Corepack |
+| [language_specific_package_managers.md](language_specific_package_managers.md) | Cross-platform (all languages) | — | Python, Rust, Go, Ruby, PHP, Java, .NET, Swift, Dart, Haskell, Elixir, Julia, R, Lua, C/C++, Perl, Erlang, Nim, Zig |
 
 ---
 
