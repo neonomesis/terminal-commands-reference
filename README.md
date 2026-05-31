@@ -6,14 +6,14 @@ A structured, searchable collection of 850+ terminal and shell command reference
 
 ## Files at a Glance
 
-| File | Shell / OS | Commands | Categories |
-|------|-----------|----------|------------|
-| [terminal_commands_reference.md](terminal_commands_reference.md) | Bash / Zsh — macOS & Linux | 142 | 11 |
-| [linux_terminal_commands_reference_full.md](linux_terminal_commands_reference_full.md) | Linux — full deep reference | 394 | 24 |
-| [powershell_commands_reference.md](powershell_commands_reference.md) | PowerShell — Windows | 314 | 21 |
-| [package_managers_reference.md](package_managers_reference.md) | macOS, Windows, Linux | — | Homebrew, Winget, Chocolatey, apt, dnf, pacman, snap, flatpak |
-| [js_package_managers_reference.md](js_package_managers_reference.md) | Node.js / JavaScript | — | npm, yarn v1/v2+, pnpm, bun, Corepack |
-| [language_specific_package_managers.md](language_specific_package_managers.md) | Cross-platform (all languages) | — | Python, Rust, Go, Ruby, PHP, Java, .NET, Swift, Dart, Haskell, Elixir, Julia, R, Lua, C/C++, Perl, Erlang, Nim, Zig |
+| File                                                                                   | Shell / OS                     | Commands | Categories                                                                                                          |
+| -------------------------------------------------------------------------------------- | ------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| [terminal_commands_reference.md](terminal_commands_reference.md)                       | Bash / Zsh — macOS & Linux     | 142      | 11                                                                                                                  |
+| [linux_terminal_commands_reference_full.md](linux_terminal_commands_reference_full.md) | Linux — full deep reference    | 394      | 24                                                                                                                  |
+| [powershell_commands_reference.md](powershell_commands_reference.md)                   | PowerShell — Windows           | 314      | 21                                                                                                                  |
+| [package_managers_reference.md](package_managers_reference.md)                         | macOS, Windows, Linux          | —        | Homebrew, Winget, Chocolatey, apt, dnf, pacman, snap, flatpak                                                       |
+| [js_package_managers_reference.md](js_package_managers_reference.md)                   | Node.js / JavaScript           | —        | npm, yarn v1/v2+, pnpm, bun, Corepack                                                                               |
+| [language_specific_package_managers.md](language_specific_package_managers.md)         | Cross-platform (all languages) | —        | Python, Rust, Go, Ruby, PHP, Java, .NET, Swift, Dart, Haskell, Elixir, Julia, R, Lua, C/C++, Perl, Erlang, Nim, Zig |
 
 ---
 
@@ -22,6 +22,7 @@ A structured, searchable collection of 850+ terminal and shell command reference
 **Jump to a section** — every file has a full table of contents with category counts. Click any heading to go there directly.
 
 **Quick search in terminal:**
+
 ```bash
 # Find all entries for a command across all files
 grep -n "curl" terminal_commands_reference.md
@@ -41,19 +42,19 @@ grep -n "port" linux_terminal_commands_reference_full.md
 
 > File: `terminal_commands_reference.md`
 
-| Category | Commands | What's Covered |
-|----------|----------|----------------|
-| Navigation | 6 | `ls`, `cd`, `pwd`, `find`, `locate`, `tree` |
-| Files | 12 | `cp`, `mv`, `rm`, `mkdir`, `touch`, `ln`, `chmod`, `chown`, `stat`, `file`, `du`, `rename` |
-| Text | 15 | `cat`, `less`, `head`, `tail`, `grep`, `sed`, `awk`, `sort`, `uniq`, `wc`, `cut`, `tr`, `diff`, `tee`, `xargs` |
-| Archives | 5 | `tar`, `gzip`, `zip`, `unzip`, `7z` |
-| Processes | 13 | `ps`, `top`, `htop`, `kill`, `killall`, `pkill`, `pgrep`, `bg`, `fg`, `jobs`, `nohup`, `nice`, `renice` |
-| Network | 15 | `ping`, `curl`, `wget`, `ssh`, `scp`, `rsync`, `netstat`, `ss`, `ip`, `nmap`, `dig`, `traceroute`, `nslookup`, `iptables`, `ufw` |
-| Disk | 10 | `df`, `lsblk`, `mount`, `umount`, `fdisk`, `mkfs`, `fsck`, `dd`, `blkid`, `parted` |
-| Users | 13 | `whoami`, `id`, `w`, `who`, `last`, `sudo`, `su`, `useradd`, `usermod`, `userdel`, `passwd`, `groupadd`, `groups` |
-| System | 22 | `uname`, `uptime`, `hostname`, `date`, `cal`, `timedatectl`, `systemctl`, `journalctl`, `dmesg`, `lshw`, `lscpu`, `free`, `vmstat`, `env`, `export`, `alias`, `history`, `cron`, `at`, `reboot`, `shutdown`, `poweroff` |
-| Package Mgmt | 10 | `apt`, `apt-get`, `dpkg`, `yum`, `dnf`, `pacman`, `snap`, `flatpak`, `npm`, `pip` |
-| Shell | 21 | `echo`, `printf`, `read`, `source`, `exec`, `test`, `true`, `false`, `exit`, `set`, `type`, `which`, `whereis`, `man`, `help`, `info`, `time`, `watch`, `screen`, `tmux`, `strace` |
+| Category     | Commands | What's Covered                                                                                                                                                                                                          |
+| ------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Navigation   | 6        | `ls`, `cd`, `pwd`, `find`, `locate`, `tree`                                                                                                                                                                             |
+| Files        | 12       | `cp`, `mv`, `rm`, `mkdir`, `touch`, `ln`, `chmod`, `chown`, `stat`, `file`, `du`, `rename`                                                                                                                              |
+| Text         | 15       | `cat`, `less`, `head`, `tail`, `grep`, `sed`, `awk`, `sort`, `uniq`, `wc`, `cut`, `tr`, `diff`, `tee`, `xargs`                                                                                                          |
+| Archives     | 5        | `tar`, `gzip`, `zip`, `unzip`, `7z`                                                                                                                                                                                     |
+| Processes    | 13       | `ps`, `top`, `htop`, `kill`, `killall`, `pkill`, `pgrep`, `bg`, `fg`, `jobs`, `nohup`, `nice`, `renice`                                                                                                                 |
+| Network      | 15       | `ping`, `curl`, `wget`, `ssh`, `scp`, `rsync`, `netstat`, `ss`, `ip`, `nmap`, `dig`, `traceroute`, `nslookup`, `iptables`, `ufw`                                                                                        |
+| Disk         | 10       | `df`, `lsblk`, `mount`, `umount`, `fdisk`, `mkfs`, `fsck`, `dd`, `blkid`, `parted`                                                                                                                                      |
+| Users        | 13       | `whoami`, `id`, `w`, `who`, `last`, `sudo`, `su`, `useradd`, `usermod`, `userdel`, `passwd`, `groupadd`, `groups`                                                                                                       |
+| System       | 22       | `uname`, `uptime`, `hostname`, `date`, `cal`, `timedatectl`, `systemctl`, `journalctl`, `dmesg`, `lshw`, `lscpu`, `free`, `vmstat`, `env`, `export`, `alias`, `history`, `cron`, `at`, `reboot`, `shutdown`, `poweroff` |
+| Package Mgmt | 10       | `apt`, `apt-get`, `dpkg`, `yum`, `dnf`, `pacman`, `snap`, `flatpak`, `npm`, `pip`                                                                                                                                       |
+| Shell        | 21       | `echo`, `printf`, `read`, `source`, `exec`, `test`, `true`, `false`, `exit`, `set`, `type`, `which`, `whereis`, `man`, `help`, `info`, `time`, `watch`, `screen`, `tmux`, `strace`                                      |
 
 ### Most-Used Commands (Bash/Zsh)
 
@@ -103,32 +104,32 @@ ss -tlnp
 
 This is the deep-dive Linux reference — covers everything from basic navigation to kernel modules, containers, and Git.
 
-| Category | Commands | What's Covered |
-|----------|----------|----------------|
-| Navigation | 10 | `ls`, `cd`, `pwd`, `find`, `locate`, `tree`, `pushd`, `popd`, `dirs`, `realpath` |
-| Files | 16 | `cp`, `mv`, `rm`, `mkdir`, `touch`, `ln`, `chmod`, `chown`, `stat`, `file`, `du`, `rename`, `install`, `truncate`, `shred`, `split` |
-| Text | 32 | `cat`, `less`, `more`, `head`, `tail`, `grep`, `egrep`, `fgrep`, `sed`, `awk`, `sort`, `uniq`, `wc`, `cut`, `tr`, `diff`, `patch`, `tee`, `xargs`, `strings`, `od`, `xxd`, `nl`, `fold`, `fmt`, `column`, `paste`, `join`, `comm`, `expand`, `unexpand`, `rev` |
-| Search | 8 | `find`, `locate`, `updatedb`, `which`, `whereis`, `type`, `mlocate`, `fd` |
-| Archives | 11 | `tar`, `gzip`, `bzip2`, `xz`, `zip`, `unzip`, `7z`, `rar`, `ar`, `cpio`, `zcat` |
-| Processes | 22 | `ps`, `top`, `htop`, `kill`, `killall`, `pkill`, `pgrep`, `bg`, `fg`, `jobs`, `nohup`, `nice`, `renice`, `pstree`, `lsof`, `fuser`, `pidof`, `wait`, `trap`, `ulimit`, `ionice`, `taskset` |
-| Network | 26 | `ping`, `curl`, `wget`, `ssh`, `scp`, `rsync`, `netstat`, `ss`, `ip`, `ifconfig`, `nmap`, `dig`, `nslookup`, `host`, `traceroute`, `mtr`, `iptables`, `ufw`, `nc`, `tcpdump`, `arp`, `route`, `nmcli`, `hostnamectl`, `ethtool`, `iwconfig` |
-| Disk | 24 | `df`, `du`, `lsblk`, `mount`, `umount`, `fdisk`, `mkfs`, `fsck`, `dd`, `blkid`, `parted`, `gdisk`, `e2fsck`, `tune2fs`, `badblocks`, `hdparm`, `smartctl`, `fstrim`, `swapoff`, `swapon`, `mkswap`, `losetup`, `cryptsetup`, `lvdisplay` |
-| Users & Groups | 23 | `whoami`, `id`, `w`, `who`, `last`, `lastlog`, `sudo`, `su`, `useradd`, `usermod`, `userdel`, `passwd`, `groupadd`, `groupmod`, `groupdel`, `groups`, `newgrp`, `gpasswd`, `chage`, `finger`, `getent`, `visudo`, `chsh` |
-| Permissions | 10 | `chmod`, `chown`, `chgrp`, `umask`, `setfacl`, `getfacl`, `lsattr`, `chattr`, `namei`, `stat` |
-| System Info | 18 | `uname`, `uptime`, `hostname`, `date`, `cal`, `timedatectl`, `hostnamectl`, `lshw`, `lscpu`, `lspci`, `lsusb`, `dmidecode`, `inxi`, `free`, `vmstat`, `iostat`, `sar`, `nproc` |
-| Services | 9 | `systemctl`, `service`, `journalctl`, `systemd-analyze`, `loginctl`, `machinectl`, `resolvectl`, `hostnamectl`, `timedatectl` |
-| Kernel & Modules | 10 | `uname`, `dmesg`, `lsmod`, `modinfo`, `modprobe`, `rmmod`, `insmod`, `depmod`, `sysctl`, `kexec` |
-| Memory | 7 | `free`, `vmstat`, `smem`, `pmap`, `memtester`, `slabtop`, `numactl` |
-| Monitoring | 13 | `top`, `htop`, `atop`, `glances`, `iotop`, `iftop`, `nethogs`, `nload`, `dstat`, `collectl`, `perf`, `strace`, `ltrace` |
-| Package Mgmt | 15 | `apt`, `apt-get`, `dpkg`, `yum`, `dnf`, `pacman`, `zypper`, `rpm`, `snap`, `flatpak`, `brew`, `npm`, `pip`, `cargo`, `gem` |
-| SSH & Remote | 11 | `ssh`, `scp`, `rsync`, `sftp`, `ssh-keygen`, `ssh-copy-id`, `ssh-add`, `ssh-agent`, `sshfs`, `autossh`, `mosh` |
-| Firewall | 6 | `iptables`, `ip6tables`, `ufw`, `firewalld`, `nftables`, `fail2ban` |
-| Containers | 6 | `docker`, `podman`, `buildah`, `skopeo`, `kubectl`, `helm` |
-| Git | 28 | `init`, `clone`, `add`, `commit`, `push`, `pull`, `fetch`, `merge`, `rebase`, `branch`, `checkout`, `switch`, `status`, `log`, `diff`, `stash`, `tag`, `remote`, `reset`, `revert`, `cherry-pick`, `bisect`, `blame`, `show`, `reflog`, `submodule`, `worktree`, `config` |
-| Shell & Scripting | 36 | `echo`, `printf`, `read`, `source`, `exec`, `test`, `if`, `for`, `while`, `case`, `function`, `return`, `exit`, `set`, `shift`, `getopts`, `trap`, `eval`, `expr`, `let`, `declare`, `local`, `readonly`, `unset`, `array ops`, `heredoc`, `process substitution`, and more |
-| Environment | 8 | `env`, `export`, `printenv`, `unset`, `set`, `declare`, `direnv`, `envsubst` |
-| Cron & Jobs | 8 | `crontab`, `at`, `atq`, `atrm`, `batch`, `anacron`, `systemd timers`, `fcron` |
-| Misc | 37 | `alias`, `history`, `man`, `info`, `tldr`, `help`, `time`, `watch`, `sleep`, `wait`, `bc`, `expr`, `factor`, `yes`, `seq`, `tput`, `clear`, `reset`, `banner`, `figlet`, `cowsay`, `lolcat`, `fortune`, `cal`, `units`, `od`, `base64`, `xxd`, `uuidgen`, `md5sum`, `sha256sum`, `openssl`, `gpg`, `shuf`, `tac`, `nl`, `pr` |
+| Category          | Commands | What's Covered                                                                                                                                                                                                                                                                                                               |
+| ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Navigation        | 10       | `ls`, `cd`, `pwd`, `find`, `locate`, `tree`, `pushd`, `popd`, `dirs`, `realpath`                                                                                                                                                                                                                                             |
+| Files             | 16       | `cp`, `mv`, `rm`, `mkdir`, `touch`, `ln`, `chmod`, `chown`, `stat`, `file`, `du`, `rename`, `install`, `truncate`, `shred`, `split`                                                                                                                                                                                          |
+| Text              | 32       | `cat`, `less`, `more`, `head`, `tail`, `grep`, `egrep`, `fgrep`, `sed`, `awk`, `sort`, `uniq`, `wc`, `cut`, `tr`, `diff`, `patch`, `tee`, `xargs`, `strings`, `od`, `xxd`, `nl`, `fold`, `fmt`, `column`, `paste`, `join`, `comm`, `expand`, `unexpand`, `rev`                                                               |
+| Search            | 8        | `find`, `locate`, `updatedb`, `which`, `whereis`, `type`, `mlocate`, `fd`                                                                                                                                                                                                                                                    |
+| Archives          | 11       | `tar`, `gzip`, `bzip2`, `xz`, `zip`, `unzip`, `7z`, `rar`, `ar`, `cpio`, `zcat`                                                                                                                                                                                                                                              |
+| Processes         | 22       | `ps`, `top`, `htop`, `kill`, `killall`, `pkill`, `pgrep`, `bg`, `fg`, `jobs`, `nohup`, `nice`, `renice`, `pstree`, `lsof`, `fuser`, `pidof`, `wait`, `trap`, `ulimit`, `ionice`, `taskset`                                                                                                                                   |
+| Network           | 26       | `ping`, `curl`, `wget`, `ssh`, `scp`, `rsync`, `netstat`, `ss`, `ip`, `ifconfig`, `nmap`, `dig`, `nslookup`, `host`, `traceroute`, `mtr`, `iptables`, `ufw`, `nc`, `tcpdump`, `arp`, `route`, `nmcli`, `hostnamectl`, `ethtool`, `iwconfig`                                                                                  |
+| Disk              | 24       | `df`, `du`, `lsblk`, `mount`, `umount`, `fdisk`, `mkfs`, `fsck`, `dd`, `blkid`, `parted`, `gdisk`, `e2fsck`, `tune2fs`, `badblocks`, `hdparm`, `smartctl`, `fstrim`, `swapoff`, `swapon`, `mkswap`, `losetup`, `cryptsetup`, `lvdisplay`                                                                                     |
+| Users & Groups    | 23       | `whoami`, `id`, `w`, `who`, `last`, `lastlog`, `sudo`, `su`, `useradd`, `usermod`, `userdel`, `passwd`, `groupadd`, `groupmod`, `groupdel`, `groups`, `newgrp`, `gpasswd`, `chage`, `finger`, `getent`, `visudo`, `chsh`                                                                                                     |
+| Permissions       | 10       | `chmod`, `chown`, `chgrp`, `umask`, `setfacl`, `getfacl`, `lsattr`, `chattr`, `namei`, `stat`                                                                                                                                                                                                                                |
+| System Info       | 18       | `uname`, `uptime`, `hostname`, `date`, `cal`, `timedatectl`, `hostnamectl`, `lshw`, `lscpu`, `lspci`, `lsusb`, `dmidecode`, `inxi`, `free`, `vmstat`, `iostat`, `sar`, `nproc`                                                                                                                                               |
+| Services          | 9        | `systemctl`, `service`, `journalctl`, `systemd-analyze`, `loginctl`, `machinectl`, `resolvectl`, `hostnamectl`, `timedatectl`                                                                                                                                                                                                |
+| Kernel & Modules  | 10       | `uname`, `dmesg`, `lsmod`, `modinfo`, `modprobe`, `rmmod`, `insmod`, `depmod`, `sysctl`, `kexec`                                                                                                                                                                                                                             |
+| Memory            | 7        | `free`, `vmstat`, `smem`, `pmap`, `memtester`, `slabtop`, `numactl`                                                                                                                                                                                                                                                          |
+| Monitoring        | 13       | `top`, `htop`, `atop`, `glances`, `iotop`, `iftop`, `nethogs`, `nload`, `dstat`, `collectl`, `perf`, `strace`, `ltrace`                                                                                                                                                                                                      |
+| Package Mgmt      | 15       | `apt`, `apt-get`, `dpkg`, `yum`, `dnf`, `pacman`, `zypper`, `rpm`, `snap`, `flatpak`, `brew`, `npm`, `pip`, `cargo`, `gem`                                                                                                                                                                                                   |
+| SSH & Remote      | 11       | `ssh`, `scp`, `rsync`, `sftp`, `ssh-keygen`, `ssh-copy-id`, `ssh-add`, `ssh-agent`, `sshfs`, `autossh`, `mosh`                                                                                                                                                                                                               |
+| Firewall          | 6        | `iptables`, `ip6tables`, `ufw`, `firewalld`, `nftables`, `fail2ban`                                                                                                                                                                                                                                                          |
+| Containers        | 6        | `docker`, `podman`, `buildah`, `skopeo`, `kubectl`, `helm`                                                                                                                                                                                                                                                                   |
+| Git               | 28       | `init`, `clone`, `add`, `commit`, `push`, `pull`, `fetch`, `merge`, `rebase`, `branch`, `checkout`, `switch`, `status`, `log`, `diff`, `stash`, `tag`, `remote`, `reset`, `revert`, `cherry-pick`, `bisect`, `blame`, `show`, `reflog`, `submodule`, `worktree`, `config`                                                    |
+| Shell & Scripting | 36       | `echo`, `printf`, `read`, `source`, `exec`, `test`, `if`, `for`, `while`, `case`, `function`, `return`, `exit`, `set`, `shift`, `getopts`, `trap`, `eval`, `expr`, `let`, `declare`, `local`, `readonly`, `unset`, `array ops`, `heredoc`, `process substitution`, and more                                                  |
+| Environment       | 8        | `env`, `export`, `printenv`, `unset`, `set`, `declare`, `direnv`, `envsubst`                                                                                                                                                                                                                                                 |
+| Cron & Jobs       | 8        | `crontab`, `at`, `atq`, `atrm`, `batch`, `anacron`, `systemd timers`, `fcron`                                                                                                                                                                                                                                                |
+| Misc              | 37       | `alias`, `history`, `man`, `info`, `tldr`, `help`, `time`, `watch`, `sleep`, `wait`, `bc`, `expr`, `factor`, `yes`, `seq`, `tput`, `clear`, `reset`, `banner`, `figlet`, `cowsay`, `lolcat`, `fortune`, `cal`, `units`, `od`, `base64`, `xxd`, `uuidgen`, `md5sum`, `sha256sum`, `openssl`, `gpg`, `shuf`, `tac`, `nl`, `pr` |
 
 ### Most-Used Commands (Linux)
 
@@ -184,29 +185,29 @@ tar -czf - folder/ | openssl enc -aes-256-cbc -out folder.tar.gz.enc
 
 Full cmdlet and alias reference for PowerShell on Windows (and cross-platform PS Core). Every cmdlet lists its short aliases (e.g. `ls`, `cd`, `cat`).
 
-| Category | Commands | What's Covered |
-|----------|----------|----------------|
-| Navigation | 6 | `Set-Location`, `Get-Location`, `Push-Location`, `Pop-Location`, `Get-ChildItem`, `Get-Item` |
-| File System | 21 | `Copy-Item`, `Move-Item`, `Remove-Item`, `New-Item`, `Rename-Item`, `Get-Content`, `Set-Content`, `Add-Content`, `Clear-Content`, `Test-Path`, `Resolve-Path`, `Split-Path`, `Join-Path`, `Get-ItemProperty`, `Set-ItemProperty`, and more |
-| Text & String | 29 | `Select-String`, `Out-String`, `-split`, `-join`, `-replace`, `[regex]`, `Format-*`, `Measure-Object`, and more |
-| Objects & Pipeline | 20 | `Where-Object`, `ForEach-Object`, `Select-Object`, `Sort-Object`, `Group-Object`, `Compare-Object`, `Tee-Object`, `Out-*` cmdlets |
-| Variables & Data | 21 | `Set-Variable`, `Get-Variable`, `Remove-Variable`, `New-Variable`, hashtables, arrays, `[PSCustomObject]`, `ConvertTo-Json`, `ConvertFrom-Json` |
-| Processes | 13 | `Get-Process`, `Start-Process`, `Stop-Process`, `Wait-Process`, `Debug-Process` |
-| Services | 9 | `Get-Service`, `Start-Service`, `Stop-Service`, `Restart-Service`, `Set-Service`, `New-Service`, `Remove-Service` |
-| Network | 16 | `Test-Connection`, `Invoke-WebRequest`, `Invoke-RestMethod`, `Get-NetAdapter`, `Get-NetIPAddress`, `Test-NetConnection`, `Resolve-DnsName` |
-| System Info | 18 | `Get-ComputerInfo`, `Get-Host`, `Get-Date`, `Get-Uptime`, `Get-HotFix`, `Get-Disk`, `Get-Volume`, `Get-PSDrive` |
-| Registry | 10 | `Get-ItemProperty`, `Set-ItemProperty`, `New-Item` (Registry), `Remove-ItemProperty`, `Get-ChildItem` (HKLM:/HKCU:) |
-| Security | 12 | `Get-Acl`, `Set-Acl`, `Get-Credential`, `ConvertTo-SecureString`, `Get-AuthenticodeSignature`, `Set-ExecutionPolicy` |
-| Users & Groups | 13 | `Get-LocalUser`, `New-LocalUser`, `Remove-LocalUser`, `Set-LocalUser`, `Get-LocalGroup`, `Add-LocalGroupMember` |
-| Modules & Packages | 16 | `Get-Module`, `Import-Module`, `Install-Module`, `Find-Module`, `Update-Module`, `Get-Command`, `Find-Package`, `Install-Package` |
-| Remoting | 11 | `Enter-PSSession`, `New-PSSession`, `Invoke-Command`, `Exit-PSSession`, `Enable-PSRemoting` |
-| CIM & WMI | 12 | `Get-CimInstance`, `Invoke-CimMethod`, `Get-WmiObject`, `Invoke-WmiMethod` |
-| Scheduling | 10 | `Get-ScheduledTask`, `Register-ScheduledTask`, `Start-ScheduledTask`, `Unregister-ScheduledTask`, `New-ScheduledTaskTrigger` |
-| Error Handling | 10 | `Try/Catch/Finally`, `$Error`, `$?`, `$LASTEXITCODE`, `Write-Error`, `Throw`, `-ErrorAction` |
-| Scripting & Flow | 16 | `If/ElseIf/Else`, `Switch`, `For`, `ForEach`, `While`, `Do-While`, `Break`, `Continue`, `Return`, `Function`, `Param` |
-| Environment | 11 | `$env:`, `[System.Environment]`, `Get-Content Env:`, `Set-Item Env:`, `$HOME`, `$PATH`, `$PSVersionTable` |
-| Formatting & Output | 12 | `Format-Table`, `Format-List`, `Format-Wide`, `Format-Custom`, `Out-File`, `Out-GridView`, `Out-Printer`, `Export-Csv`, `Import-Csv` |
-| Misc | 28 | `Write-Host`, `Write-Output`, `Read-Host`, `Clear-Host`, `Get-Alias`, `New-Alias`, `Measure-Command`, `Start-Sleep`, `Get-Random`, `ConvertTo-Html`, `Send-MailMessage`, and more |
+| Category            | Commands | What's Covered                                                                                                                                                                                                                             |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Navigation          | 6        | `Set-Location`, `Get-Location`, `Push-Location`, `Pop-Location`, `Get-ChildItem`, `Get-Item`                                                                                                                                               |
+| File System         | 21       | `Copy-Item`, `Move-Item`, `Remove-Item`, `New-Item`, `Rename-Item`, `Get-Content`, `Set-Content`, `Add-Content`, `Clear-Content`, `Test-Path`, `Resolve-Path`, `Split-Path`, `Join-Path`, `Get-ItemProperty`, `Set-ItemProperty`, and more |
+| Text & String       | 29       | `Select-String`, `Out-String`, `-split`, `-join`, `-replace`, `[regex]`, `Format-*`, `Measure-Object`, and more                                                                                                                            |
+| Objects & Pipeline  | 20       | `Where-Object`, `ForEach-Object`, `Select-Object`, `Sort-Object`, `Group-Object`, `Compare-Object`, `Tee-Object`, `Out-*` cmdlets                                                                                                          |
+| Variables & Data    | 21       | `Set-Variable`, `Get-Variable`, `Remove-Variable`, `New-Variable`, hashtables, arrays, `[PSCustomObject]`, `ConvertTo-Json`, `ConvertFrom-Json`                                                                                            |
+| Processes           | 13       | `Get-Process`, `Start-Process`, `Stop-Process`, `Wait-Process`, `Debug-Process`                                                                                                                                                            |
+| Services            | 9        | `Get-Service`, `Start-Service`, `Stop-Service`, `Restart-Service`, `Set-Service`, `New-Service`, `Remove-Service`                                                                                                                          |
+| Network             | 16       | `Test-Connection`, `Invoke-WebRequest`, `Invoke-RestMethod`, `Get-NetAdapter`, `Get-NetIPAddress`, `Test-NetConnection`, `Resolve-DnsName`                                                                                                 |
+| System Info         | 18       | `Get-ComputerInfo`, `Get-Host`, `Get-Date`, `Get-Uptime`, `Get-HotFix`, `Get-Disk`, `Get-Volume`, `Get-PSDrive`                                                                                                                            |
+| Registry            | 10       | `Get-ItemProperty`, `Set-ItemProperty`, `New-Item` (Registry), `Remove-ItemProperty`, `Get-ChildItem` (HKLM:/HKCU:)                                                                                                                        |
+| Security            | 12       | `Get-Acl`, `Set-Acl`, `Get-Credential`, `ConvertTo-SecureString`, `Get-AuthenticodeSignature`, `Set-ExecutionPolicy`                                                                                                                       |
+| Users & Groups      | 13       | `Get-LocalUser`, `New-LocalUser`, `Remove-LocalUser`, `Set-LocalUser`, `Get-LocalGroup`, `Add-LocalGroupMember`                                                                                                                            |
+| Modules & Packages  | 16       | `Get-Module`, `Import-Module`, `Install-Module`, `Find-Module`, `Update-Module`, `Get-Command`, `Find-Package`, `Install-Package`                                                                                                          |
+| Remoting            | 11       | `Enter-PSSession`, `New-PSSession`, `Invoke-Command`, `Exit-PSSession`, `Enable-PSRemoting`                                                                                                                                                |
+| CIM & WMI           | 12       | `Get-CimInstance`, `Invoke-CimMethod`, `Get-WmiObject`, `Invoke-WmiMethod`                                                                                                                                                                 |
+| Scheduling          | 10       | `Get-ScheduledTask`, `Register-ScheduledTask`, `Start-ScheduledTask`, `Unregister-ScheduledTask`, `New-ScheduledTaskTrigger`                                                                                                               |
+| Error Handling      | 10       | `Try/Catch/Finally`, `$Error`, `$?`, `$LASTEXITCODE`, `Write-Error`, `Throw`, `-ErrorAction`                                                                                                                                               |
+| Scripting & Flow    | 16       | `If/ElseIf/Else`, `Switch`, `For`, `ForEach`, `While`, `Do-While`, `Break`, `Continue`, `Return`, `Function`, `Param`                                                                                                                      |
+| Environment         | 11       | `$env:`, `[System.Environment]`, `Get-Content Env:`, `Set-Item Env:`, `$HOME`, `$PATH`, `$PSVersionTable`                                                                                                                                  |
+| Formatting & Output | 12       | `Format-Table`, `Format-List`, `Format-Wide`, `Format-Custom`, `Out-File`, `Out-GridView`, `Out-Printer`, `Export-Csv`, `Import-Csv`                                                                                                       |
+| Misc                | 28       | `Write-Host`, `Write-Output`, `Read-Host`, `Clear-Host`, `Get-Alias`, `New-Alias`, `Measure-Command`, `Start-Sleep`, `Get-Random`, `ConvertTo-Html`, `Send-MailMessage`, and more                                                          |
 
 ### Most-Used Commands (PowerShell)
 
@@ -263,6 +264,7 @@ Measure-Command { Get-ChildItem -Recurse C:\ }
 ### How to find a file by name
 
 **Bash/Linux:**
+
 ```bash
 find /path -name "filename.txt"          # exact name
 find /path -name "*.log" -type f         # by extension
@@ -270,6 +272,7 @@ locate filename.txt                       # fast, uses DB
 ```
 
 **PowerShell:**
+
 ```powershell
 Get-ChildItem -Recurse -Filter "*.txt"
 Get-ChildItem -Recurse | Where-Object { $_.Name -like "*config*" }
@@ -280,6 +283,7 @@ Get-ChildItem -Recurse | Where-Object { $_.Name -like "*config*" }
 ### How to search inside files
 
 **Bash/Linux:**
+
 ```bash
 grep -rn "search term" /path/            # recursive, with line numbers
 grep -ri "error" /var/log/               # case-insensitive
@@ -288,6 +292,7 @@ awk '/pattern/ { print NR": "$0 }' file  # with context
 ```
 
 **PowerShell:**
+
 ```powershell
 Select-String -Path ".\**\*.log" -Pattern "error" -Recurse
 ```
@@ -297,6 +302,7 @@ Select-String -Path ".\**\*.log" -Pattern "error" -Recurse
 ### How to manage processes
 
 **Bash/Linux:**
+
 ```bash
 ps aux | grep process_name               # find a process
 kill -15 <PID>                           # graceful stop
@@ -306,6 +312,7 @@ nohup ./script.sh &                      # run detached
 ```
 
 **PowerShell:**
+
 ```powershell
 Get-Process | Where-Object { $_.Name -like "*node*" }
 Stop-Process -Id <PID> -Force
@@ -317,6 +324,7 @@ Start-Process notepad.exe
 ### How to work with archives
 
 **Bash/Linux:**
+
 ```bash
 tar -czf archive.tar.gz folder/          # create .tar.gz
 tar -xzf archive.tar.gz -C /dest/       # extract to dir
@@ -326,6 +334,7 @@ unzip archive.zip -d /dest/             # extract .zip
 ```
 
 **PowerShell:**
+
 ```powershell
 Compress-Archive -Path ".\folder" -DestinationPath "archive.zip"
 Expand-Archive -Path "archive.zip" -DestinationPath ".\output"
@@ -336,6 +345,7 @@ Expand-Archive -Path "archive.zip" -DestinationPath ".\output"
 ### How to use SSH
 
 **Connect to a server:**
+
 ```bash
 ssh user@192.168.1.10                    # basic connection
 ssh -p 2222 user@host                    # custom port
@@ -343,12 +353,14 @@ ssh -i ~/.ssh/id_rsa user@host           # with key file
 ```
 
 **Set up key-based auth (no password):**
+
 ```bash
 ssh-keygen -t ed25519                    # generate key
 ssh-copy-id user@host                    # copy key to server
 ```
 
 **Port forwarding:**
+
 ```bash
 ssh -L 8080:localhost:80 user@host       # local forward
 ssh -R 9090:localhost:3000 user@host     # remote forward
@@ -360,6 +372,7 @@ ssh -N -D 1080 user@host                 # SOCKS proxy
 ### How to monitor system resources
 
 **Bash/Linux:**
+
 ```bash
 top                    # live CPU/memory (press M to sort by memory)
 htop                   # interactive (F6 to sort, F9 to kill)
@@ -370,6 +383,7 @@ watch -n 1 'ps aux --sort=-%cpu | head -10'  # top processes
 ```
 
 **PowerShell:**
+
 ```powershell
 Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
 Get-PSDrive -PSProvider FileSystem
@@ -426,6 +440,7 @@ done
 ### How to schedule tasks
 
 **Linux cron:**
+
 ```bash
 crontab -e     # open cron editor
 # Format: minute hour day-of-month month day-of-week command
@@ -436,6 +451,7 @@ crontab -e     # open cron editor
 ```
 
 **PowerShell:**
+
 ```powershell
 $trigger = New-ScheduledTaskTrigger -Daily -At "02:00AM"
 $action  = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File C:\Scripts\backup.ps1"
@@ -447,6 +463,7 @@ Register-ScheduledTask -TaskName "NightlyBackup" -Trigger $trigger -Action $acti
 ### How to manage packages
 
 **Debian / Ubuntu:**
+
 ```bash
 sudo apt update && sudo apt upgrade       # update all
 sudo apt install package-name             # install
@@ -455,6 +472,7 @@ sudo apt search keyword                   # search
 ```
 
 **RHEL / Fedora / CentOS:**
+
 ```bash
 sudo dnf upgrade                          # update all
 sudo dnf install package-name
@@ -463,6 +481,7 @@ sudo dnf search keyword
 ```
 
 **Arch Linux:**
+
 ```bash
 sudo pacman -Syu                          # update all
 sudo pacman -S package-name
@@ -471,6 +490,7 @@ sudo pacman -Ss keyword
 ```
 
 **PowerShell (winget / PSGallery):**
+
 ```powershell
 winget install package-name
 Install-Module -Name ModuleName -Scope CurrentUser
@@ -480,19 +500,19 @@ Install-Module -Name ModuleName -Scope CurrentUser
 
 ## Quick Reference: Essential Flags
 
-| Command | Must-Know Flags |
-|---------|----------------|
-| `ls` | `-la` (all + long), `-lht` (sorted by time) |
-| `grep` | `-rni` (recursive, line numbers, case-insensitive), `-v` (invert) |
-| `find` | `-name`, `-type f/d`, `-mtime -N`, `-size +Nk`, `-exec {} \;` |
-| `tar` | `-czf` (create gzip), `-xzf` (extract), `-tzf` (list) |
-| `curl` | `-sLo file URL` (silent, follow redirect, output) |
-| `ssh` | `-p` (port), `-i` (key), `-L/-R` (port forward) |
-| `rsync` | `-avz` (archive, verbose, compress), `--delete`, `-n` (dry run) |
-| `ps` | `aux` (all processes), `--forest` (tree) |
-| `sed` | `-i 's/old/new/g'` (in-place replace) |
-| `awk` | `-F:` (delimiter), `'{print $1}'` (first field) |
-| `chmod` | `+x` (add exec), `644` (rw-r--r--), `755` (rwxr-xr-x) |
+| Command | Must-Know Flags                                                   |
+| ------- | ----------------------------------------------------------------- |
+| `ls`    | `-la` (all + long), `-lht` (sorted by time)                       |
+| `grep`  | `-rni` (recursive, line numbers, case-insensitive), `-v` (invert) |
+| `find`  | `-name`, `-type f/d`, `-mtime -N`, `-size +Nk`, `-exec {} \;`     |
+| `tar`   | `-czf` (create gzip), `-xzf` (extract), `-tzf` (list)             |
+| `curl`  | `-sLo file URL` (silent, follow redirect, output)                 |
+| `ssh`   | `-p` (port), `-i` (key), `-L/-R` (port forward)                   |
+| `rsync` | `-avz` (archive, verbose, compress), `--delete`, `-n` (dry run)   |
+| `ps`    | `aux` (all processes), `--forest` (tree)                          |
+| `sed`   | `-i 's/old/new/g'` (in-place replace)                             |
+| `awk`   | `-F:` (delimiter), `'{print $1}'` (first field)                   |
+| `chmod` | `+x` (add exec), `644` (rw-r--r--), `755` (rwxr-xr-x)             |
 
 ---
 
@@ -504,4 +524,5 @@ Install-Module -Name ModuleName -Scope CurrentUser
 - **`Ctrl+R`** in bash/zsh — fuzzy reverse search through command history
 - **`!!`** — repeat last command; `sudo !!` to re-run it with sudo
 - **`Ctrl+Z`** — suspend a process, then `bg` to resume in background
+- **`Ctrl+C`** - terminates and kills a running process permanently
 - In PowerShell, every cmdlet supports `-WhatIf` to preview destructive actions before running

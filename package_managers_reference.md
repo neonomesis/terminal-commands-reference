@@ -7,6 +7,7 @@ A comprehensive guide to package managers across macOS, Windows, and Linux.
 ## macOS
 
 ### Homebrew
+
 The most popular package manager for macOS.
 
 ```bash
@@ -33,6 +34,7 @@ brew services restart <service> # Restart a service
 ```
 
 ### Homebrew Cask (GUI Apps)
+
 Extension of Homebrew for macOS GUI applications.
 
 ```bash
@@ -44,6 +46,7 @@ brew search --cask <app>        # Search for cask apps
 ```
 
 ### MacPorts
+
 Alternative to Homebrew, uses a different approach.
 
 ```bash
@@ -60,6 +63,7 @@ sudo port clean --all installed # Clean build files
 ```
 
 ### pip (Python)
+
 ```bash
 pip install <package>           # Install a package
 pip uninstall <package>         # Remove a package
@@ -72,6 +76,7 @@ pip search <package>            # Search (deprecated in newer pip)
 ```
 
 ### npm / npx (Node.js)
+
 ```bash
 npm install <package>           # Install locally
 npm install -g <package>        # Install globally
@@ -86,6 +91,7 @@ npx <package>                   # Run a package without installing
 ```
 
 ### yarn
+
 ```bash
 yarn add <package>              # Install a package
 yarn remove <package>           # Remove a package
@@ -101,6 +107,7 @@ yarn install                    # Install from yarn.lock
 ## Windows
 
 ### Winget (Windows Package Manager)
+
 Built-in package manager starting from Windows 10 (build 1709+).
 
 ```powershell
@@ -121,6 +128,7 @@ winget import -i packages.json  # Import and install packages
 ```
 
 ### Chocolatey
+
 Popular community-driven package manager for Windows.
 
 ```powershell
@@ -143,6 +151,7 @@ choco pin remove -n <package>   # Unpin a package
 ```
 
 ### Scoop
+
 Command-line installer focused on dev tools, no admin required.
 
 ```powershell
@@ -165,6 +174,7 @@ scoop status                    # Show outdated packages
 ```
 
 ### pip (Python) — same as macOS
+
 ```powershell
 pip install <package>
 pip uninstall <package>
@@ -174,6 +184,7 @@ pip install -r requirements.txt
 ```
 
 ### npm / yarn — same as macOS
+
 ```powershell
 npm install <package>
 npm install -g <package>
@@ -181,6 +192,7 @@ yarn add <package>
 ```
 
 ### NuGet (.NET)
+
 ```powershell
 nuget install <package>         # Install a package
 nuget update <package>          # Update a package
@@ -197,6 +209,7 @@ dotnet restore                  # Restore packages
 ## Linux
 
 ### apt / apt-get (Debian, Ubuntu, Mint)
+
 ```bash
 sudo apt update                         # Refresh package list
 sudo apt upgrade                        # Upgrade all packages
@@ -215,6 +228,7 @@ sudo apt autoclean                      # Remove old cached packages
 ```
 
 ### dnf / yum (Fedora, RHEL, CentOS)
+
 ```bash
 sudo dnf install <package>      # Install a package
 sudo dnf remove <package>       # Remove a package
@@ -233,6 +247,7 @@ sudo dnf history undo <id>      # Undo a transaction
 ```
 
 ### pacman (Arch Linux, Manjaro)
+
 ```bash
 sudo pacman -S <package>        # Install a package
 sudo pacman -R <package>        # Remove a package
@@ -251,6 +266,7 @@ sudo pacman -U <file.pkg.tar>   # Install from local file
 ```
 
 ### yay / paru (AUR helpers for Arch)
+
 ```bash
 yay -S <package>                # Install from AUR
 yay -R <package>                # Remove a package
@@ -264,6 +280,7 @@ paru -Ss <package>              # Search AUR and repos
 ```
 
 ### zypper (openSUSE)
+
 ```bash
 sudo zypper install <package>   # Install a package
 sudo zypper remove <package>    # Remove a package
@@ -277,6 +294,7 @@ sudo zypper clean               # Clear cache
 ```
 
 ### snap (Ubuntu, many distros)
+
 ```bash
 snap install <package>          # Install a snap package
 snap install --classic <pkg>    # Install with classic confinement
@@ -291,6 +309,7 @@ snap connections <package>      # Show snap interfaces
 ```
 
 ### flatpak (universal Linux)
+
 ```bash
 flatpak install <remote> <app>          # Install an app
 flatpak install flathub <app>           # Install from Flathub
@@ -306,6 +325,7 @@ flatpak override --filesystem=home <app># Grant filesystem access
 ```
 
 ### rpm (Red Hat, Fedora, CentOS — low level)
+
 ```bash
 rpm -i <package>.rpm            # Install a package
 rpm -U <package>.rpm            # Upgrade a package
@@ -322,36 +342,36 @@ rpm --checksig <package>.rpm    # Verify package signature
 
 ## Language-Specific Package Managers (Cross-Platform)
 
-| Language   | Tool        | Install Command                        | Config File          |
-|------------|-------------|----------------------------------------|----------------------|
-| Node.js    | npm         | `npm install <pkg>`                    | package.json         |
-| Node.js    | yarn        | `yarn add <pkg>`                       | yarn.lock            |
-| Node.js    | pnpm        | `pnpm add <pkg>`                       | pnpm-lock.yaml       |
-| Node.js    | bun         | `bun add <pkg>`                        | bun.lockb            |
-| Python     | pip         | `pip install <pkg>`                    | requirements.txt     |
-| Python     | poetry      | `poetry add <pkg>`                     | pyproject.toml       |
-| Python     | conda       | `conda install <pkg>`                  | environment.yml      |
-| Python     | uv          | `uv add <pkg>`                         | pyproject.toml       |
-| Rust       | cargo       | `cargo add <pkg>`                      | Cargo.toml           |
-| Go         | go modules  | `go get <pkg>`                         | go.mod               |
-| Ruby       | gem         | `gem install <pkg>`                    | Gemfile              |
-| Ruby       | bundler     | `bundle add <pkg>`                     | Gemfile.lock         |
-| PHP        | composer    | `composer require <pkg>`               | composer.json        |
-| Java       | maven       | add to pom.xml                         | pom.xml              |
-| Java       | gradle      | add to build.gradle                    | build.gradle         |
-| .NET/C#    | nuget       | `dotnet add package <pkg>`             | .csproj              |
-| Swift      | swift pm    | add to Package.swift                   | Package.swift        |
-| Dart       | pub         | `dart pub add <pkg>`                   | pubspec.yaml         |
+| Language | Tool       | Install Command            | Config File      |
+| -------- | ---------- | -------------------------- | ---------------- |
+| Node.js  | npm        | `npm install <pkg>`        | package.json     |
+| Node.js  | yarn       | `yarn add <pkg>`           | yarn.lock        |
+| Node.js  | pnpm       | `pnpm add <pkg>`           | pnpm-lock.yaml   |
+| Node.js  | bun        | `bun add <pkg>`            | bun.lockb        |
+| Python   | pip        | `pip install <pkg>`        | requirements.txt |
+| Python   | poetry     | `poetry add <pkg>`         | pyproject.toml   |
+| Python   | conda      | `conda install <pkg>`      | environment.yml  |
+| Python   | uv         | `uv add <pkg>`             | pyproject.toml   |
+| Rust     | cargo      | `cargo add <pkg>`          | Cargo.toml       |
+| Go       | go modules | `go get <pkg>`             | go.mod           |
+| Ruby     | gem        | `gem install <pkg>`        | Gemfile          |
+| Ruby     | bundler    | `bundle add <pkg>`         | Gemfile.lock     |
+| PHP      | composer   | `composer require <pkg>`   | composer.json    |
+| Java     | maven      | add to pom.xml             | pom.xml          |
+| Java     | gradle     | add to build.gradle        | build.gradle     |
+| .NET/C#  | nuget      | `dotnet add package <pkg>` | .csproj          |
+| Swift    | swift pm   | add to Package.swift       | Package.swift    |
+| Dart     | pub        | `dart pub add <pkg>`       | pubspec.yaml     |
 
 ---
 
 ## Quick Comparison
 
-| Feature              | Homebrew (mac) | Winget (win) | Chocolatey (win) | apt (linux) | pacman (linux) |
-|----------------------|:--------------:|:------------:|:----------------:|:-----------:|:--------------:|
-| GUI apps             | Yes (cask)     | Yes          | Yes              | Limited     | Limited        |
-| Dev tools            | Yes            | Yes          | Yes              | Yes         | Yes            |
-| No admin required    | Yes            | Yes          | No               | No          | No             |
-| Community packages   | Yes            | Yes          | Yes              | Yes         | Yes (AUR)      |
-| Rollback support     | Partial        | No           | Yes              | No          | Yes            |
-| Auto-updates         | Manual         | Yes          | Manual           | Manual      | Manual         |
+| Feature            | Homebrew (mac) | Winget (win) | Chocolatey (win) | apt (linux) | pacman (linux) |
+| ------------------ | :------------: | :----------: | :--------------: | :---------: | :------------: |
+| GUI apps           |   Yes (cask)   |     Yes      |       Yes        |   Limited   |    Limited     |
+| Dev tools          |      Yes       |     Yes      |       Yes        |     Yes     |      Yes       |
+| No admin required  |      Yes       |     Yes      |        No        |     No      |       No       |
+| Community packages |      Yes       |     Yes      |       Yes        |     Yes     |   Yes (AUR)    |
+| Rollback support   |    Partial     |      No      |       Yes        |     No      |      Yes       |
+| Auto-updates       |     Manual     |     Yes      |      Manual      |   Manual    |     Manual     |

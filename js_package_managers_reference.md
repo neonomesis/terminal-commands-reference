@@ -5,9 +5,11 @@ Comprehensive command reference for npm, yarn, pnpm, bun, and more.
 ---
 
 ## npm (Node Package Manager)
+
 Comes bundled with Node.js. The default and most widely used.
 
 ### Installation
+
 ```bash
 # Comes with Node.js — check version
 npm --version
@@ -18,6 +20,7 @@ npm install -g npm@latest
 ```
 
 ### Init / Setup
+
 ```bash
 npm init                        # Interactive project setup
 npm init -y                     # Skip prompts, use defaults
@@ -25,6 +28,7 @@ npm init --scope=@myorg         # Scoped package setup
 ```
 
 ### Installing Packages
+
 ```bash
 npm install                     # Install all from package.json
 npm install <package>           # Install and save to dependencies
@@ -42,6 +46,7 @@ npm ci                          # Clean install (from lock file only)
 ```
 
 ### Removing Packages
+
 ```bash
 npm uninstall <package>         # Remove from dependencies
 npm uninstall -D <package>      # Remove from devDependencies
@@ -51,6 +56,7 @@ npm prune --production          # Remove devDependencies
 ```
 
 ### Updating Packages
+
 ```bash
 npm update                      # Update all packages
 npm update <package>            # Update specific package
@@ -59,6 +65,7 @@ npm install <package>@latest    # Force update to latest
 ```
 
 ### Running Scripts
+
 ```bash
 npm run <script>                # Run a script from package.json
 npm start                       # Run the "start" script
@@ -69,6 +76,7 @@ npm run --if-present <script>   # Run only if script exists
 ```
 
 ### Listing & Info
+
 ```bash
 npm list                        # List installed packages (local)
 npm list -g                     # List global packages
@@ -80,6 +88,7 @@ npm ls <package>                # Check if package is installed
 ```
 
 ### Publishing
+
 ```bash
 npm login                       # Log in to npm registry
 npm logout                      # Log out
@@ -94,6 +103,7 @@ npm unpublish <package>@<ver>   # Unpublish a version (72h limit)
 ```
 
 ### Cache & Misc
+
 ```bash
 npm cache clean --force         # Clear the cache
 npm cache verify                # Verify cache integrity
@@ -115,21 +125,25 @@ npm config delete <key>         # Delete a config value
 ---
 
 ## yarn (v1 Classic)
+
 Facebook's alternative to npm with deterministic installs.
 
 ### Installation
+
 ```bash
 npm install -g yarn
 yarn --version
 ```
 
 ### Init / Setup
+
 ```bash
 yarn init                       # Interactive setup
 yarn init -y                    # Skip prompts
 ```
 
 ### Installing Packages
+
 ```bash
 yarn                            # Install all from package.json
 yarn install                    # Same as above
@@ -146,12 +160,14 @@ yarn add file:<path>            # Install from local path
 ```
 
 ### Removing Packages
+
 ```bash
 yarn remove <package>           # Remove a package
 yarn global remove <package>    # Remove a global package
 ```
 
 ### Updating Packages
+
 ```bash
 yarn upgrade                    # Upgrade all packages
 yarn upgrade <package>          # Upgrade specific package
@@ -162,6 +178,7 @@ yarn outdated                   # Show outdated packages
 ```
 
 ### Running Scripts
+
 ```bash
 yarn <script>                   # Run a script (no "run" needed for custom)
 yarn run <script>               # Run a script explicitly
@@ -172,6 +189,7 @@ yarn dev                        # Run "dev"
 ```
 
 ### Listing & Info
+
 ```bash
 yarn list                       # List all installed packages
 yarn list --depth=0             # List top-level only
@@ -182,6 +200,7 @@ yarn why <package>              # Explain why package is installed
 ```
 
 ### Publishing
+
 ```bash
 yarn login                      # Log in to npm registry
 yarn logout                     # Log out
@@ -193,6 +212,7 @@ yarn version --major            # Bump major version
 ```
 
 ### Cache & Misc
+
 ```bash
 yarn cache list                 # Show cached packages
 yarn cache clean                # Clear cache
@@ -212,9 +232,11 @@ yarn config get <key>           # Get config
 ---
 
 ## yarn (v2/v3/v4 — Berry)
+
 Modern rewrite of yarn with Plug'n'Play and zero-installs.
 
 ### Installation
+
 ```bash
 # Enable via Corepack (Node.js 16.10+)
 corepack enable
@@ -224,6 +246,7 @@ yarn --version                  # Should show 2.x / 3.x / 4.x
 ```
 
 ### Key Differences from v1
+
 ```bash
 yarn set version stable         # Update to latest stable
 yarn set version berry          # Switch to berry
@@ -237,11 +260,13 @@ yarn install                    # Installs via PnP
 ```
 
 ### Init / Setup
+
 ```bash
 yarn init -2                    # Init with yarn v2+
 ```
 
 ### Common Commands (same as v1, with additions)
+
 ```bash
 yarn add <package>
 yarn remove <package>
@@ -259,9 +284,11 @@ yarn plugin import <name>       # Add a plugin
 ---
 
 ## pnpm
+
 Fast, disk-efficient package manager using a content-addressable store.
 
 ### Installation
+
 ```bash
 # Via npm
 npm install -g pnpm
@@ -280,11 +307,13 @@ pnpm --version
 ```
 
 ### Init / Setup
+
 ```bash
 pnpm init                       # Create package.json
 ```
 
 ### Installing Packages
+
 ```bash
 pnpm install                    # Install all from package.json
 pnpm install --frozen-lockfile  # CI install (no lockfile changes)
@@ -301,12 +330,14 @@ pnpm fetch                      # Fetch packages to virtual store (offline)
 ```
 
 ### Removing Packages
+
 ```bash
 pnpm remove <package>           # Remove a package
 pnpm remove -g <package>        # Remove a global package
 ```
 
 ### Updating Packages
+
 ```bash
 pnpm update                     # Update all packages
 pnpm update <package>           # Update specific package
@@ -318,6 +349,7 @@ pnpm outdated                   # Show outdated packages
 ```
 
 ### Running Scripts
+
 ```bash
 pnpm <script>                   # Run a script
 pnpm run <script>               # Run a script explicitly
@@ -329,6 +361,7 @@ pnpm run --filter <pkg> <script># Run script in specific workspace
 ```
 
 ### Listing & Info
+
 ```bash
 pnpm list                       # List installed packages
 pnpm list --depth=0             # Top-level only
@@ -339,6 +372,7 @@ pnpm view <package> versions    # Show all versions
 ```
 
 ### Workspaces (Monorepo)
+
 ```bash
 # pnpm-workspace.yaml required
 pnpm -r <command>               # Run in all workspace packages
@@ -349,6 +383,7 @@ pnpm -r exec -- <command>       # Execute shell command in all packages
 ```
 
 ### Store & Cache
+
 ```bash
 pnpm store status               # Show store status
 pnpm store path                 # Show store location
@@ -358,6 +393,7 @@ pnpm cache delete               # Delete cached metadata
 ```
 
 ### Publishing & Misc
+
 ```bash
 pnpm publish                    # Publish package
 pnpm pack                       # Create tarball
@@ -379,9 +415,11 @@ pnpm env list                   # List available Node.js versions
 ---
 
 ## bun
+
 All-in-one JavaScript runtime + package manager. Extremely fast.
 
 ### Installation
+
 ```bash
 # macOS / Linux
 curl -fsSL https://bun.sh/install | bash
@@ -397,6 +435,7 @@ bun upgrade                     # Update bun itself
 ```
 
 ### Init / Setup
+
 ```bash
 bun init                        # Initialize a project
 bun init -y                     # Skip prompts
@@ -406,6 +445,7 @@ bun create next .               # Create Next.js app
 ```
 
 ### Installing Packages
+
 ```bash
 bun install                     # Install all from package.json
 bun install --frozen-lockfile   # CI install (fail if lockfile changes)
@@ -421,12 +461,14 @@ bun add <git-url>               # Install from git
 ```
 
 ### Removing Packages
+
 ```bash
 bun remove <package>            # Remove a package
 bun remove -g <package>         # Remove a global package
 ```
 
 ### Updating Packages
+
 ```bash
 bun update                      # Update all packages
 bun update <package>            # Update specific package
@@ -434,6 +476,7 @@ bun outdated                    # Show outdated packages
 ```
 
 ### Running Scripts
+
 ```bash
 bun run <script>                # Run a script from package.json
 bun run start                   # Run "start"
@@ -446,12 +489,14 @@ bun --watch <file>              # Run with file watcher
 ```
 
 ### Running Without Installing
+
 ```bash
 bunx <package>                  # Run a package (like npx)
 bunx --bun <package>            # Force run with bun runtime
 ```
 
 ### Bun as a Runtime
+
 ```bash
 bun <file>.ts                   # Run TypeScript directly (no compile)
 bun <file>.js                   # Run JavaScript
@@ -464,6 +509,7 @@ bun build --sourcemap           # Generate source maps
 ```
 
 ### Testing
+
 ```bash
 bun test                        # Run all tests
 bun test <file>                 # Run specific test file
@@ -474,6 +520,7 @@ bun test --timeout 10000        # Set test timeout (ms)
 ```
 
 ### Workspaces
+
 ```bash
 # Define in package.json: "workspaces": ["packages/*"]
 bun install                     # Installs all workspaces
@@ -481,6 +528,7 @@ bun run --filter <pkg> <script> # Run script in specific workspace
 ```
 
 ### Misc
+
 ```bash
 bun pm ls                       # List installed packages
 bun pm hash                     # Hash the lockfile
@@ -497,6 +545,7 @@ bun pack                        # Create a tarball
 ---
 
 ## Corepack
+
 Node.js built-in tool to manage package manager versions per project.
 
 ```bash
@@ -517,17 +566,19 @@ corepack disable
 ```
 
 ### packageManager field in package.json
+
 ```json
 {
-  "packageManager": "pnpm@8.15.0",
-  "packageManager": "yarn@4.1.0",
-  "packageManager": "bun@1.0.0"
+	"packageManager": "pnpm@8.15.0",
+	"packageManager": "yarn@4.1.0",
+	"packageManager": "bun@1.0.0"
 }
 ```
 
 ---
 
 ## npx / bunx / pnpm dlx / yarn dlx
+
 Run packages without installing them globally.
 
 ```bash
@@ -552,13 +603,13 @@ yarn dlx <package>              # Run a package with yarn
 
 ## Lockfiles Reference
 
-| Package Manager | Lockfile              | Should commit? |
-|-----------------|-----------------------|:--------------:|
-| npm             | `package-lock.json`   | Yes            |
-| yarn v1         | `yarn.lock`           | Yes            |
-| yarn v2+        | `yarn.lock`           | Yes            |
-| pnpm            | `pnpm-lock.yaml`      | Yes            |
-| bun             | `bun.lockb`           | Yes            |
+| Package Manager | Lockfile            | Should commit? |
+| --------------- | ------------------- | :------------: |
+| npm             | `package-lock.json` |      Yes       |
+| yarn v1         | `yarn.lock`         |      Yes       |
+| yarn v2+        | `yarn.lock`         |      Yes       |
+| pnpm            | `pnpm-lock.yaml`    |      Yes       |
+| bun             | `bun.lockb`         |      Yes       |
 
 ---
 
@@ -596,12 +647,14 @@ saving significant disk space across projects.
 ## Common Workspace / Monorepo Configs
 
 ### npm workspaces (package.json)
+
 ```json
 {
-  "name": "my-monorepo",
-  "workspaces": ["packages/*", "apps/*"]
+	"name": "my-monorepo",
+	"workspaces": ["packages/*", "apps/*"]
 }
 ```
+
 ```bash
 npm install                             # Install all workspaces
 npm run build --workspace=packages/ui   # Run in specific workspace
@@ -609,26 +662,29 @@ npm run build --workspaces              # Run in all workspaces
 ```
 
 ### yarn workspaces (package.json)
+
 ```json
 {
-  "private": true,
-  "workspaces": ["packages/*"]
+	"private": true,
+	"workspaces": ["packages/*"]
 }
 ```
 
 ### pnpm workspaces (pnpm-workspace.yaml)
+
 ```yaml
 packages:
-  - 'packages/*'
-  - 'apps/*'
-  - '!**/test/**'
+  - "packages/*"
+  - "apps/*"
+  - "!**/test/**"
 ```
 
 ### bun workspaces (package.json)
+
 ```json
 {
-  "name": "my-monorepo",
-  "workspaces": ["packages/*", "apps/*"]
+	"name": "my-monorepo",
+	"workspaces": ["packages/*", "apps/*"]
 }
 ```
 
@@ -636,17 +692,17 @@ packages:
 
 ## Quick Command Cheat Sheet
 
-| Action                  | npm                      | yarn                   | pnpm                   | bun                  |
-|-------------------------|--------------------------|------------------------|------------------------|----------------------|
-| Install all             | `npm install`            | `yarn`                 | `pnpm install`         | `bun install`        |
-| Add package             | `npm install <pkg>`      | `yarn add <pkg>`       | `pnpm add <pkg>`       | `bun add <pkg>`      |
-| Add dev dep             | `npm install -D <pkg>`   | `yarn add -D <pkg>`    | `pnpm add -D <pkg>`    | `bun add -d <pkg>`   |
-| Add global              | `npm install -g <pkg>`   | `yarn global add <pkg>`| `pnpm add -g <pkg>`    | `bun add -g <pkg>`   |
-| Remove package          | `npm uninstall <pkg>`    | `yarn remove <pkg>`    | `pnpm remove <pkg>`    | `bun remove <pkg>`   |
-| Update all              | `npm update`             | `yarn upgrade`         | `pnpm update`          | `bun update`         |
-| Run script              | `npm run <script>`       | `yarn <script>`        | `pnpm <script>`        | `bun run <script>`   |
-| Run without install     | `npx <pkg>`              | `yarn dlx <pkg>`       | `pnpm dlx <pkg>`       | `bunx <pkg>`         |
-| List packages           | `npm list`               | `yarn list`            | `pnpm list`            | `bun pm ls`          |
-| Audit                   | `npm audit`              | `yarn audit`           | `pnpm audit`           | `bun audit`          |
-| Clean install (CI)      | `npm ci`                 | `yarn --frozen-lockfile`| `pnpm install --frozen-lockfile` | `bun install --frozen-lockfile` |
-| Publish                 | `npm publish`            | `yarn publish`         | `pnpm publish`         | `bun publish`        |
+| Action              | npm                    | yarn                     | pnpm                             | bun                             |
+| ------------------- | ---------------------- | ------------------------ | -------------------------------- | ------------------------------- |
+| Install all         | `npm install`          | `yarn`                   | `pnpm install`                   | `bun install`                   |
+| Add package         | `npm install <pkg>`    | `yarn add <pkg>`         | `pnpm add <pkg>`                 | `bun add <pkg>`                 |
+| Add dev dep         | `npm install -D <pkg>` | `yarn add -D <pkg>`      | `pnpm add -D <pkg>`              | `bun add -d <pkg>`              |
+| Add global          | `npm install -g <pkg>` | `yarn global add <pkg>`  | `pnpm add -g <pkg>`              | `bun add -g <pkg>`              |
+| Remove package      | `npm uninstall <pkg>`  | `yarn remove <pkg>`      | `pnpm remove <pkg>`              | `bun remove <pkg>`              |
+| Update all          | `npm update`           | `yarn upgrade`           | `pnpm update`                    | `bun update`                    |
+| Run script          | `npm run <script>`     | `yarn <script>`          | `pnpm <script>`                  | `bun run <script>`              |
+| Run without install | `npx <pkg>`            | `yarn dlx <pkg>`         | `pnpm dlx <pkg>`                 | `bunx <pkg>`                    |
+| List packages       | `npm list`             | `yarn list`              | `pnpm list`                      | `bun pm ls`                     |
+| Audit               | `npm audit`            | `yarn audit`             | `pnpm audit`                     | `bun audit`                     |
+| Clean install (CI)  | `npm ci`               | `yarn --frozen-lockfile` | `pnpm install --frozen-lockfile` | `bun install --frozen-lockfile` |
+| Publish             | `npm publish`          | `yarn publish`           | `pnpm publish`                   | `bun publish`                   |

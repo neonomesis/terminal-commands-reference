@@ -50,6 +50,7 @@ Covers install, remove, update, publish, workspaces, virtual environments, and m
 ## Python
 
 ### pip / pip3
+
 The standard Python package installer. `pip3` is the same tool for Python 3.
 
 ```bash
@@ -134,6 +135,7 @@ pip install --require-hashes -r requirements.txt  # Enforce hash checking
 ---
 
 ### pipenv
+
 Combines virtualenv + pip into one workflow. Creates a `Pipfile` and `Pipfile.lock`.
 
 ```bash
@@ -192,6 +194,7 @@ PIPENV_VENV_IN_PROJECT=1 pipenv install # Store .venv in project dir
 ---
 
 ### poetry
+
 Modern dependency management and packaging. Uses `pyproject.toml`.
 
 ```bash
@@ -292,6 +295,7 @@ poetry config cache-dir                 # Show cache location
 ---
 
 ### conda / mamba
+
 Environment and package manager for data science. Handles non-Python packages too.
 
 ```bash
@@ -373,6 +377,7 @@ pip install <package>                   # Use pip within active conda env
 ---
 
 ### uv
+
 Extremely fast Python package installer and resolver (written in Rust). Drop-in pip replacement.
 
 ```bash
@@ -445,6 +450,7 @@ uv cache prune                          # Remove stale entries
 ---
 
 ### venv / virtualenv
+
 Built-in Python virtual environment tools.
 
 ```bash
@@ -471,6 +477,7 @@ virtualenv --version
 ---
 
 ### pyenv
+
 Python version manager — install and switch between Python versions.
 
 ```bash
@@ -729,6 +736,7 @@ go clean -fuzzcache                     # Clear fuzz cache
 ## Ruby
 
 ### gem
+
 RubyGems — the standard Ruby package manager.
 
 ```bash
@@ -790,6 +798,7 @@ gem signin                              # Log in to rubygems.org
 ---
 
 ### bundler
+
 Manages gem dependencies for a project. Uses `Gemfile` and `Gemfile.lock`.
 
 ```bash
@@ -850,6 +859,7 @@ bundle config unset <key>
 ---
 
 ### rbenv
+
 Ruby version manager (lightweight, shell-based).
 
 ```bash
@@ -885,6 +895,7 @@ rbenv rehash                            # Rebuild shim executables
 ---
 
 ### rvm
+
 Ruby Version Manager (full-featured, manages gemsets too).
 
 ```bash
@@ -1434,6 +1445,7 @@ flutter doctor                          # Check environment setup
 ## Haskell
 
 ### cabal
+
 The Haskell package and build tool.
 
 ```bash
@@ -1490,6 +1502,7 @@ cabal upload --publish dist-newstyle/*.tar.gz  # Publish (make public)
 ---
 
 ### stack
+
 Another Haskell build tool. Uses "resolvers" (LTS Haskell snapshots) for reproducible builds.
 
 ```bash
@@ -2159,29 +2172,29 @@ zig translate-c file.h                  # Translate C header to Zig
 
 ## Cross-Language Quick Reference Table
 
-| Language   | Tool        | Add Package               | Remove Package             | Update All       | List Installed    | Config File          |
-|------------|-------------|---------------------------|----------------------------|------------------|-------------------|----------------------|
-| Python     | pip         | `pip install <pkg>`       | `pip uninstall <pkg>`      | `pip install -U` | `pip list`        | requirements.txt     |
-| Python     | poetry      | `poetry add <pkg>`        | `poetry remove <pkg>`      | `poetry update`  | `poetry show`     | pyproject.toml       |
-| Python     | uv          | `uv add <pkg>`            | `uv remove <pkg>`          | `uv sync`        | `uv pip list`     | pyproject.toml       |
-| Python     | conda       | `conda install <pkg>`     | `conda remove <pkg>`       | `conda update --all` | `conda list`  | environment.yml      |
-| Rust       | cargo       | `cargo add <pkg>`         | `cargo remove <pkg>`       | `cargo update`   | `cargo tree`      | Cargo.toml           |
-| Go         | go          | `go get <pkg>`            | `go mod tidy`              | `go get -u ./..` | `go list -m all`  | go.mod               |
-| Ruby       | gem         | `gem install <gem>`       | `gem uninstall <gem>`      | `gem update`     | `gem list`        | Gemfile              |
-| Ruby       | bundler     | `bundle add <gem>`        | `bundle remove <gem>`      | `bundle update`  | `bundle list`     | Gemfile.lock         |
-| PHP        | composer    | `composer require <pkg>`  | `composer remove <pkg>`    | `composer update`| `composer show`   | composer.json        |
-| Java       | maven       | edit pom.xml              | edit pom.xml               | `mvn versions:use-latest-releases` | `mvn dependency:list` | pom.xml |
-| Java       | gradle      | edit build.gradle         | edit build.gradle          | `gradle dependencyUpdates` | `gradle dependencies` | build.gradle |
-| .NET/C#    | dotnet      | `dotnet add package <pkg>`| `dotnet remove package`    | —                | `dotnet list pkg` | .csproj              |
-| Swift      | spm         | edit Package.swift        | edit Package.swift         | `swift package update` | `swift package show-dependencies` | Package.swift |
-| Dart       | pub         | `dart pub add <pkg>`      | `dart pub remove <pkg>`    | `dart pub upgrade`| `dart pub deps`  | pubspec.yaml         |
-| Haskell    | cabal       | edit .cabal               | edit .cabal                | `cabal update`   | `cabal list`      | *.cabal              |
-| Haskell    | stack       | edit package.yaml         | edit package.yaml          | `stack update`   | `stack ls deps`   | stack.yaml           |
-| Elixir     | mix/hex     | edit mix.exs              | edit mix.exs               | `mix deps.update --all` | `mix deps` | mix.exs         |
-| Julia      | Pkg         | `add <pkg>`               | `rm <pkg>`                 | `update`         | `status`          | Project.toml         |
-| R          | pak         | `pak::pkg_install("pkg")` | `remove.packages("pkg")`   | `pak::pkg_update()` | `installed.packages()` | renv.lock    |
-| Lua        | luarocks    | `luarocks install <rock>` | `luarocks remove <rock>`   | `luarocks upgrade`| `luarocks list`  | rockspec             |
-| Perl       | cpanm       | `cpanm <Module>`          | —                          | `cpanm --self-upgrade` | `cpan -l`   | cpanfile             |
-| Erlang     | rebar3      | edit rebar.config         | edit rebar.config          | `rebar3 upgrade` | `rebar3 pkgs`     | rebar.config         |
-| Nim        | nimble      | `nimble install <pkg>`    | `nimble uninstall <pkg>`   | `nimble refresh` | `nimble list --installed` | *.nimble    |
-| Zig        | zig build   | `zig fetch --save <url>`  | edit build.zig.zon         | —                | —                 | build.zig.zon        |
+| Language | Tool      | Add Package                | Remove Package           | Update All                         | List Installed                    | Config File      |
+| -------- | --------- | -------------------------- | ------------------------ | ---------------------------------- | --------------------------------- | ---------------- |
+| Python   | pip       | `pip install <pkg>`        | `pip uninstall <pkg>`    | `pip install -U`                   | `pip list`                        | requirements.txt |
+| Python   | poetry    | `poetry add <pkg>`         | `poetry remove <pkg>`    | `poetry update`                    | `poetry show`                     | pyproject.toml   |
+| Python   | uv        | `uv add <pkg>`             | `uv remove <pkg>`        | `uv sync`                          | `uv pip list`                     | pyproject.toml   |
+| Python   | conda     | `conda install <pkg>`      | `conda remove <pkg>`     | `conda update --all`               | `conda list`                      | environment.yml  |
+| Rust     | cargo     | `cargo add <pkg>`          | `cargo remove <pkg>`     | `cargo update`                     | `cargo tree`                      | Cargo.toml       |
+| Go       | go        | `go get <pkg>`             | `go mod tidy`            | `go get -u ./..`                   | `go list -m all`                  | go.mod           |
+| Ruby     | gem       | `gem install <gem>`        | `gem uninstall <gem>`    | `gem update`                       | `gem list`                        | Gemfile          |
+| Ruby     | bundler   | `bundle add <gem>`         | `bundle remove <gem>`    | `bundle update`                    | `bundle list`                     | Gemfile.lock     |
+| PHP      | composer  | `composer require <pkg>`   | `composer remove <pkg>`  | `composer update`                  | `composer show`                   | composer.json    |
+| Java     | maven     | edit pom.xml               | edit pom.xml             | `mvn versions:use-latest-releases` | `mvn dependency:list`             | pom.xml          |
+| Java     | gradle    | edit build.gradle          | edit build.gradle        | `gradle dependencyUpdates`         | `gradle dependencies`             | build.gradle     |
+| .NET/C#  | dotnet    | `dotnet add package <pkg>` | `dotnet remove package`  | —                                  | `dotnet list pkg`                 | .csproj          |
+| Swift    | spm       | edit Package.swift         | edit Package.swift       | `swift package update`             | `swift package show-dependencies` | Package.swift    |
+| Dart     | pub       | `dart pub add <pkg>`       | `dart pub remove <pkg>`  | `dart pub upgrade`                 | `dart pub deps`                   | pubspec.yaml     |
+| Haskell  | cabal     | edit .cabal                | edit .cabal              | `cabal update`                     | `cabal list`                      | \*.cabal         |
+| Haskell  | stack     | edit package.yaml          | edit package.yaml        | `stack update`                     | `stack ls deps`                   | stack.yaml       |
+| Elixir   | mix/hex   | edit mix.exs               | edit mix.exs             | `mix deps.update --all`            | `mix deps`                        | mix.exs          |
+| Julia    | Pkg       | `add <pkg>`                | `rm <pkg>`               | `update`                           | `status`                          | Project.toml     |
+| R        | pak       | `pak::pkg_install("pkg")`  | `remove.packages("pkg")` | `pak::pkg_update()`                | `installed.packages()`            | renv.lock        |
+| Lua      | luarocks  | `luarocks install <rock>`  | `luarocks remove <rock>` | `luarocks upgrade`                 | `luarocks list`                   | rockspec         |
+| Perl     | cpanm     | `cpanm <Module>`           | —                        | `cpanm --self-upgrade`             | `cpan -l`                         | cpanfile         |
+| Erlang   | rebar3    | edit rebar.config          | edit rebar.config        | `rebar3 upgrade`                   | `rebar3 pkgs`                     | rebar.config     |
+| Nim      | nimble    | `nimble install <pkg>`     | `nimble uninstall <pkg>` | `nimble refresh`                   | `nimble list --installed`         | \*.nimble        |
+| Zig      | zig build | `zig fetch --save <url>`   | edit build.zig.zon       | —                                  | —                                 | build.zig.zon    |

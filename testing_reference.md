@@ -26,6 +26,7 @@ A practical reference for writing and running tests across popular languages and
 ### Jest
 
 #### Install
+
 ```bash
 npm install --save-dev jest
 # TypeScript support
@@ -33,32 +34,35 @@ npm install --save-dev ts-jest @types/jest
 ```
 
 #### Config (`jest.config.js`)
+
 ```js
 module.exports = {
-  preset: 'ts-jest',        // remove if not using TypeScript
-  testEnvironment: 'node',  // or 'jsdom' for browser-like env
-  coverageDirectory: 'coverage',
-  collectCoverageFrom: ['src/**/*.{ts,js}'],
+	preset: "ts-jest", // remove if not using TypeScript
+	testEnvironment: "node", // or 'jsdom' for browser-like env
+	coverageDirectory: "coverage",
+	collectCoverageFrom: ["src/**/*.{ts,js}"],
 };
 ```
 
 #### Writing Tests
+
 ```js
 // math.test.js
-const { add } = require('./math');
+const { add } = require("./math");
 
-describe('add()', () => {
-  it('returns the sum of two numbers', () => {
-    expect(add(2, 3)).toBe(5);
-  });
+describe("add()", () => {
+	it("returns the sum of two numbers", () => {
+		expect(add(2, 3)).toBe(5);
+	});
 
-  it('handles negative numbers', () => {
-    expect(add(-1, 1)).toBe(0);
-  });
+	it("handles negative numbers", () => {
+		expect(add(-1, 1)).toBe(0);
+	});
 });
 ```
 
 #### Running Tests
+
 ```bash
 npx jest                        # run all tests
 npx jest --watch                # watch mode
@@ -71,62 +75,74 @@ npx jest --runInBand            # run serially (no parallelism)
 ```
 
 #### Matchers Cheat Sheet
+
 ```js
-expect(value).toBe(x)              // strict equality (===)
-expect(value).toEqual(x)           // deep equality
-expect(value).toBeTruthy()
-expect(value).toBeFalsy()
-expect(value).toBeNull()
-expect(value).toBeUndefined()
-expect(value).toContain(item)      // array or string
-expect(value).toHaveLength(n)
-expect(fn).toThrow()               // function throws
-expect(fn).toThrow('message')
-expect(value).toBeGreaterThan(n)
-expect(value).toBeLessThan(n)
-expect(mock).toHaveBeenCalled()
-expect(mock).toHaveBeenCalledWith(args)
-expect(mock).toHaveBeenCalledTimes(n)
+expect(value).toBe(x); // strict equality (===)
+expect(value).toEqual(x); // deep equality
+expect(value).toBeTruthy();
+expect(value).toBeFalsy();
+expect(value).toBeNull();
+expect(value).toBeUndefined();
+expect(value).toContain(item); // array or string
+expect(value).toHaveLength(n);
+expect(fn).toThrow(); // function throws
+expect(fn).toThrow("message");
+expect(value).toBeGreaterThan(n);
+expect(value).toBeLessThan(n);
+expect(mock).toHaveBeenCalled();
+expect(mock).toHaveBeenCalledWith(args);
+expect(mock).toHaveBeenCalledTimes(n);
 ```
 
 #### Mocking
+
 ```js
 // Mock a module
-jest.mock('./api');
+jest.mock("./api");
 
 // Mock a function
 const mockFn = jest.fn().mockReturnValue(42);
-const mockAsync = jest.fn().mockResolvedValue({ data: 'ok' });
+const mockAsync = jest.fn().mockResolvedValue({ data: "ok" });
 
 // Spy on an existing method
-const spy = jest.spyOn(object, 'method');
+const spy = jest.spyOn(object, "method");
 
 // Clear mocks between tests
 afterEach(() => jest.clearAllMocks());
 ```
 
 #### Async Tests
+
 ```js
 // async/await
-it('fetches data', async () => {
-  const data = await fetchData();
-  expect(data).toEqual({ id: 1 });
+it("fetches data", async () => {
+	const data = await fetchData();
+	expect(data).toEqual({ id: 1 });
 });
 
 // Promise
-it('resolves correctly', () => {
-  return fetchData().then(data => {
-    expect(data).toEqual({ id: 1 });
-  });
+it("resolves correctly", () => {
+	return fetchData().then((data) => {
+		expect(data).toEqual({ id: 1 });
+	});
 });
 ```
 
 #### Lifecycle Hooks
+
 ```js
-beforeAll(() => { /* runs once before all tests in block */ });
-afterAll(() => { /* runs once after all tests in block */ });
-beforeEach(() => { /* runs before each test */ });
-afterEach(() => { /* runs after each test */ });
+beforeAll(() => {
+	/* runs once before all tests in block */
+});
+afterAll(() => {
+	/* runs once after all tests in block */
+});
+beforeEach(() => {
+	/* runs before each test */
+});
+afterEach(() => {
+	/* runs after each test */
+});
 ```
 
 ---
@@ -136,37 +152,41 @@ afterEach(() => { /* runs after each test */ });
 > Drop-in Jest replacement for Vite projects. Faster, ESM-native.
 
 #### Install
+
 ```bash
 npm install --save-dev vitest
 ```
 
 #### Config (`vite.config.ts` or `vitest.config.ts`)
+
 ```ts
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  test: {
-    environment: 'node', // or 'jsdom', 'happy-dom'
-    coverage: {
-      reporter: ['text', 'html'],
-    },
-  },
+	test: {
+		environment: "node", // or 'jsdom', 'happy-dom'
+		coverage: {
+			reporter: ["text", "html"],
+		},
+	},
 });
 ```
 
 #### Writing Tests
-```ts
-import { describe, it, expect, vi } from 'vitest';
-import { add } from './math';
 
-describe('add()', () => {
-  it('returns the sum', () => {
-    expect(add(2, 3)).toBe(5);
-  });
+```ts
+import { describe, it, expect, vi } from "vitest";
+import { add } from "./math";
+
+describe("add()", () => {
+	it("returns the sum", () => {
+		expect(add(2, 3)).toBe(5);
+	});
 });
 ```
 
 #### Running Tests
+
 ```bash
 npx vitest              # watch mode by default
 npx vitest run          # single run (CI mode)
@@ -177,13 +197,14 @@ npx vitest ui           # browser UI
 ```
 
 #### Mocking (Vitest)
-```ts
-import { vi } from 'vitest';
 
-vi.mock('./api');                          // auto-mock module
+```ts
+import { vi } from "vitest";
+
+vi.mock("./api"); // auto-mock module
 const mockFn = vi.fn().mockReturnValue(1);
-vi.spyOn(object, 'method');
-vi.useFakeTimers();                        // fake timers
+vi.spyOn(object, "method");
+vi.useFakeTimers(); // fake timers
 vi.useRealTimers();
 ```
 
@@ -192,23 +213,26 @@ vi.useRealTimers();
 ### Mocha
 
 #### Install
+
 ```bash
 npm install --save-dev mocha chai
 ```
 
 #### Writing Tests
-```js
-const { expect } = require('chai');
-const { add } = require('./math');
 
-describe('add()', () => {
-  it('returns the sum', () => {
-    expect(add(2, 3)).to.equal(5);
-  });
+```js
+const { expect } = require("chai");
+const { add } = require("./math");
+
+describe("add()", () => {
+	it("returns the sum", () => {
+		expect(add(2, 3)).to.equal(5);
+	});
 });
 ```
 
 #### Running Tests
+
 ```bash
 npx mocha                        # looks for test/ folder
 npx mocha 'src/**/*.test.js'     # glob pattern
@@ -223,6 +247,7 @@ npx mocha --reporter spec        # output format
 ### Playwright (E2E)
 
 #### Install
+
 ```bash
 npm init playwright@latest
 # or manually:
@@ -231,23 +256,25 @@ npx playwright install            # download browsers
 ```
 
 #### Writing Tests
+
 ```ts
 // tests/home.spec.ts
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('homepage has title', async ({ page }) => {
-  await page.goto('http://localhost:3000');
-  await expect(page).toHaveTitle(/My App/);
+test("homepage has title", async ({ page }) => {
+	await page.goto("http://localhost:3000");
+	await expect(page).toHaveTitle(/My App/);
 });
 
-test('button click', async ({ page }) => {
-  await page.goto('/');
-  await page.getByRole('button', { name: 'Submit' }).click();
-  await expect(page.getByText('Success')).toBeVisible();
+test("button click", async ({ page }) => {
+	await page.goto("/");
+	await page.getByRole("button", { name: "Submit" }).click();
+	await expect(page.getByText("Success")).toBeVisible();
 });
 ```
 
 #### Running Tests
+
 ```bash
 npx playwright test                     # run all tests
 npx playwright test --headed            # show browser window
@@ -260,21 +287,22 @@ npx playwright codegen http://localhost # record test by clicking
 ```
 
 #### Config (`playwright.config.ts`)
+
 ```ts
-import { defineConfig } from '@playwright/test';
+import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
-  testDir: './tests',
-  use: {
-    baseURL: 'http://localhost:3000',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-  },
-  projects: [
-    { name: 'chromium', use: { browserName: 'chromium' } },
-    { name: 'firefox',  use: { browserName: 'firefox' } },
-    { name: 'webkit',   use: { browserName: 'webkit' } },
-  ],
+	testDir: "./tests",
+	use: {
+		baseURL: "http://localhost:3000",
+		screenshot: "only-on-failure",
+		video: "retain-on-failure",
+	},
+	projects: [
+		{ name: "chromium", use: { browserName: "chromium" } },
+		{ name: "firefox", use: { browserName: "firefox" } },
+		{ name: "webkit", use: { browserName: "webkit" } },
+	],
 });
 ```
 
@@ -283,30 +311,33 @@ export default defineConfig({
 ### Cypress (E2E)
 
 #### Install
+
 ```bash
 npm install --save-dev cypress
 npx cypress open    # first-time setup wizard
 ```
 
 #### Writing Tests
+
 ```js
 // cypress/e2e/home.cy.js
-describe('Homepage', () => {
-  it('displays the title', () => {
-    cy.visit('/');
-    cy.get('h1').should('contain', 'Welcome');
-  });
+describe("Homepage", () => {
+	it("displays the title", () => {
+		cy.visit("/");
+		cy.get("h1").should("contain", "Welcome");
+	});
 
-  it('submits the form', () => {
-    cy.visit('/contact');
-    cy.get('[data-cy=email]').type('test@example.com');
-    cy.get('[data-cy=submit]').click();
-    cy.contains('Thank you').should('be.visible');
-  });
+	it("submits the form", () => {
+		cy.visit("/contact");
+		cy.get("[data-cy=email]").type("test@example.com");
+		cy.get("[data-cy=submit]").click();
+		cy.contains("Thank you").should("be.visible");
+	});
 });
 ```
 
 #### Running Tests
+
 ```bash
 npx cypress open                    # interactive GUI
 npx cypress run                     # headless (CI)
@@ -322,11 +353,13 @@ npx cypress run --headed            # headed mode in CI
 ### pytest
 
 #### Install
+
 ```bash
 pip install pytest pytest-cov
 ```
 
 #### Writing Tests
+
 ```python
 # test_math.py
 from math_utils import add
@@ -346,6 +379,7 @@ class TestAdd:
 ```
 
 #### Running Tests
+
 ```bash
 pytest                          # run all tests
 pytest test_math.py             # single file
@@ -362,6 +396,7 @@ pytest -s                       # show print() output
 ```
 
 #### Fixtures
+
 ```python
 import pytest
 
@@ -381,6 +416,7 @@ def test_query(db_connection):
 ```
 
 #### Parametrize
+
 ```python
 @pytest.mark.parametrize("a,b,expected", [
     (1, 2, 3),
@@ -392,6 +428,7 @@ def test_add(a, b, expected):
 ```
 
 #### Marks & Skip
+
 ```python
 @pytest.mark.skip(reason="not implemented yet")
 def test_future():
@@ -414,12 +451,14 @@ def test_heavy():
 ```
 
 #### Config (`pytest.ini` or `pyproject.toml`)
+
 ```ini
 # pytest.ini
 [pytest]
 testpaths = tests
 addopts = -v --tb=short
 ```
+
 ```toml
 # pyproject.toml
 [tool.pytest.ini_options]
@@ -432,6 +471,7 @@ addopts = "-v --tb=short"
 ### unittest
 
 #### Writing Tests
+
 ```python
 import unittest
 from math_utils import add
@@ -461,6 +501,7 @@ if __name__ == '__main__':
 ```
 
 #### Running Tests
+
 ```bash
 python -m unittest                       # discover all tests
 python -m unittest test_math             # single module
@@ -475,6 +516,7 @@ python -m unittest -v                    # verbose
 ## Go
 
 #### Writing Tests
+
 ```go
 // math_test.go
 package math
@@ -514,6 +556,7 @@ func BenchmarkAdd(b *testing.B) {
 ```
 
 #### Running Tests
+
 ```bash
 go test ./...                   # all packages recursively
 go test .                       # current package
@@ -533,6 +576,7 @@ go test -timeout 30s ./...      # set timeout
 ## Rust
 
 #### Writing Tests
+
 ```rust
 // src/math.rs
 pub fn add(a: i32, b: i32) -> i32 {
@@ -567,6 +611,7 @@ mod tests {
 ```
 
 #### Integration Tests
+
 ```rust
 // tests/integration_test.rs  (separate file, not inside src/)
 use my_crate::add;
@@ -578,6 +623,7 @@ fn test_add_integration() {
 ```
 
 #### Running Tests
+
 ```bash
 cargo test                      # run all tests
 cargo test test_add             # filter by name
@@ -595,13 +641,13 @@ cargo bench                     # run benchmarks
 
 ### Test Types
 
-| Type          | Purpose                              | Speed    |
-|---------------|--------------------------------------|----------|
-| Unit          | Test a single function/class         | Fast     |
-| Integration   | Test multiple components together    | Medium   |
-| E2E / UI      | Test full user flows in browser      | Slow     |
-| Snapshot      | Detect unintended UI changes         | Fast     |
-| Performance   | Measure speed and resource usage     | Variable |
+| Type        | Purpose                           | Speed    |
+| ----------- | --------------------------------- | -------- |
+| Unit        | Test a single function/class      | Fast     |
+| Integration | Test multiple components together | Medium   |
+| E2E / UI    | Test full user flows in browser   | Slow     |
+| Snapshot    | Detect unintended UI changes      | Fast     |
+| Performance | Measure speed and resource usage  | Variable |
 
 ### Test Structure (AAA Pattern)
 
@@ -610,15 +656,16 @@ Arrange → Act → Assert
 ```
 
 ```js
-it('adds two numbers', () => {
-  // Arrange
-  const a = 2, b = 3;
+it("adds two numbers", () => {
+	// Arrange
+	const a = 2,
+		b = 3;
 
-  // Act
-  const result = add(a, b);
+	// Act
+	const result = add(a, b);
 
-  // Assert
-  expect(result).toBe(5);
+	// Assert
+	expect(result).toBe(5);
 });
 ```
 
@@ -634,13 +681,13 @@ describe('add') > it('returns 0 when both inputs are negative')
 
 ### Coverage Goals
 
-| Coverage %  | Meaning                              |
-|-------------|--------------------------------------|
-| < 50%       | Likely undertested                   |
-| 60–80%      | Acceptable for most projects         |
-| 80–90%      | Good — aim for this                  |
-| > 90%       | High confidence, diminishing returns |
-| 100%        | Often impractical; can hide bad tests|
+| Coverage % | Meaning                               |
+| ---------- | ------------------------------------- |
+| < 50%      | Likely undertested                    |
+| 60–80%     | Acceptable for most projects          |
+| 80–90%     | Good — aim for this                   |
+| > 90%      | High confidence, diminishing returns  |
+| 100%       | Often impractical; can hide bad tests |
 
 ### CI Integration (GitHub Actions example)
 
@@ -664,13 +711,13 @@ jobs:
 
 ### Common Flags Summary
 
-| Flag              | Jest       | pytest      | Go           |
-|-------------------|------------|-------------|--------------|
-| Verbose           | `--verbose`| `-v`        | `-v`         |
-| Filter by name    | `-t`       | `-k`        | `-run`       |
-| Coverage          | `--coverage`| `--cov`   | `-cover`     |
-| Stop on failure   | `--bail`   | `-x`        | (default)    |
-| Watch mode        | `--watch`  | `--watch` * | N/A          |
-| Parallel          | (default)  | `-n 4` *    | (default)    |
+| Flag            | Jest         | pytest       | Go        |
+| --------------- | ------------ | ------------ | --------- |
+| Verbose         | `--verbose`  | `-v`         | `-v`      |
+| Filter by name  | `-t`         | `-k`         | `-run`    |
+| Coverage        | `--coverage` | `--cov`      | `-cover`  |
+| Stop on failure | `--bail`     | `-x`         | (default) |
+| Watch mode      | `--watch`    | `--watch` \* | N/A       |
+| Parallel        | (default)    | `-n 4` \*    | (default) |
 
 \* requires extra package (`pytest-watch`, `pytest-xdist`)

@@ -601,60 +601,60 @@ helm package ./mychart                              # Package into .tgz
 
 ### Docker Run — Common Flags
 
-| Flag | Purpose |
-|------|---------|
-| `-d` | Detached (background) |
-| `-it` | Interactive + TTY |
-| `--rm` | Auto-remove on exit |
-| `-p host:container` | Port mapping |
-| `-e KEY=val` | Environment variable |
-| `-v src:dst` | Volume / bind mount |
-| `--name` | Container name |
-| `--network` | Attach to network |
-| `--restart` | Restart policy (`no`, `always`, `unless-stopped`, `on-failure`) |
-| `--cpus` / `--memory` | Resource limits |
-| `--user` | Run as UID:GID |
-| `--read-only` | Immutable root fs |
+| Flag                  | Purpose                                                         |
+| --------------------- | --------------------------------------------------------------- |
+| `-d`                  | Detached (background)                                           |
+| `-it`                 | Interactive + TTY                                               |
+| `--rm`                | Auto-remove on exit                                             |
+| `-p host:container`   | Port mapping                                                    |
+| `-e KEY=val`          | Environment variable                                            |
+| `-v src:dst`          | Volume / bind mount                                             |
+| `--name`              | Container name                                                  |
+| `--network`           | Attach to network                                               |
+| `--restart`           | Restart policy (`no`, `always`, `unless-stopped`, `on-failure`) |
+| `--cpus` / `--memory` | Resource limits                                                 |
+| `--user`              | Run as UID:GID                                                  |
+| `--read-only`         | Immutable root fs                                               |
 
 ---
 
 ### kubectl — Resource Short Names
 
-| Resource | Short Name |
-|----------|-----------|
-| `pods` | `po` |
-| `services` | `svc` |
-| `deployments` | `deploy` |
-| `replicasets` | `rs` |
-| `namespaces` | `ns` |
-| `nodes` | `no` |
-| `configmaps` | `cm` |
-| `persistentvolumeclaims` | `pvc` |
-| `persistentvolumes` | `pv` |
-| `cronjobs` | `cj` |
-| `horizontalpodautoscalers` | `hpa` |
-| `ingresses` | `ing` |
-| `storageclasses` | `sc` |
-| `serviceaccounts` | `sa` |
+| Resource                   | Short Name |
+| -------------------------- | ---------- |
+| `pods`                     | `po`       |
+| `services`                 | `svc`      |
+| `deployments`              | `deploy`   |
+| `replicasets`              | `rs`       |
+| `namespaces`               | `ns`       |
+| `nodes`                    | `no`       |
+| `configmaps`               | `cm`       |
+| `persistentvolumeclaims`   | `pvc`      |
+| `persistentvolumes`        | `pv`       |
+| `cronjobs`                 | `cj`       |
+| `horizontalpodautoscalers` | `hpa`      |
+| `ingresses`                | `ing`      |
+| `storageclasses`           | `sc`       |
+| `serviceaccounts`          | `sa`       |
 
 ---
 
 ### Service Types
 
-| Type | Accessibility |
-|------|--------------|
-| `ClusterIP` | Internal only (cluster-local DNS) |
-| `NodePort` | Exposed on every node's IP at a static port (30000–32767) |
-| `LoadBalancer` | External load balancer (cloud provider) |
-| `ExternalName` | DNS alias to external hostname |
+| Type           | Accessibility                                             |
+| -------------- | --------------------------------------------------------- |
+| `ClusterIP`    | Internal only (cluster-local DNS)                         |
+| `NodePort`     | Exposed on every node's IP at a static port (30000–32767) |
+| `LoadBalancer` | External load balancer (cloud provider)                   |
+| `ExternalName` | DNS alias to external hostname                            |
 
 ---
 
 ### Container Restart Policies
 
-| Policy | Behavior |
-|--------|---------|
-| `no` | Never restart (default) |
-| `always` | Always restart, including on daemon start |
+| Policy           | Behavior                                     |
+| ---------------- | -------------------------------------------- |
+| `no`             | Never restart (default)                      |
+| `always`         | Always restart, including on daemon start    |
 | `unless-stopped` | Restart always, except when manually stopped |
 | `on-failure[:N]` | Restart only on non-zero exit, up to N times |

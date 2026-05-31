@@ -177,14 +177,14 @@ git reflog                                   # Show history of HEAD movements
 
 > **Safe** operations create new commits and don't rewrite history. **Destructive** operations rewrite history — avoid on shared branches.
 
-| Command | Safe? | Effect |
-|---|---|---|
-| `git revert <commit>` | ✅ Safe | Creates a new undo commit |
-| `git reset --soft HEAD~1` | ⚠️ Local only | Undo commit, keep staged |
-| `git reset --mixed HEAD~1` | ⚠️ Local only | Undo commit, keep unstaged |
-| `git reset --hard HEAD~1` | ❌ Destructive | Undo commit, discard changes |
-| `git restore <file>` | ✅ Safe | Discard unstaged changes |
-| `git clean -fd` | ❌ Destructive | Remove untracked files permanently |
+| Command                    | Safe?          | Effect                             |
+| -------------------------- | -------------- | ---------------------------------- |
+| `git revert <commit>`      | ✅ Safe        | Creates a new undo commit          |
+| `git reset --soft HEAD~1`  | ⚠️ Local only  | Undo commit, keep staged           |
+| `git reset --mixed HEAD~1` | ⚠️ Local only  | Undo commit, keep unstaged         |
+| `git reset --hard HEAD~1`  | ❌ Destructive | Undo commit, discard changes       |
+| `git restore <file>`       | ✅ Safe        | Discard unstaged changes           |
+| `git clean -fd`            | ❌ Destructive | Remove untracked files permanently |
 
 ```bash
 git revert <commit>                          # Create undo commit (safe)
@@ -286,15 +286,15 @@ docs/**/*.pdf
 
 ### Pattern rules
 
-| Pattern | Meaning |
-|---|---|
-| `*` | Matches any string except `/` |
-| `**` | Matches any path including `/` |
-| `?` | Matches any single character |
-| `[abc]` | Matches one of the characters in brackets |
-| `!pattern` | Negates a pattern (un-ignores a file) |
-| `trailing/` | Matches directories only |
-| `leading/` | Anchors pattern to repo root |
+| Pattern     | Meaning                                   |
+| ----------- | ----------------------------------------- |
+| `*`         | Matches any string except `/`             |
+| `**`        | Matches any path including `/`            |
+| `?`         | Matches any single character              |
+| `[abc]`     | Matches one of the characters in brackets |
+| `!pattern`  | Negates a pattern (un-ignores a file)     |
+| `trailing/` | Matches directories only                  |
+| `leading/`  | Anchors pattern to repo root              |
 
 ### Common `.gitignore` templates
 
@@ -411,12 +411,12 @@ git add .
 
 ### `.gitignore` vs other ignore files
 
-| File | Scope | Committed? | Use case |
-|---|---|---|---|
-| `.gitignore` | Repo (shared) | ✅ Yes | Rules everyone on the team should share |
-| `.git/info/exclude` | Repo (local) | ❌ No | Personal rules for this repo only |
-| `~/.gitignore_global` | System-wide | ❌ No | Rules for all repos on your machine |
+| File                  | Scope         | Committed? | Use case                                |
+| --------------------- | ------------- | ---------- | --------------------------------------- |
+| `.gitignore`          | Repo (shared) | ✅ Yes     | Rules everyone on the team should share |
+| `.git/info/exclude`   | Repo (local)  | ❌ No      | Personal rules for this repo only       |
+| `~/.gitignore_global` | System-wide   | ❌ No      | Rules for all repos on your machine     |
 
 ---
 
-*Reference guide — Git 2.x and above.*
+_Reference guide — Git 2.x and above._

@@ -1,4 +1,5 @@
 # 🐧 Linux Terminal Commands
+
 > Complete command & flag reference
 
 **394 commands** across **24 categories** — Generated May 30, 2026
@@ -48,14 +49,14 @@ ls [opts] [path]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | hidden |
-| `-l` | long |
-| `-h` | sizes |
-| `-R` | recurse |
-| `-t` | by time |
-| `--color` | colorize |
+| Flag      | Description |
+| --------- | ----------- |
+| `-a`      | hidden      |
+| `-l`      | long        |
+| `-h`      | sizes       |
+| `-R`      | recurse     |
+| `-t`      | by time     |
+| `--color` | colorize    |
 
 ---
 
@@ -71,11 +72,11 @@ cd [path]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `~` | home |
-| `..` | parent |
-| `-` | previous dir |
+| Flag | Description  |
+| ---- | ------------ |
+| `~`  | home         |
+| `..` | parent       |
+| `-`  | previous dir |
 
 ---
 
@@ -91,9 +92,9 @@ pwd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-L` | logical path |
+| Flag | Description   |
+| ---- | ------------- |
+| `-L` | logical path  |
 | `-P` | physical path |
 
 ---
@@ -135,8 +136,8 @@ dirs
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-v` | numbered |
+| ---- | ----------- |
+| `-v` | numbered    |
 | `-c` | clear stack |
 
 ---
@@ -154,11 +155,11 @@ tree [path]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-L` | depth |
-| `-a` | hidden |
-| `-d` | dirs only |
-| `-f` | full paths |
+| ---- | ----------- |
+| `-L` | depth       |
+| `-a` | hidden      |
+| `-d` | dirs only   |
+| `-f` | full paths  |
 
 ---
 
@@ -175,9 +176,9 @@ realpath [path]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-m` | missing ok |
-| `-q` | quiet |
+| ---- | ----------- |
+| `-m` | missing ok  |
+| `-q` | quiet       |
 
 ---
 
@@ -205,7 +206,6 @@ dirname path
 
 ---
 
-
 ## Files
 
 ### `cp`
@@ -221,13 +221,13 @@ cp [opts] src dst
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-r` | recurse |
-| `-p` | preserve |
+| ---- | ----------- |
+| `-r` | recurse     |
+| `-p` | preserve    |
 | `-u` | update only |
-| `-v` | verbose |
+| `-v` | verbose     |
 | `-i` | interactive |
-| `-l` | hardlink |
+| `-l` | hardlink    |
 
 ---
 
@@ -243,11 +243,11 @@ mv [opts] src dst
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-i` | interactive |
-| `-u` | update only |
-| `-v` | verbose |
+| Flag | Description  |
+| ---- | ------------ |
+| `-i` | interactive  |
+| `-u` | update only  |
+| `-v` | verbose      |
 | `-n` | no overwrite |
 
 ---
@@ -264,13 +264,13 @@ rm [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-r` | recursive |
-| `-f` | force |
-| `-i` | interactive |
-| `-v` | verbose |
-| `--preserve-root` | — |
+| Flag              | Description |
+| ----------------- | ----------- |
+| `-r`              | recursive   |
+| `-f`              | force       |
+| `-i`              | interactive |
+| `-v`              | verbose     |
+| `--preserve-root` | —           |
 
 ---
 
@@ -287,10 +287,10 @@ mkdir [opts] dir
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-p` | parents |
-| `-m` | mode |
-| `-v` | verbose |
+| ---- | ----------- |
+| `-p` | parents     |
+| `-m` | mode        |
+| `-v` | verbose     |
 
 ---
 
@@ -306,10 +306,10 @@ rmdir dir
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--ignore-fail-on-non-empty` | — |
-| `-p` | parents |
+| Flag                         | Description |
+| ---------------------------- | ----------- |
+| `--ignore-fail-on-non-empty` | —           |
+| `-p`                         | parents     |
 
 ---
 
@@ -326,11 +326,11 @@ touch file
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-a` | access time |
 | `-m` | modify time |
-| `-t` | timestamp |
-| `-c` | no create |
+| `-t` | timestamp   |
+| `-c` | no create   |
 
 ---
 
@@ -347,11 +347,11 @@ ln [opts] src dst
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-s` | symbolic |
-| `-f` | force |
-| `-v` | verbose |
-| `-b` | backup |
+| ---- | ----------- |
+| `-s` | symbolic    |
+| `-f` | force       |
+| `-v` | verbose     |
+| `-b` | backup      |
 
 ---
 
@@ -368,9 +368,9 @@ rename 's/old/new/' files
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | dry run |
-| `-v` | verbose |
+| ---- | ----------- |
+| `-n` | dry run     |
+| `-v` | verbose     |
 
 ---
 
@@ -387,11 +387,11 @@ install [opts] src dst
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-m` | mode |
-| `-o` | owner |
-| `-g` | group |
-| `-d` | create dir |
+| ---- | ----------- |
+| `-m` | mode        |
+| `-o` | owner       |
+| `-g` | group       |
+| `-d` | create dir  |
 
 ---
 
@@ -407,11 +407,11 @@ shred [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description  |
+| ---- | ------------ |
 | `-u` | remove after |
-| `-n` | passes |
-| `-z` | zero final |
+| `-n` | passes       |
+| `-z` | zero final   |
 
 ---
 
@@ -428,9 +428,9 @@ truncate -s size file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-s` | size |
-| `-r` | ref file |
+| ---- | ----------- |
+| `-s` | size        |
+| `-r` | ref file    |
 
 ---
 
@@ -447,10 +447,10 @@ mktemp [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | create dir |
-| `-p` | dir |
-| `-t` | template |
+| ---- | ----------- |
+| `-d` | create dir  |
+| `-p` | dir         |
+| `-t` | template    |
 
 ---
 
@@ -467,9 +467,9 @@ file file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-b` | brief |
-| `-i` | MIME type |
+| ---- | ----------- |
+| `-b` | brief       |
+| `-i` | MIME type   |
 | `-L` | follow link |
 
 ---
@@ -486,10 +486,10 @@ stat file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-c` | format |
-| `-L` | follow link |
+| Flag | Description     |
+| ---- | --------------- |
+| `-c` | format          |
+| `-L` | follow link     |
 | `-f` | filesystem info |
 
 ---
@@ -506,10 +506,10 @@ readlink [opts] link
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-f` | canonicalize |
-| `-e` | must exist |
+| Flag | Description      |
+| ---- | ---------------- |
+| `-f` | canonicalize     |
+| `-e` | must exist       |
 | `-m` | tolerate missing |
 
 ---
@@ -527,15 +527,14 @@ lsof [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-u` | user |
-| `-p` | PID |
-| `-i` | network |
-| `+d` | dir |
-| `-t` | terse |
+| ---- | ----------- |
+| `-u` | user        |
+| `-p` | PID         |
+| `-i` | network     |
+| `+d` | dir         |
+| `-t` | terse       |
 
 ---
-
 
 ## Text
 
@@ -551,11 +550,11 @@ cat [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-n` | line numbers |
-| `-A` | show special |
-| `-s` | squeeze blanks |
+| Flag | Description      |
+| ---- | ---------------- |
+| `-n` | line numbers     |
+| `-A` | show special     |
+| `-s` | squeeze blanks   |
 | `-b` | number non-blank |
 
 ---
@@ -584,13 +583,13 @@ less [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-N` | numbers |
-| `-S` | chop lines |
-| `-R` | color |
+| Flag | Description      |
+| ---- | ---------------- |
+| `-N` | numbers          |
+| `-S` | chop lines       |
+| `-R` | color            |
 | `-F` | quit if 1 screen |
-| `-X` | no clear |
+| `-X` | no clear         |
 
 ---
 
@@ -619,10 +618,10 @@ head [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | lines |
-| `-c` | bytes |
-| `-q` | quiet |
+| ---- | ----------- |
+| `-n` | lines       |
+| `-c` | bytes       |
+| `-q` | quiet       |
 
 ---
 
@@ -638,12 +637,12 @@ tail [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-n` | lines |
-| `-f` | follow |
-| `-c` | bytes |
-| `--retry` | — |
+| Flag      | Description |
+| --------- | ----------- |
+| `-n`      | lines       |
+| `-f`      | follow      |
+| `-c`      | bytes       |
+| `--retry` | —           |
 
 ---
 
@@ -659,19 +658,19 @@ grep [opts] pattern file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-r` | recurse |
-| `-i` | ignore case |
-| `-n` | line nums |
-| `-v` | invert |
-| `-l` | files only |
-| `-c` | count |
-| `-E` | extended regex |
-| `-P` | perl regex |
-| `-A/B/C` | context |
-| `-o` | only match |
-| `--color` | — |
+| Flag      | Description    |
+| --------- | -------------- |
+| `-r`      | recurse        |
+| `-i`      | ignore case    |
+| `-n`      | line nums      |
+| `-v`      | invert         |
+| `-l`      | files only     |
+| `-c`      | count          |
+| `-E`      | extended regex |
+| `-P`      | perl regex     |
+| `-A/B/C`  | context        |
+| `-o`      | only match     |
+| `--color` | —              |
 
 ---
 
@@ -711,12 +710,12 @@ sed 's/old/new/g' file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-i` | in-place |
-| `-n` | suppress |
-| `-e` | expression |
-| `-f` | script |
+| Flag | Description    |
+| ---- | -------------- |
+| `-i` | in-place       |
+| `-n` | suppress       |
+| `-e` | expression     |
+| `-f` | script         |
 | `-r` | extended regex |
 
 ---
@@ -733,11 +732,11 @@ awk '{print $1}' file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-F` | separator |
-| `-v` | variable |
-| `-f` | script |
+| Flag  | Description |
+| ----- | ----------- |
+| `-F`  | separator   |
+| `-v`  | variable    |
+| `-f`  | script      |
 | `-NR` | line number |
 
 ---
@@ -754,15 +753,15 @@ sort [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-n` | numeric |
-| `-r` | reverse |
-| `-u` | unique |
-| `-k` | key |
-| `-t` | delimiter |
+| Flag | Description   |
+| ---- | ------------- |
+| `-n` | numeric       |
+| `-r` | reverse       |
+| `-u` | unique        |
+| `-k` | key           |
+| `-t` | delimiter     |
 | `-h` | human numeric |
-| `-R` | random |
+| `-R` | random        |
 
 ---
 
@@ -779,9 +778,9 @@ uniq [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-c` | count |
-| `-d` | show dupes |
+| ---- | ----------- |
+| `-c` | count       |
+| `-d` | show dupes  |
 | `-u` | unique only |
 | `-i` | ignore case |
 
@@ -800,11 +799,11 @@ wc [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | lines |
-| `-w` | words |
-| `-c` | bytes |
-| `-m` | chars |
+| ---- | ----------- |
+| `-l` | lines       |
+| `-w` | words       |
+| `-c` | bytes       |
+| `-m` | chars       |
 
 ---
 
@@ -820,12 +819,12 @@ cut [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-d` | delimiter |
-| `-f` | fields |
-| `-c` | characters |
-| `--complement` | — |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-d`           | delimiter   |
+| `-f`           | fields      |
+| `-c`           | characters  |
+| `--complement` | —           |
 
 ---
 
@@ -842,9 +841,9 @@ paste file1 file2
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | delimiter |
-| `-s` | serial |
+| ---- | ----------- |
+| `-d` | delimiter   |
+| `-s` | serial      |
 
 ---
 
@@ -861,10 +860,10 @@ join file1 file2
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-1` | field1 |
-| `-2` | field2 |
-| `-t` | separator |
+| ---- | ----------- |
+| `-1` | field1      |
+| `-2` | field2      |
+| `-t` | separator   |
 
 ---
 
@@ -881,10 +880,10 @@ tr set1 set2
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | delete |
-| `-s` | squeeze |
-| `-c` | complement |
+| ---- | ----------- |
+| `-d` | delete      |
+| `-s` | squeeze     |
+| `-c` | complement  |
 
 ---
 
@@ -900,9 +899,9 @@ fold -w N file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-w` | width |
+| Flag | Description   |
+| ---- | ------------- |
+| `-w` | width         |
 | `-s` | word boundary |
 
 ---
@@ -919,9 +918,9 @@ fmt [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-w` | width |
+| Flag | Description     |
+| ---- | --------------- |
+| `-w` | width           |
 | `-u` | uniform spacing |
 
 ---
@@ -939,9 +938,9 @@ column [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-t` | table |
-| `-s` | separator |
+| ---- | ----------- |
+| `-t` | table       |
+| `-s` | separator   |
 | `-R` | right align |
 
 ---
@@ -959,10 +958,10 @@ pr [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-h` | header |
-| `-n` | number |
-| `-N` | page start |
+| ---- | ----------- |
+| `-h` | header      |
+| `-n` | number      |
+| `-N` | page start  |
 
 ---
 
@@ -978,13 +977,13 @@ diff [opts] file1 file2
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-u` | unified |
-| `-r` | recursive |
-| `-i` | ignore case |
-| `-w` | ignore whitespace |
-| `--brief` | — |
+| Flag      | Description       |
+| --------- | ----------------- |
+| `-u`      | unified           |
+| `-r`      | recursive         |
+| `-i`      | ignore case       |
+| `-w`      | ignore whitespace |
+| `--brief` | —                 |
 
 ---
 
@@ -1001,11 +1000,11 @@ patch [opts] [file] < patch
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-p` | strip level |
-| `-R` | reverse |
-| `-b` | backup |
-| `-d` | dir |
+| `-R` | reverse     |
+| `-b` | backup      |
+| `-d` | dir         |
 
 ---
 
@@ -1033,8 +1032,8 @@ comm file1 file2
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description   |
+| ---- | ------------- |
 | `-1` | suppress col1 |
 | `-2` | suppress col2 |
 | `-3` | suppress col3 |
@@ -1054,8 +1053,8 @@ cmd | tee file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-a` | append |
+| ---- | ----------- |
+| `-a` | append      |
 
 ---
 
@@ -1072,12 +1071,12 @@ cmd | xargs [cmd]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | max args |
+| ---- | ----------- |
+| `-n` | max args    |
 | `-I` | replace str |
-| `-0` | null sep |
-| `-P` | parallel |
-| `-t` | trace |
+| `-0` | null sep    |
+| `-P` | parallel    |
+| `-t` | trace       |
 
 ---
 
@@ -1094,9 +1093,9 @@ strings [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | min len |
-| `-o` | offsets |
+| ---- | ----------- |
+| `-n` | min len     |
+| `-o` | offsets     |
 
 ---
 
@@ -1113,9 +1112,9 @@ hexdump [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-C` | canonical |
-| `-n` | count |
+| ---- | ----------- |
+| `-C` | canonical   |
+| `-n` | count       |
 
 ---
 
@@ -1132,10 +1131,10 @@ od [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-x` | hex |
-| `-d` | decimal |
-| `-c` | chars |
+| ---- | ----------- |
+| `-x` | hex         |
+| `-d` | decimal     |
+| `-c` | chars       |
 | `-A` | addr format |
 
 ---
@@ -1152,15 +1151,14 @@ iconv -f from -t to file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description   |
+| ---- | ------------- |
 | `-f` | from encoding |
-| `-t` | to encoding |
-| `-o` | output file |
-| `-l` | list codecs |
+| `-t` | to encoding   |
+| `-o` | output file   |
+| `-l` | list codecs   |
 
 ---
-
 
 ## Search
 
@@ -1176,18 +1174,18 @@ find [path] [expr]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-name` | by name |
-| `-iname` | case insensitive |
-| `-type` | f/d/l |
-| `-mtime` | modified |
-| `-size` | size |
-| `-user` | owner |
-| `-perm` | permissions |
-| `-exec` | run cmd |
-| `!` | negate |
-| `-maxdepth` | limit depth |
+| Flag        | Description      |
+| ----------- | ---------------- |
+| `-name`     | by name          |
+| `-iname`    | case insensitive |
+| `-type`     | f/d/l            |
+| `-mtime`    | modified         |
+| `-size`     | size             |
+| `-user`     | owner            |
+| `-perm`     | permissions      |
+| `-exec`     | run cmd          |
+| `!`         | negate           |
+| `-maxdepth` | limit depth      |
 
 ---
 
@@ -1203,13 +1201,13 @@ locate pattern
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description      |
+| ---- | ---------------- |
 | `-i` | case insensitive |
-| `-n` | limit |
-| `-e` | check exists |
-| `-r` | regex |
-| `-c` | count |
+| `-n` | limit            |
+| `-e` | check exists     |
+| `-r` | regex            |
+| `-c` | count            |
 
 ---
 
@@ -1225,10 +1223,10 @@ updatedb
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--output` | file |
-| `--prunepaths` | exclude |
+| Flag           | Description |
+| -------------- | ----------- |
+| `--output`     | file        |
+| `--prunepaths` | exclude     |
 
 ---
 
@@ -1245,7 +1243,7 @@ which cmd
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-a` | all matches |
 
 ---
@@ -1263,7 +1261,7 @@ whereis cmd
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-b` | binary only |
 | `-m` | manual only |
 | `-s` | source only |
@@ -1282,11 +1280,11 @@ type name
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description   |
+| ---- | ------------- |
 | `-a` | all locations |
-| `-t` | type |
-| `-P` | path only |
+| `-t` | type          |
+| `-P` | path only     |
 
 ---
 
@@ -1314,13 +1312,12 @@ apropos keyword
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description     |
+| ---- | --------------- |
 | `-a` | all words match |
-| `-l` | no trim |
+| `-l` | no trim         |
 
 ---
-
 
 ## Archives
 
@@ -1336,14 +1333,14 @@ tar [opts] archive files
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `c` | create  x extract |
-| `v` | verbose  f file |
-| `z` | gzip  j bzip2  J xz |
-| `t` | list  r append |
-| `--delete` | remove entry |
-| `--strip-components` | — |
+| Flag                 | Description       |
+| -------------------- | ----------------- |
+| `c`                  | create x extract  |
+| `v`                  | verbose f file    |
+| `z`                  | gzip j bzip2 J xz |
+| `t`                  | list r append     |
+| `--delete`           | remove entry      |
+| `--strip-components` | —                 |
 
 ---
 
@@ -1359,14 +1356,14 @@ gzip [opts] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-d` | decompress |
-| `-k` | keep original |
-| `-v` | verbose |
-| `-r` | recursive |
-| `-9` | max |
-| `--best` | / --fast |
+| Flag     | Description   |
+| -------- | ------------- |
+| `-d`     | decompress    |
+| `-k`     | keep original |
+| `-v`     | verbose       |
+| `-r`     | recursive     |
+| `-9`     | max           |
+| `--best` | / --fast      |
 
 ---
 
@@ -1382,10 +1379,10 @@ gunzip file.gz
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description  |
+| ---- | ------------ |
 | `-k` | keep archive |
-| `-v` | verbose |
+| `-v` | verbose      |
 
 ---
 
@@ -1402,11 +1399,11 @@ bzip2 [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | decompress |
-| `-k` | keep |
-| `-v` | verbose |
-| `-9` | best |
+| ---- | ----------- |
+| `-d` | decompress  |
+| `-k` | keep        |
+| `-v` | verbose     |
+| `-9` | best        |
 
 ---
 
@@ -1423,11 +1420,11 @@ xz [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | decompress |
-| `-k` | keep |
-| `-v` | verbose |
-| `-9` | max |
+| ---- | ----------- |
+| `-d` | decompress  |
+| `-k` | keep        |
+| `-v` | verbose     |
+| `-9` | max         |
 
 ---
 
@@ -1443,13 +1440,13 @@ zip archive.zip files
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-r` | recursive |
-| `-e` | encrypt |
+| Flag | Description  |
+| ---- | ------------ |
+| `-r` | recursive    |
+| `-e` | encrypt      |
 | `-9` | max compress |
-| `-u` | update |
-| `-d` | delete |
+| `-u` | update       |
+| `-d` | delete       |
 
 ---
 
@@ -1466,12 +1463,12 @@ unzip archive.zip
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | output dir |
-| `-l` | list |
-| `-o` | overwrite |
-| `-q` | quiet |
-| `-p` | to stdout |
+| ---- | ----------- |
+| `-d` | output dir  |
+| `-l` | list        |
+| `-o` | overwrite   |
+| `-q` | quiet       |
+| `-p` | to stdout   |
 
 ---
 
@@ -1487,12 +1484,12 @@ unzip archive.zip
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `a` | add  e extract  x full |
-| `l` | list  d delete  u update |
-| `-p` | password |
-| `-mhe` | encrypt names |
+| Flag   | Description            |
+| ------ | ---------------------- |
+| `a`    | add e extract x full   |
+| `l`    | list d delete u update |
+| `-p`   | password               |
+| `-mhe` | encrypt names          |
 
 ---
 
@@ -1532,7 +1529,6 @@ zgrep pattern file.gz
 
 ---
 
-
 ## Processes
 
 ### `ps`
@@ -1547,14 +1543,14 @@ ps [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `aux` | all + BSD |
-| `ef` | all + full |
-| `-u` | user |
-| `--forest` | tree |
-| `-o` | custom output |
-| `-p` | by PID |
+| Flag       | Description   |
+| ---------- | ------------- |
+| `aux`      | all + BSD     |
+| `ef`       | all + full    |
+| `-u`       | user          |
+| `--forest` | tree          |
+| `-o`       | custom output |
+| `-p`       | by PID        |
 
 ---
 
@@ -1570,12 +1566,12 @@ top
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `q` | quit  k kill |
-| `r` | renice  M mem sort |
-| `P` | cpu sort  1 per-cpu |
-| `c` | full cmdline  u user |
+| Flag | Description         |
+| ---- | ------------------- |
+| `q`  | quit k kill         |
+| `r`  | renice M mem sort   |
+| `P`  | cpu sort 1 per-cpu  |
+| `c`  | full cmdline u user |
 
 ---
 
@@ -1591,11 +1587,11 @@ htop
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `F5` | tree  F9 kill |
-| `F6` | sort  F4 filter |
-| `u` | user  H threads |
+| Flag | Description    |
+| ---- | -------------- |
+| `F5` | tree F9 kill   |
+| `F6` | sort F4 filter |
+| `u`  | user H threads |
 
 ---
 
@@ -1611,13 +1607,13 @@ kill [signal] PID
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-9` | SIGKILL |
-| `-15` | SIGTERM |
-| `-1` | SIGHUP |
-| `-2` | SIGINT |
-| `-l` | list signals |
+| Flag  | Description  |
+| ----- | ------------ |
+| `-9`  | SIGKILL      |
+| `-15` | SIGTERM      |
+| `-1`  | SIGHUP       |
+| `-2`  | SIGINT       |
+| `-l`  | list signals |
 
 ---
 
@@ -1634,12 +1630,12 @@ killall [opts] name
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-9` | force |
-| `-u` | user |
-| `-s` | signal |
+| ---- | ----------- |
+| `-9` | force       |
+| `-u` | user        |
+| `-s` | signal      |
 | `-i` | interactive |
-| `-w` | wait |
+| `-w` | wait        |
 
 ---
 
@@ -1655,13 +1651,13 @@ pkill [opts] pattern
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-f` | match full cmd |
-| `-u` | user |
-| `-signal` | signal |
-| `-n` | newest |
-| `-o` | oldest |
+| Flag      | Description    |
+| --------- | -------------- |
+| `-f`      | match full cmd |
+| `-u`      | user           |
+| `-signal` | signal         |
+| `-n`      | newest         |
+| `-o`      | oldest         |
 
 ---
 
@@ -1678,10 +1674,10 @@ pgrep [opts] pattern
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | show names |
-| `-a` | full cmd |
-| `-u` | user |
+| ---- | ----------- |
+| `-l` | show names  |
+| `-a` | full cmd    |
+| `-u` | user        |
 | `-x` | exact match |
 
 ---
@@ -1699,9 +1695,9 @@ pidof name
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-s` | single |
-| `-o` | omit PID |
+| ---- | ----------- |
+| `-s` | single      |
+| `-o` | omit PID    |
 
 ---
 
@@ -1742,11 +1738,11 @@ jobs
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | show PID |
-| `-p` | PID only |
-| `-r` | running |
-| `-s` | stopped |
+| ---- | ----------- |
+| `-l` | show PID    |
+| `-p` | PID only    |
+| `-r` | running     |
+| `-s` | stopped     |
 
 ---
 
@@ -1774,10 +1770,10 @@ disown [job]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description         |
+| ---- | ------------------- |
 | `-h` | keep but ignore HUP |
-| `-a` | all jobs |
+| `-a` | all jobs            |
 
 ---
 
@@ -1806,9 +1802,9 @@ renice N -p PID
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-u` | by user |
-| `-g` | by group |
+| ---- | ----------- |
+| `-u` | by user     |
+| `-g` | by group    |
 
 ---
 
@@ -1824,11 +1820,11 @@ ionice -c class cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `c1` | realtime  c2 best-effort |
-| `c3` | idle |
-| `-n` | level 0-7 |
+| Flag | Description             |
+| ---- | ----------------------- |
+| `c1` | realtime c2 best-effort |
+| `c3` | idle                    |
+| `-n` | level 0-7               |
 
 ---
 
@@ -1844,13 +1840,13 @@ strace cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-p` | PID |
-| `-e` | filter |
-| `-o` | output |
+| Flag | Description  |
+| ---- | ------------ |
+| `-p` | PID          |
+| `-e` | filter       |
+| `-o` | output       |
 | `-f` | follow forks |
-| `-c` | count |
+| `-c` | count        |
 
 ---
 
@@ -1867,9 +1863,9 @@ ltrace cmd
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-p` | PID |
-| `-o` | output |
+| ---- | ----------- |
+| `-p` | PID         |
+| `-o` | output      |
 
 ---
 
@@ -1885,10 +1881,10 @@ timeout N cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--preserve-status` | — |
-| `-s` | signal |
+| Flag                | Description |
+| ------------------- | ----------- |
+| `--preserve-status` | —           |
+| `-s`                | signal      |
 
 ---
 
@@ -1916,9 +1912,9 @@ trap cmd SIGNAL
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `INT` | TERM  EXIT  ERR |
+| Flag  | Description   |
+| ----- | ------------- |
+| `INT` | TERM EXIT ERR |
 
 ---
 
@@ -1935,14 +1931,13 @@ fuser [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-k` | kill procs |
-| `-m` | all on fs |
-| `-u` | show users |
-| `-v` | verbose |
+| ---- | ----------- |
+| `-k` | kill procs  |
+| `-m` | all on fs   |
+| `-u` | show users  |
+| `-v` | verbose     |
 
 ---
-
 
 ## Network
 
@@ -1959,13 +1954,13 @@ ping [opts] host
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-c` | count |
-| `-i` | interval |
-| `-t` | TTL |
+| ---- | ----------- |
+| `-c` | count       |
+| `-i` | interval    |
+| `-t` | TTL         |
 | `-s` | packet size |
-| `-W` | timeout |
-| `-6` | IPv6 |
+| `-W` | timeout     |
+| `-6` | IPv6        |
 
 ---
 
@@ -1994,12 +1989,12 @@ traceroute host
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | no DNS |
-| `-m` | max hops |
-| `-I` | ICMP |
-| `-T` | TCP |
-| `-p` | port |
+| ---- | ----------- |
+| `-n` | no DNS      |
+| `-m` | max hops    |
+| `-I` | ICMP        |
+| `-T` | TCP         |
+| `-p` | port        |
 
 ---
 
@@ -2015,11 +2010,11 @@ mtr host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--report` | batch mode |
-| `-c` | count |
-| `-n` | no DNS |
+| Flag       | Description |
+| ---------- | ----------- |
+| `--report` | batch mode  |
+| `-c`       | count       |
+| `-n`       | no DNS      |
 
 ---
 
@@ -2035,19 +2030,19 @@ curl [opts] URL
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-o` | output |
-| `-X` | method |
-| `-H` | header |
-| `-d` | data |
-| `-s` | silent |
-| `-L` | follow |
-| `-k` | insecure |
-| `-u` | user:pass |
-| `-F` | form data |
-| `-v` | verbose |
-| `--retry` | N |
+| Flag      | Description |
+| --------- | ----------- |
+| `-o`      | output      |
+| `-X`      | method      |
+| `-H`      | header      |
+| `-d`      | data        |
+| `-s`      | silent      |
+| `-L`      | follow      |
+| `-k`      | insecure    |
+| `-u`      | user:pass   |
+| `-F`      | form data   |
+| `-v`      | verbose     |
+| `--retry` | N           |
 
 ---
 
@@ -2063,15 +2058,15 @@ wget [opts] URL
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-O` | output |
-| `-r` | recursive |
-| `-q` | quiet |
-| `--limit-rate` | — |
-| `--continue` | — |
-| `-P` | dir |
-| `-np` | no parent |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-O`           | output      |
+| `-r`           | recursive   |
+| `-q`           | quiet       |
+| `--limit-rate` | —           |
+| `--continue`   | —           |
+| `-P`           | dir         |
+| `-np`          | no parent   |
 
 ---
 
@@ -2087,14 +2082,14 @@ ip [obj] [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `addr` | show IPs |
-| `link` | interfaces |
-| `route` | routes |
-| `neigh` | neighbors |
-| `rule` | policy routing |
-| `monitor` | watch |
+| Flag      | Description    |
+| --------- | -------------- |
+| `addr`    | show IPs       |
+| `link`    | interfaces     |
+| `route`   | routes         |
+| `neigh`   | neighbors      |
+| `rule`    | policy routing |
+| `monitor` | watch          |
 
 ---
 
@@ -2110,12 +2105,12 @@ ifconfig [iface]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `up` | / down |
-| `netmask` | — |
-| `broadcast` | — |
-| `-a` | all |
+| Flag        | Description |
+| ----------- | ----------- |
+| `up`        | / down      |
+| `netmask`   | —           |
+| `broadcast` | —           |
+| `-a`        | all         |
 
 ---
 
@@ -2132,15 +2127,15 @@ ss [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-t` | TCP |
-| `-u` | UDP |
-| `-l` | listening |
-| `-a` | all |
-| `-p` | process |
-| `-n` | numeric |
-| `-s` | summary |
-| `-r` | resolve |
+| ---- | ----------- |
+| `-t` | TCP         |
+| `-u` | UDP         |
+| `-l` | listening   |
+| `-a` | all         |
+| `-p` | process     |
+| `-n` | numeric     |
+| `-s` | summary     |
+| `-r` | resolve     |
 
 ---
 
@@ -2157,13 +2152,13 @@ netstat [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-t` | TCP |
-| `-u` | UDP |
-| `-l` | listening |
-| `-n` | numeric |
-| `-p` | PID |
-| `-r` | routes |
+| ---- | ----------- |
+| `-t` | TCP         |
+| `-u` | UDP         |
+| `-l` | listening   |
+| `-n` | numeric     |
+| `-p` | PID         |
+| `-r` | routes      |
 
 ---
 
@@ -2179,15 +2174,15 @@ nmap [opts] target
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-sS` | SYN scan |
-| `-sV` | versions |
-| `-p` | ports |
-| `-A` | aggressive |
-| `-O` | OS detect |
-| `-Pn` | no ping |
-| `--script` | NSE |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-sS`      | SYN scan    |
+| `-sV`      | versions    |
+| `-p`       | ports       |
+| `-A`       | aggressive  |
+| `-O`       | OS detect   |
+| `-Pn`      | no ping     |
+| `--script` | NSE         |
 
 ---
 
@@ -2204,12 +2199,12 @@ nc [opts] host port
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | listen |
-| `-u` | UDP |
-| `-v` | verbose |
-| `-z` | port scan |
-| `-k` | keep open |
+| ---- | ----------- |
+| `-l` | listen      |
+| `-u` | UDP         |
+| `-v` | verbose     |
+| `-z` | port scan   |
+| `-k` | keep open   |
 
 ---
 
@@ -2225,14 +2220,14 @@ dig [opts] domain
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `+short` | — |
-| `+noall` | +answer |
-| `@server` | — |
-| `-t` | record type |
-| `MX` | A NS CNAME TXT |
-| `+trace` | full trace |
+| Flag      | Description    |
+| --------- | -------------- |
+| `+short`  | —              |
+| `+noall`  | +answer        |
+| `@server` | —              |
+| `-t`      | record type    |
+| `MX`      | A NS CNAME TXT |
+| `+trace`  | full trace     |
 
 ---
 
@@ -2249,10 +2244,10 @@ host domain
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-t` | record type |
-| `-v` | verbose |
-| `-a` | all info |
+| `-v` | verbose     |
+| `-a` | all info    |
 
 ---
 
@@ -2280,10 +2275,10 @@ resolvectl query domain
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `status` | flush-caches |
-| `dns` | domain  statistics |
+| Flag     | Description       |
+| -------- | ----------------- |
+| `status` | flush-caches      |
+| `dns`    | domain statistics |
 
 ---
 
@@ -2299,11 +2294,11 @@ arp [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | show all |
+| Flag | Description  |
+| ---- | ------------ |
+| `-a` | show all     |
 | `-d` | delete entry |
-| `-s` | add entry |
+| `-s` | add entry    |
 
 ---
 
@@ -2319,12 +2314,12 @@ ethtool iface
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-i` | driver |
-| `-S` | statistics |
-| `-g` | ring params |
-| `--speed` | — |
+| Flag      | Description |
+| --------- | ----------- |
+| `-i`      | driver      |
+| `-S`      | statistics  |
+| `-g`      | ring params |
+| `--speed` | —           |
 
 ---
 
@@ -2352,12 +2347,12 @@ nmcli [opts] obj cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `device` | wifi list |
-| `connection` | up/down |
-| `general` | status |
-| `con` | show |
+| Flag         | Description |
+| ------------ | ----------- |
+| `device`     | wifi list   |
+| `connection` | up/down     |
+| `general`    | status      |
+| `con`        | show        |
 
 ---
 
@@ -2373,16 +2368,16 @@ tcpdump [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-i` | interface |
-| `-n` | no DNS |
-| `-v` | verbose |
-| `-w` | write pcap |
-| `-r` | read pcap |
-| `port` | filter |
-| `-c` | count |
-| `-X` | hex+ASCII |
+| Flag   | Description |
+| ------ | ----------- |
+| `-i`   | interface   |
+| `-n`   | no DNS      |
+| `-v`   | verbose     |
+| `-w`   | write pcap  |
+| `-r`   | read pcap   |
+| `port` | filter      |
+| `-c`   | count       |
+| `-X`   | hex+ASCII   |
 
 ---
 
@@ -2399,12 +2394,12 @@ iperf3 -s / -c host
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-p` | port |
-| `-t` | duration |
-| `-u` | UDP |
-| `-b` | bandwidth |
-| `-P` | parallel |
+| ---- | ----------- |
+| `-p` | port        |
+| `-t` | duration    |
+| `-u` | UDP         |
+| `-b` | bandwidth   |
+| `-P` | parallel    |
 
 ---
 
@@ -2432,13 +2427,13 @@ openssl [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `s_client` | -connect |
-| `req` | -new cert |
-| `x509` | -text |
-| `genrsa` | private key |
-| `enc` | encrypt/decrypt |
+| Flag       | Description     |
+| ---------- | --------------- |
+| `s_client` | -connect        |
+| `req`      | -new cert       |
+| `x509`     | -text           |
+| `genrsa`   | private key     |
+| `enc`      | encrypt/decrypt |
 
 ---
 
@@ -2454,12 +2449,12 @@ ssh-keygen [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description        |
+| ---- | ------------------ |
 | `-t` | type (rsa ed25519) |
-| `-b` | bits |
-| `-f` | file |
-| `-C` | comment |
+| `-b` | bits               |
+| `-f` | file               |
+| `-C` | comment            |
 
 ---
 
@@ -2475,15 +2470,14 @@ nft [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `list` | ruleset |
-| `add` | table/chain/rule |
-| `delete` | — |
-| `flush` | ruleset |
+| Flag     | Description      |
+| -------- | ---------------- |
+| `list`   | ruleset          |
+| `add`    | table/chain/rule |
+| `delete` | —                |
+| `flush`  | ruleset          |
 
 ---
-
 
 ## Disk
 
@@ -2500,11 +2494,11 @@ df [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-h` | human |
-| `-T` | fs type |
-| `-i` | inodes |
-| `-a` | all |
+| ---- | ----------- |
+| `-h` | human       |
+| `-T` | fs type     |
+| `-i` | inodes      |
+| `-a` | all         |
 
 ---
 
@@ -2520,14 +2514,14 @@ du [opts] path
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-s` | summary |
-| `-h` | human |
-| `-a` | all files |
-| `-c` | total |
-| `--max-depth` | N |
-| `-x` | one fs |
+| Flag          | Description |
+| ------------- | ----------- |
+| `-s`          | summary     |
+| `-h`          | human       |
+| `-a`          | all files   |
+| `-c`          | total       |
+| `--max-depth` | N           |
+| `-x`          | one fs      |
 
 ---
 
@@ -2544,12 +2538,12 @@ lsblk [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | filesystem |
-| `-o` | columns |
-| `-a` | all |
+| ---- | ----------- |
+| `-f` | filesystem  |
+| `-o` | columns     |
+| `-a` | all         |
 | `-m` | permissions |
-| `-t` | topology |
+| `-t` | topology    |
 
 ---
 
@@ -2565,10 +2559,10 @@ blkid [dev]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-t` | search |
-| `-o` | format |
+| Flag | Description     |
+| ---- | --------------- |
+| `-t` | search          |
+| `-o` | format          |
 | `-p` | low-level probe |
 
 ---
@@ -2586,12 +2580,12 @@ fdisk [opts] dev
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | list |
-| `-n` | new |
-| `-d` | delete |
-| `-t` | type |
-| `-p` | print |
+| ---- | ----------- |
+| `-l` | list        |
+| `-n` | new         |
+| `-d` | delete      |
+| `-t` | type        |
+| `-p` | print       |
 
 ---
 
@@ -2619,11 +2613,11 @@ parted [dev]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `print` | mkpart  rm |
+| Flag         | Description |
+| ------------ | ----------- |
+| `print`      | mkpart rm   |
 | `resizepart` | align-check |
-| `unit` | MB/GB/TiB |
+| `unit`       | MB/GB/TiB   |
 
 ---
 
@@ -2639,11 +2633,11 @@ mkfs -t type dev
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `ext4` | xfs  btrfs  fat32 |
-| `ntfs` | f2fs |
-| `-L` | label |
+| Flag   | Description     |
+| ------ | --------------- |
+| `ext4` | xfs btrfs fat32 |
+| `ntfs` | f2fs            |
+| `-L`   | label           |
 
 ---
 
@@ -2660,8 +2654,8 @@ mkswap dev
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-L` | label |
+| ---- | ----------- |
+| `-L` | label       |
 
 ---
 
@@ -2677,11 +2671,11 @@ swapon dev
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--all` | — |
-| `-s` | show swap |
-| `-p` | priority |
+| Flag    | Description |
+| ------- | ----------- |
+| `--all` | —           |
+| `-s`    | show swap   |
+| `-p`    | priority    |
 
 ---
 
@@ -2697,9 +2691,9 @@ swapoff dev
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--all` | — |
+| Flag    | Description |
+| ------- | ----------- |
+| `--all` | —           |
 
 ---
 
@@ -2715,12 +2709,12 @@ mount [opts] dev mnt
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-t` | type |
-| `-o` | options |
-| `-a` | fstab |
-| `--bind` | rebind |
+| Flag     | Description |
+| -------- | ----------- |
+| `-t`     | type        |
+| `-o`     | options     |
+| `-a`     | fstab       |
+| `--bind` | rebind      |
 
 ---
 
@@ -2736,10 +2730,10 @@ umount dev|mnt
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-l` | lazy |
-| `-f` | force |
+| Flag | Description       |
+| ---- | ----------------- |
+| `-l` | lazy              |
+| `-f` | force             |
 | `-r` | read-only on fail |
 
 ---
@@ -2757,11 +2751,11 @@ fsck [opts] dev
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-a` | auto repair |
-| `-y` | yes to all |
-| `-t` | type |
-| `-n` | no write |
+| `-y` | yes to all  |
+| `-t` | type        |
+| `-n` | no write    |
 
 ---
 
@@ -2778,10 +2772,10 @@ e2fsck [opts] dev
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | force |
-| `-y` | auto yes |
-| `-b` | superblock |
+| ---- | ----------- |
+| `-f` | force       |
+| `-y` | auto yes    |
+| `-b` | superblock  |
 
 ---
 
@@ -2797,11 +2791,11 @@ tune2fs [opts] dev
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-L` | label |
-| `-i` | interval |
-| `-c` | max mounts |
+| Flag | Description  |
+| ---- | ------------ |
+| `-L` | label        |
+| `-i` | interval     |
+| `-c` | max mounts   |
 | `-m` | reserved pct |
 
 ---
@@ -2819,8 +2813,8 @@ xfs_repair dev
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | no modify |
+| ---- | ----------- |
+| `-n` | no modify   |
 
 ---
 
@@ -2836,13 +2830,13 @@ dd if=src of=dst
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `bs=` | block size |
-| `count=` | blocks |
-| `skip=` | skip blocks |
-| `status=progress` | — |
-| `conv=sync,noerror` | — |
+| Flag                | Description |
+| ------------------- | ----------- |
+| `bs=`               | block size  |
+| `count=`            | blocks      |
+| `skip=`             | skip blocks |
+| `status=progress`   | —           |
+| `conv=sync,noerror` | —           |
 
 ---
 
@@ -2871,11 +2865,11 @@ hdparm [opts] dev
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-I` | identity |
+| ---- | ----------- |
+| `-I` | identity    |
 | `-t` | read timing |
-| `-W` | cache |
-| `-S` | standby |
+| `-W` | cache       |
+| `-S` | standby     |
 
 ---
 
@@ -2892,11 +2886,11 @@ smartctl [opts] dev
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-a` | all info |
-| `-H` | health |
-| `-t` | test type |
-| `-l` | log |
+| ---- | ----------- |
+| `-a` | all info    |
+| `-H` | health      |
+| `-t` | test type   |
+| `-l` | log         |
 
 ---
 
@@ -2912,11 +2906,11 @@ cryptsetup [cmd] dev
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `luksFormat` | luksOpen |
-| `luksClose` | luksDump |
-| `status` | resize |
+| Flag         | Description |
+| ------------ | ----------- |
+| `luksFormat` | luksOpen    |
+| `luksClose`  | luksDump    |
+| `status`     | resize      |
 
 ---
 
@@ -2945,13 +2939,12 @@ lvcreate -n name -L size VG
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-L` | size |
-| `-l` | extents |
-| `-s` | snapshot |
+| ---- | ----------- |
+| `-L` | size        |
+| `-l` | extents     |
+| `-s` | snapshot    |
 
 ---
-
 
 ## Users & Groups
 
@@ -2979,11 +2972,11 @@ id [user]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-u` | UID only |
-| `-g` | GID only |
-| `-G` | all groups |
+| Flag | Description     |
+| ---- | --------------- |
+| `-u` | UID only        |
+| `-g` | GID only        |
+| `-G` | all groups      |
 | `-n` | name not number |
 
 ---
@@ -3000,9 +2993,9 @@ w [user]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-h` | no header |
+| Flag | Description  |
+| ---- | ------------ |
+| `-h` | no header    |
 | `-s` | short format |
 
 ---
@@ -3020,11 +3013,11 @@ who [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-a` | all info |
-| `-H` | headers |
-| `-b` | last boot |
-| `-r` | runlevel |
+| ---- | ----------- |
+| `-a` | all info    |
+| `-H` | headers     |
+| `-b` | last boot   |
+| `-r` | runlevel    |
 
 ---
 
@@ -3040,12 +3033,12 @@ last [user]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-n` | lines |
+| Flag | Description    |
+| ---- | -------------- |
+| `-n` | lines          |
 | `-x` | show shutdowns |
-| `-F` | full dates |
-| `-i` | show IP |
+| `-F` | full dates     |
+| `-i` | show IP        |
 
 ---
 
@@ -3062,9 +3055,9 @@ lastb
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | lines |
-| `-F` | full dates |
+| ---- | ----------- |
+| `-n` | lines       |
+| `-F` | full dates  |
 
 ---
 
@@ -3081,9 +3074,9 @@ lastlog
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-u` | user |
-| `-t` | days |
+| ---- | ----------- |
+| `-u` | user        |
+| `-t` | days        |
 
 ---
 
@@ -3112,13 +3105,13 @@ sudo [opts] cmd
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-u` | user |
+| ---- | ----------- |
+| `-u` | user        |
 | `-i` | login shell |
-| `-l` | list perms |
-| `-k` | invalidate |
-| `-s` | shell |
-| `-e` | edit files |
+| `-l` | list perms  |
+| `-k` | invalidate  |
+| `-s` | shell       |
+| `-e` | edit files  |
 
 ---
 
@@ -3135,10 +3128,10 @@ su [opts] [user]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-` | login shell |
-| `-c` | run cmd |
-| `-s` | shell |
+| ---- | ----------- |
+| `-`  | login shell |
+| `-c` | run cmd     |
+| `-s` | shell       |
 
 ---
 
@@ -3155,13 +3148,13 @@ useradd [opts] user
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-m` | home dir |
-| `-s` | shell |
-| `-G` | groups |
-| `-c` | comment |
-| `-e` | expiry |
-| `-u` | UID |
+| ---- | ----------- |
+| `-m` | home dir    |
+| `-s` | shell       |
+| `-G` | groups      |
+| `-c` | comment     |
+| `-e` | expiry      |
+| `-u` | UID         |
 
 ---
 
@@ -3177,14 +3170,14 @@ usermod [opts] user
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag  | Description  |
+| ----- | ------------ |
 | `-aG` | add to group |
-| `-l` | rename |
-| `-s` | shell |
-| `-d` | home |
-| `-L` | lock |
-| `-U` | unlock |
+| `-l`  | rename       |
+| `-s`  | shell        |
+| `-d`  | home         |
+| `-L`  | lock         |
+| `-U`  | unlock       |
 
 ---
 
@@ -3201,9 +3194,9 @@ userdel [opts] user
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-r` | remove home |
-| `-f` | force |
+| `-f` | force       |
 
 ---
 
@@ -3220,12 +3213,12 @@ passwd [user]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | lock |
-| `-u` | unlock |
-| `-e` | expire |
-| `-d` | delete |
-| `-S` | status |
+| ---- | ----------- |
+| `-l` | lock        |
+| `-u` | unlock      |
+| `-e` | expire      |
+| `-d` | delete      |
+| `-S` | status      |
 
 ---
 
@@ -3253,9 +3246,9 @@ groupadd [opts] group
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-g` | GID |
+| Flag | Description  |
+| ---- | ------------ |
+| `-g` | GID          |
 | `-r` | system group |
 
 ---
@@ -3273,9 +3266,9 @@ groupmod [opts] group
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | rename |
-| `-g` | GID |
+| ---- | ----------- |
+| `-n` | rename      |
+| `-g` | GID         |
 
 ---
 
@@ -3304,11 +3297,11 @@ gpasswd [opts] group
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-a` | add user |
+| ---- | ----------- |
+| `-a` | add user    |
 | `-d` | remove user |
 | `-M` | set members |
-| `-A` | set admins |
+| `-A` | set admins  |
 
 ---
 
@@ -3349,9 +3342,9 @@ visudo
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | file |
-| `-c` | check only |
+| ---- | ----------- |
+| `-f` | file        |
+| `-c` | check only  |
 
 ---
 
@@ -3367,7 +3360,6 @@ getent passwd|group|hosts name
 
 ---
 
-
 ## Permissions
 
 ### `chmod`
@@ -3382,13 +3374,13 @@ chmod [opts] mode file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-R` | recursive |
-| `u/g/o/a` | targets |
-| `+/-/=` | operators |
-| `r/w/x/X/s/t` | bits |
-| `numeric` | e.g. 755 |
+| Flag          | Description |
+| ------------- | ----------- |
+| `-R`          | recursive   |
+| `u/g/o/a`     | targets     |
+| `+/-/=`       | operators   |
+| `r/w/x/X/s/t` | bits        |
+| `numeric`     | e.g. 755    |
 
 ---
 
@@ -3404,10 +3396,10 @@ chown user:group file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-R` | recursive |
-| `-L` | follow links |
+| Flag          | Description    |
+| ------------- | -------------- |
+| `-R`          | recursive      |
+| `-L`          | follow links   |
 | `--reference` | copy from file |
 
 ---
@@ -3425,8 +3417,8 @@ chgrp group file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-R` | recursive |
+| ---- | ----------- |
+| `-R` | recursive   |
 
 ---
 
@@ -3443,8 +3435,8 @@ umask [mode]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-S` | symbolic |
+| ---- | ----------- |
+| `-S` | symbolic    |
 
 ---
 
@@ -3460,10 +3452,10 @@ getfacl file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-R` | recursive |
-| `-n` | numeric |
+| Flag | Description    |
+| ---- | -------------- |
+| `-R` | recursive      |
+| `-n` | numeric        |
 | `-p` | absolute names |
 
 ---
@@ -3481,11 +3473,11 @@ setfacl [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-m` | modify |
-| `-x` | remove |
-| `-b` | clear |
-| `-R` | recursive |
+| ---- | ----------- |
+| `-m` | modify      |
+| `-x` | remove      |
+| `-b` | clear       |
+| `-R` | recursive   |
 | `-d` | default ACL |
 
 ---
@@ -3503,11 +3495,11 @@ chattr [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `+i` | immutable |
+| ---- | ----------- |
+| `+i` | immutable   |
 | `+a` | append only |
-| `-R` | recursive |
-| `-v` | version |
+| `-R` | recursive   |
+| `-v` | version     |
 
 ---
 
@@ -3524,10 +3516,10 @@ lsattr [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-R` | recursive |
-| `-a` | all |
-| `-d` | dirs |
+| ---- | ----------- |
+| `-R` | recursive   |
+| `-a` | all         |
+| `-d` | dirs        |
 
 ---
 
@@ -3543,10 +3535,10 @@ getfattr -n attr file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--dump` | all |
-| `-n` | name |
+| Flag     | Description |
+| -------- | ----------- |
+| `--dump` | all         |
+| `-n`     | name        |
 
 ---
 
@@ -3563,13 +3555,12 @@ setfattr -n attr -v val file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | name |
-| `-v` | value |
-| `-x` | remove |
+| ---- | ----------- |
+| `-n` | name        |
+| `-v` | value       |
+| `-x` | remove      |
 
 ---
-
 
 ## System Info
 
@@ -3585,14 +3576,14 @@ uname [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | all |
+| Flag | Description    |
+| ---- | -------------- |
+| `-a` | all            |
 | `-r` | kernel release |
-| `-m` | machine |
-| `-n` | hostname |
+| `-m` | machine        |
+| `-n` | hostname       |
 | `-v` | kernel version |
-| `-s` | kernel name |
+| `-s` | kernel name    |
 
 ---
 
@@ -3609,10 +3600,10 @@ hostname [name]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-I` | show IPs |
-| `-f` | FQDN |
-| `-s` | short |
+| ---- | ----------- |
+| `-I` | show IPs    |
+| `-f` | FQDN        |
+| `-s` | short       |
 
 ---
 
@@ -3628,10 +3619,10 @@ hostnamectl [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `status` | set-hostname |
-| `set-icon-name` | set-chassis |
+| Flag            | Description  |
+| --------------- | ------------ |
+| `status`        | set-hostname |
+| `set-icon-name` | set-chassis  |
 
 ---
 
@@ -3648,9 +3639,9 @@ uptime
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-p` | pretty |
-| `-s` | since |
+| ---- | ----------- |
+| `-p` | pretty      |
+| `-s` | since       |
 
 ---
 
@@ -3666,12 +3657,12 @@ date [opts] [+fmt]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-u` | UTC |
-| `-s` | set date |
-| `-R` | RFC 2822 |
-| `+%Y-%m-%d` | +%s unix |
+| Flag        | Description |
+| ----------- | ----------- |
+| `-u`        | UTC         |
+| `-s`        | set date    |
+| `-R`        | RFC 2822    |
+| `+%Y-%m-%d` | +%s unix    |
 
 ---
 
@@ -3687,12 +3678,12 @@ timedatectl [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `status` | set-time |
-| `set-timezone` | — |
-| `list-timezones` | — |
-| `set-ntp` | — |
+| Flag             | Description |
+| ---------------- | ----------- |
+| `status`         | set-time    |
+| `set-timezone`   | —           |
+| `list-timezones` | —           |
+| `set-ntp`        | —           |
 
 ---
 
@@ -3708,11 +3699,11 @@ cal [month] [year]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description  |
+| ---- | ------------ |
 | `-3` | three months |
-| `-y` | full year |
-| `-j` | julian days |
+| `-y` | full year    |
+| `-j` | julian days  |
 
 ---
 
@@ -3728,9 +3719,9 @@ locale [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | all locales |
+| Flag | Description  |
+| ---- | ------------ |
+| `-a` | all locales  |
 | `-m` | all charmaps |
 
 ---
@@ -3747,13 +3738,13 @@ lshw [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-short` | summary |
-| `-class` | filter |
-| `-json` | output |
-| `-html` | output |
-| `-quiet` | no prompt |
+| Flag     | Description |
+| -------- | ----------- |
+| `-short` | summary     |
+| `-class` | filter      |
+| `-json`  | output      |
+| `-html`  | output      |
+| `-quiet` | no prompt   |
 
 ---
 
@@ -3769,11 +3760,11 @@ lscpu
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-e` | extended |
+| Flag | Description           |
+| ---- | --------------------- |
+| `-e` | extended              |
 | `-a` | all including offline |
-| `-J` | JSON output |
+| `-J` | JSON output           |
 
 ---
 
@@ -3789,12 +3780,12 @@ lspci [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-v` | verbose |
-| `-k` | kernel driver |
-| `-nn` | show codes |
-| `-t` | tree |
+| Flag  | Description   |
+| ----- | ------------- |
+| `-v`  | verbose       |
+| `-k`  | kernel driver |
+| `-nn` | show codes    |
+| `-t`  | tree          |
 
 ---
 
@@ -3811,10 +3802,10 @@ lsusb [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-v` | verbose |
-| `-t` | tree |
-| `-s` | bus:dev |
+| ---- | ----------- |
+| `-v` | verbose     |
+| `-t` | tree        |
+| `-s` | bus:dev     |
 
 ---
 
@@ -3830,11 +3821,11 @@ dmidecode [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description         |
+| ---- | ------------------- |
 | `-t` | type (bios mem sys) |
-| `-s` | string |
-| `-q` | quiet |
+| `-s` | string              |
+| `-q` | quiet               |
 
 ---
 
@@ -3850,10 +3841,10 @@ hwinfo [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--short` | --all |
-| `--cpu` | --disk  --net |
+| Flag      | Description  |
+| --------- | ------------ |
+| `--short` | --all        |
+| `--cpu`   | --disk --net |
 
 ---
 
@@ -3870,12 +3861,12 @@ inxi [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-F` | full |
-| `-G` | graphics |
-| `-N` | network |
-| `-D` | disk |
-| `-C` | CPU |
+| ---- | ----------- |
+| `-F` | full        |
+| `-G` | graphics    |
+| `-N` | network     |
+| `-D` | disk        |
+| `-C` | CPU         |
 
 ---
 
@@ -3903,9 +3894,9 @@ nproc
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--all` | all CPUs |
+| Flag    | Description |
+| ------- | ----------- |
+| `--all` | all CPUs    |
 
 ---
 
@@ -3921,7 +3912,6 @@ getconf LONG_BIT
 
 ---
 
-
 ## Services
 
 ### `systemctl`
@@ -3936,14 +3926,14 @@ systemctl [cmd] [unit]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `start` | stop  restart |
-| `status` | enable  disable |
-| `list-units` | list-sockets |
-| `daemon-reload` | — |
-| `is-active` | is-enabled |
-| `mask` | unmask  isolate |
+| Flag            | Description    |
+| --------------- | -------------- |
+| `start`         | stop restart   |
+| `status`        | enable disable |
+| `list-units`    | list-sockets   |
+| `daemon-reload` | —              |
+| `is-active`     | is-enabled     |
+| `mask`          | unmask isolate |
 
 ---
 
@@ -3959,19 +3949,19 @@ journalctl [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-u` | unit |
-| `-f` | follow |
-| `-b` | this boot |
-| `-k` | kernel |
-| `-n` | lines |
-| `--since` | date |
-| `--until` | date |
-| `-p` | priority |
-| `-o` | json |
-| `--disk-usage` | — |
-| `--rotate` | — |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-u`           | unit        |
+| `-f`           | follow      |
+| `-b`           | this boot   |
+| `-k`           | kernel      |
+| `-n`           | lines       |
+| `--since`      | date        |
+| `--until`      | date        |
+| `-p`           | priority    |
+| `-o`           | json        |
+| `--disk-usage` | —           |
+| `--rotate`     | —           |
 
 ---
 
@@ -3987,10 +3977,10 @@ service name cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `start` | stop  restart |
-| `status` | reload |
+| Flag     | Description  |
+| -------- | ------------ |
+| `start`  | stop restart |
+| `status` | reload       |
 
 ---
 
@@ -4006,10 +3996,10 @@ chkconfig name on|off
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--list` | — |
-| `--level` | — |
+| Flag      | Description |
+| --------- | ----------- |
+| `--list`  | —           |
+| `--level` | —           |
 
 ---
 
@@ -4025,9 +4015,9 @@ update-rc.d name defaults
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `remove` | disable  enable |
+| Flag     | Description    |
+| -------- | -------------- |
+| `remove` | disable enable |
 
 ---
 
@@ -4043,10 +4033,10 @@ loginctl [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `list-sessions` | — |
-| `list-users` | list-seats |
+| Flag                | Description  |
+| ------------------- | ------------ |
+| `list-sessions`     | —            |
+| `list-users`        | list-seats   |
 | `terminate-session` | lock-session |
 
 ---
@@ -4087,14 +4077,13 @@ systemd-analyze [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `time` | blame  critical-chain |
-| `plot` | > boot.svg |
-| `verify` | unit file |
+| Flag     | Description          |
+| -------- | -------------------- |
+| `time`   | blame critical-chain |
+| `plot`   | > boot.svg           |
+| `verify` | unit file            |
 
 ---
-
 
 ## Kernel & Modules
 
@@ -4123,10 +4112,10 @@ modinfo module
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-d` | description |
-| `-a` | author |
-| `-p` | parameters |
+| `-a` | author      |
+| `-p` | parameters  |
 
 ---
 
@@ -4155,9 +4144,9 @@ rmmod module
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | force |
-| `-v` | verbose |
+| ---- | ----------- |
+| `-f` | force       |
+| `-v` | verbose     |
 
 ---
 
@@ -4174,12 +4163,12 @@ modprobe [opts] module
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-r` | remove |
-| `-n` | dry run |
-| `-v` | verbose |
-| `-a` | all |
-| `-l` | list |
+| ---- | ----------- |
+| `-r` | remove      |
+| `-n` | dry run     |
+| `-v` | verbose     |
+| `-a` | all         |
+| `-l` | list        |
 
 ---
 
@@ -4196,10 +4185,10 @@ depmod
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-a` | all |
-| `-n` | no write |
-| `-v` | verbose |
+| ---- | ----------- |
+| `-a` | all         |
+| `-n` | no write    |
+| `-v` | verbose     |
 
 ---
 
@@ -4215,14 +4204,14 @@ dmesg [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-H` | human readable |
-| `-T` | timestamps |
-| `-l` | log level |
-| `-f` | facility |
-| `--follow` | -w |
-| `--clear` | — |
+| Flag       | Description    |
+| ---------- | -------------- |
+| `-H`       | human readable |
+| `-T`       | timestamps     |
+| `-l`       | log level      |
+| `-f`       | facility       |
+| `--follow` | -w             |
+| `--clear`  | —              |
 
 ---
 
@@ -4238,13 +4227,13 @@ sysctl [opts] key
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | all |
-| `-w` | set value |
-| `-p` | load file |
-| `-n` | value only |
-| `--system` | — |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-a`       | all         |
+| `-w`       | set value   |
+| `-p`       | load file   |
+| `-n`       | value only  |
+| `--system` | —           |
 
 ---
 
@@ -4261,9 +4250,9 @@ kexec [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | load |
-| `-e` | execute |
+| ---- | ----------- |
+| `-l` | load        |
+| `-e` | execute     |
 
 ---
 
@@ -4279,14 +4268,13 @@ udevadm [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `info` | trigger |
-| `monitor` | settle |
-| `test` | device |
+| Flag      | Description |
+| --------- | ----------- |
+| `info`    | trigger     |
+| `monitor` | settle      |
+| `test`    | device      |
 
 ---
-
 
 ## Memory
 
@@ -4303,13 +4291,13 @@ free [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-h` | human |
-| `-m` | MB |
-| `-g` | GB |
-| `-s` | interval |
-| `-t` | total |
-| `-w` | wide |
+| ---- | ----------- |
+| `-h` | human       |
+| `-m` | MB          |
+| `-g` | GB          |
+| `-s` | interval    |
+| `-t` | total       |
+| `-w` | wide        |
 
 ---
 
@@ -4325,13 +4313,13 @@ vmstat [interval]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-s` | summary |
-| `-d` | disk |
-| `-p` | partition |
+| Flag | Description     |
+| ---- | --------------- |
+| `-s` | summary         |
+| `-d` | disk            |
+| `-p` | partition       |
 | `-a` | active/inactive |
-| `-S` | units |
+| `-S` | units           |
 
 ---
 
@@ -4348,10 +4336,10 @@ pmap PID
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-x` | extended |
-| `-d` | device |
-| `-q` | quiet |
+| ---- | ----------- |
+| `-x` | extended    |
+| `-d` | device      |
+| `-q` | quiet       |
 
 ---
 
@@ -4368,10 +4356,10 @@ slabtop
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | delay |
-| `-s` | sort |
-| `-o` | once |
+| ---- | ----------- |
+| `-d` | delay       |
+| `-s` | sort        |
+| `-o` | once        |
 
 ---
 
@@ -4388,10 +4376,10 @@ smem [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-r` | by RSS |
-| `-p` | percent |
-| `-u` | user |
+| ---- | ----------- |
+| `-r` | by RSS      |
+| `-p` | percent     |
+| `-u` | user        |
 
 ---
 
@@ -4407,11 +4395,11 @@ numactl [opts] cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--hardware` | — |
-| `--interleave` | — |
-| `--membind` | node |
+| Flag           | Description |
+| -------------- | ----------- |
+| `--hardware`   | —           |
+| `--interleave` | —           |
+| `--membind`    | node        |
 
 ---
 
@@ -4420,7 +4408,6 @@ numactl [opts] cmd
 Drop page/slab caches
 
 ---
-
 
 ## Monitoring
 
@@ -4436,13 +4423,13 @@ iotop
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-o` | only active |
-| `-a` | accumulated |
+| Flag | Description    |
+| ---- | -------------- |
+| `-o` | only active    |
+| `-a` | accumulated    |
 | `-P` | processes only |
-| `-u` | user |
-| `-d` | delay |
+| `-u` | user           |
+| `-d` | delay          |
 
 ---
 
@@ -4459,12 +4446,12 @@ iostat [opts] [interval]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-x` | extended |
-| `-d` | device |
-| `-c` | CPU |
-| `-h` | human |
-| `-m` | MB/s |
+| ---- | ----------- |
+| `-x` | extended    |
+| `-d` | device      |
+| `-c` | CPU         |
+| `-h` | human       |
+| `-m` | MB/s        |
 
 ---
 
@@ -4481,10 +4468,10 @@ mpstat [opts] [interval]
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-P` | ALL per CPU |
 | `-u` | utilization |
-| `-I` | interrupt |
+| `-I` | interrupt   |
 
 ---
 
@@ -4501,14 +4488,14 @@ sar [opts] [interval]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-u` | CPU |
-| `-r` | memory |
-| `-d` | disk |
-| `-n` | net |
-| `-b` | I/O |
-| `-q` | load |
-| `-f` | file |
+| ---- | ----------- |
+| `-u` | CPU         |
+| `-r` | memory      |
+| `-d` | disk        |
+| `-n` | net         |
+| `-b` | I/O         |
+| `-q` | load        |
+| `-f` | file        |
 
 ---
 
@@ -4524,11 +4511,11 @@ perf [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `stat` | record  report |
-| `top` | annotate |
-| `list` | events  script |
+| Flag   | Description   |
+| ------ | ------------- |
+| `stat` | record report |
+| `top`  | annotate      |
+| `list` | events script |
 
 ---
 
@@ -4545,13 +4532,13 @@ lsof [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-u` | user |
-| `-p` | PID |
-| `-i` | network |
-| `-c` | cmd |
-| `+d` | dir |
-| `-t` | terse PIDs |
+| ---- | ----------- |
+| `-u` | user        |
+| `-p` | PID         |
+| `-i` | network     |
+| `-c` | cmd         |
+| `+d` | dir         |
+| `-t` | terse PIDs  |
 
 ---
 
@@ -4567,11 +4554,11 @@ atop
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-d` | interval |
+| Flag | Description   |
+| ---- | ------------- |
+| `-d` | interval      |
 | `-r` | playback file |
-| `-w` | write log |
+| `-w` | write log     |
 
 ---
 
@@ -4588,10 +4575,10 @@ glances
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-w` | web server |
-| `-c` | client |
-| `-t` | interval |
+| ---- | ----------- |
+| `-w` | web server  |
+| `-c` | client      |
+| `-t` | interval    |
 
 ---
 
@@ -4608,9 +4595,9 @@ nethogs [iface]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-d` | delay |
-| `-p` | promisc |
+| ---- | ----------- |
+| `-d` | delay       |
+| `-p` | promisc     |
 
 ---
 
@@ -4650,16 +4637,16 @@ dstat [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-c` | CPU |
-| `-d` | disk |
-| `-n` | net |
-| `-m` | mem |
-| `-p` | paging |
-| `-s` | swap |
-| `--top-cpu` | — |
-| `--full` | — |
+| Flag        | Description |
+| ----------- | ----------- |
+| `-c`        | CPU         |
+| `-d`        | disk        |
+| `-n`        | net         |
+| `-m`        | mem         |
+| `-p`        | paging      |
+| `-s`        | swap        |
+| `--top-cpu` | —           |
+| `--full`    | —           |
 
 ---
 
@@ -4675,15 +4662,14 @@ sysdig [filter]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-c` | chisel |
-| `-w` | write |
-| `-r` | read |
+| Flag  | Description  |
+| ----- | ------------ |
+| `-c`  | chisel       |
+| `-w`  | write        |
+| `-r`  | read         |
 | `-cl` | list chisels |
 
 ---
-
 
 ## Package Mgmt
 
@@ -4699,13 +4685,13 @@ apt [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | remove  purge |
-| `update` | upgrade  full-upgrade |
-| `search` | show  list |
-| `autoremove` | autoclean |
-| `depends` | rdepends |
+| Flag         | Description          |
+| ------------ | -------------------- |
+| `install`    | remove purge         |
+| `update`     | upgrade full-upgrade |
+| `search`     | show list            |
+| `autoremove` | autoclean            |
+| `depends`    | rdepends             |
 
 ---
 
@@ -4721,13 +4707,13 @@ apt-get [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | remove |
-| `update` | upgrade |
-| `dist-upgrade` | build-dep |
-| `-y` | auto yes |
-| `-s` | simulate |
+| Flag           | Description |
+| -------------- | ----------- |
+| `install`      | remove      |
+| `update`       | upgrade     |
+| `dist-upgrade` | build-dep   |
+| `-y`           | auto yes    |
+| `-s`           | simulate    |
 
 ---
 
@@ -4743,11 +4729,11 @@ apt-cache [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `search` | show  policy |
-| `depends` | rdepends |
-| `dump` | stats |
+| Flag      | Description |
+| --------- | ----------- |
+| `search`  | show policy |
+| `depends` | rdepends    |
+| `dump`    | stats       |
 
 ---
 
@@ -4763,15 +4749,15 @@ dpkg [opts] pkg
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description  |
+| ---- | ------------ |
 | `-i` | install .deb |
-| `-r` | remove |
-| `-P` | purge |
-| `-l` | list |
-| `-s` | status |
-| `-L` | list files |
-| `-S` | find owner |
+| `-r` | remove       |
+| `-P` | purge        |
+| `-l` | list         |
+| `-s` | status       |
+| `-L` | list files   |
+| `-S` | find owner   |
 
 ---
 
@@ -4787,12 +4773,12 @@ snap [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | remove |
-| `list` | refresh |
-| `find` | info |
-| `run` | connect |
+| Flag      | Description |
+| --------- | ----------- |
+| `install` | remove      |
+| `list`    | refresh     |
+| `find`    | info        |
+| `run`     | connect     |
 
 ---
 
@@ -4808,10 +4794,10 @@ flatpak [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | uninstall |
-| `list` | update  run |
+| Flag         | Description |
+| ------------ | ----------- |
+| `install`    | uninstall   |
+| `list`       | update run  |
 | `remote-add` | remote-list |
 
 ---
@@ -4828,11 +4814,11 @@ yum [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | remove |
-| `update` | check-update |
-| `search` | info  list |
+| Flag       | Description  |
+| ---------- | ------------ |
+| `install`  | remove       |
+| `update`   | check-update |
+| `search`   | info list    |
 | `repolist` | groupinstall |
 
 ---
@@ -4849,13 +4835,13 @@ dnf [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | remove |
-| `update` | search |
-| `autoremove` | history |
-| `module` | group |
-| `config-manager` | — |
+| Flag             | Description |
+| ---------------- | ----------- |
+| `install`        | remove      |
+| `update`         | search      |
+| `autoremove`     | history     |
+| `module`         | group       |
+| `config-manager` | —           |
 
 ---
 
@@ -4871,15 +4857,15 @@ rpm [opts] pkg
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-i` | install |
-| `-U` | upgrade |
-| `-e` | erase |
-| `-q` | query |
-| `-V` | verify |
-| `-qa` | list all |
-| `-ql` | list files |
+| Flag  | Description |
+| ----- | ----------- |
+| `-i`  | install     |
+| `-U`  | upgrade     |
+| `-e`  | erase       |
+| `-q`  | query       |
+| `-V`  | verify      |
+| `-qa` | list all    |
+| `-ql` | list files  |
 
 ---
 
@@ -4895,14 +4881,14 @@ pacman [opts] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-S` | install |
-| `-R` | remove |
-| `-U` | upgrade file |
-| `-Ss` | search |
-| `-Q` | installed |
-| `-Si` | info |
+| Flag   | Description  |
+| ------ | ------------ |
+| `-S`   | install      |
+| `-R`   | remove       |
+| `-U`   | upgrade file |
+| `-Ss`  | search       |
+| `-Q`   | installed    |
+| `-Si`  | info         |
 | `-Syu` | full upgrade |
 
 ---
@@ -4919,12 +4905,12 @@ zypper [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | remove |
-| `refresh` | update |
-| `search` | info |
-| `repos` | addrepo |
+| Flag      | Description |
+| --------- | ----------- |
+| `install` | remove      |
+| `refresh` | update      |
+| `search`  | info        |
+| `repos`   | addrepo     |
 
 ---
 
@@ -4940,13 +4926,13 @@ pip [cmd] pkg
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | uninstall |
-| `freeze` | list |
-| `show` | search |
+| Flag      | Description         |
+| --------- | ------------------- |
+| `install` | uninstall           |
+| `freeze`  | list                |
+| `show`    | search              |
 | `install` | -r requirements.txt |
-| `install` | -e editable |
+| `install` | -e editable         |
 
 ---
 
@@ -4974,13 +4960,13 @@ npm [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | uninstall |
-| `update` | list |
-| `run` | init |
-| `publish` | audit |
-| `ci` | link |
+| Flag      | Description |
+| --------- | ----------- |
+| `install` | uninstall   |
+| `update`  | list        |
+| `run`     | init        |
+| `publish` | audit       |
+| `ci`      | link        |
 
 ---
 
@@ -4996,16 +4982,15 @@ cargo [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `build` | run  test |
-| `install` | update |
-| `search` | publish |
-| `doc` | check  fmt |
-| `clippy` | bench |
+| Flag      | Description |
+| --------- | ----------- |
+| `build`   | run test    |
+| `install` | update      |
+| `search`  | publish     |
+| `doc`     | check fmt   |
+| `clippy`  | bench       |
 
 ---
-
 
 ## SSH & Remote
 
@@ -5021,18 +5006,18 @@ ssh [opts] user@host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-p` | port |
-| `-i` | key |
-| `-L` | local fwd |
-| `-R` | remote fwd |
+| Flag | Description   |
+| ---- | ------------- |
+| `-p` | port          |
+| `-i` | key           |
+| `-L` | local fwd     |
+| `-R` | remote fwd    |
 | `-D` | dynamic/SOCKS |
-| `-N` | no cmd |
-| `-f` | background |
-| `-v` | verbose |
-| `-J` | jump host |
-| `-X` | X11 |
+| `-N` | no cmd        |
+| `-f` | background    |
+| `-v` | verbose       |
+| `-J` | jump host     |
+| `-X` | X11           |
 
 ---
 
@@ -5048,14 +5033,14 @@ ssh-keygen [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description        |
+| ---- | ------------------ |
 | `-t` | type (ed25519 rsa) |
-| `-b` | bits |
-| `-f` | file |
-| `-C` | comment |
-| `-N` | passphrase |
-| `-p` | change passphrase |
+| `-b` | bits               |
+| `-f` | file               |
+| `-C` | comment            |
+| `-N` | passphrase         |
+| `-p` | change passphrase  |
 
 ---
 
@@ -5072,9 +5057,9 @@ ssh-copy-id user@host
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-i` | key file |
-| `-p` | port |
+| ---- | ----------- |
+| `-i` | key file    |
+| `-p` | port        |
 
 ---
 
@@ -5091,11 +5076,11 @@ ssh-add [key]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | list |
-| `-D` | delete all |
-| `-t` | lifetime |
-| `-k` | PKCS11 |
+| ---- | ----------- |
+| `-l` | list        |
+| `-D` | delete all  |
+| `-t` | lifetime    |
+| `-k` | PKCS11      |
 
 ---
 
@@ -5112,8 +5097,8 @@ eval $(ssh-agent)
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-k` | kill agent |
+| ---- | ----------- |
+| `-k` | kill agent  |
 
 ---
 
@@ -5130,13 +5115,13 @@ scp [opts] src user@host:dst
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-r` | recursive |
-| `-P` | port |
-| `-i` | key |
-| `-p` | preserve |
-| `-C` | compress |
-| `-3` | via local |
+| ---- | ----------- |
+| `-r` | recursive   |
+| `-P` | port        |
+| `-i` | key         |
+| `-p` | preserve    |
+| `-C` | compress    |
+| `-3` | via local   |
 
 ---
 
@@ -5152,11 +5137,11 @@ sftp user@host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-P` | port |
-| `-i` | key |
-| `get` | put  ls  cd |
+| Flag  | Description |
+| ----- | ----------- |
+| `-P`  | port        |
+| `-i`  | key         |
+| `get` | put ls cd   |
 
 ---
 
@@ -5172,17 +5157,17 @@ rsync [opts] src dst
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | archive |
-| `-v` | verbose |
-| `-z` | compress |
-| `-n` | dry run |
-| `--delete` | — |
-| `--exclude` | — |
-| `--bwlimit` | — |
-| `-e` | ssh |
-| `-P` | progress+partial |
+| Flag        | Description      |
+| ----------- | ---------------- |
+| `-a`        | archive          |
+| `-v`        | verbose          |
+| `-z`        | compress         |
+| `-n`        | dry run          |
+| `--delete`  | —                |
+| `--exclude` | —                |
+| `--bwlimit` | —                |
+| `-e`        | ssh              |
+| `-P`        | progress+partial |
 
 ---
 
@@ -5198,11 +5183,11 @@ sshfs user@host:path mnt
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-p` | port |
-| `-o` | opts |
-| `fusermount` | -u unmount |
+| Flag         | Description |
+| ------------ | ----------- |
+| `-p`         | port        |
+| `-o`         | opts        |
+| `fusermount` | -u unmount  |
 
 ---
 
@@ -5218,15 +5203,15 @@ tmux [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `new` | -s name |
-| `attach` | -t name |
-| `ls` | kill-session |
-| `C-b` | d detach |
-| `C-b` | c new window |
-| `C-b` | % split v |
-| `C-b` | " split h |
+| Flag     | Description  |
+| -------- | ------------ |
+| `new`    | -s name      |
+| `attach` | -t name      |
+| `ls`     | kill-session |
+| `C-b`    | d detach     |
+| `C-b`    | c new window |
+| `C-b`    | % split v    |
+| `C-b`    | " split h    |
 
 ---
 
@@ -5242,16 +5227,15 @@ screen [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-S` | name |
-| `-r` | reattach |
-| `-ls` | list |
-| `C-a` | d detach |
+| Flag  | Description  |
+| ----- | ------------ |
+| `-S`  | name         |
+| `-r`  | reattach     |
+| `-ls` | list         |
+| `C-a` | d detach     |
 | `C-a` | c new window |
 
 ---
-
 
 ## Firewall
 
@@ -5267,15 +5251,15 @@ ufw [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `enable` | disable  reset |
-| `allow` | deny  reject port |
-| `allow` | from IP |
-| `status` | verbose  numbered |
-| `delete` | N |
-| `default` | policy |
-| `logging` | — |
+| Flag      | Description      |
+| --------- | ---------------- |
+| `enable`  | disable reset    |
+| `allow`   | deny reject port |
+| `allow`   | from IP          |
+| `status`  | verbose numbered |
+| `delete`  | N                |
+| `default` | policy           |
+| `logging` | —                |
 
 ---
 
@@ -5291,16 +5275,16 @@ iptables [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-L` | list |
-| `-A` | append |
-| `-I` | insert |
-| `-D` | delete |
-| `-F` | flush |
-| `-P` | policy |
-| `-n` | numeric |
-| `-t` | table (nat mangle) |
+| Flag | Description                 |
+| ---- | --------------------------- |
+| `-L` | list                        |
+| `-A` | append                      |
+| `-I` | insert                      |
+| `-D` | delete                      |
+| `-F` | flush                       |
+| `-P` | policy                      |
+| `-n` | numeric                     |
+| `-t` | table (nat mangle)          |
 | `-j` | target (ACCEPT DROP REJECT) |
 
 ---
@@ -5317,8 +5301,8 @@ ip6tables [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag   | Description |
+| ------ | ----------- |
 | `same` | as iptables |
 
 ---
@@ -5335,12 +5319,12 @@ nft [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `list` | ruleset |
-| `add` | table/chain/rule |
-| `delete` | flush ruleset |
-| `monitor` | -f script |
+| Flag      | Description      |
+| --------- | ---------------- |
+| `list`    | ruleset          |
+| `add`     | table/chain/rule |
+| `delete`  | flush ruleset    |
+| `monitor` | -f script        |
 
 ---
 
@@ -5356,15 +5340,15 @@ firewall-cmd [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--list-all` | — |
-| `--add-service` | — |
-| `--add-port` | — |
-| `--reload` | — |
-| `--zone` | — |
-| `--permanent` | — |
-| `--state` | — |
+| Flag            | Description |
+| --------------- | ----------- |
+| `--list-all`    | —           |
+| `--add-service` | —           |
+| `--add-port`    | —           |
+| `--reload`      | —           |
+| `--zone`        | —           |
+| `--permanent`   | —           |
+| `--state`       | —           |
 
 ---
 
@@ -5380,15 +5364,14 @@ fail2ban-client [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `status` | start  stop |
-| `status` | jailname |
-| `set` | jail banip |
-| `unban` | IP |
+| Flag     | Description |
+| -------- | ----------- |
+| `status` | start stop  |
+| `status` | jailname    |
+| `set`    | jail banip  |
+| `unban`  | IP          |
 
 ---
-
 
 ## Containers
 
@@ -5404,14 +5387,14 @@ docker [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `run` | exec  ps  stop |
-| `kill` | rm  rmi |
-| `build` | pull  push |
-| `images` | volume  network |
-| `logs` | inspect  stats |
-| `cp` | commit  tag |
+| Flag     | Description    |
+| -------- | -------------- |
+| `run`    | exec ps stop   |
+| `kill`   | rm rmi         |
+| `build`  | pull push      |
+| `images` | volume network |
+| `logs`   | inspect stats  |
+| `cp`     | commit tag     |
 
 ---
 
@@ -5427,14 +5410,14 @@ docker-compose [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `up` | -d  down |
-| `build` | pull |
-| `logs` | -f |
-| `exec` | run |
-| `ps` | restart |
-| `config` | scale |
+| Flag     | Description |
+| -------- | ----------- |
+| `up`     | -d down     |
+| `build`  | pull        |
+| `logs`   | -f          |
+| `exec`   | run         |
+| `ps`     | restart     |
+| `config` | scale       |
 
 ---
 
@@ -5450,8 +5433,8 @@ docker compose [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag   | Description       |
+| ------ | ----------------- |
 | `same` | as docker-compose |
 
 ---
@@ -5468,12 +5451,12 @@ podman [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `run` | exec  ps |
-| `build` | pull  push |
-| `volume` | network  pod |
-| `generate` | systemd |
+| Flag       | Description |
+| ---------- | ----------- |
+| `run`      | exec ps     |
+| `build`    | pull push   |
+| `volume`   | network pod |
+| `generate` | systemd     |
 
 ---
 
@@ -5489,14 +5472,14 @@ kubectl [cmd] [resource]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `get` | describe  delete |
-| `apply` | -f  create |
-| `logs` | exec  port-forward |
-| `rollout` | scale |
-| `config` | namespace |
-| `top` | events  cordon |
+| Flag      | Description       |
+| --------- | ----------------- |
+| `get`     | describe delete   |
+| `apply`   | -f create         |
+| `logs`    | exec port-forward |
+| `rollout` | scale             |
+| `config`  | namespace         |
+| `top`     | events cordon     |
 
 ---
 
@@ -5512,15 +5495,14 @@ crictl [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `ps` | pods  images |
-| `exec` | logs  inspect |
-| `start` | stop  rm |
-| `pull` | rmi |
+| Flag    | Description  |
+| ------- | ------------ |
+| `ps`    | pods images  |
+| `exec`  | logs inspect |
+| `start` | stop rm      |
+| `pull`  | rmi          |
 
 ---
-
 
 ## Git
 
@@ -5536,8 +5518,8 @@ git init [dir]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag     | Description |
+| -------- | ----------- |
 | `--bare` | server repo |
 
 ---
@@ -5554,12 +5536,12 @@ git clone URL [dir]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--depth` | N shallow |
-| `--branch` | name |
-| `--recurse-submodules` | — |
-| `--single-branch` | — |
+| Flag                   | Description |
+| ---------------------- | ----------- |
+| `--depth`              | N shallow   |
+| `--branch`             | name        |
+| `--recurse-submodules` | —           |
+| `--single-branch`      | —           |
 
 ---
 
@@ -5576,10 +5558,10 @@ git status
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-s` | short |
-| `-b` | branch |
-| `-u` | untracked |
+| ---- | ----------- |
+| `-s` | short       |
+| `-b` | branch      |
+| `-u` | untracked   |
 
 ---
 
@@ -5595,10 +5577,10 @@ git add [file|.]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-A` | all |
-| `-p` | interactive |
+| Flag | Description  |
+| ---- | ------------ |
+| `-A` | all          |
+| `-p` | interactive  |
 | `-u` | tracked only |
 
 ---
@@ -5615,12 +5597,12 @@ git commit [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-m` | message |
-| `-a` | stage modified |
-| `-v` | verbose |
-| `--amend` | rewrite last |
+| Flag      | Description    |
+| --------- | -------------- |
+| `-m`      | message        |
+| `-a`      | stage modified |
+| `-v`      | verbose        |
+| `--amend` | rewrite last   |
 
 ---
 
@@ -5636,13 +5618,13 @@ git push [remote] [branch]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-u` | set upstream |
-| `-f` | force |
-| `--tags` | — |
-| `-d` | delete remote branch |
-| `--dry-run` | — |
+| Flag        | Description          |
+| ----------- | -------------------- |
+| `-u`        | set upstream         |
+| `-f`        | force                |
+| `--tags`    | —                    |
+| `-d`        | delete remote branch |
+| `--dry-run` | —                    |
 
 ---
 
@@ -5658,11 +5640,11 @@ git pull [remote] [branch]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--rebase` | — |
-| `-ff` | fast-forward only |
-| `--all` | all remotes |
+| Flag       | Description       |
+| ---------- | ----------------- |
+| `--rebase` | —                 |
+| `-ff`      | fast-forward only |
+| `--all`    | all remotes       |
 
 ---
 
@@ -5678,11 +5660,11 @@ git fetch [remote]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--all` | remotes |
-| `--prune` | — |
-| `--tags` | — |
+| Flag      | Description |
+| --------- | ----------- |
+| `--all`   | remotes     |
+| `--prune` | —           |
+| `--tags`  | —           |
 
 ---
 
@@ -5698,14 +5680,14 @@ git branch [opts] [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | all |
-| `-r` | remote |
-| `-d` | delete |
+| Flag | Description  |
+| ---- | ------------ |
+| `-a` | all          |
+| `-r` | remote       |
+| `-d` | delete       |
 | `-D` | force delete |
-| `-m` | rename |
-| `-v` | verbose |
+| `-m` | rename       |
+| `-v` | verbose      |
 
 ---
 
@@ -5721,10 +5703,10 @@ git checkout [branch|file]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-b` | create+switch |
-| `--` | file restore |
+| Flag | Description     |
+| ---- | --------------- |
+| `-b` | create+switch   |
+| `--` | file restore    |
 | `-t` | tracking remote |
 
 ---
@@ -5741,10 +5723,10 @@ git switch [branch]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-c` | create |
-| `-d` | detach |
+| Flag       | Description  |
+| ---------- | ------------ |
+| `-c`       | create       |
+| `-d`       | detach       |
 | `--orphan` | empty branch |
 
 ---
@@ -5761,11 +5743,11 @@ git merge [branch]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--no-ff` | force merge commit |
-| `--squash` | --abort |
-| `--strategy` | — |
+| Flag         | Description        |
+| ------------ | ------------------ |
+| `--no-ff`    | force merge commit |
+| `--squash`   | --abort            |
+| `--strategy` | —                  |
 
 ---
 
@@ -5781,12 +5763,12 @@ git rebase [branch|opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-i` | interactive |
-| `--onto` | — |
-| `--autosquash` | — |
-| `--abort` | --continue  --skip |
+| Flag           | Description       |
+| -------------- | ----------------- |
+| `-i`           | interactive       |
+| `--onto`       | —                 |
+| `--autosquash` | —                 |
+| `--abort`      | --continue --skip |
 
 ---
 
@@ -5802,12 +5784,12 @@ git stash [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `push` | pop  apply |
-| `list` | drop  show |
-| `branch` | clear |
-| `-u` | include untracked |
+| Flag     | Description       |
+| -------- | ----------------- |
+| `push`   | pop apply         |
+| `list`   | drop show         |
+| `branch` | clear             |
+| `-u`     | include untracked |
 
 ---
 
@@ -5823,15 +5805,15 @@ git log [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--oneline` | --graph |
-| `--all` | --author |
-| `--since` | --until |
-| `-n` | count |
-| `--stat` | -p diff |
-| `--follow` | file |
-| `-S` | search content |
+| Flag        | Description    |
+| ----------- | -------------- |
+| `--oneline` | --graph        |
+| `--all`     | --author       |
+| `--since`   | --until        |
+| `-n`        | count          |
+| `--stat`    | -p diff        |
+| `--follow`  | file           |
+| `-S`        | search content |
 
 ---
 
@@ -5847,12 +5829,12 @@ git diff [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--staged` | cached |
-| `--stat` | --name-only |
-| `HEAD~N` | previous |
-| `branch1..branch2` | — |
+| Flag               | Description |
+| ------------------ | ----------- |
+| `--staged`         | cached      |
+| `--stat`           | --name-only |
+| `HEAD~N`           | previous    |
+| `branch1..branch2` | —           |
 
 ---
 
@@ -5868,11 +5850,11 @@ git reset [opts] [commit]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--soft` | keep staged |
-| `--mixed` | unstage |
-| `--hard` | discard all |
+| Flag      | Description |
+| --------- | ----------- |
+| `--soft`  | keep staged |
+| `--mixed` | unstage     |
+| `--hard`  | discard all |
 
 ---
 
@@ -5888,10 +5870,10 @@ git revert commit
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--no-commit` | -n |
-| `--mainline` | M merge |
+| Flag          | Description |
+| ------------- | ----------- |
+| `--no-commit` | -n          |
+| `--mainline`  | M merge     |
 
 ---
 
@@ -5907,14 +5889,14 @@ git tag [opts] name
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | annotated |
-| `-m` | message |
-| `-d` | delete |
-| `-l` | list |
-| `--sort` | — |
-| `-v` | verify |
+| Flag     | Description |
+| -------- | ----------- |
+| `-a`     | annotated   |
+| `-m`     | message     |
+| `-d`     | delete      |
+| `-l`     | list        |
+| `--sort` | —           |
+| `-v`     | verify      |
 
 ---
 
@@ -5930,11 +5912,11 @@ git remote [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `add` | remove  rename |
-| `show` | set-url  prune |
-| `-v` | verbose |
+| Flag   | Description   |
+| ------ | ------------- |
+| `add`  | remove rename |
+| `show` | set-url prune |
+| `-v`   | verbose       |
 
 ---
 
@@ -5950,11 +5932,11 @@ git cherry-pick commit
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-n` | no commit |
-| `--abort` | --continue |
-| `--ff` | fast-forward |
+| Flag      | Description  |
+| --------- | ------------ |
+| `-n`      | no commit    |
+| `--abort` | --continue   |
+| `--ff`    | fast-forward |
 
 ---
 
@@ -5970,10 +5952,10 @@ git bisect start
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `good` | bad  reset |
-| `run` | cmd auto |
+| Flag   | Description |
+| ------ | ----------- |
+| `good` | bad reset   |
+| `run`  | cmd auto    |
 
 ---
 
@@ -5989,11 +5971,11 @@ git blame file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-L` | from,to lines |
+| Flag | Description       |
+| ---- | ----------------- |
+| `-L` | from,to lines     |
 | `-w` | ignore whitespace |
-| `-C` | detect moved |
+| `-C` | detect moved      |
 
 ---
 
@@ -6010,10 +5992,10 @@ git clean [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | force |
-| `-d` | dirs |
-| `-n` | dry run |
+| ---- | ----------- |
+| `-f` | force       |
+| `-d` | dirs        |
+| `-n` | dry run     |
 | `-x` | ignored too |
 
 ---
@@ -6030,11 +6012,11 @@ git submodule [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `add` | update  init |
-| `foreach` | status |
-| `--recursive` | — |
+| Flag          | Description |
+| ------------- | ----------- |
+| `add`         | update init |
+| `foreach`     | status      |
+| `--recursive` | —           |
 
 ---
 
@@ -6050,10 +6032,10 @@ git worktree [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `add` | list  remove |
-| `prune` | lock |
+| Flag    | Description |
+| ------- | ----------- |
+| `add`   | list remove |
+| `prune` | lock        |
 
 ---
 
@@ -6069,10 +6051,10 @@ git reflog
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `expire` | delete |
-| `show` | --all |
+| Flag     | Description |
+| -------- | ----------- |
+| `expire` | delete      |
+| `show`   | --all       |
 
 ---
 
@@ -6088,14 +6070,13 @@ git gc
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--aggressive` | — |
-| `--auto` | — |
-| `--prune=date` | — |
+| Flag           | Description |
+| -------------- | ----------- |
+| `--aggressive` | —           |
+| `--auto`       | —           |
+| `--prune=date` | —           |
 
 ---
-
 
 ## Shell & Scripting
 
@@ -6111,14 +6092,14 @@ bash [opts] [script]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-c` | command |
-| `-x` | trace |
+| Flag | Description  |
+| ---- | ------------ |
+| `-c` | command      |
+| `-x` | trace        |
 | `-n` | syntax check |
-| `-v` | verbose |
-| `-i` | interactive |
-| `-l` | login |
+| `-v` | verbose      |
+| `-i` | interactive  |
+| `-l` | login        |
 
 ---
 
@@ -6159,10 +6140,10 @@ echo [opts] text
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | no newline |
-| `-e` | escapes |
-| `-E` | no escapes |
+| ---- | ----------- |
+| `-n` | no newline  |
+| `-e` | escapes     |
+| `-E` | no escapes  |
 
 ---
 
@@ -6178,10 +6159,10 @@ printf format [args]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `%s` | string  %d int  %f float |
-| `\n` | \t \0 escapes |
+| Flag | Description            |
+| ---- | ---------------------- |
+| `%s` | string %d int %f float |
+| `\n` | \t \0 escapes          |
 
 ---
 
@@ -6198,13 +6179,13 @@ read [opts] var
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-p` | prompt |
-| `-s` | silent |
-| `-n` | chars |
-| `-t` | timeout |
-| `-a` | array |
-| `-d` | delimiter |
+| ---- | ----------- |
+| `-p` | prompt      |
+| `-s` | silent      |
+| `-n` | chars       |
+| `-t` | timeout     |
+| `-a` | array       |
+| `-d` | delimiter   |
 
 ---
 
@@ -6232,9 +6213,9 @@ exec cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | name |
+| Flag   | Description    |
+| ------ | -------------- |
+| `-a`   | name           |
 | `exec` | >file redirect |
 
 ---
@@ -6263,13 +6244,13 @@ test expr  |  [ expr ]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-f` | file |
-| `-d` | dir |
-| `-e` | exists |
-| `-z` | empty string |
-| `-n` | non-empty |
+| Flag  | Description         |
+| ----- | ------------------- |
+| `-f`  | file                |
+| `-d`  | dir                 |
+| `-e`  | exists              |
+| `-z`  | empty string        |
+| `-n`  | non-empty           |
 | `-eq` | -ne -lt -gt compare |
 
 ---
@@ -6286,11 +6267,11 @@ Extended test (bash)
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `=~` | regex |
-| `==` | != match |
-| `-z` | -n string |
+| Flag | Description   |
+| ---- | ------------- |
+| `=~` | regex         |
+| `==` | != match      |
+| `-z` | -n string     |
 | `-f` | -d file tests |
 
 ---
@@ -6307,10 +6288,10 @@ let expr
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `var=expr` | — |
-| `++` | -- += etc |
+| Flag       | Description |
+| ---------- | ----------- |
+| `var=expr` | —           |
+| `++`       | -- += etc   |
 
 ---
 
@@ -6338,13 +6319,13 @@ set [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-e` | exit on error |
-| `-x` | trace |
-| `-u` | undefined error |
-| `-o` | pipefail |
-| `pipefail` | noglob  noclobber |
+| Flag       | Description      |
+| ---------- | ---------------- |
+| `-e`       | exit on error    |
+| `-x`       | trace            |
+| `-u`       | undefined error  |
+| `-o`       | pipefail         |
+| `pipefail` | noglob noclobber |
 
 ---
 
@@ -6360,11 +6341,11 @@ shopt [-su] opt
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `globstar` | extglob |
-| `nocaseglob` | direxpand |
-| `histappend` | cdspell |
+| Flag         | Description |
+| ------------ | ----------- |
+| `globstar`   | extglob     |
+| `nocaseglob` | direxpand   |
+| `histappend` | cdspell     |
 
 ---
 
@@ -6381,13 +6362,13 @@ declare [opts] var
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-i` | integer |
-| `-a` | array |
+| ---- | ----------- |
+| `-i` | integer     |
+| `-a` | array       |
 | `-A` | assoc array |
-| `-r` | readonly |
-| `-x` | export |
-| `-f` | functions |
+| `-r` | readonly    |
+| `-x` | export      |
+| `-f` | functions   |
 
 ---
 
@@ -6416,10 +6397,10 @@ export VAR=value
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | unexport |
-| `-f` | function |
-| `-p` | print all |
+| ---- | ----------- |
+| `-n` | unexport    |
+| `-f` | function    |
+| `-p` | print all   |
 
 ---
 
@@ -6436,9 +6417,9 @@ unset var
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | function |
-| `-v` | variable |
+| ---- | ----------- |
+| `-f` | function    |
+| `-v` | variable    |
 
 ---
 
@@ -6455,8 +6436,8 @@ alias name='cmd'
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-p` | print all |
+| ---- | ----------- |
+| `-p` | print all   |
 
 ---
 
@@ -6473,8 +6454,8 @@ unalias name
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-a` | remove all |
+| ---- | ----------- |
+| `-a` | remove all  |
 
 ---
 
@@ -6562,11 +6543,11 @@ mapfile -t arr < file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description   |
+| ---- | ------------- |
 | `-t` | trim newlines |
-| `-n` | lines |
-| `-s` | skip |
+| `-n` | lines         |
+| `-s` | skip          |
 
 ---
 
@@ -6582,11 +6563,11 @@ command cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-v` | locate |
+| Flag | Description  |
+| ---- | ------------ |
+| `-v` | locate       |
 | `-p` | default PATH |
-| `-n` | no function |
+| `-n` | no function  |
 
 ---
 
@@ -6615,10 +6596,10 @@ hash [cmd]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-r` | reset |
-| `-p` | path |
-| `-l` | list |
+| ---- | ----------- |
+| `-r` | reset       |
+| `-p` | path        |
+| `-l` | list        |
 
 ---
 
@@ -6634,16 +6615,16 @@ history [n]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `!!` | last cmd |
-| `!n` | run nth |
+| Flag   | Description   |
+| ------ | ------------- |
+| `!!`   | last cmd      |
+| `!n`   | run nth       |
 | `!str` | last matching |
-| `!!` | last cmd |
-| `-c` | clear |
-| `-d` | N delete |
-| `-r` | read file |
-| `-w` | write |
+| `!!`   | last cmd      |
+| `-c`   | clear         |
+| `-d`   | N delete      |
+| `-r`   | read file     |
+| `-w`   | write         |
 
 ---
 
@@ -6671,13 +6652,13 @@ watch [opts] cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-n` | interval |
+| Flag | Description     |
+| ---- | --------------- |
+| `-n` | interval        |
 | `-d` | highlight diffs |
-| `-e` | exit on error |
-| `-t` | no header |
-| `-x` | pass to exec |
+| `-e` | exit on error   |
+| `-t` | no header       |
+| `-x` | pass to exec    |
 
 ---
 
@@ -6706,13 +6687,12 @@ notify-send title body
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-t` | timeout ms |
-| `-u` | urgency |
-| `-i` | icon |
+| ---- | ----------- |
+| `-t` | timeout ms  |
+| `-u` | urgency     |
+| `-i` | icon        |
 
 ---
-
 
 ## Environment
 
@@ -6729,10 +6709,10 @@ env [name=val] cmd
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-i` | empty env |
-| `-u` | unset |
-| `-C` | dir |
+| ---- | ----------- |
+| `-i` | empty env   |
+| `-u` | unset       |
+| `-C` | dir         |
 | `--` | end of opts |
 
 ---
@@ -6762,9 +6742,9 @@ locale [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-a` | all locales |
-| `-m` | charmaps |
+| `-m` | charmaps    |
 
 ---
 
@@ -6780,9 +6760,9 @@ localectl [cmd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `status` | set-locale |
+| Flag         | Description  |
+| ------------ | ------------ |
+| `status`     | set-locale   |
 | `set-keymap` | list-locales |
 
 ---
@@ -6812,10 +6792,10 @@ ldconfig [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-p` | print cache |
-| `-v` | verbose |
-| `-n` | dir update |
+| `-v` | verbose     |
+| `-n` | dir update  |
 
 ---
 
@@ -6832,9 +6812,9 @@ ldd [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-v` | verbose |
-| `-r` | resolve |
+| ---- | ----------- |
+| `-v` | verbose     |
+| `-r` | resolve     |
 
 ---
 
@@ -6850,13 +6830,12 @@ stdbuf [opts] cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description           |
+| ---- | --------------------- |
 | `-i` | -o -e buffer settings |
-| `L` | line  0 unbuffered |
+| `L`  | line 0 unbuffered     |
 
 ---
-
 
 ## Cron & Jobs
 
@@ -6873,11 +6852,11 @@ crontab [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-e` | edit |
-| `-l` | list |
-| `-r` | remove |
-| `-u` | user |
+| ---- | ----------- |
+| `-e` | edit        |
+| `-l` | list        |
+| `-r` | remove      |
+| `-u` | user        |
 
 ---
 
@@ -6893,12 +6872,12 @@ at time
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-l` | list jobs |
-| `-d` | delete |
-| `-c` | show job |
-| `now` | +5min  3pm  midnight |
+| Flag  | Description        |
+| ----- | ------------------ |
+| `-l`  | list jobs          |
+| `-d`  | delete             |
+| `-c`  | show job           |
+| `now` | +5min 3pm midnight |
 
 ---
 
@@ -6951,10 +6930,10 @@ anacron [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | run now |
-| `-f` | force |
-| `-s` | serial |
+| ---- | ----------- |
+| `-n` | run now     |
+| `-f` | force       |
+| `-s` | serial      |
 
 ---
 
@@ -6970,11 +6949,11 @@ systemd-run --on-active=T cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--on-calendar` | — |
-| `--timer-property` | — |
-| `--unit` | name |
+| Flag               | Description |
+| ------------------ | ----------- |
+| `--on-calendar`    | —           |
+| `--timer-property` | —           |
+| `--unit`           | name        |
 
 ---
 
@@ -6991,14 +6970,13 @@ flock lockfile cmd
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-e` | exclusive |
-| `-s` | shared |
-| `-n` | nonblock |
-| `-w` | timeout |
+| ---- | ----------- |
+| `-e` | exclusive   |
+| `-s` | shared      |
+| `-n` | nonblock    |
+| `-w` | timeout     |
 
 ---
-
 
 ## Misc
 
@@ -7014,12 +6992,12 @@ man [section] cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-k` | search |
-| `-f` | brief |
-| `-a` | all sections |
-| `sections` | 1-9 |
+| Flag       | Description  |
+| ---------- | ------------ |
+| `-k`       | search       |
+| `-f`       | brief        |
+| `-a`       | all sections |
+| `sections` | 1-9          |
 
 ---
 
@@ -7059,9 +7037,9 @@ tldr cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--update` | --list |
+| Flag       | Description |
+| ---------- | ----------- |
+| `--update` | --list      |
 
 ---
 
@@ -7077,8 +7055,8 @@ clear
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description     |
+| ---- | --------------- |
 | `-x` | keep scrollback |
 
 ---
@@ -7107,11 +7085,11 @@ tput [cap]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `cols` | rows  clear |
-| `bold` | sgr0  rev |
-| `setaf` | N  setab N |
+| Flag    | Description |
+| ------- | ----------- |
+| `cols`  | rows clear  |
+| `bold`  | sgr0 rev    |
+| `setaf` | N setab N   |
 
 ---
 
@@ -7127,11 +7105,11 @@ script [opts] [file]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-a` | append |
-| `-q` | quiet |
-| `-t` | timing |
+| Flag | Description      |
+| ---- | ---------------- |
+| `-a` | append           |
+| `-q` | quiet            |
+| `-t` | timing           |
 | `-e` | record exit code |
 
 ---
@@ -7173,9 +7151,9 @@ bc [opts]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-l` | math lib |
-| `-q` | quiet |
+| ---- | ----------- |
+| `-l` | math lib    |
+| `-q` | quiet       |
 | `-i` | interactive |
 
 ---
@@ -7192,11 +7170,11 @@ expr expr
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `+` | - \* / % |
-| `=` | != < > <= >= |
-| `&` | \|  match substr index length |
+| Flag | Description                  |
+| ---- | ---------------------------- |
+| `+`  | - \* / %                     |
+| `=`  | != < > <= >=                 |
+| `&`  | \| match substr index length |
 
 ---
 
@@ -7213,10 +7191,10 @@ seq [first] [incr] last
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-s` | separator |
-| `-w` | pad zeros |
-| `-f` | format |
+| ---- | ----------- |
+| `-s` | separator   |
+| `-w` | pad zeros   |
+| `-f` | format      |
 
 ---
 
@@ -7232,12 +7210,12 @@ shuf [opts] [file]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-n` | count |
+| Flag | Description   |
+| ---- | ------------- |
+| `-n` | count         |
 | `-e` | input as args |
-| `-i` | range |
-| `-r` | repeat |
+| `-i` | range         |
+| `-r` | repeat        |
 
 ---
 
@@ -7265,9 +7243,9 @@ sleep N[smhd]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `s` | secs  m mins  h hours  d days |
+| Flag | Description                |
+| ---- | -------------------------- |
+| `s`  | secs m mins h hours d days |
 
 ---
 
@@ -7284,8 +7262,8 @@ wall message
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-n` | no banner |
+| ---- | ----------- |
+| `-n` | no banner   |
 
 ---
 
@@ -7338,11 +7316,11 @@ nl [opts] file
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-b` | body type |
-| `-n` | format |
-| `-s` | separator |
-| `-v` | start num |
+| ---- | ----------- |
+| `-b` | body type   |
+| `-n` | format      |
+| `-s` | separator   |
+| `-v` | start num   |
 
 ---
 
@@ -7371,10 +7349,10 @@ cmd | lolcat
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-a` | animate |
-| `-d` | delay |
-| `-F` | freq |
+| ---- | ----------- |
+| `-a` | animate     |
+| `-d` | delay       |
+| `-F` | freq        |
 
 ---
 
@@ -7391,9 +7369,9 @@ cowsay message
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | file |
-| `-l` | list |
+| ---- | ----------- |
+| `-f` | file        |
+| `-l` | list        |
 
 ---
 
@@ -7422,10 +7400,10 @@ figlet text
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-f` | font |
-| `-l` | list fonts |
-| `-c` | center |
+| ---- | ----------- |
+| `-f` | font        |
+| `-l` | list fonts  |
+| `-c` | center      |
 
 ---
 
@@ -7441,10 +7419,10 @@ toilet text
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-f` | font |
-| `--filter` | effect |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-f`       | font        |
+| `--filter` | effect      |
 
 ---
 
@@ -7460,11 +7438,11 @@ base64 [opts] [file]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-d` | decode |
-| `-w` | wrap width |
-| `--ignore-garbage` | — |
+| Flag               | Description |
+| ------------------ | ----------- |
+| `-d`               | decode      |
+| `-w`               | wrap width  |
+| `--ignore-garbage` | —           |
 
 ---
 
@@ -7481,10 +7459,10 @@ md5sum [opts] [file]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-c` | check |
-| `-b` | binary |
-| `-t` | text |
+| ---- | ----------- |
+| `-c` | check       |
+| `-b` | binary      |
+| `-t` | text        |
 
 ---
 
@@ -7501,8 +7479,8 @@ sha256sum [file]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-c` | check |
+| ---- | ----------- |
+| `-c` | check       |
 
 ---
 
@@ -7519,8 +7497,8 @@ sha512sum [file]
 **Options**
 
 | Flag | Description |
-|------|-------------|
-| `-c` | check |
+| ---- | ----------- |
+| `-c` | check       |
 
 ---
 
@@ -7560,13 +7538,13 @@ gpg [opts]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `--encrypt` | --decrypt |
-| `--sign` | --verify |
-| `--list-keys` | — |
-| `--import` | --export |
-| `--gen-key` | --fingerprint |
+| Flag          | Description   |
+| ------------- | ------------- |
+| `--encrypt`   | --decrypt     |
+| `--sign`      | --verify      |
+| `--list-keys` | —             |
+| `--import`    | --export      |
+| `--gen-key`   | --fingerprint |
 
 ---
 
@@ -7600,10 +7578,9 @@ Reverse history search
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `type` | to search |
-| `Enter` | to run  Ctrl+R next match |
+| Flag    | Description              |
+| ------- | ------------------------ |
+| `type`  | to search                |
+| `Enter` | to run Ctrl+R next match |
 
 ---
-

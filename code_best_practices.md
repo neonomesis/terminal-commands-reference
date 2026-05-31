@@ -1,6 +1,7 @@
 # Code Best Practices Reference
 
 ## Table of Contents
+
 - [General Principles](#general-principles)
 - [Naming Conventions](#naming-conventions)
 - [Functions & Methods](#functions--methods)
@@ -21,6 +22,7 @@
 ## General Principles
 
 ### SOLID Principles
+
 ```
 S - Single Responsibility   Each class/function does ONE thing
 O - Open/Closed             Open for extension, closed for modification
@@ -30,6 +32,7 @@ D - Dependency Inversion    Depend on abstractions, not concrete implementations
 ```
 
 ### DRY, KISS, YAGNI
+
 ```
 DRY  - Don't Repeat Yourself       Extract repeated logic into reusable units
 KISS - Keep It Simple, Stupid      Prefer simple solutions over clever ones
@@ -41,6 +44,7 @@ YAGNI - You Ain't Gonna Need It    Don't build features for hypothetical future 
 ## Naming Conventions
 
 ### Variables & Constants
+
 ```js
 // Bad
 const d = new Date();
@@ -54,6 +58,7 @@ const SECONDS_PER_DAY = 86400;
 ```
 
 ### Functions
+
 ```js
 // Bad
 function data() {}
@@ -65,6 +70,7 @@ function calculateTax(income) {}
 ```
 
 ### Boolean Naming
+
 ```js
 // Bad
 let active = true;
@@ -77,6 +83,7 @@ let canEdit = true;
 ```
 
 ### Language Conventions
+
 ```
 JavaScript/TypeScript  camelCase vars, PascalCase classes, UPPER_SNAKE_CASE constants
 Python                 snake_case vars/functions, PascalCase classes, UPPER_SNAKE_CASE constants
@@ -90,25 +97,27 @@ CSS                    kebab-case classes, BEM methodology
 ## Functions & Methods
 
 ### Single Responsibility
+
 ```js
 // Bad — does too many things
 function processUser(user) {
-  validateEmail(user.email);
-  saveToDatabase(user);
-  sendWelcomeEmail(user);
-  logActivity(user);
+	validateEmail(user.email);
+	saveToDatabase(user);
+	sendWelcomeEmail(user);
+	logActivity(user);
 }
 
 // Good — each function has one job
 function registerUser(user) {
-  validateUser(user);
-  const saved = saveUser(user);
-  notifyUser(saved);
-  return saved;
+	validateUser(user);
+	const saved = saveUser(user);
+	notifyUser(saved);
+	return saved;
 }
 ```
 
 ### Argument Count
+
 ```js
 // Bad — too many parameters
 function createUser(name, email, age, role, isActive, country) {}
@@ -118,38 +127,40 @@ function createUser({ name, email, age, role, isActive, country }) {}
 ```
 
 ### Return Early (Guard Clauses)
+
 ```js
 // Bad — deeply nested
 function processOrder(order) {
-  if (order) {
-    if (order.items.length > 0) {
-      if (order.isPaid) {
-        // process...
-      }
-    }
-  }
+	if (order) {
+		if (order.items.length > 0) {
+			if (order.isPaid) {
+				// process...
+			}
+		}
+	}
 }
 
 // Good — return early
 function processOrder(order) {
-  if (!order) return;
-  if (order.items.length === 0) return;
-  if (!order.isPaid) return;
-  // process...
+	if (!order) return;
+	if (order.items.length === 0) return;
+	if (!order.isPaid) return;
+	// process...
 }
 ```
 
 ### Pure Functions
+
 ```js
 // Impure — depends on external state
 let tax = 0.2;
 function getTotal(price) {
-  return price + price * tax;
+	return price + price * tax;
 }
 
 // Pure — same input always gives same output
 function getTotal(price, taxRate) {
-  return price + price * taxRate;
+	return price + price * taxRate;
 }
 ```
 
@@ -158,6 +169,7 @@ function getTotal(price, taxRate) {
 ## Comments & Documentation
 
 ### When to Comment
+
 ```js
 // Bad — comment explains WHAT (already obvious)
 // increment i by 1
@@ -169,6 +181,7 @@ const page = requestedPage + 1;
 ```
 
 ### JSDoc / Docstrings
+
 ```js
 /**
  * Calculates compound interest.
@@ -178,7 +191,7 @@ const page = requestedPage + 1;
  * @returns {number} Final amount after compound interest
  */
 function compoundInterest(principal, rate, years) {
-  return principal * Math.pow(1 + rate, years);
+	return principal * Math.pow(1 + rate, years);
 }
 ```
 
@@ -199,14 +212,20 @@ def compound_interest(principal: float, rate: float, years: int) -> float:
 ```
 
 ### README Essentials
+
 ```markdown
 # Project Name
+
 Brief description of what it does.
 
 ## Installation
+
 ## Usage
+
 ## Configuration
+
 ## Contributing
+
 ## License
 ```
 
@@ -215,63 +234,67 @@ Brief description of what it does.
 ## Error Handling
 
 ### Never Swallow Errors
+
 ```js
 // Bad
 try {
-  doSomething();
+	doSomething();
 } catch (e) {}
 
 // Good
 try {
-  doSomething();
+	doSomething();
 } catch (error) {
-  logger.error('doSomething failed:', error);
-  throw error; // or handle gracefully
+	logger.error("doSomething failed:", error);
+	throw error; // or handle gracefully
 }
 ```
 
 ### Specific Error Types
+
 ```js
 // Bad
-throw new Error('Something went wrong');
+throw new Error("Something went wrong");
 
 // Good
 class ValidationError extends Error {
-  constructor(field, message) {
-    super(message);
-    this.name = 'ValidationError';
-    this.field = field;
-  }
+	constructor(field, message) {
+		super(message);
+		this.name = "ValidationError";
+		this.field = field;
+	}
 }
 
-throw new ValidationError('email', 'Invalid email format');
+throw new ValidationError("email", "Invalid email format");
 ```
 
 ### Async Error Handling
+
 ```js
 // Bad
 async function fetchData() {
-  const data = await api.get('/users'); // unhandled rejection
-  return data;
+	const data = await api.get("/users"); // unhandled rejection
+	return data;
 }
 
 // Good
 async function fetchData() {
-  try {
-    const data = await api.get('/users');
-    return data;
-  } catch (error) {
-    logger.error('Failed to fetch users:', error);
-    throw new ServiceError('User fetch failed', { cause: error });
-  }
+	try {
+		const data = await api.get("/users");
+		return data;
+	} catch (error) {
+		logger.error("Failed to fetch users:", error);
+		throw new ServiceError("User fetch failed", { cause: error });
+	}
 }
 ```
 
 ### Fail Fast
+
 ```js
 function divide(a, b) {
-  if (b === 0) throw new Error('Division by zero');
-  return a / b;
+	if (b === 0) throw new Error("Division by zero");
+	return a / b;
 }
 ```
 
@@ -280,6 +303,7 @@ function divide(a, b) {
 ## Code Structure & Organization
 
 ### File Organization
+
 ```
 src/
 ├── components/       UI components
@@ -292,6 +316,7 @@ src/
 ```
 
 ### Module Exports
+
 ```js
 // Bad — export everything as default
 export default { fetchUser, saveUser, deleteUser };
@@ -303,6 +328,7 @@ export function deleteUser(id) {}
 ```
 
 ### Magic Numbers & Strings
+
 ```js
 // Bad
 if (status === 3) { ... }
@@ -317,6 +343,7 @@ setTimeout(fn, ONE_DAY_MS);
 ```
 
 ### Max Line Length
+
 ```
 Recommended: 80–120 characters per line
 Configure in .editorconfig, .prettierrc, or eslint
@@ -327,6 +354,7 @@ Configure in .editorconfig, .prettierrc, or eslint
 ## Filesystem Best Practices
 
 ### Directory & File Naming
+
 ```
 Use lowercase with hyphens for directories and files
   good:  user-profile/avatar-upload.js
@@ -339,6 +367,7 @@ Exception: language convention takes precedence
 ```
 
 ### Project Root — Keep It Clean
+
 ```
 /project-root
 ├── src/              All source code
@@ -354,13 +383,14 @@ Exception: language convention takes precedence
 ```
 
 ### Paths — Absolute vs Relative
+
 ```js
 // Bad — breaks when file moves
-const config = require('../../../config');
+const config = require("../../../config");
 
 // Good — use path aliases or a root-relative helper
-import config from '@/config';          // alias in tsconfig/webpack
-const config = require(path.join(__dirname, 'config'));
+import config from "@/config"; // alias in tsconfig/webpack
+const config = require(path.join(__dirname, "config"));
 ```
 
 ```python
@@ -372,18 +402,20 @@ CONFIG_PATH = BASE_DIR / 'config' / 'settings.json'
 ```
 
 ### File Reads & Writes
+
 ```js
 // Always handle file errors explicitly
-import fs from 'fs/promises';
+import fs from "fs/promises";
 
 async function readConfig(filePath) {
-  try {
-    const content = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(content);
-  } catch (error) {
-    if (error.code === 'ENOENT') throw new Error(`Config not found: ${filePath}`);
-    throw error;
-  }
+	try {
+		const content = await fs.readFile(filePath, "utf-8");
+		return JSON.parse(content);
+	} catch (error) {
+		if (error.code === "ENOENT")
+			throw new Error(`Config not found: ${filePath}`);
+		throw error;
+	}
 }
 ```
 
@@ -397,17 +429,19 @@ def read_config(path: Path) -> dict:
 ```
 
 ### Atomic Writes (Avoid Corrupt Files)
+
 ```js
 // Bad — crash mid-write leaves corrupt file
 fs.writeFileSync(targetPath, data);
 
 // Good — write to temp, then rename (atomic on most OS)
-const tmp = targetPath + '.tmp';
+const tmp = targetPath + ".tmp";
 fs.writeFileSync(tmp, data);
 fs.renameSync(tmp, targetPath);
 ```
 
 ### Temp Files & Cleanup
+
 ```python
 import tempfile
 
@@ -419,32 +453,34 @@ with tempfile.NamedTemporaryFile(suffix='.json', delete=True) as tmp:
 
 ```js
 // Always clean up temp files in a finally block
-const tmp = os.tmpdir() + '/upload-' + Date.now();
+const tmp = os.tmpdir() + "/upload-" + Date.now();
 try {
-  await processFile(tmp);
+	await processFile(tmp);
 } finally {
-  await fs.unlink(tmp).catch(() => {});
+	await fs.unlink(tmp).catch(() => {});
 }
 ```
 
 ### File Upload Security
+
 ```js
 // Validate file type by content (magic bytes), not just extension
-import { fileTypeFromBuffer } from 'file-type';
+import { fileTypeFromBuffer } from "file-type";
 
 const type = await fileTypeFromBuffer(buffer);
-const ALLOWED = ['image/jpeg', 'image/png', 'image/webp'];
+const ALLOWED = ["image/jpeg", "image/png", "image/webp"];
 
 if (!type || !ALLOWED.includes(type.mime)) {
-  throw new ValidationError('file', 'Unsupported file type');
+	throw new ValidationError("file", "Unsupported file type");
 }
 
 // Sanitize filenames — never trust user-supplied names
-import { basename } from 'path';
-const safe = basename(userFilename).replace(/[^a-zA-Z0-9._-]/g, '_');
+import { basename } from "path";
+const safe = basename(userFilename).replace(/[^a-zA-Z0-9._-]/g, "_");
 ```
 
 ### Path Traversal Prevention
+
 ```js
 // Bad — attacker can send ../../etc/passwd
 const filePath = path.join(uploadDir, req.query.file);
@@ -452,17 +488,18 @@ const filePath = path.join(uploadDir, req.query.file);
 // Good — resolve and verify it's inside the allowed dir
 const filePath = path.resolve(uploadDir, req.query.file);
 if (!filePath.startsWith(path.resolve(uploadDir))) {
-  throw new Error('Path traversal detected');
+	throw new Error("Path traversal detected");
 }
 ```
 
 ### Environment-Specific Paths
+
 ```js
 // Bad — hardcoded OS-specific path
-const logDir = '/var/log/myapp';
+const logDir = "/var/log/myapp";
 
 // Good — configurable via env
-const logDir = process.env.LOG_DIR ?? path.join(os.homedir(), '.myapp', 'logs');
+const logDir = process.env.LOG_DIR ?? path.join(os.homedir(), ".myapp", "logs");
 ```
 
 ```python
@@ -474,35 +511,38 @@ LOG_DIR.mkdir(parents=True, exist_ok=True)
 ```
 
 ### File Size & Limits
+
 ```js
 // Always enforce upload/read size limits
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 
 if (file.size > MAX_FILE_SIZE) {
-  throw new ValidationError('file', 'File exceeds 10 MB limit');
+	throw new ValidationError("file", "File exceeds 10 MB limit");
 }
 
 // Stream large files instead of loading into memory
-import { createReadStream } from 'fs';
+import { createReadStream } from "fs";
 const stream = createReadStream(largePath, { highWaterMark: 64 * 1024 });
 ```
 
 ### Cross-Platform Compatibility
+
 ```js
 // Bad — Unix-only path separator
-const filePath = dir + '/' + filename;
+const filePath = dir + "/" + filename;
 
 // Good — works on Windows too
 const filePath = path.join(dir, filename);
 
 // Bad — Unix line endings assumed
-const lines = content.split('\n');
+const lines = content.split("\n");
 
 // Good — handles \r\n (Windows) and \n (Unix)
 const lines = content.split(/\r?\n/);
 ```
 
 ### Permissions & Ownership
+
 ```bash
 # Least-privilege file permissions
 chmod 600 .env                  # owner read/write only
@@ -515,12 +555,13 @@ chmod 777 .env                  # WRONG — anyone on system can read
 ```
 
 ### Logging File Operations
+
 ```js
 // Log meaningful context, not just "file saved"
-logger.info('Config written', {
-  path: filePath,
-  size: Buffer.byteLength(data),
-  user: req.user.id,
+logger.info("Config written", {
+	path: filePath,
+	size: Buffer.byteLength(data),
+	user: req.user.id,
 });
 ```
 
@@ -529,6 +570,7 @@ logger.info('Config written', {
 ## API Design Best Practices
 
 ### RESTful URL Structure
+
 ```
 Use nouns, not verbs — the HTTP method is the verb
 
@@ -551,6 +593,7 @@ Nested resources:
 ```
 
 ### HTTP Methods
+
 ```
 GET     Read only — never mutates state
 POST    Create a new resource or trigger an action
@@ -561,6 +604,7 @@ HEAD    Same as GET but no body — check existence/metadata
 ```
 
 ### HTTP Status Codes
+
 ```
 2xx — Success
   200 OK                  Standard success
@@ -589,6 +633,7 @@ HEAD    Same as GET but no body — check existence/metadata
 ```
 
 ### Versioning
+
 ```
 URL versioning (most common, explicit):
   /api/v1/users
@@ -605,6 +650,7 @@ Never break existing clients — deprecate, then remove:
 ```
 
 ### Request & Response Shape
+
 ```json
 // Consistent response envelope
 {
@@ -636,6 +682,7 @@ Never break existing clients — deprecate, then remove:
 ```
 
 ### Pagination
+
 ```
 Offset pagination — simple, good for small datasets
   GET /users?page=2&perPage=20
@@ -651,6 +698,7 @@ Use offset pagination for admin tables with explicit page numbers.
 ```
 
 ### Filtering, Sorting & Field Selection
+
 ```
 Filtering:
   GET /users?status=active&role=admin
@@ -665,6 +713,7 @@ Field selection (sparse fieldsets):
 ```
 
 ### Idempotency
+
 ```
 Idempotent requests — same request made N times = same result as 1 time
 
@@ -679,6 +728,7 @@ if the same key arrives again. Expire keys after 24 hours.
 ```
 
 ### Authentication & Authorization
+
 ```
 Always use HTTPS — never send tokens over plain HTTP.
 
@@ -694,6 +744,7 @@ Authorization:
 ```
 
 ### Rate Limiting
+
 ```
 Always rate-limit public APIs. Return standard headers:
 
@@ -709,6 +760,7 @@ Strategies:
 ```
 
 ### Caching
+
 ```
 Use HTTP cache headers:
 
@@ -723,47 +775,50 @@ Client sends on subsequent request:
 ```
 
 ### Input Validation
+
 ```js
 // Validate and sanitize at the API boundary — never trust the client
-app.post('/users', async (req, res) => {
-  const { error, value } = userSchema.validate(req.body, {
-    abortEarly: false,    // collect all errors, not just first
-    stripUnknown: true,   // remove fields not in schema
-  });
+app.post("/users", async (req, res) => {
+	const { error, value } = userSchema.validate(req.body, {
+		abortEarly: false, // collect all errors, not just first
+		stripUnknown: true, // remove fields not in schema
+	});
 
-  if (error) {
-    return res.status(422).json({
-      error: {
-        code: 'VALIDATION_FAILED',
-        details: error.details.map(d => ({
-          field: d.path.join('.'),
-          message: d.message,
-        })),
-      },
-    });
-  }
+	if (error) {
+		return res.status(422).json({
+			error: {
+				code: "VALIDATION_FAILED",
+				details: error.details.map((d) => ({
+					field: d.path.join("."),
+					message: d.message,
+				})),
+			},
+		});
+	}
 
-  const user = await createUser(value);
-  res.status(201).json({ data: user });
+	const user = await createUser(value);
+	res.status(201).json({ data: user });
 });
 ```
 
 ### Error Handling — Never Leak Internals
+
 ```js
 // Bad — exposes stack trace and DB details to client
 res.status(500).json({ error: err.stack });
 
 // Good — log full error internally, return safe message
-logger.error('createUser failed', { error: err, body: req.body });
+logger.error("createUser failed", { error: err, body: req.body });
 res.status(500).json({
-  error: {
-    code: 'INTERNAL_ERROR',
-    message: 'An unexpected error occurred. Please try again.',
-  },
+	error: {
+		code: "INTERNAL_ERROR",
+		message: "An unexpected error occurred. Please try again.",
+	},
 });
 ```
 
 ### API Documentation
+
 ```
 Always document:
   Endpoint URL + HTTP method
@@ -780,6 +835,7 @@ Tools:
 ```
 
 ### Webhooks
+
 ```
 Delivering events to clients:
 
@@ -798,6 +854,7 @@ Delivering events to clients:
 ```
 
 ### GraphQL (when to use)
+
 ```
 Use REST when:
   Public API consumed by many different clients
@@ -816,6 +873,7 @@ Use GraphQL when:
 ## Fetching Data
 
 ### Always Handle All States
+
 ```js
 // Every fetch has 4 states — handle all of them
 const [data, setData] = useState(null);
@@ -829,83 +887,93 @@ const [error, setError] = useState(null);
 ```
 
 ### Abort Stale Requests
+
 ```js
 // Bad — response from a previous input can overwrite a newer one
 useEffect(() => {
-  fetch(`/api/search?q=${query}`).then(r => r.json()).then(setResults);
+	fetch(`/api/search?q=${query}`)
+		.then((r) => r.json())
+		.then(setResults);
 }, [query]);
 
 // Good — cancel the previous request when query changes
 useEffect(() => {
-  const controller = new AbortController();
+	const controller = new AbortController();
 
-  fetch(`/api/search?q=${query}`, { signal: controller.signal })
-    .then(r => r.json())
-    .then(setResults)
-    .catch(err => {
-      if (err.name !== 'AbortError') setError(err);
-    });
+	fetch(`/api/search?q=${query}`, { signal: controller.signal })
+		.then((r) => r.json())
+		.then(setResults)
+		.catch((err) => {
+			if (err.name !== "AbortError") setError(err);
+		});
 
-  return () => controller.abort();
+	return () => controller.abort();
 }, [query]);
 ```
 
 ### Always Check Response Status
+
 ```js
 // Bad — fetch() only rejects on network failure, not 4xx/5xx
-const res = await fetch('/api/users');
+const res = await fetch("/api/users");
 const data = await res.json(); // runs even on 404/500
 
 // Good — check ok before parsing
-const res = await fetch('/api/users');
+const res = await fetch("/api/users");
 if (!res.ok) {
-  throw new Error(`Request failed: ${res.status} ${res.statusText}`);
+	throw new Error(`Request failed: ${res.status} ${res.statusText}`);
 }
 const data = await res.json();
 ```
 
 ### Centralize HTTP Logic
+
 ```js
 // Create a single API client — don't scatter fetch() calls everywhere
 // lib/api.js
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 async function request(path, options = {}) {
-  const res = await fetch(`${BASE_URL}${path}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${getToken()}`,
-      ...options.headers,
-    },
-    ...options,
-  });
+	const res = await fetch(`${BASE_URL}${path}`, {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${getToken()}`,
+			...options.headers,
+		},
+		...options,
+	});
 
-  if (!res.ok) {
-    const error = await res.json().catch(() => ({}));
-    throw new ApiError(res.status, error.message ?? res.statusText);
-  }
+	if (!res.ok) {
+		const error = await res.json().catch(() => ({}));
+		throw new ApiError(res.status, error.message ?? res.statusText);
+	}
 
-  return res.status === 204 ? null : res.json();
+	return res.status === 204 ? null : res.json();
 }
 
 export const api = {
-  get:    (path)         => request(path),
-  post:   (path, body)   => request(path, { method: 'POST',   body: JSON.stringify(body) }),
-  patch:  (path, body)   => request(path, { method: 'PATCH',  body: JSON.stringify(body) }),
-  put:    (path, body)   => request(path, { method: 'PUT',    body: JSON.stringify(body) }),
-  delete: (path)         => request(path, { method: 'DELETE' }),
+	get: (path) => request(path),
+	post: (path, body) =>
+		request(path, { method: "POST", body: JSON.stringify(body) }),
+	patch: (path, body) =>
+		request(path, { method: "PATCH", body: JSON.stringify(body) }),
+	put: (path, body) =>
+		request(path, { method: "PUT", body: JSON.stringify(body) }),
+	delete: (path) => request(path, { method: "DELETE" }),
 };
 ```
 
 ### Timeouts
+
 ```js
 // fetch() has no built-in timeout — add one
 function fetchWithTimeout(url, options = {}, timeoutMs = 10_000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
+	const controller = new AbortController();
+	const timer = setTimeout(() => controller.abort(), timeoutMs);
 
-  return fetch(url, { ...options, signal: controller.signal })
-    .finally(() => clearTimeout(timer));
+	return fetch(url, { ...options, signal: controller.signal }).finally(() =>
+		clearTimeout(timer),
+	);
 }
 ```
 
@@ -919,79 +987,87 @@ async with httpx.AsyncClient(timeout=10.0) as client:
 ```
 
 ### Retry with Exponential Backoff
+
 ```js
 async function fetchWithRetry(url, options = {}, retries = 3) {
-  for (let attempt = 0; attempt <= retries; attempt++) {
-    try {
-      const res = await fetch(url, options);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return await res.json();
-    } catch (err) {
-      const isLast = attempt === retries;
-      if (isLast) throw err;
-      // Only retry on network errors or 5xx, never on 4xx
-      await new Promise(r => setTimeout(r, 2 ** attempt * 500)); // 500ms, 1s, 2s
-    }
-  }
+	for (let attempt = 0; attempt <= retries; attempt++) {
+		try {
+			const res = await fetch(url, options);
+			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			return await res.json();
+		} catch (err) {
+			const isLast = attempt === retries;
+			if (isLast) throw err;
+			// Only retry on network errors or 5xx, never on 4xx
+			await new Promise((r) => setTimeout(r, 2 ** attempt * 500)); // 500ms, 1s, 2s
+		}
+	}
 }
 ```
 
 ### Caching & Deduplication
+
 ```js
 // Use a data-fetching library — don't reinvent caching
 // React Query / TanStack Query
 const { data, isLoading, error } = useQuery({
-  queryKey: ['users', userId],
-  queryFn: () => api.get(`/users/${userId}`),
-  staleTime: 5 * 60 * 1000,   // treat data as fresh for 5 min
-  retry: 2,                    // auto-retry failed requests
+	queryKey: ["users", userId],
+	queryFn: () => api.get(`/users/${userId}`),
+	staleTime: 5 * 60 * 1000, // treat data as fresh for 5 min
+	retry: 2, // auto-retry failed requests
 });
 
 // SWR
 const { data, error, isLoading } = useSWR(`/users/${userId}`, fetcher, {
-  revalidateOnFocus: false,
-  dedupingInterval: 5000,
+	revalidateOnFocus: false,
+	dedupingInterval: 5000,
 });
 ```
 
 ### Optimistic Updates
+
 ```js
 // Update UI immediately, rollback on failure
 const mutation = useMutation({
-  mutationFn: (newName) => api.patch(`/users/${id}`, { name: newName }),
+	mutationFn: (newName) => api.patch(`/users/${id}`, { name: newName }),
 
-  onMutate: async (newName) => {
-    await queryClient.cancelQueries({ queryKey: ['users', id] });
-    const previous = queryClient.getQueryData(['users', id]);
-    queryClient.setQueryData(['users', id], old => ({ ...old, name: newName }));
-    return { previous }; // snapshot for rollback
-  },
+	onMutate: async (newName) => {
+		await queryClient.cancelQueries({ queryKey: ["users", id] });
+		const previous = queryClient.getQueryData(["users", id]);
+		queryClient.setQueryData(["users", id], (old) => ({
+			...old,
+			name: newName,
+		}));
+		return { previous }; // snapshot for rollback
+	},
 
-  onError: (_err, _vars, ctx) => {
-    queryClient.setQueryData(['users', id], ctx.previous); // rollback
-  },
+	onError: (_err, _vars, ctx) => {
+		queryClient.setQueryData(["users", id], ctx.previous); // rollback
+	},
 
-  onSettled: () => queryClient.invalidateQueries({ queryKey: ['users', id] }),
+	onSettled: () => queryClient.invalidateQueries({ queryKey: ["users", id] }),
 });
 ```
 
 ### Pagination Fetching
+
 ```js
 // Cursor-based infinite scroll with TanStack Query
 const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
-  queryKey: ['posts'],
-  queryFn: ({ pageParam }) => api.get(`/posts?cursor=${pageParam}&limit=20`),
-  getNextPageParam: (lastPage) => lastPage.meta.nextCursor ?? undefined,
-  initialPageParam: '',
+	queryKey: ["posts"],
+	queryFn: ({ pageParam }) => api.get(`/posts?cursor=${pageParam}&limit=20`),
+	getNextPageParam: (lastPage) => lastPage.meta.nextCursor ?? undefined,
+	initialPageParam: "",
 });
 ```
 
 ### Parallel & Dependent Requests
+
 ```js
 // Parallel — fire all at once
 const [users, products] = await Promise.all([
-  api.get('/users'),
-  api.get('/products'),
+	api.get("/users"),
+	api.get("/products"),
 ]);
 
 // Sequential — second depends on first
@@ -1000,20 +1076,21 @@ const seller = await api.get(`/users/${order.sellerId}`);
 
 // Parallel with individual error handling
 const results = await Promise.allSettled([
-  api.get('/primary'),
-  api.get('/secondary'),
+	api.get("/primary"),
+	api.get("/secondary"),
 ]);
 
-results.forEach(r => {
-  if (r.status === 'fulfilled') use(r.value);
-  else logger.warn('Request failed', r.reason);
+results.forEach((r) => {
+	if (r.status === "fulfilled") use(r.value);
+	else logger.warn("Request failed", r.reason);
 });
 ```
 
 ### Environment URLs
+
 ```js
 // Bad — hardcoded URL
-const res = await fetch('https://api.myapp.com/users');
+const res = await fetch("https://api.myapp.com/users");
 
 // Good — environment variable
 const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`);
@@ -1026,6 +1103,7 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`);
 ```
 
 ### Security — Never Expose Secrets in Client Fetches
+
 ```
 Server-side fetches (Node / Next.js server components):
   Can use secret API keys — kept server-side, never sent to browser
@@ -1037,17 +1115,18 @@ Client-side fetches (browser):
 ```
 
 ### Response Validation
+
 ```ts
 // Validate API responses match expected shape — don't trust external data
-import { z } from 'zod';
+import { z } from "zod";
 
 const UserSchema = z.object({
-  id: z.number(),
-  name: z.string(),
-  email: z.string().email(),
+	id: z.number(),
+	name: z.string(),
+	email: z.string().email(),
 });
 
-const raw = await api.get('/users/42');
+const raw = await api.get("/users/42");
 const user = UserSchema.parse(raw); // throws if shape is wrong
 ```
 
@@ -1056,29 +1135,32 @@ const user = UserSchema.parse(raw); // throws if shape is wrong
 ## Security
 
 ### Input Validation
+
 ```js
 // Always validate at system boundaries (user input, API responses)
 function createUser(input) {
-  if (!input.email || !isValidEmail(input.email)) {
-    throw new ValidationError('email', 'Invalid email');
-  }
-  if (!input.password || input.password.length < 8) {
-    throw new ValidationError('password', 'Password too short');
-  }
+	if (!input.email || !isValidEmail(input.email)) {
+		throw new ValidationError("email", "Invalid email");
+	}
+	if (!input.password || input.password.length < 8) {
+		throw new ValidationError("password", "Password too short");
+	}
 }
 ```
 
 ### Never Trust User Input
+
 ```js
 // SQL Injection — Bad
 const query = `SELECT * FROM users WHERE id = ${userId}`;
 
 // Good — parameterized queries
-const query = 'SELECT * FROM users WHERE id = ?';
+const query = "SELECT * FROM users WHERE id = ?";
 db.execute(query, [userId]);
 ```
 
 ### Secrets Management
+
 ```bash
 # Bad — hardcoded secrets
 API_KEY = "sk-abc123xyz"
@@ -1096,6 +1178,7 @@ Never commit to git:
 ```
 
 ### Dependency Security
+
 ```bash
 npm audit                    # Check for vulnerabilities
 npm audit fix                # Auto-fix where possible
@@ -1103,6 +1186,7 @@ pip install safety && safety check
 ```
 
 ### XSS Prevention
+
 ```js
 // Bad — raw HTML injection
 element.innerHTML = userInput;
@@ -1118,6 +1202,7 @@ element.innerHTML = DOMPurify.sanitize(userInput);
 ## Performance
 
 ### Avoid Premature Optimization
+
 ```
 1. Make it work
 2. Make it right (correct + tested)
@@ -1125,29 +1210,34 @@ element.innerHTML = DOMPurify.sanitize(userInput);
 ```
 
 ### Memoization
+
 ```js
 // Cache expensive computations
 const memoize = (fn) => {
-  const cache = new Map();
-  return (...args) => {
-    const key = JSON.stringify(args);
-    if (cache.has(key)) return cache.get(key);
-    const result = fn(...args);
-    cache.set(key, result);
-    return result;
-  };
+	const cache = new Map();
+	return (...args) => {
+		const key = JSON.stringify(args);
+		if (cache.has(key)) return cache.get(key);
+		const result = fn(...args);
+		cache.set(key, result);
+		return result;
+	};
 };
 
-const expensiveCalc = memoize((n) => { /* ... */ });
+const expensiveCalc = memoize((n) => {
+	/* ... */
+});
 ```
 
 ### Lazy Loading
+
 ```js
 // Load only when needed
-const HeavyComponent = React.lazy(() => import('./HeavyComponent'));
+const HeavyComponent = React.lazy(() => import("./HeavyComponent"));
 ```
 
 ### Database
+
 ```sql
 -- Index frequently queried columns
 CREATE INDEX idx_users_email ON users(email);
@@ -1164,6 +1254,7 @@ SELECT * FROM logs ORDER BY created_at DESC LIMIT 100;
 ## Testing
 
 ### Test Pyramid
+
 ```
         /\
        /E2E\         Few — slow, expensive, test full flows
@@ -1175,6 +1266,7 @@ SELECT * FROM logs ORDER BY created_at DESC LIMIT 100;
 ```
 
 ### Naming Tests
+
 ```js
 // Pattern: describe WHAT and WHEN
 describe('calculateTax', () => {
@@ -1185,20 +1277,22 @@ describe('calculateTax', () => {
 ```
 
 ### Arrange-Act-Assert (AAA)
+
 ```js
-it('applies discount to order total', () => {
-  // Arrange
-  const order = { total: 100, discountCode: 'SAVE10' };
+it("applies discount to order total", () => {
+	// Arrange
+	const order = { total: 100, discountCode: "SAVE10" };
 
-  // Act
-  const result = applyDiscount(order);
+	// Act
+	const result = applyDiscount(order);
 
-  // Assert
-  expect(result.total).toBe(90);
+	// Assert
+	expect(result.total).toBe(90);
 });
 ```
 
 ### Test Coverage
+
 ```
 Aim for: 70–80% coverage on business logic
 Avoid:   Testing implementation details (test behavior, not internals)
@@ -1215,6 +1309,7 @@ go test -cover ./...
 ## Version Control
 
 ### Commit Messages
+
 ```
 Format: <type>(<scope>): <short description>
 
@@ -1235,6 +1330,7 @@ Examples:
 ```
 
 ### Branch Strategy
+
 ```
 main / master     Production-ready code
 develop           Integration branch
@@ -1245,6 +1341,7 @@ hotfix/*          Critical production fixes
 ```
 
 ### .gitignore Essentials
+
 ```gitignore
 # Dependencies
 node_modules/
@@ -1278,6 +1375,7 @@ Thumbs.db
 ## Language-Specific
 
 ### JavaScript / TypeScript
+
 ```ts
 // Prefer const over let, avoid var
 const MAX_RETRIES = 3;
@@ -1299,6 +1397,7 @@ const data = await fetchData();
 ```
 
 ### Python
+
 ```python
 # Use type hints
 def greet(name: str) -> str:
@@ -1325,6 +1424,7 @@ class User:
 ```
 
 ### Go
+
 ```go
 // Handle errors explicitly
 result, err := doSomething()
@@ -1351,6 +1451,7 @@ type Writer interface {
 ## Quick Checklist
 
 ### Before Committing
+
 ```
 [ ] Code does what it's supposed to do
 [ ] No hardcoded secrets or credentials
@@ -1363,6 +1464,7 @@ type Writer interface {
 ```
 
 ### Code Review Checklist
+
 ```
 [ ] Is the logic correct?
 [ ] Is it readable without explanation?
@@ -1376,4 +1478,4 @@ type Writer interface {
 
 ---
 
-*Reference guide — not exhaustive. Adapt to your team's conventions.*
+_Reference guide — not exhaustive. Adapt to your team's conventions._

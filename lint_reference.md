@@ -27,15 +27,15 @@ npm init @eslint/config
 import js from "@eslint/js";
 
 export default [
-  js.configs.recommended,
-  {
-    files: ["**/*.js"],
-    rules: {
-      "no-unused-vars": "warn",
-      "no-console": "off",
-      semi: ["error", "always"],
-    },
-  },
+	js.configs.recommended,
+	{
+		files: ["**/*.js"],
+		rules: {
+			"no-unused-vars": "warn",
+			"no-console": "off",
+			semi: ["error", "always"],
+		},
+	},
 ];
 ```
 
@@ -43,16 +43,16 @@ export default [
 
 ```json
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
-  "extends": ["eslint:recommended"],
-  "rules": {
-    "no-unused-vars": "warn",
-    "semi": ["error", "always"]
-  }
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"extends": ["eslint:recommended"],
+	"rules": {
+		"no-unused-vars": "warn",
+		"semi": ["error", "always"]
+	}
 }
 ```
 
@@ -90,19 +90,19 @@ npx eslint src/ --cache
 
 ## Rule Severity Levels
 
-| Value | Meaning                  |
-|-------|--------------------------|
+| Value           | Meaning                |
+| --------------- | ---------------------- |
 | `0` / `"off"`   | Disable the rule       |
 | `1` / `"warn"`  | Warning (non-breaking) |
 | `2` / `"error"` | Error (exit code 1)    |
 
 ```json
 {
-  "rules": {
-    "no-console": "off",
-    "eqeqeq": "warn",
-    "semi": ["error", "always"]
-  }
+	"rules": {
+		"no-console": "off",
+		"eqeqeq": "warn",
+		"semi": ["error", "always"]
+	}
 }
 ```
 
@@ -112,20 +112,20 @@ npx eslint src/ --cache
 
 ```json
 {
-  "rules": {
-    "no-unused-vars": "warn",
-    "no-undef": "error",
-    "no-console": "warn",
-    "eqeqeq": ["error", "always"],
-    "semi": ["error", "always"],
-    "quotes": ["error", "single"],
-    "indent": ["error", 2],
-    "comma-dangle": ["error", "always-multiline"],
-    "no-var": "error",
-    "prefer-const": "error",
-    "arrow-body-style": ["error", "as-needed"],
-    "object-shorthand": ["error", "always"]
-  }
+	"rules": {
+		"no-unused-vars": "warn",
+		"no-undef": "error",
+		"no-console": "warn",
+		"eqeqeq": ["error", "always"],
+		"semi": ["error", "always"],
+		"quotes": ["error", "single"],
+		"indent": ["error", 2],
+		"comma-dangle": ["error", "always-multiline"],
+		"no-var": "error",
+		"prefer-const": "error",
+		"arrow-body-style": ["error", "as-needed"],
+		"object-shorthand": ["error", "always"]
+	}
 }
 ```
 
@@ -139,27 +139,27 @@ These rules flag code quality and style concerns without blocking CI. Good start
 
 ```json
 {
-  "rules": {
-    "no-unused-vars": "warn",
-    "no-console": "warn",
-    "no-debugger": "warn",
-    "no-alert": "warn",
-    "no-todo-comments": "off",
-    "no-empty": "warn",
-    "no-empty-function": "warn",
-    "no-lonely-if": "warn",
-    "no-negated-condition": "warn",
-    "no-nested-ternary": "warn",
-    "no-unneeded-ternary": "warn",
-    "no-useless-return": "warn",
-    "no-useless-concat": "warn",
-    "no-useless-rename": "warn",
-    "no-shadow": "warn",
-    "no-param-reassign": "warn",
-    "no-else-return": "warn",
-    "consistent-return": "warn",
-    "default-case": "warn"
-  }
+	"rules": {
+		"no-unused-vars": "warn",
+		"no-console": "warn",
+		"no-debugger": "warn",
+		"no-alert": "warn",
+		"no-todo-comments": "off",
+		"no-empty": "warn",
+		"no-empty-function": "warn",
+		"no-lonely-if": "warn",
+		"no-negated-condition": "warn",
+		"no-nested-ternary": "warn",
+		"no-unneeded-ternary": "warn",
+		"no-useless-return": "warn",
+		"no-useless-concat": "warn",
+		"no-useless-rename": "warn",
+		"no-shadow": "warn",
+		"no-param-reassign": "warn",
+		"no-else-return": "warn",
+		"consistent-return": "warn",
+		"default-case": "warn"
+	}
 }
 ```
 
@@ -167,22 +167,22 @@ These rules flag code quality and style concerns without blocking CI. Good start
 
 ```json
 {
-  "rules": {
-    "prefer-const": "warn",
-    "prefer-arrow-callback": "warn",
-    "prefer-template": "warn",
-    "prefer-destructuring": ["warn", { "array": false, "object": true }],
-    "prefer-rest-params": "warn",
-    "prefer-spread": "warn",
-    "prefer-object-spread": "warn",
-    "prefer-numeric-literals": "warn",
-    "prefer-exponentiation-operator": "warn",
-    "object-shorthand": ["warn", "always"],
-    "arrow-body-style": ["warn", "as-needed"],
-    "no-var": "warn",
-    "require-await": "warn",
-    "no-return-await": "warn"
-  }
+	"rules": {
+		"prefer-const": "warn",
+		"prefer-arrow-callback": "warn",
+		"prefer-template": "warn",
+		"prefer-destructuring": ["warn", { "array": false, "object": true }],
+		"prefer-rest-params": "warn",
+		"prefer-spread": "warn",
+		"prefer-object-spread": "warn",
+		"prefer-numeric-literals": "warn",
+		"prefer-exponentiation-operator": "warn",
+		"object-shorthand": ["warn", "always"],
+		"arrow-body-style": ["warn", "as-needed"],
+		"no-var": "warn",
+		"require-await": "warn",
+		"no-return-await": "warn"
+	}
 }
 ```
 
@@ -190,19 +190,26 @@ These rules flag code quality and style concerns without blocking CI. Good start
 
 ```json
 {
-  "rules": {
-    "spaced-comment": ["warn", "always"],
-    "capitalized-comments": ["warn", "always", { "ignoreInlineComments": true }],
-    "multiline-comment-style": ["warn", "starred-block"],
-    "yoda": ["warn", "never"],
-    "curly": ["warn", "multi-line"],
-    "dot-notation": "warn",
-    "eqeqeq": ["warn", "always"],
-    "no-implicit-coercion": "warn",
-    "operator-assignment": ["warn", "always"],
-    "sort-imports": ["warn", { "ignoreDeclarationSort": true }],
-    "no-magic-numbers": ["warn", { "ignore": [0, 1, -1], "ignoreArrayIndexes": true }]
-  }
+	"rules": {
+		"spaced-comment": ["warn", "always"],
+		"capitalized-comments": [
+			"warn",
+			"always",
+			{ "ignoreInlineComments": true }
+		],
+		"multiline-comment-style": ["warn", "starred-block"],
+		"yoda": ["warn", "never"],
+		"curly": ["warn", "multi-line"],
+		"dot-notation": "warn",
+		"eqeqeq": ["warn", "always"],
+		"no-implicit-coercion": "warn",
+		"operator-assignment": ["warn", "always"],
+		"sort-imports": ["warn", { "ignoreDeclarationSort": true }],
+		"no-magic-numbers": [
+			"warn",
+			{ "ignore": [0, 1, -1], "ignoreArrayIndexes": true }
+		]
+	}
 }
 ```
 
@@ -210,14 +217,14 @@ These rules flag code quality and style concerns without blocking CI. Good start
 
 ```json
 {
-  "rules": {
-    "complexity": ["warn", 10],
-    "max-depth": ["warn", 4],
-    "max-lines": ["warn", 300],
-    "max-lines-per-function": ["warn", 60],
-    "max-params": ["warn", 4],
-    "max-statements": ["warn", 20]
-  }
+	"rules": {
+		"complexity": ["warn", 10],
+		"max-depth": ["warn", 4],
+		"max-lines": ["warn", 300],
+		"max-lines-per-function": ["warn", 60],
+		"max-params": ["warn", 4],
+		"max-statements": ["warn", 20]
+	}
 }
 ```
 
@@ -225,17 +232,20 @@ These rules flag code quality and style concerns without blocking CI. Good start
 
 ```json
 {
-  "rules": {
-    "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/no-inferrable-types": "warn",
-    "@typescript-eslint/prefer-optional-chain": "warn",
-    "@typescript-eslint/prefer-nullish-coalescing": "warn",
-    "@typescript-eslint/no-non-null-assertion": "warn",
-    "@typescript-eslint/consistent-type-imports": ["warn", { "prefer": "type-imports" }],
-    "@typescript-eslint/no-empty-interface": "warn",
-    "@typescript-eslint/ban-ts-comment": "warn"
-  }
+	"rules": {
+		"@typescript-eslint/no-explicit-any": "warn",
+		"@typescript-eslint/no-unused-vars": "warn",
+		"@typescript-eslint/no-inferrable-types": "warn",
+		"@typescript-eslint/prefer-optional-chain": "warn",
+		"@typescript-eslint/prefer-nullish-coalescing": "warn",
+		"@typescript-eslint/no-non-null-assertion": "warn",
+		"@typescript-eslint/consistent-type-imports": [
+			"warn",
+			{ "prefer": "type-imports" }
+		],
+		"@typescript-eslint/no-empty-interface": "warn",
+		"@typescript-eslint/ban-ts-comment": "warn"
+	}
 }
 ```
 
@@ -243,16 +253,16 @@ These rules flag code quality and style concerns without blocking CI. Good start
 
 ```json
 {
-  "rules": {
-    "react/prop-types": "warn",
-    "react/no-unused-prop-types": "warn",
-    "react/self-closing-comp": "warn",
-    "react/jsx-no-useless-fragment": "warn",
-    "react/jsx-curly-brace-presence": ["warn", "never"],
-    "react/no-array-index-key": "warn",
-    "react/prefer-stateless-function": "warn",
-    "react-hooks/exhaustive-deps": "warn"
-  }
+	"rules": {
+		"react/prop-types": "warn",
+		"react/no-unused-prop-types": "warn",
+		"react/self-closing-comp": "warn",
+		"react/jsx-no-useless-fragment": "warn",
+		"react/jsx-curly-brace-presence": ["warn", "never"],
+		"react/no-array-index-key": "warn",
+		"react/prefer-stateless-function": "warn",
+		"react-hooks/exhaustive-deps": "warn"
+	}
 }
 ```
 
@@ -267,21 +277,21 @@ Drop-in config that sets every rule to `warn` — useful for onboarding lint int
 import js from "@eslint/js";
 
 function allWarn(rules) {
-  return Object.fromEntries(
-    Object.entries(rules).map(([key, val]) => {
-      const severity = Array.isArray(val) ? val[0] : val;
-      if (severity === "error" || severity === 2) {
-        return [key, Array.isArray(val) ? ["warn", ...val.slice(1)] : "warn"];
-      }
-      return [key, val];
-    })
-  );
+	return Object.fromEntries(
+		Object.entries(rules).map(([key, val]) => {
+			const severity = Array.isArray(val) ? val[0] : val;
+			if (severity === "error" || severity === 2) {
+				return [key, Array.isArray(val) ? ["warn", ...val.slice(1)] : "warn"];
+			}
+			return [key, val];
+		}),
+	);
 }
 
 export default [
-  {
-    rules: allWarn(js.configs.recommended.rules),
-  },
+	{
+		rules: allWarn(js.configs.recommended.rules),
+	},
 ];
 ```
 
@@ -292,9 +302,7 @@ export default [
 ### Flat config (`eslint.config.js`)
 
 ```js
-export default [
-  { ignores: ["dist/", "node_modules/", "*.min.js"] },
-];
+export default [{ ignores: ["dist/", "node_modules/", "*.min.js"] }];
 ```
 
 ### Legacy (`.eslintignore`)
@@ -333,15 +341,15 @@ import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 
 export default [
-  {
-    files: ["**/*.ts", "**/*.tsx"],
-    languageOptions: { parser: tsParser },
-    plugins: { "@typescript-eslint": tsPlugin },
-    rules: {
-      ...tsPlugin.configs.recommended.rules,
-      "@typescript-eslint/no-explicit-any": "warn",
-    },
-  },
+	{
+		files: ["**/*.ts", "**/*.tsx"],
+		languageOptions: { parser: tsParser },
+		plugins: { "@typescript-eslint": tsPlugin },
+		rules: {
+			...tsPlugin.configs.recommended.rules,
+			"@typescript-eslint/no-explicit-any": "warn",
+		},
+	},
 ];
 ```
 
@@ -349,16 +357,16 @@ export default [
 
 ## Popular Plugins & Configs
 
-| Package | Purpose |
-|--------|---------|
-| `eslint-plugin-react` | React-specific rules |
-| `eslint-plugin-react-hooks` | Enforce hooks rules |
-| `eslint-plugin-import` | Import/export linting |
-| `eslint-plugin-jsx-a11y` | Accessibility rules |
-| `eslint-plugin-n` | Node.js rules |
-| `@typescript-eslint` | TypeScript rules |
-| `eslint-config-prettier` | Disable style rules that conflict with Prettier |
-| `eslint-plugin-prettier` | Run Prettier as an ESLint rule |
+| Package                     | Purpose                                         |
+| --------------------------- | ----------------------------------------------- |
+| `eslint-plugin-react`       | React-specific rules                            |
+| `eslint-plugin-react-hooks` | Enforce hooks rules                             |
+| `eslint-plugin-import`      | Import/export linting                           |
+| `eslint-plugin-jsx-a11y`    | Accessibility rules                             |
+| `eslint-plugin-n`           | Node.js rules                                   |
+| `@typescript-eslint`        | TypeScript rules                                |
+| `eslint-config-prettier`    | Disable style rules that conflict with Prettier |
+| `eslint-plugin-prettier`    | Run Prettier as an ESLint rule                  |
 
 ---
 
@@ -373,10 +381,7 @@ npm install --save-dev eslint-config-prettier eslint-plugin-prettier
 import prettier from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier/recommended";
 
-export default [
-  prettierPlugin,
-  prettier,
-];
+export default [prettierPlugin, prettier];
 ```
 
 ---
@@ -385,11 +390,11 @@ export default [
 
 ```json
 {
-  "scripts": {
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix",
-    "lint:ci": "eslint src/ --max-warnings 0"
-  }
+	"scripts": {
+		"lint": "eslint src/",
+		"lint:fix": "eslint src/ --fix",
+		"lint:ci": "eslint src/ --max-warnings 0"
+	}
 }
 ```
 
@@ -401,10 +406,10 @@ Install the **ESLint** extension (`dbaeumer.vscode-eslint`), then add to `settin
 
 ```json
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.validate": ["javascript", "typescript", "jsx", "tsx"]
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"eslint.validate": ["javascript", "typescript", "jsx", "tsx"]
 }
 ```
 
@@ -427,11 +432,11 @@ npx eslint --print-config src/index.js | grep '"rules"' -A 9999
 
 ## Version History Highlights
 
-| Version | Key Change |
-|---------|-----------|
-| v6 | Sharable configs |
-| v8 | Stable flat config preview |
-| v9 | Flat config (`eslint.config.js`) is default, `.eslintrc` deprecated |
+| Version | Key Change                                                          |
+| ------- | ------------------------------------------------------------------- |
+| v6      | Sharable configs                                                    |
+| v8      | Stable flat config preview                                          |
+| v9      | Flat config (`eslint.config.js`) is default, `.eslintrc` deprecated |
 
 ---
 
@@ -458,13 +463,13 @@ Linting is not limited to JavaScript. Every language and file format has dedicat
 
 ## JavaScript / TypeScript Alternatives
 
-| Tool | Description | Install |
-|------|-------------|---------|
-| **Biome** | All-in-one linter + formatter (replaces ESLint + Prettier), written in Rust | `npm i -D @biomejs/biome` |
-| **oxlint** | Extremely fast ESLint-compatible linter in Rust | `npm i -D oxlint` |
-| **JSHint** | Older, config-driven JS linter | `npm i -D jshint` |
-| **StandardJS** | Opinionated JS style with zero config | `npm i -D standard` |
-| **deno lint** | Built-in linter for Deno projects | `deno lint` |
+| Tool           | Description                                                                 | Install                   |
+| -------------- | --------------------------------------------------------------------------- | ------------------------- |
+| **Biome**      | All-in-one linter + formatter (replaces ESLint + Prettier), written in Rust | `npm i -D @biomejs/biome` |
+| **oxlint**     | Extremely fast ESLint-compatible linter in Rust                             | `npm i -D oxlint`         |
+| **JSHint**     | Older, config-driven JS linter                                              | `npm i -D jshint`         |
+| **StandardJS** | Opinionated JS style with zero config                                       | `npm i -D standard`       |
+| **deno lint**  | Built-in linter for Deno projects                                           | `deno lint`               |
 
 ```bash
 # Biome
@@ -512,14 +517,14 @@ npx stylelint "**/*.{css,scss,less}"
 
 ## Python
 
-| Tool | Role | Install |
-|------|------|---------|
-| **Ruff** | Fast all-in-one linter + formatter (replaces flake8/isort/black) | `pip install ruff` |
-| **Pylint** | Deep static analysis, style + logic | `pip install pylint` |
-| **Flake8** | Style + syntax checker (PEP 8) | `pip install flake8` |
-| **mypy** | Static type checker | `pip install mypy` |
-| **Bandit** | Security vulnerability scanner | `pip install bandit` |
-| **Black** | Opinionated code formatter | `pip install black` |
+| Tool       | Role                                                             | Install              |
+| ---------- | ---------------------------------------------------------------- | -------------------- |
+| **Ruff**   | Fast all-in-one linter + formatter (replaces flake8/isort/black) | `pip install ruff`   |
+| **Pylint** | Deep static analysis, style + logic                              | `pip install pylint` |
+| **Flake8** | Style + syntax checker (PEP 8)                                   | `pip install flake8` |
+| **mypy**   | Static type checker                                              | `pip install mypy`   |
+| **Bandit** | Security vulnerability scanner                                   | `pip install bandit` |
+| **Black**  | Opinionated code formatter                                       | `pip install black`  |
 
 ```bash
 # Ruff (fastest, recommended)
@@ -620,12 +625,12 @@ echo $var
 
 Common ShellCheck codes:
 
-| Code | Issue |
-|------|-------|
+| Code   | Issue                                   |
+| ------ | --------------------------------------- | --- | ----- |
 | SC2086 | Unquoted variable (word splitting risk) |
-| SC2046 | Unquoted command substitution |
-| SC2006 | Use `$()` instead of backticks |
-| SC2164 | Use `cd ... || exit` |
+| SC2046 | Unquoted command substitution           |
+| SC2006 | Use `$()` instead of backticks          |
+| SC2164 | Use `cd ...                             |     | exit` |
 
 ---
 
@@ -708,11 +713,11 @@ RUN apt-get install -y curl
 
 Common Hadolint rules:
 
-| Rule | Issue |
-|------|-------|
-| DL3007 | Use specific tag, not `latest` |
-| DL3008 | Pin apt package versions |
-| DL3009 | Delete apt lists after install |
+| Rule   | Issue                            |
+| ------ | -------------------------------- |
+| DL3007 | Use specific tag, not `latest`   |
+| DL3008 | Pin apt package versions         |
+| DL3009 | Delete apt lists after install   |
 | DL4006 | Set `SHELL` option with pipefail |
 
 ---
@@ -759,14 +764,14 @@ sqlfluff lint --dialect postgres query.sql
 
 ## Security-Focused Scanners
 
-| Tool | Language / Target | Install |
-|------|------------------|---------|
-| **Semgrep** | Any language, custom rules | `pip install semgrep` |
-| **Bandit** | Python | `pip install bandit` |
-| **Brakeman** | Ruby on Rails | `gem install brakeman` |
-| **gosec** | Go | `go install github.com/securecgo/gosec/v2/cmd/gosec@latest` |
-| **npm audit** | Node.js deps | built-in |
-| **Snyk** | Deps + code | `npm i -g snyk` |
+| Tool          | Language / Target          | Install                                                     |
+| ------------- | -------------------------- | ----------------------------------------------------------- |
+| **Semgrep**   | Any language, custom rules | `pip install semgrep`                                       |
+| **Bandit**    | Python                     | `pip install bandit`                                        |
+| **Brakeman**  | Ruby on Rails              | `gem install brakeman`                                      |
+| **gosec**     | Go                         | `go install github.com/securecgo/gosec/v2/cmd/gosec@latest` |
+| **npm audit** | Node.js deps               | built-in                                                    |
+| **Snyk**      | Deps + code                | `npm i -g snyk`                                             |
 
 ```bash
 semgrep --config=auto src/
@@ -825,18 +830,18 @@ echo "npx lint-staged" > .husky/pre-commit
 
 ## Linter Comparison by Language
 
-| Language | Recommended | Also popular |
-|----------|-------------|--------------|
-| JavaScript | ESLint / Biome | oxlint, StandardJS |
-| TypeScript | ESLint + @typescript-eslint | Biome |
-| CSS/SCSS | Stylelint | — |
-| Python | Ruff | Pylint, Flake8 |
-| Go | golangci-lint | staticcheck, go vet |
-| Rust | Clippy | — |
-| Shell | ShellCheck | — |
-| Markdown | markdownlint | — |
-| YAML | yamllint | — |
-| Dockerfile | Hadolint | — |
-| Terraform | tflint + tfsec | — |
-| SQL | SQLFluff | — |
-| HTML | HTMLHint | — |
+| Language   | Recommended                 | Also popular        |
+| ---------- | --------------------------- | ------------------- |
+| JavaScript | ESLint / Biome              | oxlint, StandardJS  |
+| TypeScript | ESLint + @typescript-eslint | Biome               |
+| CSS/SCSS   | Stylelint                   | —                   |
+| Python     | Ruff                        | Pylint, Flake8      |
+| Go         | golangci-lint               | staticcheck, go vet |
+| Rust       | Clippy                      | —                   |
+| Shell      | ShellCheck                  | —                   |
+| Markdown   | markdownlint                | —                   |
+| YAML       | yamllint                    | —                   |
+| Dockerfile | Hadolint                    | —                   |
+| Terraform  | tflint + tfsec              | —                   |
+| SQL        | SQLFluff                    | —                   |
+| HTML       | HTMLHint                    | —                   |

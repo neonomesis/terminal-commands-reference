@@ -1,4 +1,5 @@
 # ⚡ PowerShell Commands Reference
+
 > Complete cmdlet & alias reference
 
 **314 commands** across **21 categories** — Generated May 30, 2026
@@ -45,12 +46,12 @@ Set-Location [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Path` | destination |
-| `-PassThru` | return new loc |
-| `-LiteralPath` | no wildcards |
-| `~` | home dir (PS 6+) |
+| Flag           | Description      |
+| -------------- | ---------------- |
+| `-Path`        | destination      |
+| `-PassThru`    | return new loc   |
+| `-LiteralPath` | no wildcards     |
+| `~`            | home dir (PS 6+) |
 
 ---
 
@@ -66,12 +67,12 @@ Get-Location
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-PSProvider` | filter provider |
-| `-PSDrive` | filter drive |
-| `-Stack` | from location stack |
-| `-StackName` | named stack |
+| Flag          | Description         |
+| ------------- | ------------------- |
+| `-PSProvider` | filter provider     |
+| `-PSDrive`    | filter drive        |
+| `-Stack`      | from location stack |
+| `-StackName`  | named stack         |
 
 ---
 
@@ -87,11 +88,11 @@ Push-Location [path]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Path` | directory |
+| Flag         | Description |
+| ------------ | ----------- |
+| `-Path`      | directory   |
 | `-StackName` | named stack |
-| `-PassThru` | return loc |
+| `-PassThru`  | return loc  |
 
 ---
 
@@ -107,10 +108,10 @@ Pop-Location
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag         | Description |
+| ------------ | ----------- |
 | `-StackName` | named stack |
-| `-PassThru` | return loc |
+| `-PassThru`  | return loc  |
 
 ---
 
@@ -126,18 +127,18 @@ Get-ChildItem [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Recurse` | recurse dirs |
-| `-Force` | include hidden |
-| `-Filter` | glob filter |
-| `-Include` | include pattern |
-| `-Exclude` | exclude pattern |
-| `-Depth` | limit depth |
-| `-File` | files only |
-| `-Directory` | dirs only |
-| `-Name` | names only |
-| `-LiteralPath` | no wildcards |
+| Flag           | Description     |
+| -------------- | --------------- |
+| `-Recurse`     | recurse dirs    |
+| `-Force`       | include hidden  |
+| `-Filter`      | glob filter     |
+| `-Include`     | include pattern |
+| `-Exclude`     | exclude pattern |
+| `-Depth`       | limit depth     |
+| `-File`        | files only      |
+| `-Directory`   | dirs only       |
+| `-Name`        | names only      |
+| `-LiteralPath` | no wildcards    |
 
 ---
 
@@ -153,15 +154,14 @@ Get-Item [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Path` | with wildcards |
-| `-LiteralPath` | exact path |
-| `-Force` | include hidden |
-| `-Stream` | NTFS stream |
+| Flag           | Description    |
+| -------------- | -------------- |
+| `-Path`        | with wildcards |
+| `-LiteralPath` | exact path     |
+| `-Force`       | include hidden |
+| `-Stream`      | NTFS stream    |
 
 ---
-
 
 ## File System
 
@@ -177,15 +177,15 @@ Copy-Item [-Path] <src> [-Destination] <dst>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Recurse` | recursive |
-| `-Force` | overwrite |
+| Flag         | Description   |
+| ------------ | ------------- |
+| `-Recurse`   | recursive     |
+| `-Force`     | overwrite     |
 | `-Container` | preserve dirs |
-| `-PassThru` | return item |
-| `-Filter` | glob |
-| `-Exclude` | -Include |
-| `-Confirm` | -WhatIf |
+| `-PassThru`  | return item   |
+| `-Filter`    | glob          |
+| `-Exclude`   | -Include      |
+| `-Confirm`   | -WhatIf       |
 
 ---
 
@@ -201,12 +201,12 @@ Move-Item [-Path] <src> [-Destination] <dst>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | overwrite |
-| `-PassThru` | return item |
-| `-Filter` | -Include  -Exclude |
-| `-Confirm` | -WhatIf |
+| Flag        | Description       |
+| ----------- | ----------------- |
+| `-Force`    | overwrite         |
+| `-PassThru` | return item       |
+| `-Filter`   | -Include -Exclude |
+| `-Confirm`  | -WhatIf           |
 
 ---
 
@@ -222,14 +222,14 @@ Remove-Item [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Recurse` | recursive |
-| `-Force` | hidden/read-only |
-| `-Confirm` | prompt |
-| `-WhatIf` | dry run |
-| `-Filter` | -Include  -Exclude |
-| `-Stream` | delete NTFS stream |
+| Flag       | Description        |
+| ---------- | ------------------ |
+| `-Recurse` | recursive          |
+| `-Force`   | hidden/read-only   |
+| `-Confirm` | prompt             |
+| `-WhatIf`  | dry run            |
+| `-Filter`  | -Include -Exclude  |
+| `-Stream`  | delete NTFS stream |
 
 ---
 
@@ -245,12 +245,12 @@ New-Item [-Path] <path> -ItemType <type>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description                          |
+| ----------- | ------------------------------------ |
 | `-ItemType` | File/Directory/SymbolicLink/HardLink |
-| `-Value` | initial content |
-| `-Force` | overwrite / create path |
-| `-Confirm` | -WhatIf |
+| `-Value`    | initial content                      |
+| `-Force`    | overwrite / create path              |
+| `-Confirm`  | -WhatIf                              |
 
 ---
 
@@ -266,10 +266,10 @@ Rename-Item [-Path] <path> [-NewName] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -PassThru |
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Force`   | -PassThru   |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -285,16 +285,16 @@ Get-Content [-Path] <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-TotalCount` | / -Head N lines |
-| `-Tail` | N last lines |
-| `-Raw` | single string |
-| `-Encoding` | UTF8/ASCII/etc |
-| `-Delimiter` | line sep |
-| `-Wait` | follow mode |
-| `-Filter` | -Include  -Exclude |
-| `-Stream` | NTFS stream |
+| Flag          | Description       |
+| ------------- | ----------------- |
+| `-TotalCount` | / -Head N lines   |
+| `-Tail`       | N last lines      |
+| `-Raw`        | single string     |
+| `-Encoding`   | UTF8/ASCII/etc    |
+| `-Delimiter`  | line sep          |
+| `-Wait`       | follow mode       |
+| `-Filter`     | -Include -Exclude |
+| `-Stream`     | NTFS stream       |
 
 ---
 
@@ -310,13 +310,13 @@ Set-Content [-Path] <file> [-Value] <val>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Encoding` | UTF8/ASCII/etc |
-| `-Force` | overwrite read-only |
-| `-NoNewline` | skip newline |
-| `-Confirm` | -WhatIf |
-| `-PassThru` | return val |
+| Flag         | Description         |
+| ------------ | ------------------- |
+| `-Encoding`  | UTF8/ASCII/etc      |
+| `-Force`     | overwrite read-only |
+| `-NoNewline` | skip newline        |
+| `-Confirm`   | -WhatIf             |
+| `-PassThru`  | return val          |
 
 ---
 
@@ -332,11 +332,11 @@ Add-Content [-Path] <file> [-Value] <val>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Encoding` | -Force |
-| `-NoNewline` | -PassThru |
-| `-Confirm` | -WhatIf |
+| Flag         | Description |
+| ------------ | ----------- |
+| `-Encoding`  | -Force      |
+| `-NoNewline` | -PassThru   |
+| `-Confirm`   | -WhatIf     |
 
 ---
 
@@ -352,10 +352,10 @@ Clear-Content [-Path] <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -Filter |
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Force`   | -Filter     |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -371,12 +371,12 @@ Test-Path [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-PathType` | Container/Leaf/Any |
-| `-LiteralPath` | exact |
-| `-IsValid` | check syntax only |
-| `-Filter` | -Include  -Exclude |
+| Flag           | Description        |
+| -------------- | ------------------ |
+| `-PathType`    | Container/Leaf/Any |
+| `-LiteralPath` | exact              |
+| `-IsValid`     | check syntax only  |
+| `-Filter`      | -Include -Exclude  |
 
 ---
 
@@ -392,10 +392,10 @@ Resolve-Path [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Relative` | relative paths |
-| `-LiteralPath` | -ProviderPath |
+| Flag           | Description    |
+| -------------- | -------------- |
+| `-Relative`    | relative paths |
+| `-LiteralPath` | -ProviderPath  |
 
 ---
 
@@ -411,15 +411,15 @@ Split-Path [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Parent` | parent dir (default) |
-| `-Leaf` | filename |
-| `-LeafBase` | name without ext |
-| `-Extension` | extension |
-| `-Qualifier` | drive |
-| `-IsAbsolute` | test |
-| `-NoQualifier` | no drive |
+| Flag           | Description          |
+| -------------- | -------------------- |
+| `-Parent`      | parent dir (default) |
+| `-Leaf`        | filename             |
+| `-LeafBase`    | name without ext     |
+| `-Extension`   | extension            |
+| `-Qualifier`   | drive                |
+| `-IsAbsolute`  | test                 |
+| `-NoQualifier` | no drive             |
 
 ---
 
@@ -435,10 +435,10 @@ Join-Path <parent> <child>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag                   | Description    |
+| ---------------------- | -------------- |
 | `-AdditionalChildPath` | extra segments |
-| `-Resolve` | resolve result |
+| `-Resolve`             | resolve result |
 
 ---
 
@@ -466,11 +466,11 @@ Get-Acl [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Audit` | include SACL |
-| `-Filter` | -Include  -Exclude |
-| `-LiteralPath` | — |
+| Flag           | Description       |
+| -------------- | ----------------- |
+| `-Audit`       | include SACL      |
+| `-Filter`      | -Include -Exclude |
+| `-LiteralPath` | —                 |
 
 ---
 
@@ -486,11 +486,11 @@ Set-Acl [-Path] <path> -AclObject <acl>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Confirm` | -WhatIf |
-| `-ClearCentralAccessPolicy` | — |
-| `-PassThru` | — |
+| Flag                        | Description |
+| --------------------------- | ----------- |
+| `-Confirm`                  | -WhatIf     |
+| `-ClearCentralAccessPolicy` | —           |
+| `-PassThru`                 | —           |
 
 ---
 
@@ -506,10 +506,10 @@ Get-FileHash [-Path] <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Algorithm` | SHA256/SHA512/MD5/SHA1 |
-| `-LiteralPath` | -InputStream |
+| Flag           | Description            |
+| -------------- | ---------------------- |
+| `-Algorithm`   | SHA256/SHA512/MD5/SHA1 |
+| `-LiteralPath` | -InputStream           |
 
 ---
 
@@ -525,10 +525,10 @@ Compress-Archive -Path <src> -DestinationPath <zip>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Update` | add to existing |
-| `-Force` | overwrite |
+| Flag                | Description                   |
+| ------------------- | ----------------------------- |
+| `-Update`           | add to existing               |
+| `-Force`            | overwrite                     |
 | `-CompressionLevel` | Optimal/Fastest/NoCompression |
 
 ---
@@ -545,9 +545,9 @@ Expand-Archive -Path <zip> -DestinationPath <dir>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | overwrite |
+| Flag        | Description  |
+| ----------- | ------------ |
+| `-Force`    | overwrite    |
 | `-PassThru` | return items |
 
 ---
@@ -576,13 +576,12 @@ Invoke-Item [-Path] <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Filter` | -Include  -Exclude |
-| `-Confirm` | -WhatIf |
+| Flag       | Description       |
+| ---------- | ----------------- |
+| `-Filter`  | -Include -Exclude |
+| `-Confirm` | -WhatIf           |
 
 ---
-
 
 ## Text & String
 
@@ -598,17 +597,17 @@ Select-String [-Pattern] <re> [-Path] <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-CaseSensitive` | — |
-| `-SimpleMatch` | literal |
-| `-AllMatches` | all per line |
-| `-NotMatch` | invert |
-| `-Quiet` | return bool |
-| `-List` | first match per file |
-| `-Encoding` | -Include  -Exclude |
-| `-Context` | N lines before/after |
-| `-LiteralPath` | — |
+| Flag             | Description          |
+| ---------------- | -------------------- |
+| `-CaseSensitive` | —                    |
+| `-SimpleMatch`   | literal              |
+| `-AllMatches`    | all per line         |
+| `-NotMatch`      | invert               |
+| `-Quiet`         | return bool          |
+| `-List`          | first match per file |
+| `-Encoding`      | -Include -Exclude    |
+| `-Context`       | N lines before/after |
+| `-LiteralPath`   | —                    |
 
 ---
 
@@ -624,11 +623,11 @@ Get-Content <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Raw` | whole file |
-| `-Tail` | N |
-| `(see` | File System) |
+| Flag    | Description  |
+| ------- | ------------ |
+| `-Raw`  | whole file   |
+| `-Tail` | N            |
+| `(see`  | File System) |
 
 ---
 
@@ -644,10 +643,10 @@ cmd | Out-String
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag      | Description  |
+| --------- | ------------ |
 | `-Stream` | line by line |
-| `-Width` | line width |
+| `-Width`  | line width   |
 
 ---
 
@@ -663,12 +662,12 @@ obj | ConvertTo-Json
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Depth` | N (default 2) |
-| `-Compress` | no whitespace |
-| `-EnumsAsStrings` | — |
-| `-AsArray` | force array |
+| Flag              | Description   |
+| ----------------- | ------------- |
+| `-Depth`          | N (default 2) |
+| `-Compress`       | no whitespace |
+| `-EnumsAsStrings` | —             |
+| `-AsArray`        | force array   |
 
 ---
 
@@ -684,11 +683,11 @@ json | ConvertFrom-Json
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Depth` | N |
-| `-AsHashtable` | — |
-| `-NoEnumerate` | — |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-Depth`       | N           |
+| `-AsHashtable` | —           |
+| `-NoEnumerate` | —           |
 
 ---
 
@@ -704,9 +703,9 @@ obj | ConvertTo-Csv
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Delimiter` | -NoTypeInformation |
+| Flag         | Description           |
+| ------------ | --------------------- |
+| `-Delimiter` | -NoTypeInformation    |
 | `-UseQuotes` | Always/Never/AsNeeded |
 
 ---
@@ -723,10 +722,10 @@ csv | ConvertFrom-Csv
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Delimiter` | -Header custom headers |
-| `-UseCulture` | — |
+| Flag          | Description            |
+| ------------- | ---------------------- |
+| `-Delimiter`  | -Header custom headers |
+| `-UseCulture` | —                      |
 
 ---
 
@@ -742,10 +741,10 @@ Import-Csv [-Path] <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Delimiter` | -Header |
-| `-Encoding` | -UseCulture |
+| Flag         | Description |
+| ------------ | ----------- |
+| `-Delimiter` | -Header     |
+| `-Encoding`  | -UseCulture |
 
 ---
 
@@ -761,11 +760,11 @@ obj | Export-Csv -Path <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag         | Description        |
+| ------------ | ------------------ |
 | `-Delimiter` | -NoTypeInformation |
-| `-Append` | -Force |
-| `-Encoding` | -UseCulture |
+| `-Append`    | -Force             |
+| `-Encoding`  | -UseCulture        |
 
 ---
 
@@ -781,11 +780,11 @@ obj | ConvertTo-Xml
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Depth` | N |
-| `-As` | Document/Fragment/String |
-| `-NoTypeInformation` | — |
+| Flag                 | Description              |
+| -------------------- | ------------------------ |
+| `-Depth`             | N                        |
+| `-As`                | Document/Fragment/String |
+| `-NoTypeInformation` | —                        |
 
 ---
 
@@ -801,8 +800,8 @@ str | ConvertFrom-StringData
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag         | Description |
+| ------------ | ----------- |
 | `-Delimiter` | -StringData |
 
 ---
@@ -819,11 +818,11 @@ Split string
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `Regex` | or literal split |
-| `N` | max splits (neg = right) |
-| `'str'` | -split 're' N opt |
+| Flag    | Description              |
+| ------- | ------------------------ |
+| `Regex` | or literal split         |
+| `N`     | max splits (neg = right) |
+| `'str'` | -split 're' N opt        |
 
 ---
 
@@ -839,9 +838,9 @@ $arr -join ','
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `or` | -join $arr (prefix) |
+| Flag | Description             |
+| ---- | ----------------------- |
+| `or` | -join $arr (prefix)     |
 | `or` | [string]::Join(',',@()) |
 
 ---
@@ -858,11 +857,11 @@ Regex replace in string
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description      |
+| ----------- | ---------------- |
 | `-ireplace` | case insensitive |
-| `-creplace` | case sensitive |
-| `Use` | $1 $2 for groups |
+| `-creplace` | case sensitive   |
+| `Use`       | $1 $2 for groups |
 
 ---
 
@@ -878,14 +877,14 @@ String comparison operators
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-match` | regex |
-| `-like` | glob (* ?) |
-| `'a'` | -in @('a','b') in array |
-| `-contains` | array contains value |
-| `-eq` | / -ne / -lt / -gt |
-| `-cmatch` | case sensitive match |
+| Flag        | Description             |
+| ----------- | ----------------------- |
+| `-match`    | regex                   |
+| `-like`     | glob (\* ?)             |
+| `'a'`       | -in @('a','b') in array |
+| `-contains` | array contains value    |
+| `-eq`       | / -ne / -lt / -gt       |
+| `-cmatch`   | case sensitive match    |
 
 ---
 
@@ -901,11 +900,11 @@ obj | Format-List [props]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `*` | all properties |
-| `-GroupBy` | group by prop |
-| `-AutoSize` | — |
+| Flag        | Description    |
+| ----------- | -------------- |
+| `*`         | all properties |
+| `-GroupBy`  | group by prop  |
+| `-AutoSize` | —              |
 
 ---
 
@@ -921,12 +920,12 @@ obj | Format-Table [props]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-AutoSize` | -Wrap |
-| `-HideTableHeaders` | — |
-| `-GroupBy` | group by prop |
-| `-Property` | @{} custom |
+| Flag                | Description   |
+| ------------------- | ------------- |
+| `-AutoSize`         | -Wrap         |
+| `-HideTableHeaders` | —             |
+| `-GroupBy`          | group by prop |
+| `-Property`         | @{} custom    |
 
 ---
 
@@ -942,9 +941,9 @@ obj | Format-Wide
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Column` | N columns |
+| Flag        | Description  |
+| ----------- | ------------ |
+| `-Column`   | N columns    |
 | `-Property` | prop to show |
 
 ---
@@ -961,10 +960,10 @@ obj | Out-GridView
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Title` | window title |
-| `-PassThru` | return selected |
+| Flag          | Description          |
+| ------------- | -------------------- |
+| `-Title`      | window title         |
+| `-PassThru`   | return selected      |
 | `-OutputMode` | Single/Multiple/None |
 
 ---
@@ -981,12 +980,12 @@ Write-Host message
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ForegroundColor` | — |
-| `-BackgroundColor` | — |
-| `-NoNewline` | — |
-| `-Separator` | — |
+| Flag               | Description |
+| ------------------ | ----------- |
+| `-ForegroundColor` | —           |
+| `-BackgroundColor` | —           |
+| `-NoNewline`       | —           |
+| `-Separator`       | —           |
 
 ---
 
@@ -1002,9 +1001,9 @@ Write-Output value
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-NoEnumerate` | — |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-NoEnumerate` | —           |
 
 ---
 
@@ -1020,8 +1019,8 @@ Write-Verbose message
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag       | Description                    |
+| ---------- | ------------------------------ |
 | `requires` | -Verbose or $VerbosePreference |
 
 ---
@@ -1050,9 +1049,9 @@ Write-Error message
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Category` | -ErrorId |
+| Flag            | Description        |
+| --------------- | ------------------ |
+| `-Category`     | -ErrorId           |
 | `-TargetObject` | -RecommendedAction |
 
 ---
@@ -1069,9 +1068,9 @@ Write-Information message
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Tags` | tag array |
+| Flag    | Description |
+| ------- | ----------- |
+| `-Tags` | tag array   |
 
 ---
 
@@ -1087,8 +1086,8 @@ Write-Debug message
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag       | Description                |
+| ---------- | -------------------------- |
 | `requires` | -Debug or $DebugPreference |
 
 ---
@@ -1105,13 +1104,13 @@ Write-Progress -Activity name
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Status` | text |
-| `-PercentComplete` | 0-100 |
-| `-CurrentOperation` | detail |
-| `-Id` | -ParentId |
-| `-Completed` | close bar |
+| Flag                | Description |
+| ------------------- | ----------- |
+| `-Status`           | text        |
+| `-PercentComplete`  | 0-100       |
+| `-CurrentOperation` | detail      |
+| `-Id`               | -ParentId   |
+| `-Completed`        | close bar   |
 
 ---
 
@@ -1139,13 +1138,12 @@ Read-Host [-Prompt] <text>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-AsSecureString` | mask input |
-| `-MaskInput` | (PS 7.1+) |
+| Flag              | Description |
+| ----------------- | ----------- |
+| `-AsSecureString` | mask input  |
+| `-MaskInput`      | (PS 7.1+)   |
 
 ---
-
 
 ## Objects & Pipeline
 
@@ -1161,16 +1159,16 @@ obj | Select-Object [props]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Property` | prop list |
-| `-ExcludeProperty` | — |
-| `-ExpandProperty` | unwrap |
-| `-First` | N  -Last N |
-| `-Skip` | N  -SkipLast N |
-| `-Unique` | deduplicate |
-| `-Wait` | pipeline wait |
-| `-Index` | N items |
+| Flag               | Description   |
+| ------------------ | ------------- |
+| `-Property`        | prop list     |
+| `-ExcludeProperty` | —             |
+| `-ExpandProperty`  | unwrap        |
+| `-First`           | N -Last N     |
+| `-Skip`            | N -SkipLast N |
+| `-Unique`          | deduplicate   |
+| `-Wait`            | pipeline wait |
+| `-Index`           | N items       |
 
 ---
 
@@ -1186,13 +1184,13 @@ obj | Where-Object {condition}
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `{` | $_.Prop -eq 'val' } |
-| `-Property` | -eq Value shorthand |
-| `-EQ` | -NE -GT -LT -GE -LE |
-| `-Like` | -Match -In -Contains |
-| `-Not` | negate condition |
+| Flag        | Description          |
+| ----------- | -------------------- |
+| `{`         | $\_.Prop -eq 'val' } |
+| `-Property` | -eq Value shorthand  |
+| `-EQ`       | -NE -GT -LT -GE -LE  |
+| `-Like`     | -Match -In -Contains |
+| `-Not`      | negate condition     |
 
 ---
 
@@ -1208,14 +1206,14 @@ obj | ForEach-Object {block}
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Begin` | init block |
-| `-Process` | per-item block |
-| `-End` | cleanup block |
-| `-Parallel` | PS7+ parallel |
-| `-ThrottleLimit` | PS7+ |
-| `-MemberName` | method/property |
+| Flag             | Description     |
+| ---------------- | --------------- |
+| `-Begin`         | init block      |
+| `-Process`       | per-item block  |
+| `-End`           | cleanup block   |
+| `-Parallel`      | PS7+ parallel   |
+| `-ThrottleLimit` | PS7+            |
+| `-MemberName`    | method/property |
 
 ---
 
@@ -1231,14 +1229,14 @@ obj | Sort-Object [prop]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Descending` | — |
-| `-Unique` | remove dups |
-| `-Property` | @{} expr |
-| `-CaseSensitive` | — |
-| `-Stable` | preserve order |
-| `-Top` | N  -Bottom N |
+| Flag             | Description    |
+| ---------------- | -------------- |
+| `-Descending`    | —              |
+| `-Unique`        | remove dups    |
+| `-Property`      | @{} expr       |
+| `-CaseSensitive` | —              |
+| `-Stable`        | preserve order |
+| `-Top`           | N -Bottom N    |
 
 ---
 
@@ -1254,12 +1252,12 @@ obj | Group-Object [prop]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-AsHashTable` | — |
-| `-AsString` | — |
-| `-CaseSensitive` | — |
-| `-NoElement` | no members |
+| Flag             | Description |
+| ---------------- | ----------- |
+| `-AsHashTable`   | —           |
+| `-AsString`      | —           |
+| `-CaseSensitive` | —           |
+| `-NoElement`     | no members  |
 
 ---
 
@@ -1275,12 +1273,12 @@ obj | Measure-Object [prop]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Sum` | -Average |
-| `-Maximum` | -Minimum |
-| `-StandardDeviation` | — |
-| `-AllStats` | -Line  -Word  -Character |
+| Flag                 | Description            |
+| -------------------- | ---------------------- |
+| `-Sum`               | -Average               |
+| `-Maximum`           | -Minimum               |
+| `-StandardDeviation` | —                      |
+| `-AllStats`          | -Line -Word -Character |
 
 ---
 
@@ -1296,13 +1294,13 @@ Compare-Object <ref> <diff>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Property` | props to compare |
-| `-IncludeEqual` | show same |
-| `-ExcludeDifferent` | hide diffs |
-| `-PassThru` | return originals |
-| `-SyncWindow` | for sorted |
+| Flag                | Description      |
+| ------------------- | ---------------- |
+| `-Property`         | props to compare |
+| `-IncludeEqual`     | show same        |
+| `-ExcludeDifferent` | hide diffs       |
+| `-PassThru`         | return originals |
+| `-SyncWindow`       | for sorted       |
 
 ---
 
@@ -1318,12 +1316,12 @@ obj | Tee-Object -FilePath <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-FilePath` | write to file |
-| `-LiteralPath` | — |
-| `-Variable` | write to variable |
-| `-Append` | append file |
+| Flag           | Description       |
+| -------------- | ----------------- |
+| `-FilePath`    | write to file     |
+| `-LiteralPath` | —                 |
+| `-Variable`    | write to variable |
+| `-Append`      | append file       |
 
 ---
 
@@ -1339,10 +1337,10 @@ obj | Get-Unique
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description       |
+| ----------- | ----------------- |
 | `-AsString` | compare as string |
-| `-OnType` | unique types only |
+| `-OnType`   | unique types only |
 
 ---
 
@@ -1358,14 +1356,14 @@ obj | Out-File [-FilePath] <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Encoding` | UTF8/ASCII/etc |
-| `-Append` | -Force |
-| `-NoClobber` | no overwrite |
-| `-Width` | line width |
-| `-NoNewline` | — |
-| `-WhatIf` | -Confirm |
+| Flag         | Description    |
+| ------------ | -------------- |
+| `-Encoding`  | UTF8/ASCII/etc |
+| `-Append`    | -Force         |
+| `-NoClobber` | no overwrite   |
+| `-Width`     | line width     |
+| `-NoNewline` | —              |
+| `-WhatIf`    | -Confirm       |
 
 ---
 
@@ -1393,8 +1391,8 @@ obj | Out-Host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag      | Description      |
+| --------- | ---------------- |
 | `-Paging` | pause per screen |
 
 ---
@@ -1411,8 +1409,8 @@ obj | Out-Printer
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag    | Description  |
+| ------- | ------------ |
 | `-Name` | printer name |
 
 ---
@@ -1429,10 +1427,10 @@ obj | Out-GridView
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-PassThru` | -Title |
-| `-OutputMode` | — |
+| Flag          | Description |
+| ------------- | ----------- |
+| `-PassThru`   | -Title      |
+| `-OutputMode` | —           |
 
 ---
 
@@ -1448,12 +1446,12 @@ New-Object -TypeName <type>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-TypeName` | fully qualified |
-| `-ArgumentList` | ctor args |
-| `-ComObject` | COM ProgID |
-| `-Property` | hashtable |
+| Flag            | Description     |
+| --------------- | --------------- |
+| `-TypeName`     | fully qualified |
+| `-ArgumentList` | ctor args       |
+| `-ComObject`    | COM ProgID      |
+| `-Property`     | hashtable       |
 
 ---
 
@@ -1469,12 +1467,12 @@ obj | Add-Member -NotePropertyName n -NotePropertyValue v
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag          | Description                                            |
+| ------------- | ------------------------------------------------------ |
 | `-MemberType` | NoteProperty/ScriptMethod/ScriptProperty/AliasProperty |
-| `-Force` | overwrite |
-| `-PassThru` | -InputObject |
-| `-Name` | -Value |
+| `-Force`      | overwrite                                              |
+| `-PassThru`   | -InputObject                                           |
+| `-Name`       | -Value                                                 |
 
 ---
 
@@ -1490,13 +1488,13 @@ obj | Get-Member
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-MemberType` | Property/Method/etc |
-| `-Name` | filter name |
-| `-Force` | include hidden |
-| `-Static` | static members |
-| `-InputObject` | — |
+| Flag           | Description         |
+| -------------- | ------------------- |
+| `-MemberType`  | Property/Method/etc |
+| `-Name`        | filter name         |
+| `-Force`       | include hidden      |
+| `-Static`      | static members      |
+| `-InputObject` | —                   |
 
 ---
 
@@ -1512,14 +1510,14 @@ obj | ConvertTo-Html
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Property` | -Head CSS/JS |
-| `-Title` | page title |
-| `-Body` | additional HTML |
-| `-As` | Table/List |
-| `-PreContent` | -PostContent |
-| `-Fragment` | no HTML wrapper |
+| Flag          | Description     |
+| ------------- | --------------- |
+| `-Property`   | -Head CSS/JS    |
+| `-Title`      | page title      |
+| `-Body`       | additional HTML |
+| `-As`         | Table/List      |
+| `-PreContent` | -PostContent    |
+| `-Fragment`   | no HTML wrapper |
 
 ---
 
@@ -1535,8 +1533,8 @@ Create custom object
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description                       |
+| ---- | --------------------------------- |
 | `or` | New-Object PSObject -Property @{} |
 
 ---
@@ -1553,7 +1551,6 @@ Current pipeline object
 
 ---
 
-
 ## Variables & Data
 
 ### `Get-Variable` <sub>gv</sub>
@@ -1568,12 +1565,12 @@ Get-Variable [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | wildcard ok |
-| `-Scope` | current/global/local/N |
-| `-ValueOnly` | return value |
-| `-Include` | -Exclude |
+| Flag         | Description            |
+| ------------ | ---------------------- |
+| `-Name`      | wildcard ok            |
+| `-Scope`     | current/global/local/N |
+| `-ValueOnly` | return value           |
+| `-Include`   | -Exclude               |
 
 ---
 
@@ -1589,11 +1586,11 @@ Set-Variable -Name n -Value v
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Scope` | -Option ReadOnly/Constant/Private/AllScope |
-| `-Description` | -Force |
-| `-PassThru` | -Confirm |
+| Flag           | Description                                |
+| -------------- | ------------------------------------------ |
+| `-Scope`       | -Option ReadOnly/Constant/Private/AllScope |
+| `-Description` | -Force                                     |
+| `-PassThru`    | -Confirm                                   |
 
 ---
 
@@ -1609,11 +1606,11 @@ New-Variable -Name n -Value v
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Scope` | -Option  -Description |
-| `-Force` | -Visibility Public/Private |
-| `-PassThru` | -Confirm |
+| Flag        | Description                |
+| ----------- | -------------------------- |
+| `-Scope`    | -Option -Description       |
+| `-Force`    | -Visibility Public/Private |
+| `-PassThru` | -Confirm                   |
 
 ---
 
@@ -1629,11 +1626,11 @@ Remove-Variable -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Scope` | -Force |
-| `-Include` | -Exclude |
-| `-Confirm` | — |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Scope`   | -Force      |
+| `-Include` | -Exclude    |
+| `-Confirm` | —           |
 
 ---
 
@@ -1649,10 +1646,10 @@ Clear-Variable -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Scope` | -Force |
-| `-Include` | -Exclude |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Scope`   | -Force      |
+| `-Include` | -Exclude    |
 
 ---
 
@@ -1704,11 +1701,11 @@ Type cast / accelerators
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `[datetime]` | [xml]  [regex] |
-| `[hashtable]` | [array]  [psobject] |
-| `[System.IO.FileInfo]` | etc |
+| Flag                   | Description        |
+| ---------------------- | ------------------ |
+| `[datetime]`           | [xml] [regex]      |
+| `[hashtable]`          | [array] [psobject] |
+| `[System.IO.FileInfo]` | etc                |
 
 ---
 
@@ -1724,13 +1721,13 @@ $a = @(1, 2, 3)
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `$a` | += item  add element |
-| `$a.Count` | length |
-| `$a[0]` | index |
-| `$a[-1]` | last |
-| `$a[1..3]` | range slice |
+| Flag       | Description         |
+| ---------- | ------------------- |
+| `$a`       | += item add element |
+| `$a.Count` | length              |
+| `$a[0]`    | index               |
+| `$a[-1]`   | last                |
+| `$a[1..3]` | range slice         |
 
 ---
 
@@ -1746,13 +1743,13 @@ $h = @{Key='val'; N=1}
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `$h.Key` | or  $h['Key'] |
-| `$h.Add(k,v)` | $h.Remove(k) |
-| `$h.Keys` | $h.Values |
-| `$h.ContainsKey(k)` | — |
-| `[ordered]@{}` | ordered dict |
+| Flag                | Description  |
+| ------------------- | ------------ |
+| `$h.Key`            | or $h['Key'] |
+| `$h.Add(k,v)`       | $h.Remove(k) |
+| `$h.Keys`           | $h.Values    |
+| `$h.ContainsKey(k)` | —            |
+| `[ordered]@{}`      | ordered dict |
 
 ---
 
@@ -1792,9 +1789,9 @@ $MyInvocation.MyCommand
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `.ScriptName` | .Line  .BoundParameters |
+| Flag          | Description            |
+| ------------- | ---------------------- |
+| `.ScriptName` | .Line .BoundParameters |
 
 ---
 
@@ -1834,9 +1831,9 @@ $Error[0]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `$Error.Clear()` | — |
+| Flag             | Description |
+| ---------------- | ----------- |
+| `$Error.Clear()` | —           |
 
 ---
 
@@ -1864,9 +1861,9 @@ $PSVersionTable
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `.PSVersion` | .OS  .Platform |
+| Flag         | Description   |
+| ------------ | ------------- |
+| `.PSVersion` | .OS .Platform |
 
 ---
 
@@ -1882,10 +1879,10 @@ $PROFILE.CurrentUserCurrentHost
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `.AllUsersAllHosts` | — |
-| `.CurrentUserAllHosts` | — |
+| Flag                   | Description |
+| ---------------------- | ----------- |
+| `.AllUsersAllHosts`    | —           |
+| `.CurrentUserAllHosts` | —           |
 
 ---
 
@@ -1901,7 +1898,6 @@ $HOME  $PWD.Path  $PSHome
 
 ---
 
-
 ## Processes
 
 ### `Get-Process` <sub>ps / gps</sub>
@@ -1916,14 +1912,14 @@ Get-Process [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | filter name (wildcard) |
-| `-Id` | filter by PID |
-| `-IncludeUserName` | — |
-| `-FileVersionInfo` | — |
-| `-Module` | loaded modules |
-| `-ComputerName` | remote |
+| Flag               | Description            |
+| ------------------ | ---------------------- |
+| `-Name`            | filter name (wildcard) |
+| `-Id`              | filter by PID          |
+| `-IncludeUserName` | —                      |
+| `-FileVersionInfo` | —                      |
+| `-Module`          | loaded modules         |
+| `-ComputerName`    | remote                 |
 
 ---
 
@@ -1939,18 +1935,18 @@ Start-Process [-FilePath] <exe>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ArgumentList` | args |
-| `-WorkingDirectory` | — |
-| `-Credential` | run as user |
-| `-Verb` | RunAs (elevate) |
-| `-WindowStyle` | Hidden/Min/Max/Normal |
-| `-Wait` | block until done |
-| `-PassThru` | return process obj |
-| `-NoNewWindow` | — |
-| `-RedirectStandardOutput/Input/Error` | — |
-| `-LoadUserProfile` | — |
+| Flag                                  | Description           |
+| ------------------------------------- | --------------------- |
+| `-ArgumentList`                       | args                  |
+| `-WorkingDirectory`                   | —                     |
+| `-Credential`                         | run as user           |
+| `-Verb`                               | RunAs (elevate)       |
+| `-WindowStyle`                        | Hidden/Min/Max/Normal |
+| `-Wait`                               | block until done      |
+| `-PassThru`                           | return process obj    |
+| `-NoNewWindow`                        | —                     |
+| `-RedirectStandardOutput/Input/Error` | —                     |
+| `-LoadUserProfile`                    | —                     |
 
 ---
 
@@ -1966,12 +1962,12 @@ Stop-Process [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Id` | by PID |
-| `-Force` | forceful kill |
-| `-Confirm` | -WhatIf |
-| `-PassThru` | return obj |
+| Flag        | Description   |
+| ----------- | ------------- |
+| `-Id`       | by PID        |
+| `-Force`    | forceful kill |
+| `-Confirm`  | -WhatIf       |
+| `-PassThru` | return obj    |
 
 ---
 
@@ -1987,11 +1983,11 @@ Wait-Process [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Id` | by PID |
-| `-Timeout` | seconds |
-| `-PassThru` | — |
+| Flag        | Description |
+| ----------- | ----------- |
+| `-Id`       | by PID      |
+| `-Timeout`  | seconds     |
+| `-PassThru` | —           |
 
 ---
 
@@ -2007,12 +2003,12 @@ Get-Job
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Id` | -Name  -State |
-| `-IncludeChildJob` | — |
-| `-ChildJobState` | — |
-| `-HasMoreData` | — |
+| Flag               | Description  |
+| ------------------ | ------------ |
+| `-Id`              | -Name -State |
+| `-IncludeChildJob` | —            |
+| `-ChildJobState`   | —            |
+| `-HasMoreData`     | —            |
 
 ---
 
@@ -2028,12 +2024,12 @@ Start-Job -ScriptBlock { }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -ArgumentList |
-| `-InitializationScript` | — |
-| `-Credential` | -PSVersion |
-| `-WorkingDirectory` | (PS7+) |
+| Flag                    | Description   |
+| ----------------------- | ------------- |
+| `-Name`                 | -ArgumentList |
+| `-InitializationScript` | —             |
+| `-Credential`           | -PSVersion    |
+| `-WorkingDirectory`     | (PS7+)        |
 
 ---
 
@@ -2049,11 +2045,11 @@ Stop-Job [-Id] N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -State  -Force |
-| `-Confirm` | -WhatIf |
-| `-PassThru` | — |
+| Flag        | Description   |
+| ----------- | ------------- |
+| `-Name`     | -State -Force |
+| `-Confirm`  | -WhatIf       |
+| `-PassThru` | —             |
 
 ---
 
@@ -2069,12 +2065,12 @@ Receive-Job [-Id] N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Keep` | don't flush |
-| `-Wait` | block until done |
-| `-AutoRemoveJob` | -Force |
-| `-WriteEvents` | -WriteJobInResults |
+| Flag             | Description        |
+| ---------------- | ------------------ |
+| `-Keep`          | don't flush        |
+| `-Wait`          | block until done   |
+| `-AutoRemoveJob` | -Force             |
+| `-WriteEvents`   | -WriteJobInResults |
 
 ---
 
@@ -2090,9 +2086,9 @@ Remove-Job [-Id] N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -Confirm  -WhatIf |
+| Flag     | Description      |
+| -------- | ---------------- |
+| `-Force` | -Confirm -WhatIf |
 
 ---
 
@@ -2108,11 +2104,11 @@ Wait-Job [-Id] N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Timeout` | seconds |
-| `-Any` | first job |
-| `-Force` | — |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Timeout` | seconds     |
+| `-Any`     | first job   |
+| `-Force`   | —           |
 
 ---
 
@@ -2128,13 +2124,13 @@ Start-ThreadJob -ScriptBlock { }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -ArgumentList |
-| `-InitializationScript` | — |
-| `-StreamingHost` | — |
-| `-ThrottleLimit` | — |
-| `-InputObject` | — |
+| Flag                    | Description   |
+| ----------------------- | ------------- |
+| `-Name`                 | -ArgumentList |
+| `-InitializationScript` | —             |
+| `-StreamingHost`        | —             |
+| `-ThrottleLimit`        | —             |
+| `-InputObject`          | —             |
 
 ---
 
@@ -2150,11 +2146,11 @@ Parallel pipeline processing
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ThrottleLimit` | N (default 5) |
-| `-TimeoutSeconds` | — |
-| `-AsJob` | — |
+| Flag              | Description   |
+| ----------------- | ------------- |
+| `-ThrottleLimit`  | N (default 5) |
+| `-TimeoutSeconds` | —             |
+| `-AsJob`          | —             |
 
 ---
 
@@ -2170,16 +2166,15 @@ Invoke-Command -ScriptBlock { } -ComputerName host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ComputerName` | -Session |
-| `-Credential` | -AsJob |
-| `-ArgumentList` | -HideComputerName |
-| `-ThrottleLimit` | — |
-| `-FilePath` | -InDisconnectedSession |
+| Flag             | Description            |
+| ---------------- | ---------------------- |
+| `-ComputerName`  | -Session               |
+| `-Credential`    | -AsJob                 |
+| `-ArgumentList`  | -HideComputerName      |
+| `-ThrottleLimit` | —                      |
+| `-FilePath`      | -InDisconnectedSession |
 
 ---
-
 
 ## Services
 
@@ -2195,13 +2190,13 @@ Get-Service [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | wildcard ok |
-| `-DisplayName` | — |
-| `-DependentServices` | — |
-| `-RequiredServices` | — |
-| `-ComputerName` | (PS5) |
+| Flag                 | Description |
+| -------------------- | ----------- |
+| `-Name`              | wildcard ok |
+| `-DisplayName`       | —           |
+| `-DependentServices` | —           |
+| `-RequiredServices`  | —           |
+| `-ComputerName`      | (PS5)       |
 
 ---
 
@@ -2217,10 +2212,10 @@ Start-Service [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-DisplayName` | -InputObject |
-| `-PassThru` | -Confirm  -WhatIf |
+| Flag           | Description      |
+| -------------- | ---------------- |
+| `-DisplayName` | -InputObject     |
+| `-PassThru`    | -Confirm -WhatIf |
 
 ---
 
@@ -2236,10 +2231,10 @@ Stop-Service [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -NoWait |
-| `-PassThru` | -Confirm  -WhatIf |
+| Flag        | Description      |
+| ----------- | ---------------- |
+| `-Force`    | -NoWait          |
+| `-PassThru` | -Confirm -WhatIf |
 
 ---
 
@@ -2255,10 +2250,10 @@ Restart-Service [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -PassThru |
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Force`   | -PassThru   |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -2274,9 +2269,9 @@ Suspend-Service [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-PassThru` | -Confirm  -WhatIf |
+| Flag        | Description      |
+| ----------- | ---------------- |
+| `-PassThru` | -Confirm -WhatIf |
 
 ---
 
@@ -2292,9 +2287,9 @@ Resume-Service [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-PassThru` | -Confirm  -WhatIf |
+| Flag        | Description      |
+| ----------- | ---------------- |
+| `-PassThru` | -Confirm -WhatIf |
 
 ---
 
@@ -2310,12 +2305,12 @@ Set-Service [-Name] <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Status` | Running/Stopped/Paused |
+| Flag           | Description                                     |
+| -------------- | ----------------------------------------------- |
+| `-Status`      | Running/Stopped/Paused                          |
 | `-StartupType` | Automatic/Disabled/Manual/AutomaticDelayedStart |
-| `-DisplayName` | -Description |
-| `-Credential` | -PassThru |
+| `-DisplayName` | -Description                                    |
+| `-Credential`  | -PassThru                                       |
 
 ---
 
@@ -2331,11 +2326,11 @@ New-Service -Name n -BinaryPathName path
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag           | Description  |
+| -------------- | ------------ |
 | `-DisplayName` | -Description |
-| `-StartupType` | -Credential |
-| `-DependsOn` | -PassThru |
+| `-StartupType` | -Credential  |
+| `-DependsOn`   | -PassThru    |
 
 ---
 
@@ -2351,12 +2346,11 @@ Remove-Service -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Confirm` | -WhatIf     |
 
 ---
-
 
 ## Network
 
@@ -2372,17 +2366,17 @@ Test-Connection -TargetName host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Count` | N pings |
-| `-Delay` | seconds between |
-| `-BufferSize` | bytes |
-| `-DontFragment` | -IPv4  -IPv6 |
-| `-Quiet` | return bool |
-| `-ResolveDestination` | — |
-| `-Source` | source computer |
-| `-TimeoutSeconds` | — |
-| `-MTUSizeDetect` | -Traceroute |
+| Flag                  | Description     |
+| --------------------- | --------------- |
+| `-Count`              | N pings         |
+| `-Delay`              | seconds between |
+| `-BufferSize`         | bytes           |
+| `-DontFragment`       | -IPv4 -IPv6     |
+| `-Quiet`              | return bool     |
+| `-ResolveDestination` | —               |
+| `-Source`             | source computer |
+| `-TimeoutSeconds`     | —               |
+| `-MTUSizeDetect`      | -Traceroute     |
 
 ---
 
@@ -2398,13 +2392,13 @@ Test-NetConnection host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Port` | TCP port |
-| `-InformationLevel` | Quiet/Detailed |
-| `-TraceRoute` | -DiagnoseRouting |
-| `-ConstrainInterface` | — |
-| `-CommonTCPPort` | HTTP/SMB/RDP/WINRM |
+| Flag                  | Description        |
+| --------------------- | ------------------ |
+| `-Port`               | TCP port           |
+| `-InformationLevel`   | Quiet/Detailed     |
+| `-TraceRoute`         | -DiagnoseRouting   |
+| `-ConstrainInterface` | —                  |
+| `-CommonTCPPort`      | HTTP/SMB/RDP/WINRM |
 
 ---
 
@@ -2420,17 +2414,17 @@ Invoke-WebRequest -Uri <url>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Method` | GET/POST/PUT/etc |
-| `-Body` | -Headers @{} |
-| `-ContentType` | -OutFile |
-| `-Credential` | -UseBasicParsing |
-| `-SessionVariable` | -WebSession |
-| `-Authentication` | Bearer/Basic |
-| `-Token` | -SkipCertificateCheck (PS7+) |
-| `-FollowRelLink` | -MaximumFollowRelLink |
-| `-Form` | -TimeoutSec |
+| Flag               | Description                  |
+| ------------------ | ---------------------------- |
+| `-Method`          | GET/POST/PUT/etc             |
+| `-Body`            | -Headers @{}                 |
+| `-ContentType`     | -OutFile                     |
+| `-Credential`      | -UseBasicParsing             |
+| `-SessionVariable` | -WebSession                  |
+| `-Authentication`  | Bearer/Basic                 |
+| `-Token`           | -SkipCertificateCheck (PS7+) |
+| `-FollowRelLink`   | -MaximumFollowRelLink        |
+| `-Form`            | -TimeoutSec                  |
 
 ---
 
@@ -2446,15 +2440,15 @@ Invoke-RestMethod -Uri <url>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Method` | -Body  -Headers @{} |
-| `-ContentType` | application/json |
-| `-Authentication` | -Token |
-| `-Credential` | -OutFile |
-| `-SkipCertificateCheck` | (PS7+) |
-| `-SessionVariable` | -WebSession |
-| `-FollowRelLink` | -TimeoutSec |
+| Flag                    | Description        |
+| ----------------------- | ------------------ |
+| `-Method`               | -Body -Headers @{} |
+| `-ContentType`          | application/json   |
+| `-Authentication`       | -Token             |
+| `-Credential`           | -OutFile           |
+| `-SkipCertificateCheck` | (PS7+)             |
+| `-SessionVariable`      | -WebSession        |
+| `-FollowRelLink`        | -TimeoutSec        |
 
 ---
 
@@ -2470,11 +2464,11 @@ Get-NetAdapter [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -InterfaceDescription |
-| `-Physical` | -IncludeHidden |
-| `-SkipProfiles` | — |
+| Flag            | Description           |
+| --------------- | --------------------- |
+| `-Name`         | -InterfaceDescription |
+| `-Physical`     | -IncludeHidden        |
+| `-SkipProfiles` | —                     |
 
 ---
 
@@ -2490,12 +2484,12 @@ Get-NetIPAddress
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-IPAddress` | -InterfaceAlias |
-| `-InterfaceIndex` | — |
-| `-AddressFamily` | IPv4/IPv6 |
-| `-PrefixOrigin` | -SuffixOrigin |
+| Flag              | Description     |
+| ----------------- | --------------- |
+| `-IPAddress`      | -InterfaceAlias |
+| `-InterfaceIndex` | —               |
+| `-AddressFamily`  | IPv4/IPv6       |
+| `-PrefixOrigin`   | -SuffixOrigin   |
 
 ---
 
@@ -2511,10 +2505,10 @@ Get-NetIPConfiguration
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-InterfaceAlias` | -InterfaceIndex |
-| `-Detailed` | -AllCompartments |
+| Flag              | Description      |
+| ----------------- | ---------------- |
+| `-InterfaceAlias` | -InterfaceIndex  |
+| `-Detailed`       | -AllCompartments |
 
 ---
 
@@ -2530,11 +2524,11 @@ Get-NetRoute
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag                 | Description     |
+| -------------------- | --------------- |
 | `-DestinationPrefix` | -InterfaceAlias |
-| `-AddressFamily` | — |
-| `-PolicyStore` | — |
+| `-AddressFamily`     | —               |
+| `-PolicyStore`       | —               |
 
 ---
 
@@ -2550,12 +2544,12 @@ Get-NetTCPConnection
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-LocalPort` | -RemotePort |
-| `-LocalAddress` | -RemoteAddress |
-| `-State` | Established/Listen/TimeWait/etc |
-| `-OwningProcess` | PID |
+| Flag             | Description                     |
+| ---------------- | ------------------------------- |
+| `-LocalPort`     | -RemotePort                     |
+| `-LocalAddress`  | -RemoteAddress                  |
+| `-State`         | Established/Listen/TimeWait/etc |
+| `-OwningProcess` | PID                             |
 
 ---
 
@@ -2571,10 +2565,10 @@ Get-NetUDPEndpoint
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-LocalPort` | -LocalAddress |
-| `-OwningProcess` | — |
+| Flag             | Description   |
+| ---------------- | ------------- |
+| `-LocalPort`     | -LocalAddress |
+| `-OwningProcess` | —             |
 
 ---
 
@@ -2590,13 +2584,13 @@ Resolve-DnsName <name>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Type` | A/AAAA/MX/NS/TXT/CNAME/SOA/PTR |
-| `-Server` | DNS server |
-| `-NoHostsFile` | -DnsOnly |
-| `-NetbiosOnly` | -CacheOnly |
-| `-DnssecOk` | -DnssecCd |
+| Flag           | Description                    |
+| -------------- | ------------------------------ |
+| `-Type`        | A/AAAA/MX/NS/TXT/CNAME/SOA/PTR |
+| `-Server`      | DNS server                     |
+| `-NoHostsFile` | -DnsOnly                       |
+| `-NetbiosOnly` | -CacheOnly                     |
+| `-DnssecOk`    | -DnssecCd                      |
 
 ---
 
@@ -2612,10 +2606,10 @@ Set-NetIPAddress -InterfaceAlias eth0
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-IPAddress` | -PrefixLength |
-| `-DefaultGateway` | — |
+| Flag              | Description   |
+| ----------------- | ------------- |
+| `-IPAddress`      | -PrefixLength |
+| `-DefaultGateway` | —             |
 
 ---
 
@@ -2631,14 +2625,14 @@ New-NetFirewallRule -DisplayName n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Direction` | Inbound/Outbound |
-| `-Protocol` | TCP/UDP/Any |
-| `-LocalPort` | -RemotePort |
-| `-Action` | Allow/Block/DontConfigure |
-| `-Profile` | Domain/Private/Public/Any |
-| `-Enabled` | True/False |
+| Flag         | Description               |
+| ------------ | ------------------------- |
+| `-Direction` | Inbound/Outbound          |
+| `-Protocol`  | TCP/UDP/Any               |
+| `-LocalPort` | -RemotePort               |
+| `-Action`    | Allow/Block/DontConfigure |
+| `-Profile`   | Domain/Private/Public/Any |
+| `-Enabled`   | True/False                |
 
 ---
 
@@ -2654,11 +2648,11 @@ Get-NetFirewallRule
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-DisplayName` | -Name |
-| `-Direction` | -Enabled |
-| `-Action` | -Profile |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-DisplayName` | -Name       |
+| `-Direction`   | -Enabled    |
+| `-Action`      | -Profile    |
 
 ---
 
@@ -2674,10 +2668,10 @@ Enable-NetFirewallRule -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-DisplayName` | -Group |
-| `-Direction` | -Profile |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-DisplayName` | -Group      |
+| `-Direction`   | -Profile    |
 
 ---
 
@@ -2693,13 +2687,12 @@ Get-NetNeighbor
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-IPAddress` | -InterfaceAlias |
+| Flag             | Description                |
+| ---------------- | -------------------------- |
+| `-IPAddress`     | -InterfaceAlias            |
 | `-AddressFamily` | -State Reachable/Stale/etc |
 
 ---
-
 
 ## System Info
 
@@ -2715,8 +2708,8 @@ Get-ComputerInfo
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description       |
+| ----------- | ----------------- |
 | `-Property` | filter properties |
 
 ---
@@ -2757,11 +2750,11 @@ Get-WmiObject -Class Win32_X
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Class` | Win32_ComputerSystem/Win32_OS/etc |
-| `-Property` | -Filter  -Query |
-| `-ComputerName` | -Namespace |
+| Flag            | Description                       |
+| --------------- | --------------------------------- |
+| `-Class`        | Win32_ComputerSystem/Win32_OS/etc |
+| `-Property`     | -Filter -Query                    |
+| `-ComputerName` | -Namespace                        |
 
 ---
 
@@ -2777,12 +2770,12 @@ Get-CimInstance -ClassName Win32_X
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ClassName` | -Filter |
-| `-Property` | -Query |
+| Flag            | Description |
+| --------------- | ----------- |
+| `-ClassName`    | -Filter     |
+| `-Property`     | -Query      |
 | `-ComputerName` | -CimSession |
-| `-Namespace` | — |
+| `-Namespace`    | —           |
 
 ---
 
@@ -2798,10 +2791,10 @@ Get-HotFix
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Id` | -Description |
-| `-ComputerName` | -Credential |
+| Flag            | Description  |
+| --------------- | ------------ |
+| `-Id`           | -Description |
+| `-ComputerName` | -Credential  |
 
 ---
 
@@ -2817,10 +2810,10 @@ Get-Disk
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Number` | -FriendlyName |
-| `-SerialNumber` | -UniqueId |
+| Flag            | Description   |
+| --------------- | ------------- |
+| `-Number`       | -FriendlyName |
+| `-SerialNumber` | -UniqueId     |
 
 ---
 
@@ -2836,10 +2829,10 @@ Get-Volume
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag           | Description      |
+| -------------- | ---------------- |
 | `-DriveLetter` | -FileSystemLabel |
-| `-ObjectId` | -Path |
+| `-ObjectId`    | -Path            |
 
 ---
 
@@ -2855,10 +2848,10 @@ Get-Partition
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-DiskNumber` | -PartitionNumber |
-| `-DriveLetter` | -DiskId |
+| Flag           | Description      |
+| -------------- | ---------------- |
+| `-DiskNumber`  | -PartitionNumber |
+| `-DriveLetter` | -DiskId          |
 
 ---
 
@@ -2874,9 +2867,9 @@ Get-PSDrive
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -PSProvider |
+| Flag     | Description  |
+| -------- | ------------ |
+| `-Name`  | -PSProvider  |
 | `-Scope` | -LiteralName |
 
 ---
@@ -2893,9 +2886,9 @@ Get-PSProvider
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-PSProvider` | name |
+| Flag          | Description |
+| ------------- | ----------- |
+| `-PSProvider` | name        |
 
 ---
 
@@ -2911,14 +2904,14 @@ Get-EventLog -LogName Application
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-LogName` | System/Application/Security/etc |
-| `-Newest` | N |
-| `-EntryType` | Error/Warning/Info |
-| `-Source` | -EventId |
-| `-Message` | -After  -Before |
-| `-UserName` | -ComputerName |
+| Flag         | Description                     |
+| ------------ | ------------------------------- |
+| `-LogName`   | System/Application/Security/etc |
+| `-Newest`    | N                               |
+| `-EntryType` | Error/Warning/Info              |
+| `-Source`    | -EventId                        |
+| `-Message`   | -After -Before                  |
+| `-UserName`  | -ComputerName                   |
 
 ---
 
@@ -2934,13 +2927,13 @@ Get-WinEvent -LogName Application
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-LogName` | -ListLog |
+| Flag               | Description                                   |
+| ------------------ | --------------------------------------------- |
+| `-LogName`         | -ListLog                                      |
 | `-FilterHashtable` | @{LogName=...;Id=...;Level=...;StartTime=...} |
-| `-FilterXPath` | -MaxEvents N |
-| `-ComputerName` | -Credential |
-| `-Oldest` | -ProviderName |
+| `-FilterXPath`     | -MaxEvents N                                  |
+| `-ComputerName`    | -Credential                                   |
+| `-Oldest`          | -ProviderName                                 |
 
 ---
 
@@ -2956,12 +2949,12 @@ Get-Counter '\Processor(*)% Processor Time'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-SampleInterval` | seconds |
-| `-MaxSamples` | N |
-| `-Continuous` | -ComputerName |
-| `-ListSet` | -Counter |
+| Flag              | Description   |
+| ----------------- | ------------- |
+| `-SampleInterval` | seconds       |
+| `-MaxSamples`     | N             |
+| `-Continuous`     | -ComputerName |
+| `-ListSet`        | -Counter      |
 
 ---
 
@@ -2989,8 +2982,8 @@ Get-Uptime
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag     | Description           |
+| -------- | --------------------- |
 | `-Since` | return start datetime |
 
 ---
@@ -3007,10 +3000,10 @@ Stop-Computer
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ComputerName` | -Credential |
-| `-Force` | -Confirm  -WhatIf |
+| Flag            | Description      |
+| --------------- | ---------------- |
+| `-ComputerName` | -Credential      |
+| `-Force`        | -Confirm -WhatIf |
 
 ---
 
@@ -3026,15 +3019,14 @@ Restart-Computer
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ComputerName` | -Force |
-| `-Wait` | -Timeout  -For |
-| `-Delay` | -Credential |
-| `-Confirm` | -WhatIf |
+| Flag            | Description   |
+| --------------- | ------------- |
+| `-ComputerName` | -Force        |
+| `-Wait`         | -Timeout -For |
+| `-Delay`        | -Credential   |
+| `-Confirm`      | -WhatIf       |
 
 ---
-
 
 ## Registry
 
@@ -3050,9 +3042,9 @@ Get-Item 'HKLM:\Software\...'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `HKLM:` | HKCU:  HKCR:  HKU:  HKCC: |
+| Flag    | Description            |
+| ------- | ---------------------- |
+| `HKLM:` | HKCU: HKCR: HKU: HKCC: |
 
 ---
 
@@ -3068,11 +3060,11 @@ Get-ItemProperty -Path 'HKLM:\...' -Name val
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Path` | -LiteralPath |
-| `-Name` | specific value |
-| `-Filter` | -Include  -Exclude |
+| Flag      | Description       |
+| --------- | ----------------- |
+| `-Path`   | -LiteralPath      |
+| `-Name`   | specific value    |
+| `-Filter` | -Include -Exclude |
 
 ---
 
@@ -3088,11 +3080,11 @@ Set-ItemProperty -Path 'HKLM:\...' -Name val -Value data
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Type` | String/DWord/QWord/Binary/MultiString/ExpandString |
-| `-Force` | -PassThru |
-| `-Confirm` | -WhatIf |
+| Flag       | Description                                        |
+| ---------- | -------------------------------------------------- |
+| `-Type`    | String/DWord/QWord/Binary/MultiString/ExpandString |
+| `-Force`   | -PassThru                                          |
+| `-Confirm` | -WhatIf                                            |
 
 ---
 
@@ -3108,10 +3100,10 @@ New-ItemProperty -Path 'HKLM:\...' -Name n -Value v -PropertyType type
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag            | Description                                        |
+| --------------- | -------------------------------------------------- |
 | `-PropertyType` | String/DWord/QWord/Binary/MultiString/ExpandString |
-| `-Force` | -PassThru |
+| `-Force`        | -PassThru                                          |
 
 ---
 
@@ -3127,9 +3119,9 @@ Remove-ItemProperty -Path 'HKLM:\...' -Name val
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -Confirm  -WhatIf |
+| Flag     | Description      |
+| -------- | ---------------- |
+| `-Force` | -Confirm -WhatIf |
 
 ---
 
@@ -3145,8 +3137,8 @@ New-Item -Path 'HKLM:\...' -Name KeyName
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag     | Description        |
+| -------- | ------------------ |
 | `-Force` | -Value default val |
 
 ---
@@ -3163,10 +3155,10 @@ Remove-Item -Path 'HKLM:\...'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Recurse` | -Force |
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Recurse` | -Force      |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -3182,8 +3174,8 @@ Test-Path 'HKLM:\...'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description    |
+| ----------- | -------------- |
 | `-PathType` | Container/Leaf |
 
 ---
@@ -3200,9 +3192,9 @@ Copy-Item 'HKLM:\...' 'HKCU:\...'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Recurse` | -Force |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Recurse` | -Force      |
 
 ---
 
@@ -3218,12 +3210,11 @@ Get-ChildItem 'HKLM:\Software'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Recurse` | -Depth N |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Recurse` | -Depth N    |
 
 ---
-
 
 ## Security
 
@@ -3239,11 +3230,11 @@ $cred = Get-Credential
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description   |
+| ----------- | ------------- |
 | `-UserName` | pre-fill name |
-| `-Message` | custom prompt |
-| `-Title` | (PS7.1+) |
+| `-Message`  | custom prompt |
+| `-Title`    | (PS7.1+)      |
 
 ---
 
@@ -3259,11 +3250,11 @@ ConvertTo-SecureString 'pass' -AsPlainText -Force
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-AsPlainText` | plain text input |
-| `-Force` | required with -AsPlainText |
-| `-Key` | -SecureKey encrypt |
+| Flag           | Description                |
+| -------------- | -------------------------- |
+| `-AsPlainText` | plain text input           |
+| `-Force`       | required with -AsPlainText |
+| `-Key`         | -SecureKey encrypt         |
 
 ---
 
@@ -3279,10 +3270,10 @@ $ss | ConvertFrom-SecureString
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Key` | -SecureKey |
-| `-AsPlainText` | (PS7+) |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-Key`         | -SecureKey  |
+| `-AsPlainText` | (PS7+)      |
 
 ---
 
@@ -3298,13 +3289,13 @@ New-SelfSignedCertificate -DnsName name
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-CertStoreLocation` | Cert:\... |
-| `-DnsName` | -Subject |
-| `-KeyUsage` | -KeyAlgorithm |
-| `-NotAfter` | -FriendlyName |
-| `-TextExtension` | -Type |
+| Flag                 | Description   |
+| -------------------- | ------------- |
+| `-CertStoreLocation` | Cert:\...     |
+| `-DnsName`           | -Subject      |
+| `-KeyUsage`          | -KeyAlgorithm |
+| `-NotAfter`          | -FriendlyName |
+| `-TextExtension`     | -Type         |
 
 ---
 
@@ -3320,11 +3311,11 @@ Get-Certificate
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Template` | -Url  -Credential |
-| `-SubjectName` | -DnsName |
-| `-CertStoreLocation` | — |
+| Flag                 | Description      |
+| -------------------- | ---------------- |
+| `-Template`          | -Url -Credential |
+| `-SubjectName`       | -DnsName         |
+| `-CertStoreLocation` | —                |
 
 ---
 
@@ -3340,8 +3331,8 @@ Get-PfxCertificate -FilePath file.pfx
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description          |
+| ----------- | -------------------- |
 | `-Password` | -NoPromptForPassword |
 
 ---
@@ -3358,10 +3349,10 @@ Get-ChildItem Cert:\CurrentUser\My
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Recurse` | -CodeSigningCert |
-| `-DnsName` | -EKU  -ExpiringInDays |
+| Flag       | Description          |
+| ---------- | -------------------- |
+| `-Recurse` | -CodeSigningCert     |
+| `-DnsName` | -EKU -ExpiringInDays |
 
 ---
 
@@ -3377,11 +3368,11 @@ Set-ExecutionPolicy Unrestricted
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag               | Description                                                     |
+| ------------------ | --------------------------------------------------------------- |
 | `-ExecutionPolicy` | Restricted/AllSigned/RemoteSigned/Unrestricted/Bypass/Undefined |
-| `-Scope` | MachinePolicy/UserPolicy/Process/CurrentUser/LocalMachine |
-| `-Force` | -Confirm |
+| `-Scope`           | MachinePolicy/UserPolicy/Process/CurrentUser/LocalMachine       |
+| `-Force`           | -Confirm                                                        |
 
 ---
 
@@ -3397,10 +3388,10 @@ Get-ExecutionPolicy
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-List` | show all scopes |
-| `-Scope` | — |
+| Flag     | Description     |
+| -------- | --------------- |
+| `-List`  | show all scopes |
+| `-Scope` | —               |
 
 ---
 
@@ -3416,9 +3407,9 @@ Unblock-File [-Path] <file>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -3434,8 +3425,8 @@ Get-Acl -Path <path>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag     | Description  |
+| -------- | ------------ |
 | `-Audit` | include SACL |
 
 ---
@@ -3452,7 +3443,6 @@ Set-Acl -Path <path> -AclObject <acl>
 
 ---
 
-
 ## Users & Groups
 
 ### `Get-LocalUser`
@@ -3467,10 +3457,10 @@ Get-LocalUser [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | wildcard ok |
-| `-SID` | filter by SID |
+| Flag    | Description   |
+| ------- | ------------- |
+| `-Name` | wildcard ok   |
+| `-SID`  | filter by SID |
 
 ---
 
@@ -3486,13 +3476,13 @@ New-LocalUser -Name n -Password (ConvertTo-SecureString ...)
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-FullName` | -Description |
-| `-AccountExpires` | -Disabled |
-| `-PasswordNeverExpires` | — |
-| `-UserMayNotChangePassword` | — |
-| `-NoPassword` | — |
+| Flag                        | Description  |
+| --------------------------- | ------------ |
+| `-FullName`                 | -Description |
+| `-AccountExpires`           | -Disabled    |
+| `-PasswordNeverExpires`     | —            |
+| `-UserMayNotChangePassword` | —            |
+| `-NoPassword`               | —            |
 
 ---
 
@@ -3508,12 +3498,12 @@ Set-LocalUser -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Password` | -FullName |
-| `-Description` | -AccountExpires |
-| `-PasswordNeverExpires` | — |
-| `-UserMayNotChangePassword` | -Confirm |
+| Flag                        | Description     |
+| --------------------------- | --------------- |
+| `-Password`                 | -FullName       |
+| `-Description`              | -AccountExpires |
+| `-PasswordNeverExpires`     | —               |
+| `-UserMayNotChangePassword` | -Confirm        |
 
 ---
 
@@ -3529,9 +3519,9 @@ Remove-LocalUser -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-SID` | -Confirm  -WhatIf |
+| Flag   | Description      |
+| ------ | ---------------- |
+| `-SID` | -Confirm -WhatIf |
 
 ---
 
@@ -3547,9 +3537,9 @@ Enable-LocalUser -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-SID` | -Confirm  -WhatIf |
+| Flag   | Description      |
+| ------ | ---------------- |
+| `-SID` | -Confirm -WhatIf |
 
 ---
 
@@ -3565,9 +3555,9 @@ Disable-LocalUser -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-SID` | -Confirm  -WhatIf |
+| Flag   | Description      |
+| ------ | ---------------- |
+| `-SID` | -Confirm -WhatIf |
 
 ---
 
@@ -3583,9 +3573,9 @@ Get-LocalGroup [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -SID |
+| Flag    | Description |
+| ------- | ----------- |
+| `-Name` | -SID        |
 
 ---
 
@@ -3601,9 +3591,9 @@ New-LocalGroup -Name n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Description` | — |
+| Flag           | Description |
+| -------------- | ----------- |
+| `-Description` | —           |
 
 ---
 
@@ -3619,9 +3609,9 @@ Add-LocalGroupMember -Group grp -Member user
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -3637,9 +3627,9 @@ Remove-LocalGroupMember -Group grp -Member user
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -3655,9 +3645,9 @@ Get-LocalGroupMember -Group grp
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Member` | -SID |
+| Flag      | Description |
+| --------- | ----------- |
+| `-Member` | -SID        |
 
 ---
 
@@ -3673,9 +3663,9 @@ whoami
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `/user` | /groups  /priv  /all |
+| Flag    | Description        |
+| ------- | ------------------ |
+| `/user` | /groups /priv /all |
 
 ---
 
@@ -3691,7 +3681,6 @@ Current Windows identity
 
 ---
 
-
 ## Modules & Packages
 
 ### `Get-Module` <sub>gmo</sub>
@@ -3706,13 +3695,13 @@ Get-Module [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ListAvailable` | all on PSModulePath |
-| `-All` | include nested |
-| `-Name` | -FullyQualifiedName |
-| `-Refresh` | -PSEdition |
-| `-SkipEditionCheck` | — |
+| Flag                | Description         |
+| ------------------- | ------------------- |
+| `-ListAvailable`    | all on PSModulePath |
+| `-All`              | include nested      |
+| `-Name`             | -FullyQualifiedName |
+| `-Refresh`          | -PSEdition          |
+| `-SkipEditionCheck` | —                   |
 
 ---
 
@@ -3728,12 +3717,12 @@ Import-Module [-Name] <mod>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | reimport |
-| `-NoClobber` | no overwrite |
-| `-Global` | -Prefix |
-| `-Verbose` | -PassThru |
+| Flag                | Description           |
+| ------------------- | --------------------- |
+| `-Force`            | reimport              |
+| `-NoClobber`        | no overwrite          |
+| `-Global`           | -Prefix               |
+| `-Verbose`          | -PassThru             |
 | `-SkipEditionCheck` | -UseWindowsPowerShell |
 
 ---
@@ -3750,10 +3739,10 @@ Remove-Module [-Name] <mod>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -Verbose |
-| `-Confirm` | -WhatIf |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Force`   | -Verbose    |
+| `-Confirm` | -WhatIf     |
 
 ---
 
@@ -3769,13 +3758,13 @@ Find-Module [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -Repository |
-| `-RequiredVersion` | -MinimumVersion  -MaximumVersion |
-| `-AllVersions` | -Tag  -Filter |
-| `-Command` | -DscResource |
-| `-Includes` | — |
+| Flag               | Description                     |
+| ------------------ | ------------------------------- |
+| `-Name`            | -Repository                     |
+| `-RequiredVersion` | -MinimumVersion -MaximumVersion |
+| `-AllVersions`     | -Tag -Filter                    |
+| `-Command`         | -DscResource                    |
+| `-Includes`        | —                               |
 
 ---
 
@@ -3791,14 +3780,14 @@ Install-Module [-Name] <mod>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Repository` | -RequiredVersion |
-| `-MinimumVersion` | -MaximumVersion |
-| `-Scope` | CurrentUser/AllUsers |
-| `-Force` | -AllowClobber |
-| `-SkipPublisherCheck` | -AcceptLicense |
-| `-AllowPrerelease` | — |
+| Flag                  | Description          |
+| --------------------- | -------------------- |
+| `-Repository`         | -RequiredVersion     |
+| `-MinimumVersion`     | -MaximumVersion      |
+| `-Scope`              | CurrentUser/AllUsers |
+| `-Force`              | -AllowClobber        |
+| `-SkipPublisherCheck` | -AcceptLicense       |
+| `-AllowPrerelease`    | —                    |
 
 ---
 
@@ -3814,11 +3803,11 @@ Update-Module [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag               | Description     |
+| ------------------ | --------------- |
 | `-RequiredVersion` | -MaximumVersion |
-| `-Force` | -AcceptLicense |
-| `-AllowPrerelease` | -Confirm |
+| `-Force`           | -AcceptLicense  |
+| `-AllowPrerelease` | -Confirm        |
 
 ---
 
@@ -3834,10 +3823,10 @@ Uninstall-Module [-Name] <mod>
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-RequiredVersion` | -MinimumVersion  -MaximumVersion |
-| `-AllVersions` | -Force  -Confirm |
+| Flag               | Description                     |
+| ------------------ | ------------------------------- |
+| `-RequiredVersion` | -MinimumVersion -MaximumVersion |
+| `-AllVersions`     | -Force -Confirm                 |
 
 ---
 
@@ -3853,11 +3842,11 @@ Publish-Module -Name mod -NuGetApiKey key
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Path` | -Repository |
+| Flag               | Description   |
+| ------------------ | ------------- |
+| `-Path`            | -Repository   |
 | `-RequiredVersion` | -ReleaseNotes |
-| `-Tags` | -ProjectUri |
+| `-Tags`            | -ProjectUri   |
 
 ---
 
@@ -3873,15 +3862,15 @@ Get-Command [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | wildcard ok |
-| `-CommandType` | Cmdlet/Function/Alias/Script/Application/All |
-| `-Module` | filter by module |
-| `-Verb` | -Noun |
-| `-ParameterName` | -ParameterType |
-| `-TotalCount` | -Syntax |
-| `-ShowCommandInfo` | — |
+| Flag               | Description                                  |
+| ------------------ | -------------------------------------------- |
+| `-Name`            | wildcard ok                                  |
+| `-CommandType`     | Cmdlet/Function/Alias/Script/Application/All |
+| `-Module`          | filter by module                             |
+| `-Verb`            | -Noun                                        |
+| `-ParameterName`   | -ParameterType                               |
+| `-TotalCount`      | -Syntax                                      |
+| `-ShowCommandInfo` | —                                            |
 
 ---
 
@@ -3897,9 +3886,9 @@ Get-Alias [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -Definition  -Scope |
+| Flag    | Description        |
+| ------- | ------------------ |
+| `-Name` | -Definition -Scope |
 
 ---
 
@@ -3915,10 +3904,10 @@ Set-Alias -Name n -Value cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag      | Description                        |
+| --------- | ---------------------------------- |
 | `-Option` | ReadOnly/Constant/Private/AllScope |
-| `-Scope` | -Force  -PassThru |
+| `-Scope`  | -Force -PassThru                   |
 
 ---
 
@@ -3934,10 +3923,10 @@ New-Alias -Name n -Value cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Option` | -Scope  -Force |
-| `-Description` | -PassThru |
+| Flag           | Description   |
+| -------------- | ------------- |
+| `-Option`      | -Scope -Force |
+| `-Description` | -PassThru     |
 
 ---
 
@@ -3953,11 +3942,11 @@ Export-Alias -Path file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-As` | Csv/Script |
-| `-Append` | -Force |
-| `-NoClobber` | -PassThru |
+| Flag         | Description |
+| ------------ | ----------- |
+| `-As`        | Csv/Script  |
+| `-Append`    | -Force      |
+| `-NoClobber` | -PassThru   |
 
 ---
 
@@ -3973,9 +3962,9 @@ Import-Alias -Path file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Scope` | -Force  -PassThru |
+| Flag     | Description      |
+| -------- | ---------------- |
+| `-Scope` | -Force -PassThru |
 
 ---
 
@@ -3991,12 +3980,12 @@ winget [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | uninstall  upgrade |
-| `search` | show  list |
-| `import` | export  source |
-| `settings` | features |
+| Flag       | Description       |
+| ---------- | ----------------- |
+| `install`  | uninstall upgrade |
+| `search`   | show list         |
+| `import`   | export source     |
+| `settings` | features          |
 
 ---
 
@@ -4012,15 +4001,14 @@ choco [cmd] [pkg]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `install` | uninstall  upgrade |
-| `search` | list  info |
-| `outdated` | pin |
-| `source` | feature |
+| Flag       | Description       |
+| ---------- | ----------------- |
+| `install`  | uninstall upgrade |
+| `search`   | list info         |
+| `outdated` | pin               |
+| `source`   | feature           |
 
 ---
-
 
 ## Remoting
 
@@ -4036,10 +4024,10 @@ Enable-PSRemoting
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -SkipNetworkProfileCheck |
-| `-Confirm` | -WhatIf |
+| Flag       | Description              |
+| ---------- | ------------------------ |
+| `-Force`   | -SkipNetworkProfileCheck |
+| `-Confirm` | -WhatIf                  |
 
 ---
 
@@ -4055,9 +4043,9 @@ Disable-PSRemoting
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Force` | -Confirm  -WhatIf |
+| Flag     | Description      |
+| -------- | ---------------- |
+| `-Force` | -Confirm -WhatIf |
 
 ---
 
@@ -4073,12 +4061,12 @@ Enter-PSSession -ComputerName host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ComputerName` | -Session |
-| `-Credential` | -Port |
-| `-UseSSL` | -Authentication |
-| `-ConfigurationName` | -VMName  -ContainerId |
+| Flag                 | Description          |
+| -------------------- | -------------------- |
+| `-ComputerName`      | -Session             |
+| `-Credential`        | -Port                |
+| `-UseSSL`            | -Authentication      |
+| `-ConfigurationName` | -VMName -ContainerId |
 
 ---
 
@@ -4106,12 +4094,12 @@ New-PSSession -ComputerName host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -Credential |
-| `-Port` | -UseSSL |
-| `-Authentication` | -ConfigurationName |
-| `-SessionOption` | -VMName  -ContainerId |
+| Flag              | Description          |
+| ----------------- | -------------------- |
+| `-Name`           | -Credential          |
+| `-Port`           | -UseSSL              |
+| `-Authentication` | -ConfigurationName   |
+| `-SessionOption`  | -VMName -ContainerId |
 
 ---
 
@@ -4127,11 +4115,11 @@ Get-PSSession
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ComputerName` | -Id  -Name |
-| `-State` | -InstanceId |
-| `-ContainerId` | -VMName |
+| Flag            | Description |
+| --------------- | ----------- |
+| `-ComputerName` | -Id -Name   |
+| `-State`        | -InstanceId |
+| `-ContainerId`  | -VMName     |
 
 ---
 
@@ -4147,9 +4135,9 @@ Remove-PSSession [-Id] N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -Session  -Confirm |
+| Flag    | Description       |
+| ------- | ----------------- |
+| `-Name` | -Session -Confirm |
 
 ---
 
@@ -4165,12 +4153,12 @@ Invoke-Command -ScriptBlock {} -ComputerName host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ComputerName` | -Session |
-| `-Credential` | -AsJob |
-| `-FilePath` | -ArgumentList |
-| `-ThrottleLimit` | -HideComputerName |
+| Flag                     | Description        |
+| ------------------------ | ------------------ |
+| `-ComputerName`          | -Session           |
+| `-Credential`            | -AsJob             |
+| `-FilePath`              | -ArgumentList      |
+| `-ThrottleLimit`         | -HideComputerName  |
 | `-InDisconnectedSession` | -ConfigurationName |
 
 ---
@@ -4187,12 +4175,12 @@ $opt = New-PSSessionOption
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-IdleTimeout` | -OpenTimeout |
-| `-OperationTimeout` | -MaximumReceivedDataSizePerCommand |
-| `-SkipCACheck` | -SkipCNCheck |
-| `-SkipRevocationCheck` | — |
+| Flag                   | Description                        |
+| ---------------------- | ---------------------------------- |
+| `-IdleTimeout`         | -OpenTimeout                       |
+| `-OperationTimeout`    | -MaximumReceivedDataSizePerCommand |
+| `-SkipCACheck`         | -SkipCNCheck                       |
+| `-SkipRevocationCheck` | —                                  |
 
 ---
 
@@ -4208,10 +4196,10 @@ Connect-PSSession -Id N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -ComputerName |
-| `-Session` | -Credential |
+| Flag       | Description   |
+| ---------- | ------------- |
+| `-Name`    | -ComputerName |
+| `-Session` | -Credential   |
 
 ---
 
@@ -4227,12 +4215,11 @@ Disconnect-PSSession -Id N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag              | Description          |
+| ----------------- | -------------------- |
 | `-IdleTimeoutSec` | -OutputBufferingMode |
 
 ---
-
 
 ## CIM & WMI
 
@@ -4248,13 +4235,13 @@ Get-CimInstance -ClassName Win32_X
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ClassName` | -Namespace |
-| `-Filter` | -Query |
-| `-Property` | -KeyOnly |
-| `-ComputerName` | -CimSession |
-| `-Shallow` | -OperationTimeoutSec |
+| Flag            | Description          |
+| --------------- | -------------------- |
+| `-ClassName`    | -Namespace           |
+| `-Filter`       | -Query               |
+| `-Property`     | -KeyOnly             |
+| `-ComputerName` | -CimSession          |
+| `-Shallow`      | -OperationTimeoutSec |
 
 ---
 
@@ -4270,11 +4257,11 @@ New-CimSession -ComputerName host
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Credential` | -Authentication |
-| `-SessionOption` | -Port |
-| `-OperationTimeoutSec` | — |
+| Flag                   | Description     |
+| ---------------------- | --------------- |
+| `-Credential`          | -Authentication |
+| `-SessionOption`       | -Port           |
+| `-OperationTimeoutSec` | —               |
 
 ---
 
@@ -4290,11 +4277,11 @@ Invoke-CimMethod -ClassName class -MethodName method
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Arguments` | @{} |
-| `-InputObject` | -CimSession |
-| `-Namespace` | -QueryDialect |
+| Flag           | Description   |
+| -------------- | ------------- |
+| `-Arguments`   | @{}           |
+| `-InputObject` | -CimSession   |
+| `-Namespace`   | -QueryDialect |
 
 ---
 
@@ -4310,11 +4297,11 @@ Get-CimInstance ... | Set-CimInstance -Property @{}
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Property` | @{} hashtable |
-| `-Query` | -Namespace |
-| `-CimSession` | -PassThru |
+| Flag          | Description   |
+| ------------- | ------------- |
+| `-Property`   | @{} hashtable |
+| `-Query`      | -Namespace    |
+| `-CimSession` | -PassThru     |
 
 ---
 
@@ -4330,10 +4317,10 @@ Get-CimInstance ... | Remove-CimInstance
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-CimSession` | -Namespace |
-| `-Confirm` | -WhatIf |
+| Flag          | Description |
+| ------------- | ----------- |
+| `-CimSession` | -Namespace  |
+| `-Confirm`    | -WhatIf     |
 
 ---
 
@@ -4349,12 +4336,12 @@ Get-CimClass -ClassName Win32_*
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ClassName` | wildcard |
-| `-Namespace` | -OperationTimeoutSec |
-| `-MethodName` | -PropertyName |
-| `-QualifierName` | — |
+| Flag             | Description          |
+| ---------------- | -------------------- |
+| `-ClassName`     | wildcard             |
+| `-Namespace`     | -OperationTimeoutSec |
+| `-MethodName`    | -PropertyName        |
+| `-QualifierName` | —                    |
 
 ---
 
@@ -4370,11 +4357,11 @@ Register-CimIndicationEvent -Query wql -Action {}
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Query` | -Namespace |
-| `-SourceIdentifier` | -Action {} |
-| `-CimSession` | -Forward |
+| Flag                | Description |
+| ------------------- | ----------- |
+| `-Query`            | -Namespace  |
+| `-SourceIdentifier` | -Action {}  |
+| `-CimSession`       | -Forward    |
 
 ---
 
@@ -4390,11 +4377,11 @@ Get-CimInstance Win32_ComputerSystem
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `Name` | Manufacturer  Model |
-| `TotalPhysicalMemory` | NumberOfProcessors |
-| `Domain` | Username  SystemType |
+| Flag                  | Description         |
+| --------------------- | ------------------- |
+| `Name`                | Manufacturer Model  |
+| `TotalPhysicalMemory` | NumberOfProcessors  |
+| `Domain`              | Username SystemType |
 
 ---
 
@@ -4410,11 +4397,11 @@ Get-CimInstance Win32_OperatingSystem
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `Caption` | Version  OSArchitecture |
-| `LastBootUpTime` | FreePhysicalMemory |
-| `BuildNumber` | ServicePackMajorVersion |
+| Flag             | Description             |
+| ---------------- | ----------------------- |
+| `Caption`        | Version OSArchitecture  |
+| `LastBootUpTime` | FreePhysicalMemory      |
+| `BuildNumber`    | ServicePackMajorVersion |
 
 ---
 
@@ -4430,11 +4417,11 @@ Get-CimInstance Win32_Process
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `Name` | ProcessId  ParentProcessId |
-| `CommandLine` | ExecutablePath |
-| `WorkingSetSize` | CreationDate |
+| Flag             | Description               |
+| ---------------- | ------------------------- |
+| `Name`           | ProcessId ParentProcessId |
+| `CommandLine`    | ExecutablePath            |
+| `WorkingSetSize` | CreationDate              |
 
 ---
 
@@ -4450,9 +4437,9 @@ Get-CimInstance Win32_Service
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `Name` | State  StartMode |
+| Flag   | Description     |
+| ------ | --------------- |
+| `Name` | State StartMode |
 
 ---
 
@@ -4468,14 +4455,13 @@ Get-CimInstance Win32_LogicalDisk
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `DeviceID` | Size  FreeSpace |
-| `FileSystem` | VolumeName |
-| `DriveType` | — |
+| Flag         | Description    |
+| ------------ | -------------- |
+| `DeviceID`   | Size FreeSpace |
+| `FileSystem` | VolumeName     |
+| `DriveType`  | —              |
 
 ---
-
 
 ## Scheduling
 
@@ -4491,8 +4477,8 @@ Get-ScheduledTask [name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description |
+| ----------- | ----------- |
 | `-TaskName` | wildcard ok |
 | `-TaskPath` | -CimSession |
 
@@ -4510,12 +4496,12 @@ Register-ScheduledTask -TaskName n -Action a -Trigger t
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-TaskName` | -Action  -Trigger |
-| `-Settings` | -Principal |
+| Flag           | Description       |
+| -------------- | ----------------- |
+| `-TaskName`    | -Action -Trigger  |
+| `-Settings`    | -Principal        |
 | `-Description` | -RunLevel Highest |
-| `-Force` | -CimSession |
+| `-Force`       | -CimSession       |
 
 ---
 
@@ -4531,11 +4517,11 @@ New-ScheduledTaskAction -Execute exe
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Execute` | path |
-| `-Argument` | args |
-| `-WorkingDirectory` | — |
+| Flag                | Description |
+| ------------------- | ----------- |
+| `-Execute`          | path        |
+| `-Argument`         | args        |
+| `-WorkingDirectory` | —           |
 
 ---
 
@@ -4551,12 +4537,12 @@ New-ScheduledTaskTrigger -Daily -At 9am
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Once` | -Daily  -Weekly  -AtStartup  -AtLogOn |
-| `-At` | time  -DaysInterval |
-| `-WeeksInterval` | -DaysOfWeek |
-| `-User` | -RepetitionInterval |
+| Flag             | Description                        |
+| ---------------- | ---------------------------------- |
+| `-Once`          | -Daily -Weekly -AtStartup -AtLogOn |
+| `-At`            | time -DaysInterval                 |
+| `-WeeksInterval` | -DaysOfWeek                        |
+| `-User`          | -RepetitionInterval                |
 
 ---
 
@@ -4572,9 +4558,9 @@ Start-ScheduledTask -TaskName n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-CimSession` | -Confirm  -WhatIf |
+| Flag          | Description      |
+| ------------- | ---------------- |
+| `-CimSession` | -Confirm -WhatIf |
 
 ---
 
@@ -4590,9 +4576,9 @@ Stop-ScheduledTask -TaskName n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-CimSession` | -Confirm  -WhatIf |
+| Flag          | Description      |
+| ------------- | ---------------- |
+| `-CimSession` | -Confirm -WhatIf |
 
 ---
 
@@ -4608,9 +4594,9 @@ Disable-ScheduledTask -TaskName n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-CimSession` | -Confirm  -WhatIf |
+| Flag          | Description      |
+| ------------- | ---------------- |
+| `-CimSession` | -Confirm -WhatIf |
 
 ---
 
@@ -4626,9 +4612,9 @@ Enable-ScheduledTask -TaskName n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-CimSession` | -Confirm  -WhatIf |
+| Flag          | Description      |
+| ------------- | ---------------- |
+| `-CimSession` | -Confirm -WhatIf |
 
 ---
 
@@ -4644,9 +4630,9 @@ Unregister-ScheduledTask -TaskName n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Confirm` | -WhatIf  -CimSession |
+| Flag       | Description         |
+| ---------- | ------------------- |
+| `-Confirm` | -WhatIf -CimSession |
 
 ---
 
@@ -4662,12 +4648,11 @@ Get-ScheduledTaskInfo -TaskName n
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag        | Description |
+| ----------- | ----------- |
 | `-TaskPath` | -CimSession |
 
 ---
-
 
 ## Error Handling
 
@@ -4683,12 +4668,12 @@ try { } catch [type] { } finally { }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `catch` | { $_.Exception.Message } |
-| `catch` | [System.IO.IOException] { } |
-| `$_.Exception.GetType().FullName` | — |
-| `throw` | re-throw  throw 'msg' new |
+| Flag                              | Description                 |
+| --------------------------------- | --------------------------- |
+| `catch`                           | { $\_.Exception.Message }   |
+| `catch`                           | [System.IO.IOException] { } |
+| `$_.Exception.GetType().FullName` | —                           |
+| `throw`                           | re-throw throw 'msg' new    |
 
 ---
 
@@ -4704,10 +4689,10 @@ $ErrorActionPreference = 'Stop'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `Stop` | Continue  SilentlyContinue |
-| `Inquire` | Ignore (PS3+)  Suspend |
+| Flag      | Description               |
+| --------- | ------------------------- |
+| `Stop`    | Continue SilentlyContinue |
+| `Inquire` | Ignore (PS3+) Suspend     |
 
 ---
 
@@ -4723,11 +4708,11 @@ cmd -ErrorAction Stop
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `Stop` | Continue  SilentlyContinue |
-| `Inquire` | Ignore  Suspend |
-| `-EA` | shorthand |
+| Flag      | Description               |
+| --------- | ------------------------- |
+| `Stop`    | Continue SilentlyContinue |
+| `Inquire` | Ignore Suspend            |
+| `-EA`     | shorthand                 |
 
 ---
 
@@ -4743,9 +4728,9 @@ cmd -ErrorVariable ev
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-ev` | shorthand |
+| Flag  | Description        |
+| ----- | ------------------ |
+| `-ev` | shorthand          |
 | `+ev` | append to existing |
 
 ---
@@ -4762,12 +4747,12 @@ $Error[0].Exception.Message
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `$Error.Clear()` | clear all |
-| `.InvocationInfo` | .ScriptStackTrace |
-| `.FullyQualifiedErrorId` | — |
-| `.CategoryInfo` | — |
+| Flag                     | Description       |
+| ------------------------ | ----------------- |
+| `$Error.Clear()`         | clear all         |
+| `.InvocationInfo`        | .ScriptStackTrace |
+| `.FullyQualifiedErrorId` | —                 |
+| `.CategoryInfo`          | —                 |
 
 ---
 
@@ -4783,10 +4768,10 @@ throw 'message'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag    | Description                    |
+| ------- | ------------------------------ |
 | `throw` | [System.Exception]::new('msg') |
-| `throw` | $errorRecord |
+| `throw` | $errorRecord                   |
 
 ---
 
@@ -4802,11 +4787,11 @@ Write-Error 'message'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Category` | -ErrorId |
-| `-TargetObject` | -RecommendedAction |
-| `-CategoryReason` | -Exception |
+| Flag              | Description        |
+| ----------------- | ------------------ |
+| `-Category`       | -ErrorId           |
+| `-TargetObject`   | -RecommendedAction |
+| `-CategoryReason` | -Exception         |
 
 ---
 
@@ -4822,9 +4807,9 @@ trap [type] { statement }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `trap` | { continue } |
+| Flag   | Description            |
+| ------ | ---------------------- |
+| `trap` | { continue }           |
 | `trap` | [System.Exception] { } |
 
 ---
@@ -4841,11 +4826,11 @@ Remove-Item file -WhatIf
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `requires` | CmdletBinding |
-| `-Confirm` | prompt each action |
-| `$WhatIfPreference` | global |
+| Flag                | Description        |
+| ------------------- | ------------------ |
+| `requires`          | CmdletBinding      |
+| `-Confirm`          | prompt each action |
+| `$WhatIfPreference` | global             |
 
 ---
 
@@ -4861,12 +4846,11 @@ if ($PSCmdlet.ShouldProcess("target","action")) { }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag  | Description                                 |
+| ----- | ------------------------------------------- |
 | `Use` | with [CmdletBinding(SupportsShouldProcess)] |
 
 ---
-
 
 ## Scripting & Flow
 
@@ -4882,14 +4866,14 @@ function Name { param(); }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `[CmdletBinding()]` | advanced |
-| `param()` | positional params |
-| `[Parameter(Mandatory)]` | attr |
-| `[ValidateSet()]` | [ValidateRange()] |
-| `pipeline` | input ValueFromPipeline |
-| `begin{}` | process{} end{} |
+| Flag                     | Description             |
+| ------------------------ | ----------------------- |
+| `[CmdletBinding()]`      | advanced                |
+| `param()`                | positional params       |
+| `[Parameter(Mandatory)]` | attr                    |
+| `[ValidateSet()]`        | [ValidateRange()]       |
+| `pipeline`               | input ValueFromPipeline |
+| `begin{}`                | process{} end{}         |
 
 ---
 
@@ -4905,13 +4889,13 @@ param([type]$Name = 'default')
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `[Parameter(Mandatory,Position=0)]` | — |
-| `[ValidateNotNullOrEmpty()]` | — |
-| `[ValidateScript({...})]` | — |
-| `[Alias('n')]` | — |
-| `[SupportsWildcards()]` | — |
+| Flag                                | Description |
+| ----------------------------------- | ----------- |
+| `[Parameter(Mandatory,Position=0)]` | —           |
+| `[ValidateNotNullOrEmpty()]`        | —           |
+| `[ValidateScript({...})]`           | —           |
+| `[Alias('n')]`                      | —           |
+| `[SupportsWildcards()]`             | —           |
 
 ---
 
@@ -4939,12 +4923,12 @@ switch ($val) { 'a' { } default { } }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Wildcard` | -Regex  -CaseSensitive |
-| `-File` | read from file |
-| `-Exact` | (default) |
-| `{$_` | -gt 5} { } expression case |
+| Flag        | Description                |
+| ----------- | -------------------------- |
+| `-Wildcard` | -Regex -CaseSensitive      |
+| `-File`     | read from file             |
+| `-Exact`    | (default)                  |
+| `{$_`       | -gt 5} { } expression case |
 
 ---
 
@@ -4972,8 +4956,8 @@ foreach ($item in $collection) { }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description                      |
+| ---- | -------------------------------- |
 | `or` | collection \| ForEach-Object { } |
 
 ---
@@ -5014,9 +4998,9 @@ break  |  continue
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `break` | N break N levels |
+| Flag       | Description       |
+| ---------- | ----------------- |
+| `break`    | N break N levels  |
 | `continue` | to next iteration |
 
 ---
@@ -5033,8 +5017,8 @@ return $value
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag       | Description             |
+| ---------- | ----------------------- |
 | `implicit` | return: last expression |
 
 ---
@@ -5051,8 +5035,8 @@ Run script in current scope
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag    | Description                  |
+| ------- | ---------------------------- |
 | `loads` | functions into current scope |
 
 ---
@@ -5069,10 +5053,10 @@ Invoke script/cmd
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `&` | $scriptblock  execute block |
-| `&` | $exe  run executable |
+| Flag | Description                |
+| ---- | -------------------------- |
+| `&`  | $scriptblock execute block |
+| `&`  | $exe run executable        |
 
 ---
 
@@ -5088,8 +5072,8 @@ Invoke-Expression 'Get-Process'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag  | Description               |
+| ----- | ------------------------- |
 | `use` | carefully — security risk |
 
 ---
@@ -5106,11 +5090,11 @@ $sb = { param($x) $x * 2 }
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `&` | $sb 5  invoke |
-| `$sb.Invoke(5)` | invoke method |
-| `$sb.ToString()` | get source |
+| Flag             | Description   |
+| ---------------- | ------------- |
+| `&`              | $sb 5 invoke  |
+| `$sb.Invoke(5)`  | invoke method |
+| `$sb.ToString()` | get source    |
 
 ---
 
@@ -5126,13 +5110,13 @@ Script requirements
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Version` | minimum PS version |
-| `-Modules` | module list |
-| `-PSEdition` | Desktop/Core |
-| `-RunAsAdministrator` | — |
-| `-ShellId` | — |
+| Flag                  | Description        |
+| --------------------- | ------------------ |
+| `-Version`            | minimum PS version |
+| `-Modules`            | module list        |
+| `-PSEdition`          | Desktop/Core       |
+| `-RunAsAdministrator` | —                  |
+| `-ShellId`            | —                  |
 
 ---
 
@@ -5148,15 +5132,14 @@ Advanced function attribute
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `ConfirmImpact` | High/Medium/Low/None |
-| `DefaultParameterSetName` | — |
-| `PositionalBinding=$false` | — |
-| `HelpUri` | RemotingCapability |
+| Flag                       | Description          |
+| -------------------------- | -------------------- |
+| `ConfirmImpact`            | High/Medium/Low/None |
+| `DefaultParameterSetName`  | —                    |
+| `PositionalBinding=$false` | —                    |
+| `HelpUri`                  | RemotingCapability   |
 
 ---
-
 
 ## Environment
 
@@ -5172,10 +5155,10 @@ Get-ChildItem Env:
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Filter` | -Name |
-| `-Include` | -Exclude |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Filter`  | -Name       |
+| `-Include` | -Exclude    |
 
 ---
 
@@ -5191,10 +5174,10 @@ $env:PATH   $env:COMPUTERNAME
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `$env:USERPROFILE` | $env:TEMP |
-| `$env:USERNAME` | $env:WINDIR |
+| Flag               | Description |
+| ------------------ | ----------- |
+| `$env:USERPROFILE` | $env:TEMP   |
+| `$env:USERNAME`    | $env:WINDIR |
 
 ---
 
@@ -5210,8 +5193,8 @@ $env:MY_VAR = 'hello'
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag    | Description              |
+| ------- | ------------------------ |
 | `lasts` | only for current session |
 
 ---
@@ -5228,10 +5211,10 @@ Set env variable (persistent)
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `User` | Machine  Process scope |
-| `User:` | HKCU  Machine: HKLM (admin) |
+| Flag    | Description                |
+| ------- | -------------------------- |
+| `User`  | Machine Process scope      |
+| `User:` | HKCU Machine: HKLM (admin) |
 
 ---
 
@@ -5247,9 +5230,9 @@ Get env variable by scope
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `User` | Machine  Process |
+| Flag   | Description     |
+| ------ | --------------- |
+| `User` | Machine Process |
 
 ---
 
@@ -5289,10 +5272,10 @@ OS version info
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `.Platform` | .Version  .VersionString |
-| `.ServicePack` | — |
+| Flag           | Description             |
+| -------------- | ----------------------- |
+| `.Platform`    | .Version .VersionString |
+| `.ServicePack` | —                       |
 
 ---
 
@@ -5308,11 +5291,11 @@ OS / runtime detection
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `OSPlatform:` | Windows  Linux  OSX |
+| Flag                | Description          |
+| ------------------- | -------------------- |
+| `OSPlatform:`       | Windows Linux OSX    |
 | `RuntimeIdentifier` | FrameworkDescription |
-| `OSDescription` | ProcessArchitecture |
+| `OSDescription`     | ProcessArchitecture  |
 
 ---
 
@@ -5340,7 +5323,6 @@ if ($PSEdition -eq 'Core') { }
 
 ---
 
-
 ## Formatting & Output
 
 ### `Format-Table` <sub>ft</sub>
@@ -5355,11 +5337,11 @@ obj | Format-Table [props]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-AutoSize` | -Wrap  -HideTableHeaders |
-| `-GroupBy` | -Property @{N='..'E={..}} |
-| `-View` | named view |
+| Flag        | Description               |
+| ----------- | ------------------------- |
+| `-AutoSize` | -Wrap -HideTableHeaders   |
+| `-GroupBy`  | -Property @{N='..'E={..}} |
+| `-View`     | named view                |
 
 ---
 
@@ -5375,10 +5357,10 @@ obj | Format-List [props]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-GroupBy` | -Property * all |
-| `-Force` | -View |
+| Flag       | Description      |
+| ---------- | ---------------- |
+| `-GroupBy` | -Property \* all |
+| `-Force`   | -View            |
 
 ---
 
@@ -5394,10 +5376,10 @@ obj | Format-Wide [prop]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Column` | N  -AutoSize |
-| `-GroupBy` | -Property |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Column`  | N -AutoSize |
+| `-GroupBy` | -Property   |
 
 ---
 
@@ -5413,8 +5395,8 @@ obj | Format-Custom
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag     | Description            |
+| -------- | ---------------------- |
 | `-Depth` | -View custom view name |
 
 ---
@@ -5431,9 +5413,9 @@ obj | Out-GridView
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-PassThru` | -Title  -OutputMode |
+| Flag        | Description        |
+| ----------- | ------------------ |
+| `-PassThru` | -Title -OutputMode |
 
 ---
 
@@ -5449,10 +5431,10 @@ obj | Out-String
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Stream` | line by line |
-| `-Width` | -NoNewline (PS7+) |
+| Flag      | Description       |
+| --------- | ----------------- |
+| `-Stream` | line by line      |
+| `-Width`  | -NoNewline (PS7+) |
 
 ---
 
@@ -5468,11 +5450,11 @@ obj | ConvertTo-Html
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Property` | -Head  -Body |
-| `-As` | Table/List  -Fragment |
-| `-Title` | -PreContent  -PostContent |
+| Flag        | Description              |
+| ----------- | ------------------------ |
+| `-Property` | -Head -Body              |
+| `-As`       | Table/List -Fragment     |
+| `-Title`    | -PreContent -PostContent |
 
 ---
 
@@ -5488,11 +5470,11 @@ obj | Export-Clixml -Path file.xml
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Depth` | -Encoding |
-| `-NoClobber` | -Force |
-| `-Confirm` | -WhatIf |
+| Flag         | Description |
+| ------------ | ----------- |
+| `-Depth`     | -Encoding   |
+| `-NoClobber` | -Force      |
+| `-Confirm`   | -WhatIf     |
 
 ---
 
@@ -5520,11 +5502,11 @@ obj | ConvertTo-Json -Depth 5
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Depth` | default 2 |
+| Flag        | Description     |
+| ----------- | --------------- |
+| `-Depth`    | default 2       |
 | `-Compress` | -EnumsAsStrings |
-| `-AsArray` | -EscapeHandling |
+| `-AsArray`  | -EscapeHandling |
 
 ---
 
@@ -5540,10 +5522,10 @@ Parse JSON
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Depth` | -AsHashtable |
-| `-NoEnumerate` | — |
+| Flag           | Description  |
+| -------------- | ------------ |
+| `-Depth`       | -AsHashtable |
+| `-NoEnumerate` | —            |
 
 ---
 
@@ -5559,12 +5541,11 @@ $FormatEnumerationLimit = -1
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `default` | 4  use -1 for all |
+| Flag      | Description      |
+| --------- | ---------------- |
+| `default` | 4 use -1 for all |
 
 ---
-
 
 ## Misc
 
@@ -5580,13 +5561,13 @@ Get-Help Get-Item
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Full` | -Detailed  -Examples |
-| `-Parameter` | name |
-| `-Online` | open browser |
-| `-ShowWindow` | GUI window |
-| `Update-Help` | first |
+| Flag          | Description         |
+| ------------- | ------------------- |
+| `-Full`       | -Detailed -Examples |
+| `-Parameter`  | name                |
+| `-Online`     | open browser        |
+| `-ShowWindow` | GUI window          |
+| `Update-Help` | first               |
 
 ---
 
@@ -5602,12 +5583,12 @@ Update-Help
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Module` | specific module |
-| `-Force` | reimport |
-| `-SourcePath` | offline source |
-| `-UICulture` | en-US  -Recurse |
+| Flag          | Description     |
+| ------------- | --------------- |
+| `-Module`     | specific module |
+| `-Force`      | reimport        |
+| `-SourcePath` | offline source  |
+| `-UICulture`  | en-US -Recurse  |
 
 ---
 
@@ -5623,10 +5604,10 @@ Show-Command Get-EventLog
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Name` | -Height  -Width |
-| `-NoCommonParameter` | — |
+| Flag                 | Description    |
+| -------------------- | -------------- |
+| `-Name`              | -Height -Width |
+| `-NoCommonParameter` | —              |
 
 ---
 
@@ -5642,10 +5623,10 @@ Get-History
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Count` | N |
-| `-Id` | -CommandLine (filter) |
+| Flag     | Description           |
+| -------- | --------------------- |
+| `-Count` | N                     |
+| `-Id`    | -CommandLine (filter) |
 
 ---
 
@@ -5661,8 +5642,8 @@ Invoke-History [-Id] N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag           | Description   |
+| -------------- | ------------- |
 | `-CommandLine` | search string |
 
 ---
@@ -5679,10 +5660,10 @@ Clear-History
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Id` | -Count N |
-| `-CommandLine` | -Newest  -Oldest |
+| Flag           | Description     |
+| -------------- | --------------- |
+| `-Id`          | -Count N        |
+| `-CommandLine` | -Newest -Oldest |
 
 ---
 
@@ -5698,9 +5679,9 @@ Add-History -InputObject obj
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Passthru` | — |
+| Flag        | Description |
+| ----------- | ----------- |
+| `-Passthru` | —           |
 
 ---
 
@@ -5716,11 +5697,11 @@ Start-Transcript [-Path] file
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Append` | -NoClobber |
-| `-Force` | -IncludeInvocationHeader |
-| `-UseMinimalHeader` | (PS7.2+) |
+| Flag                | Description              |
+| ------------------- | ------------------------ |
+| `-Append`           | -NoClobber               |
+| `-Force`            | -IncludeInvocationHeader |
+| `-UseMinimalHeader` | (PS7.2+)                 |
 
 ---
 
@@ -5748,9 +5729,9 @@ Debug-Runspace -Name name
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Id` | -Runspace  -BreakAll |
+| Flag  | Description         |
+| ----- | ------------------- |
+| `-Id` | -Runspace -BreakAll |
 
 ---
 
@@ -5766,10 +5747,10 @@ Set-PSDebug -Trace 1
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Trace` | 0/1/2  -Step  -Strict |
-| `-Off` | disable |
+| Flag     | Description         |
+| -------- | ------------------- |
+| `-Trace` | 0/1/2 -Step -Strict |
+| `-Off`   | disable             |
 
 ---
 
@@ -5785,8 +5766,8 @@ Set-StrictMode -Version 3.0
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag       | Description      |
+| ---------- | ---------------- |
 | `-Version` | Off/1/2/3/Latest |
 
 ---
@@ -5815,10 +5796,10 @@ Validate JSON string (PS6+)
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Schema` | JSON schema string |
-| `-SchemaFile` | path to schema |
+| Flag          | Description        |
+| ------------- | ------------------ |
+| `-Schema`     | JSON schema string |
+| `-SchemaFile` | path to schema     |
 
 ---
 
@@ -5846,8 +5827,8 @@ New-Guid
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag | Description       |
+| ---- | ----------------- |
 | `or` | [Guid]::NewGuid() |
 
 ---
@@ -5864,12 +5845,12 @@ Get-Random
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Maximum` | -Minimum |
-| `-Count` | N from collection |
+| Flag           | Description           |
+| -------------- | --------------------- |
+| `-Maximum`     | -Minimum              |
+| `-Count`       | N from collection     |
 | `-InputObject` | -SetSeed reproducible |
-| `-Shuffle` | (PS7.1+) |
+| `-Shuffle`     | (PS7.1+)              |
 
 ---
 
@@ -5885,9 +5866,9 @@ Start-Sleep -Seconds N
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Seconds` | -Milliseconds |
+| Flag        | Description     |
+| ----------- | --------------- |
+| `-Seconds`  | -Milliseconds   |
 | `-Duration` | (PS7+) timespan |
 
 ---
@@ -5904,10 +5885,10 @@ Get-Clipboard
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag      | Description                   |
+| --------- | ----------------------------- |
 | `-Format` | Text/FileDropList/Image/Audio |
-| `-Raw` | -TextFormatType |
+| `-Raw`    | -TextFormatType               |
 
 ---
 
@@ -5923,10 +5904,10 @@ Set clipboard content
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Value` | -Append  -AsHtml |
-| `-Confirm` | -WhatIf |
+| Flag       | Description     |
+| ---------- | --------------- |
+| `-Value`   | -Append -AsHtml |
+| `-Confirm` | -WhatIf         |
 
 ---
 
@@ -5942,11 +5923,11 @@ Register-EngineEvent -SourceIdentifier PSExiting -Action {}
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-SourceIdentifier` | -Action |
-| `-MessageData` | -Forward |
-| `-SupportEvent` | -MaxTriggerCount |
+| Flag                | Description      |
+| ------------------- | ---------------- |
+| `-SourceIdentifier` | -Action          |
+| `-MessageData`      | -Forward         |
+| `-SupportEvent`     | -MaxTriggerCount |
 
 ---
 
@@ -5962,11 +5943,11 @@ Register-ObjectEvent $obj EventName -Action {}
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-InputObject` | -EventName |
-| `-SourceIdentifier` | -Action |
-| `-MessageData` | -Forward |
+| Flag                | Description |
+| ------------------- | ----------- |
+| `-InputObject`      | -EventName  |
+| `-SourceIdentifier` | -Action     |
+| `-MessageData`      | -Forward    |
 
 ---
 
@@ -5982,9 +5963,9 @@ Wait-Event [-SourceIdentifier name]
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-Timeout` | seconds |
+| Flag       | Description |
+| ---------- | ----------- |
+| `-Timeout` | seconds     |
 
 ---
 
@@ -6000,8 +5981,8 @@ Get-Event
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
+| Flag                | Description      |
+| ------------------- | ---------------- |
 | `-SourceIdentifier` | -EventIdentifier |
 
 ---
@@ -6018,9 +5999,9 @@ Remove-Event -SourceIdentifier name
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-EventIdentifier` | -Confirm |
+| Flag               | Description |
+| ------------------ | ----------- |
+| `-EventIdentifier` | -Confirm    |
 
 ---
 
@@ -6036,9 +6017,9 @@ Unregister-Event -SourceIdentifier name
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-EventIdentifier` | -Force  -Confirm |
+| Flag               | Description     |
+| ------------------ | --------------- |
+| `-EventIdentifier` | -Force -Confirm |
 
 ---
 
@@ -6054,10 +6035,10 @@ ConvertFrom-Markdown -Path file.md
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-AsVT100EncodedString` | ANSI render |
-| `-LiteralPath` | -InputObject |
+| Flag                    | Description  |
+| ----------------------- | ------------ |
+| `-AsVT100EncodedString` | ANSI render  |
+| `-LiteralPath`          | -InputObject |
 
 ---
 
@@ -6073,9 +6054,8 @@ Get-Content file.md | Show-Markdown
 
 **Options**
 
-| Flag | Description |
-|------|-------------|
-| `-AsVT100EncodedString` | — |
+| Flag                    | Description |
+| ----------------------- | ----------- |
+| `-AsVT100EncodedString` | —           |
 
 ---
-
