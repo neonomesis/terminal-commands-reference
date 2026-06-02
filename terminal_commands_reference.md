@@ -2522,7 +2522,7 @@ whereis cmd
 
 ### `man`
 
-Manual pages
+User manual pages
 
 **Syntax**
 
@@ -2532,11 +2532,49 @@ man [section] cmd
 
 **Options**
 
-| Flag | Description    |
-| ---- | -------------- |
-| `-k` | keyword search |
-| `-f` | brief desc     |
-| `-a` | all sections   |
+| Flag       | Description       |
+| ---------- | ----------------- |
+| `-k`       | keyword search    |
+| `-f`       | brief description |
+| `-a`       | all sections      |
+| `-P pager` | set pager         |
+| `-w`       | show page path    |
+
+**Sections**
+
+| # | Content           |
+| - | ----------------- |
+| 1 | User commands     |
+| 2 | System calls      |
+| 3 | Library functions |
+| 4 | Device files      |
+| 5 | File formats      |
+| 6 | Games             |
+| 7 | Miscellaneous     |
+| 8 | Admin commands    |
+| 9 | Kernel routines   |
+
+**Navigation** (uses `less`)
+
+| Key     | Action         |
+| ------- | -------------- |
+| `q`     | quit           |
+| `Space` | next page      |
+| `b`     | previous page  |
+| `/term` | search forward |
+| `n`     | next match     |
+| `N`     | prev match     |
+| `g`     | top            |
+| `G`     | bottom         |
+
+**Examples**
+
+```bash
+man ls               # manual for ls
+man 3 printf         # library function, not shell printf
+man -k "list files"  # search descriptions
+man -f ls            # one-line summary
+```
 
 ---
 
