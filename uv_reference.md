@@ -185,7 +185,7 @@ uvx --with requests my-tool             # Run tool with extra dependency
 
 # Install tools globally (persisted)
 uv tool install ruff                    # Install ruff as global tool
-uv tool install black --python 3.12     # Install with specific Python
+uv tool install black --python 3.12     # Install with specific Pyt
 uv tool list                            # List installed tools
 uv tool upgrade ruff                    # Upgrade a global tool
 uv tool upgrade --all                   # Upgrade all global tools
@@ -288,17 +288,17 @@ uv cache prune                          # Remove unused cache entries
 
 ## 12. uv vs pip / Poetry / Pipenv
 
-| Feature               | pip          | Poetry       | Pipenv       | **uv**           |
-|-----------------------|--------------|--------------|--------------|------------------|
-| Speed                 | Slow         | Slow         | Slow         | **10–100× faster** |
-| Python management     | No           | No           | Yes          | **Yes**          |
-| Lock file             | No (manual)  | Yes          | Yes          | **Yes**          |
-| Virtual env mgmt      | No           | Yes          | Yes          | **Yes**          |
-| Tool runner (npx-like)| No           | No           | No           | **Yes (uvx)**    |
-| pip-compatible API    | —            | No           | No           | **Yes (uv pip)** |
-| Workspaces            | No           | No           | No           | **Yes**          |
-| Written in            | Python       | Python       | Python       | **Rust**         |
-| pyproject.toml native | No           | Yes          | No           | **Yes**          |
+| Feature                | pip         | Poetry | Pipenv | **uv**             |
+| ---------------------- | ----------- | ------ | ------ | ------------------ |
+| Speed                  | Slow        | Slow   | Slow   | **10–100× faster** |
+| Python management      | No          | No     | Yes    | **Yes**            |
+| Lock file              | No (manual) | Yes    | Yes    | **Yes**            |
+| Virtual env mgmt       | No          | Yes    | Yes    | **Yes**            |
+| Tool runner (npx-like) | No          | No     | No     | **Yes (uvx)**      |
+| pip-compatible API     | —           | No     | No     | **Yes (uv pip)**   |
+| Workspaces             | No          | No     | No     | **Yes**            |
+| Written in             | Python      | Python | Python | **Rust**           |
+| pyproject.toml native  | No          | Yes    | No     | **Yes**            |
 
 ---
 
